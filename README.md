@@ -6,6 +6,20 @@
 
 ## 目录
 
+### Java基础
+
 - [x] [java核心技术笔记](java核心技术笔记/README.md)
 - [x] [leetcode刷题笔记-剑指Offer专项突击版](leetcode/README.md)
-- [ ] 
+
+### 计算机基础
+
+- [ ] [计算机组成原理](计算机组成原理\README.md)
+- [ ] [操作系统](操作系统\README.md)
+- [ ] [计算机网络](计算机网络\README.md)
+
+### Java开发基础
+
+- [x] [MySQL数据库](数据库\MySQL\README.md)
+- [ ] [JavaWeb](JavaWeb\README.md)
+- [ ] [Spring5](Spring5\README.md)
+
