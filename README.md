@@ -1,2 +1,11 @@
+# Java-Notes
+
+## 说明
+
 本仓库主要是用于个人笔记同步，主要记录`Java`以及刷题相关笔记，偶尔会掺杂一些机器学习相关的笔记，目前主要还在巩固`Java`基础知识以及`Leetcode`刷题中
 
+## 目录
+
+- [x] [java核心技术笔记](java核心技术笔记/README.md)
+- [x] [leetcode刷题笔记-剑指Offer专项突击版](leetcode/README.md)
+- [ ] 
