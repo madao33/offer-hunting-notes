@@ -36,7 +36,7 @@ C:\Users\Administrator>net start mysql
 * 输入命令行 `mysqld --install`
 * 出现 `Service successfully installed.`表示注册成功
 
-## 登录`MySQL`
+## 登录MySQL
 
 安装完成之后，服务也正常启动之后，那么就是登录操作了，可以通过以下方式启动
 
@@ -138,7 +138,6 @@ C:\Users\Administrator>net start mysql
 ## 表
 
 * 数据库中的基本单元是表，是一种存储数据的方式，表比较直观
-
 * 任何一张表都有行和列
   * 行(row)：被称为数据/记录
   * 列(column)：被称为字段，每一个字段都有字段名，数据类型，约束等属性
@@ -183,9 +182,11 @@ C:\Users\Administrator>net start mysql
 
   ![](img/show-table-status.png)
 
-## `Java`连接`MySQL`
+导入一个提前准备好的数据
 
-`MySQL`升级到8.0版本以上之后同`5.0`版本不太一样，需要注意检查版本号仔细安装
+## Java连接MySQL
+
+MySQL升级到8.0版本以上之后同`5.0`版本不太一样，需要注意检查版本号仔细安装
 
 作为参考笔者的`MySQL`版本是`8.0.27`
 
