@@ -194,7 +194,71 @@ C:\Users\Administrator>mysql --version
 mysql  Ver 8.0.27 for Win64 on x86_64 (MySQL Community Server - GPL)
 ```
 
-然后通过`Maven`创建一个`Java`项目，[Maven配置以及创建项目](https://www.cnblogs.com/wangjr1994/p/12434294.html)
+然后通过`IDEA`创建一个`Maven`项目，可以查看[MAVEN配置](../../java相关配置/MAVEN配置.md)了解如何配置`Maven`以及创建`Maven`项目
+
+创建完成之后在项目根目录中的`pom.xml`文件中添加对应的`mysql-connector-java`依赖，这个项目目前仅需要这一个依赖
+
+```xml
+<dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.27</version>
+        </dependency>
+    </dependencies>
+```
+
+在当前编辑页面点击右键，然后选择`Maven->Reload project`重新加载项目下载依赖项
+
+然后选择`src->main->java`创建一个`main.java`文件，添加以下代码
+
+```java
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class main {
+    public static void main(String[] args){
+
+        String driverName = "com.mysql.cj.jdbc.Driver";
+        String dbURL="jdbc:mysql://localhost:3306/world";  //world为数据库名
+        String userName = "root";
+        String userPwd = "219admin";
+        Connection con = null;
+        try {
+            Class.forName(driverName);
+            con= DriverManager.getConnection(dbURL, userName, userPwd);
+            System.out.println("连接数据库成功");
+            Statement stmt = con.createStatement();
+            String sql = "select Code, Name, Population from country";
+            ResultSet resSet = stmt.executeQuery(sql);
+            while(resSet.next()) {
+                String code = resSet.getString("Code");
+                String Name = resSet.getString("Name");
+                String countryCode = resSet.getString("Population");
+
+                System.out.println(code + "\t" + Name + "\t" + countryCode);
+            }
+        }  catch (Exception e) {
+            e.printStackTrace();
+            System.out.print("连接失败");
+        }
+    }
+}
+
+```
+
+将`userName`以及`userPwd`修改为自己数据库的账号和密码就可以`ALT+shift+F10`运行该代码，可以看到以下输出
+
+```shell
+连接数据库成功
+ABW	Aruba	103000
+AFG	Afghanistan	22720000
+AGO	Angola	12878000
+AIA	Anguilla	8000
+... ...
+```
 
 
 
