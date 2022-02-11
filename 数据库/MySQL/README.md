@@ -11,7 +11,7 @@
 启动 `MySQL`服务
 
 ```shell
-net start mysql
+sunet start mysql
 ```
 
 停止 `MySQL`服务
@@ -109,6 +109,30 @@ C:\Users\Administrator>net start mysql
   9 rows in set (0.00 sec)
   ```
 
+* 删除数据库：`drop database test;`
+
+  ```shell
+  mysql> drop database test;
+  Query OK, 0 rows affected (0.01 sec)
+  
+  mysql> show databases;
+  +--------------------+
+  | Database           |
+  +--------------------+
+  | graph              |
+  | information_schema |
+  | labmanage          |
+  | mysql              |
+  | performance_schema |
+  | sakila             |
+  | sys                |
+  | world              |
+  +--------------------+
+  8 rows in set (0.00 sec)
+  ```
+
+* 
+
 > `MySQL`的命令不区分大小写
 
 ## 表
@@ -158,6 +182,17 @@ C:\Users\Administrator>net start mysql
 * 查看数据库管理系统的性能及统计信息：`show table status from database;`
 
   ![](img/show-table-status.png)
+
+## `Java`连接`MySQL`
+
+`MySQL`升级到8.0版本以上之后同`5.0`版本不太一样，需要注意检查版本号仔细安装
+
+作为参考笔者的`MySQL`版本是`8.0.27`
+
+```shell
+C:\Users\Administrator>mysql --version
+mysql  Ver 8.0.27 for Win64 on x86_64 (MySQL Community Server - GPL)
+```
 
 
 
