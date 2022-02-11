@@ -194,7 +194,7 @@ C:\Users\Administrator>mysql --version
 mysql  Ver 8.0.27 for Win64 on x86_64 (MySQL Community Server - GPL)
 ```
 
-
+然后通过`Maven`创建一个`Java`项目，[Maven配置以及创建项目](https://www.cnblogs.com/wangjr1994/p/12434294.html)
 
 
 
