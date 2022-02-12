@@ -20,5 +20,10 @@
   - [x] [剑指OfferII007.数组中和为 0 的三个数](剑指Offer专项突击版/剑指OfferII007.数组中和为0的三个数.md)
   - [x] [剑指OfferII008.和大于等于 target 的最短子数组](剑指Offer专项突击版/剑指OfferII008.和大于等于target的最短子数组.md)
   - [x] [剑指OfferII009.乘积小于 K 的子数组](剑指Offer专项突击版/剑指OfferII009.乘积小于K的子数组.md)
-- [ ] Day4 数组
+- [x] Day4 数组
+  - [x] [剑指OfferII010.和为k的子数组](剑指Offer专项突击版/剑指OfferII010.和为k的子数组.md)
+  - [x] [剑指OfferII011.0和1个数相同的子数组](剑指Offer专项突击版/剑指OfferII011.0和1个数相同的子数组.md)
+  - [x] [剑指OfferII012.左右两边子数组的和相等](剑指Offer专项突击版/剑指OfferII012.左右两边子数组的和相等.md)
+  - [x] [剑指OfferII013.二维子矩阵的和](剑指Offer专项突击版/剑指OfferII013.二维子矩阵的和.md)
+- [ ] Day5 字符串
   - [ ] 
