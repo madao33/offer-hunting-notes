@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class main {
+public class test {
     public static void main(String[] args){
 
         String driverName = "com.mysql.cj.jdbc.Driver";
