@@ -1,8 +1,9 @@
+import java.util.List;
+
 public class mainTest {
     public static void main(String[] args){
-        int[] nums = new int[]{1, 2, 3};
-        int k = 3;
-        int res = new Solution().subarraySum(nums, k);
+        String s = "abab", p = "ab";
+        List<Integer> res = new Solution().findAnagrams(s, p);
         System.out.println(res);
     }
 }
