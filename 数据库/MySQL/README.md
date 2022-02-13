@@ -4,4 +4,6 @@ MySQL是一个常用的开源数据库，之前在各种各样的项目中都使
 
 - [x] [MySQL基础](MySQL基础.md)
 - [x] [MySQL查询语句](MySQL查询语句)
+- [x] [MySQL排序](MySQL排序.md)
+- [ ] [数据处理函数](数据处理函数.md)
 - [ ] 

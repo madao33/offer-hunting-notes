@@ -8,9 +8,9 @@
 
 ### Java基础
 
-- [x] [java核心技术笔记](java核心技术笔记/README.md)
-- [x] [leetcode刷题笔记-剑指Offer专项突击版](leetcode/README.md)
-- [x] [MAVEN配置](Java相关配置/MAVEN配置.md)
+- [X] [java核心技术笔记](java核心技术笔记/README.md)
+- [X] [leetcode刷题笔记-剑指Offer专项突击版](leetcode/README.md)
+- [X] [MAVEN配置](Java相关配置/MAVEN配置.md)
 
 ### 计算机基础
 
