@@ -29,4 +29,12 @@
   - [x] [剑指 OfferII014.字符串中的变位词](剑指Offer专项突击版/剑指OfferII014.字符串中的变位词.md)
   - [x] [剑指OfferII015.字符串中的所有变位词](剑指Offer专项突击版/剑指OfferII015.字符串中的所有变位词.md)
   - [x] [剑指OfferII015.字符串中的所有变位词](剑指Offer专项突击版/剑指OfferII015.字符串中的所有变位词.md)
-- [x] Day6 字符串
+- [ ] Day6 字符串
+  - [ ] [剑指OfferII017.含有所有字符的最短字符串](剑指Offer专项突击版/剑指OfferII017.含有所有字符的最短字符串.md)
+  - [x] [剑指OfferII018.有效的回文](剑指Offer专项突击版/剑指OfferII018.有效的回文.md)
+  - [x] [剑指OfferII019.最多删除一个字符得到回文](剑指Offer专项突击版/剑指OfferII019.最多删除一个字符得到回文.md)
+  - [ ] [剑指OfferII020.回文子字符串的个数](剑指Offer专项突击版/剑指OfferII020.回文子字符串的个数.md)
+- [ ] Day7 链表
+  - [x] [剑指OfferII021.删除链表的倒数第n个结点](剑指Offer专项突击版/剑指OfferII021.删除链表的倒数第n个结点.md)
+  - [x] [剑指OfferII022.链表中环的入口节点](剑指Offer专项突击版/剑指OfferII022.链表中环的入口节点.md)
+  - [ ] 

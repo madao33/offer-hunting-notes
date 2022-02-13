@@ -22,7 +22,7 @@ net stop mysql
 
 如果出现一下情况，说明系统没有注册 `MySQL`服务，需要注册[<sup>[1]</sup>](#ref-1)
 
-```
+```shell
 C:\Users\Administrator>net start mysql
 服务名无效。
 
@@ -49,7 +49,7 @@ C:\Users\Administrator>net start mysql
 
 * 查看版本号：`select version;`
 
-  ```shell
+  ```mysql
   mysql> select version();
   +-----------+
   | version() |
@@ -61,7 +61,7 @@ C:\Users\Administrator>net start mysql
 
 * 查看有哪些数据库:：`show databases;`
 
-  ```shell
+  ```mysql
   mysql> show databases;
   +--------------------+
   | Database           |
@@ -82,7 +82,7 @@ C:\Users\Administrator>net start mysql
 
 * 使用某个数据库： `use world;`
 
-  ```shell
+  ```mysql
   mysql> use world;
   Database changed
   mysql> show tables;
@@ -102,7 +102,7 @@ C:\Users\Administrator>net start mysql
 
 * 创建数据库：`create database test;`
 
-  ```shell
+  ```mysql
   mysql> create database test;
   Query OK, 1 row affected (0.01 sec)
   
@@ -125,7 +125,7 @@ C:\Users\Administrator>net start mysql
 
 * 删除数据库：`drop database test;`
 
-  ```shell
+  ```mysql
   mysql> drop database test;
   Query OK, 0 rows affected (0.01 sec)
   
@@ -160,7 +160,7 @@ C:\Users\Administrator>net start mysql
 
 * 查看数据下有哪些表：`show tables;`
 
-  ```shell
+  ```mysql
   mysql> use world;
   Database changed
   mysql> show tables;
@@ -176,7 +176,7 @@ C:\Users\Administrator>net start mysql
 
 * 查看数据表的属性，属性类型，主键信息等，也就是查看有哪些列：`show columns from table;`
 
-  ```shell
+  ```mysql
   mysql> show columns from city;
   +-------------+----------+------+-----+---------+----------------+
   | Field       | Type     | Null | Key | Default | Extra          |
@@ -200,7 +200,7 @@ C:\Users\Administrator>net start mysql
 
 * 查看表的结构`desc table;`
 
-  ```shell
+  ```mysql
   +----------+-------------+------+-----+---------+-------+
   | Field    | Type        | Null | Key | Default | Extra |
   +----------+-------------+------+-----+---------+-------+
@@ -224,7 +224,7 @@ MySQL升级到8.0版本以上之后同`5.0`版本不太一样，需要注意检�
 
 作为参考笔者的`MySQL`版本是`8.0.27`
 
-```shell
+```mysql
 C:\Users\Administrator>mysql --version
 mysql  Ver 8.0.27 for Win64 on x86_64 (MySQL Community Server - GPL)
 ```
@@ -286,7 +286,7 @@ public class main {
 
 将`userName`以及`userPwd`修改为自己数据库的账号和密码就可以`ALT+shift+F10`运行该代码，可以看到以下输出
 
-```shell
+```mysql
 连接数据库成功
 ABW	Aruba	103000
 AFG	Afghanistan	22720000

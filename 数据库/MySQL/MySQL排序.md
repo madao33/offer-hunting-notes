@@ -4,7 +4,7 @@
 
 查询并排序`order by`，默认是升序
 
-```shell
+```mysql
 mysql> select ename, sal from emp order by sal;
 +--------+---------+
 | ename  | sal     |
@@ -29,7 +29,7 @@ mysql> select ename, sal from emp order by sal;
 
 指定降序`desc`，升序是`asc`
 
-```shell
+```mysql
 mysql> select ename, sal from emp order by sal desc;
 +--------+---------+
 | ename  | sal     |
@@ -56,7 +56,7 @@ mysql> select ename, sal from emp order by sal desc;
 
 先按照薪资升序，薪资一样按照名字升序排列
 
-```shell
+```mysql
 mysql> select ename, sal from emp order by sal asc, ename asc;
 +--------+---------+
 | ename  | sal     |
@@ -83,7 +83,7 @@ mysql> select ename, sal from emp order by sal asc, ename asc;
 
 ## 综合案例
 
-```shell
+```mysql
 mysql> select ename, sal from emp where sal <= 3000  and sal >= 1250 order by sal;
 +--------+---------+
 | ename  | sal     |

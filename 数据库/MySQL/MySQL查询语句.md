@@ -4,7 +4,7 @@
 
 * 查询一个字段：`select 字段 from table;`
 
-  ```shel
+  ```mysql
   select dname from dept;
   +------------+
   | dname      |
@@ -19,7 +19,7 @@
 
 * 查询两个字段或多个字段，使用逗号隔开：`select 字段1, 字段2 from table;`
 
-  ```shell
+  ```mysql
   select deptno, dname from dept;
   +--------+------------+
   | deptno | dname      |
@@ -34,7 +34,7 @@
 
 * 查询所用字段，可以写上所有字段或者用`*`代替：`select * from table;`
 
-  ```
+  ```mysql
   select * from dept;
   +--------+------------+----------+
   | DEPTNO | DNAME      | LOC      |
@@ -47,11 +47,11 @@
   4 rows in set (0.00 sec)
   ```
 
-  > 但是用`*`有缺点，在实际应用中比较缓慢，会将`*`转换为字段，需要花费一定时间，也不具有较高的可读性
+  但是用`*`有缺点，在实际应用中比较缓慢，会将`*`转换为字段，需要花费一定时间，也不具有较高的可读性
 
 * 给查询的列起别名：`select deptno as deptnumber, dname as deptname from dept;`
 
-  ```shell
+  ```mysql
   select deptno as deptnumber, dname as deptname from dept;
   +------------+------------+
   | deptnumber | deptname   |
@@ -70,7 +70,7 @@
 
   `as`关键字可以省略：`select deptno depthnumber, dname deptname from dept;`
 
-  ```shell
+  ```mysql
   mysql> select deptno depthnumber, dname depthname from dept;
   +-------------+------------+
   | depthnumber | depthname  |
@@ -85,7 +85,7 @@
 
   别名如果有空格，需要添加一个单引号`‘’`括起来：`select deptno, dname 'dept name' from dept;`
 
-  ```shell
+  ```mysql
   mysql> select deptno, dname 'dept name' from dept;
   +--------+------------+
   | deptno | dept name  |
@@ -102,7 +102,7 @@
 
 * 列参与数学运算：`select ename, sal*12 as '年薪' from emp;`
 
-  ```shell
+  ```mysql
   select ename, sal*12 as '年薪' from emp;
   +--------+----------+
   | ename  | 年薪     |
@@ -149,7 +149,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
 * 等于`=` 
 
-  ```shell
+  ```mysql
   mysql> select empno, ename from emp where sal = 800;
   +-------+-------+
   | empno | ename |
@@ -161,7 +161,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
 * 不等于`<>，!=`
 
-  ```shell
+  ```mysql
   mysql> select empno, ename from emp where sal <> 800;
   +-------+--------+
   | empno | ename  |
@@ -205,7 +205,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
 * 符合条件`between ... and ...`
 
-  ```shell
+  ```mysql
   mysql> select empno, ename, sal from emp where sal >= 2450 and sal <= 3000;
   +-------+-------+---------+
   | empno | ename | sal     |
@@ -235,7 +235,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
 * `null`的查询，需要使用`where filed is num;`
 
-  ```shell
+  ```mysql
   mysql> select empno, ename sal, comm from emp where comm is null;
   +-------+--------+------+
   | empno | sal    | comm |
@@ -256,7 +256,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
   > 数据库中的`null`不能使用等号进行衡量，需要使用`is null`。这是因为数据库中的`null`代表什么也没有，它不是一个值，所以不能使用等号衡量。
 
-  ```shell
+  ```mysql
   mysql> select empno, ename, sal, comm from emp where comm is not null;
   +-------+--------+---------+---------+
   | empno | ename  | sal     | comm    |
@@ -271,7 +271,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
 * 合并条件
 
-  ```shell
+  ```mysql
   mysql> select empno, ename, sal, job from emp where job = 'MANAGER' or job = 'SALESMAN';
   +-------+--------+---------+----------+
   | empno | ename  | sal     | job      |
@@ -291,7 +291,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
   查询工资大于2500，并且部门编号为10或20的员工
 
-  ```shell
+  ```mysql
   mysql> select empno, ename, sal, deptno from emp where sal > 2500 and deptno = 10 or deptno = 20;
   +-------+-------+---------+--------+
   | empno | ename | sal     | deptno |
@@ -308,7 +308,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
   可以看到有出现`sal`为800的结果也出现了，这是因为`and`的优先级较高，上述语句变成了优先判断部门编号为`20`或者工资大于`2500`以及部门编号为`10`的判断语句了，需要添加一个小括号
 
-  ```shell
+  ```mysql
   mysql> select empno, ename, sal, deptno from emp where sal > 2500 and (deptno = 10 or deptno = 20);
   +-------+-------+---------+--------+
   | empno | ename | sal     | deptno |
@@ -323,7 +323,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
 * `in`多个包含，相当于多个`or`
 
-  ```shell
+  ```mysql
   mysql> select empno, ename, job from emp where job in ('manager', 'salesman');
   +-------+--------+----------+
   | empno | ename  | job      |
@@ -357,7 +357,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
   `not in`就表示不是这几个值当中的数据
 
-  ```shell
+  ```mysql
   mysql> select empno, ename, job from emp where job not in ('manager', 'salesman');
   +-------+--------+-----------+
   | empno | ename  | job       |
@@ -379,7 +379,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
   `_`匹配任意一个字符
 
-  ```shell
+  ```mysql
   mysql> select ename from emp where ename like'%O%';
   +-------+
   | ename |
@@ -430,7 +430,7 @@ select field1, field2, ... fieldN from table_name1, table_name2 ...
 
   可以使用`\_`查找含有下划线的
 
-  ```shell
+  ```mysql
   mysql> select name from t_student where name like '%\_%';
   +-----------+
   | name      |
