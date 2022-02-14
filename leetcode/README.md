@@ -37,4 +37,9 @@
 - [ ] Day7 链表
   - [x] [剑指OfferII021.删除链表的倒数第n个结点](剑指Offer专项突击版/剑指OfferII021.删除链表的倒数第n个结点.md)
   - [x] [剑指OfferII022.链表中环的入口节点](剑指Offer专项突击版/剑指OfferII022.链表中环的入口节点.md)
-  - [ ] 
+  - [x] [剑指OfferII023.两个链表的第一个重合节点](剑指Offer专项突击版/剑指OfferII023.两个链表的第一个重合节点.md)
+- [ ] Day8 链表
+  - [x] [剑指OfferII024.反转链表](剑指Offer专项突击版/剑指OfferII024.反转链表.md)
+  - [x] [剑指OfferII025.链表中的两数相加](剑指Offer专项突击版/剑指OfferII025.链表中的两数相加.md)
+  - [x] [剑指OfferII026.重排链表](剑指Offer专项突击版/剑指OfferII026.重排链表.md)
+- [ ] Day9 链表
