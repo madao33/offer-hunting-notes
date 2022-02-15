@@ -43,3 +43,5 @@
   - [x] [剑指OfferII025.链表中的两数相加](剑指Offer专项突击版/剑指OfferII025.链表中的两数相加.md)
   - [x] [剑指OfferII026.重排链表](剑指Offer专项突击版/剑指OfferII026.重排链表.md)
 - [ ] Day9 链表
+  - [x] [剑指OfferII027.回文链表](剑指Offer专项突击版/剑指OfferII027.回文链表.md)
+  - [ ] [剑指OfferII028.展平多级双向链表](剑指Offer专项突击版/剑指OfferII028.展平多级双向链表.md)
