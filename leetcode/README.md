@@ -44,4 +44,7 @@
   - [x] [剑指OfferII026.重排链表](剑指Offer专项突击版/剑指OfferII026.重排链表.md)
 - [ ] Day9 链表
   - [x] [剑指OfferII027.回文链表](剑指Offer专项突击版/剑指OfferII027.回文链表.md)
-  - [ ] [剑指OfferII028.展平多级双向链表](剑指Offer专项突击版/剑指OfferII028.展平多级双向链表.md)
+  - [ ] [剑指OfferII028.展平多级双向链表](剑指Offer专项突击版/剑指OfferII028.展平多级双向链表.md)-DFS以及双链表没有掌握熟练
+  - [x] [剑指OfferII029.排序的循环链表](剑指Offer专项突击版/剑指OfferII029.排序的循环链表.md)
+- [ ] Day10 哈希表
+  - [ ] 

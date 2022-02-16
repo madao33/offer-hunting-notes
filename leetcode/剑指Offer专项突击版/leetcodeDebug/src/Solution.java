@@ -1,36 +1,54 @@
-import java.util.ArrayList;
-import java.util.List;
 
+
+class Node {
+    public int val;
+    public Node next;
+
+    public Node() {}
+
+    public Node(int _val) {
+        val = _val;
+    }
+
+    public Node(int _val, Node _next) {
+        val = _val;
+        next = _next;
+    }
+};
 class Solution {
-    public List<Integer> findAnagrams(String s, String p) {
-        List<Integer> res = new ArrayList<Integer>();
-        int sl = s.length(), pl = p.length();
-        if(sl < pl) return res;
+    public Node insert(Node head, int insertVal) {
+        // 空节点，创建循环lm
+        if (head == null) {
+            Node ans = new Node(insertVal);
+            ans.next = ans;
+            return ans;
+        }
 
-        int[] cnt = new int[26];
-        for(int i = 0; i < pl; i++) {
-            --cnt[p.charAt(i) - 'a'];
-            ++cnt[s.charAt(i) - 'a'];
+        // 找到链表中最大结点
+        Node cur = head.next, maxNode = head;
+        Node node = new Node(insertVal);
+        while(cur != head) {
+            if (maxNode.val <= cur.val)
+                maxNode = cur;
+            cur = cur.next;
         }
-        int diff = 0;
-        for(int c : cnt) {
-            diff += (c == 0 ? 0 : 1);
+
+        // 如果最大值和最小值相等或者插入值大于尾部结点值或者小于最小值，直接放在最大结点后，也就是最小结点前
+        if (maxNode.val == maxNode.next.val || (maxNode.val < insertVal || maxNode.next.val > insertVal)) {
+            Node tail = maxNode.next;
+            maxNode.next = node;
+            node.next = tail;
+            return head;
         }
-        if(diff == 0) res.add(0);
-        for(int i = 0; i < sl - pl; i++) {
-            int x = s.charAt(i + pl) - 'a', y = s.charAt(i) - 'a';
-            if(x == y){
-                if(diff==0) res.add(i + 1);
-                continue;
-            }
-            if(cnt[x] == 0) ++diff;
-            ++cnt[x];
-            if(cnt[x] == 0) --diff;
-            if(cnt[y] == 0) ++diff;
-            --cnt[y];
-            if(cnt[y] == 0) --diff;
-            if(diff == 0) res.add(i + 1);
+
+        // 如果插入值不大于链表中最大值也不小于最小值，找到插入位置，并插入值
+        cur = head;
+        while (cur.val >= insertVal || cur.next.val < insertVal) {
+            cur = cur.next;
         }
-        return res;
+        Node next = cur.next;
+        cur.next = node;
+        node.next = next;
+        return head;
     }
 }
