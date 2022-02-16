@@ -638,3 +638,203 @@ public class Bank {
 
 ### 14.5.6 同步阻塞
 
+每一个`Java`对象有一个锁。线程可以通过调用同步方法获得锁。还有另一种机制可以获得锁，通过进入一个同步阻塞
+
+```java
+synchronized (obj) // this is the syntax for a synchronized block
+{
+    // criticadl section
+}
+```
+
+> 使用一个对象的说来实现额外的原子操作，实际上称为客户端锁定（client-side locking）
+
+### 14.5.7 监视器概念
+
+锁和条件是线程同步的强大工具，但是，严格地讲，它们不是面向对象的。
+
+一种不需要程序员考虑如何加锁的情况下，就可以保证多线程的安全性，最成功的解决方案之一是监视器（monitor）。监视器具有以下特性：
+
+* 监视器是只包含私有域的类
+* 每个监视器类的对象有一个相关的锁
+* 使用该锁对所有的方法进行加锁。换句话说，如果客户端调用`obj.method()`，那 么`obj`对象的锁是在方法调用开始时自动获得，并且当方法返回时自动释放该锁。因为所有的域是私有的，这样的安排可以确保一个线程在对对象操作时，没有其他线程能访问该域。
+* 该锁可以有任意多个相关条件
+
+`Java`中的每一个对象有一个内部的锁和内部的条件。如果一个方法用`synchronized`关键字声明，那么它表现得就像是一个监视器方法。通过调用`wait/notifyAll/notify`来访问条件变量
+
+### 14.5.8 `Volatile`域
+
+`volatile`关键字为实例域的同步访问提供了一种免锁机制。如果声明一个域为volatile,那么编译器和虚拟机就知道该域是可能被另一个线程并发更新的
+
+例如一个`boolean`标记`done`，它的值被一个线程设置却被另一个线程查询，可以使用锁
+
+```java
+private boolean done;
+public synchronized boolean isDone() { return done; }
+public synchronized void setDone() { done = true; }
+```
+
+或许使用内部锁可能会导致一些麻烦，这种情况下，或许可以将域声明为`volatile`才比较合理
+
+```java
+private volatile boolean done;
+public boolean isDone() { return done; }
+public void setDone() { done = true; }
+```
+
+> `volatile`不能提供原子性，例如方法
+>
+> ```java
+> public void flipDone() { done = !done; }
+> ```
+>
+> 不能确保翻转域中的值。不能保证读取、翻转和写入不被中断
+
+### 14.5.9 `final`变量
+
+还有一种情况可以安全访问一个共享域，即这个域声明为`final`时
+
+```java
+final Map<String, Double> accounts = new HashMap<>();
+```
+
+其他线程会在构造函数完成构造之后才看到这个`accounts`变量
+
+如果不使用`final`，就不能保证其他线程看到的是`accounts`更新后的值，它们可能都只是看到`null`
+
+### 14.5.10 原子性
+
+假设对共享变量除了赋值之外并不完成其他操作，那么可以将这些共享变量声明为`volatile`
+
+例如，`Atomiclnteger`类提供了方法`incrementAndGet`和`decrementAndGet`,它们分别以原子方式将一个整数自增或自减。例如，可以安全地生成一个数值序列
+
+```java
+public static AtomicLong nextNumber = new AtomicLone();
+long id = nextNumber.incrementAndGet();
+```
+
+`incrementAndGet`方法以原子方式将`AtomicLong`自增，并返回自增后的值。也就是说，获得值、增`1`并设置然后生成新值的操作不会中断
+
+### 14.5.11 死锁
+
+有可能会因为每一个线程要等待更多的钱款存人而导致所有线程都被阻塞。这样的状态称为死锁（deadlock)
+
+### 14.5.12 线程局部变量
+
+线程间共享变量是有一定风险的，有时可能要避免共享变量。例如，`SimpleDateFormat`类不是线程安全的
+
+```java
+public static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+String dateStamp = dateFormat.format(new Date());
+```
+
+结果可能很混乱，因为`dateFormat`使用的内部数据结构可能会被并发的访问所破坏
+
+### 14.5.13 锁测试与超时
+
+线程在调用`lock`方法来获得另一个线程所持有的锁的时候，很可能发生阻塞。`tryLock`方法试图申请一个锁，在成功获得锁后返回`true`,否则，立即返回`false`,而且线程可以立即离开去做其他事情
+
+```java
+if (myLock.tryLock())
+{
+    try { ... }
+    finally { myLock.unlock(); }
+}
+else
+    // do something else
+```
+
+可以调用`tryLock`时，使用超时参数，像这样
+
+```java
+if (myLock.tryLock(100, TimeUnit.MILLISECONDS)) ..
+```
+
+* 如果一个线程被另一个线程通过调用`signalAll`或`signal`激活，或者超时时限已达到，或者线程被中断，那么`await`方法将返回
+* 如果等待的线程被中断，`await`方法将抛出一个`InterruptedException`异常
+
+### 14.5.14 读/写锁
+
+`java.util.concurrent.locks`包 定 义 了 两 个 锁 类，我 们 已 经 讨 论 的`ReentrantLock`类 和`ReentrantReadWriteLock`类。如果很多线程从一个数据结构读取数据而很少线程修改其中数据的话，后者是十分有用的。在这种情况下，允许对读者线程共享访问是合适的。当然，写者线程依然必须是互斥访问的
+
+读/写锁的必要步骤：
+
+1. 构造一个`ReentrantReadWriteLock`对象
+
+   ```java
+   private ReentrantReadWriteLoc rwl = new ReentrantReadWriteLock();
+   ```
+
+2. 抽取读锁和写锁：
+
+   ```java
+   private Lock readLock = rwl.readLock();
+   private Lock writeLock = rwl.writeLock();
+   ```
+
+3. 对所有的获取方法加读锁
+
+   ```java
+   public double getTotalBalance()
+   {
+       readLock.lock();
+       try { ... }
+       finally { readLock.unlock(); }
+   }
+   ```
+
+4. 对所有的修改方法加写锁：
+
+   ```java
+   public void transfer(...)
+   {
+       writeLock.lock();
+       try { ... }
+       finally { writeLock.unlock(); }
+   }
+   ```
+
+### 14.5.15 为什么弃用`stop`和`suspend`方法
+
+`stop`方法用来终止一个线程，以及一个`suspend`方法用来阻塞一个线程直至另一个线程调用`resume`
+
+`stop`、`suspend`和`resume`方法已经弃用。`stop`方法天生就不安全，经验证明`suspend`方法会经常导致死锁
+
+>  线程要终止另一个线程时，无法知道什么时候调用`stop`方法是安全的，什么时候导致对象被破坏。因此，该方法被弃用了。在希望停止线程的时候应该中断线程，被中断的线程会在安全的时候停止。
+>
+> 如果用`suspend`挂起一个持有一个锁的线程，那么，该锁在恢复之前是不可用的。如果调用`suspend`方法的线程试图获得同一个锁，那么程序死锁：被挂起的线程等着被恢复，而将其挂起的线程等待获得锁
+
+## 14.6 阻塞队列
+
+当试图向队列添加元素而队列已满，或是想从队列移出元素而队列为空的时候，阻塞队列（blocking queue)导致线程阻塞
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
