@@ -1,6 +1,6 @@
 #### [剑指OfferII031.最近最少使用缓存](https://leetcode-cn.com/problems/OrIXps/)
 
-难度中等22收藏分享切换为英文接收动态反馈
+难度中等
 
 运用所掌握的数据结构，设计和实现一个 [LRU (Least Recently Used，最近最少使用) 缓存机制](https://baike.baidu.com/item/LRU) 。
 
@@ -44,4 +44,103 @@ lRUCache.get(4);    // 返回 4
 - 最多调用 `2 * 105` 次 `get` 和 `put`
 
 ## 题解
+
+暂时没有理解
+
+```java
+public class LRUCache {
+    private final int capacity;
+    private final LinkedList list;
+    private final Map<Integer, LinkedListNode> map;
+
+    public LRUCache(int capacity) {
+        this.capacity = capacity;
+        list = new LinkedList();
+        map = new HashMap<>(capacity);
+    }
+
+    public int get(int key) {
+        // 在 map 中根据 key 获取在链表中的 node
+        LinkedListNode node = map.getOrDefault(key, null);
+        if (node == null) {
+            return -1;
+        }
+        // 将 node 从链表中删除
+        list.deleteNode(node);
+        // 将 node 放在链表的最前端
+        list.addNode(node);
+        return node.value;
+    }
+
+    public void put(int key, int value) {
+        // 从 map 中根据 key 获取在链表中的 node
+        LinkedListNode node = map.getOrDefault(key, null);
+        // 该 node 在链表中存在，修正 node 中 value 的值，同时修正其在链表中的位置
+        if (node != null) {
+            node.value = value;
+            list.deleteNode(node);
+            list.addNode(node);
+            return;
+        }
+        // 当前链表已经达到了容量要求，将链表中的最后一个节点删除
+        if (map.size() == capacity) {
+            int deleteKey = list.deleteTail();
+            map.remove(deleteKey);
+        }
+        // 在链表中创建新的节点，并将其保存在 map 和 list 中
+        node = list.addNode(key, value);
+        map.put(key, node);
+    }
+
+    private static class LinkedListNode {
+        public int key;
+        public int value;
+        public LinkedListNode pre;
+        public LinkedListNode next;
+
+        public LinkedListNode(int key, int value, LinkedListNode pre, LinkedListNode next) {
+            this.key = key;
+            this.value = value;
+            this.pre = pre;
+            this.next = next;
+        }
+    }
+
+    private static class LinkedList {
+        LinkedListNode virtualHead;
+        LinkedListNode virtualTail;
+
+        public LinkedList() {
+            virtualHead = new LinkedListNode(-1, -1, null, null);
+            virtualTail = new LinkedListNode(-1, -1, null, null);
+            virtualHead.next = virtualTail;
+            virtualTail.pre = virtualHead;
+        }
+
+        public LinkedListNode addNode(int key, int value) {
+            LinkedListNode node = new LinkedListNode(key, value, virtualHead, virtualHead.next);
+            addNode(node);
+            return node;
+        }
+
+        public void addNode(LinkedListNode node) {
+            node.pre = virtualHead;
+            node.next = virtualHead.next;
+            virtualHead.next.pre = node;
+            virtualHead.next = node;
+        }
+
+        public int deleteTail() {
+            int result = virtualTail.pre.key;
+            deleteNode(virtualTail.pre);
+            return result;
+        }
+
+        public void deleteNode(LinkedListNode node) {
+            node.pre.next = node.next;
+            node.next.pre = node.pre;
+        }
+    }
+}
+```
 
