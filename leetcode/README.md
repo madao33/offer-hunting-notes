@@ -49,3 +49,8 @@
 - [ ] Day10 哈希表
   - [x] [剑指OfferII030.插入、删除和随机访问都是O(1)的容器](剑指Offer专项突击版/剑指OfferII030.插入、删除和随机访问都是O(1)的容器.md)
   - [ ] [剑指OfferII031.最近最少使用缓存](剑指Offer专项突击版/剑指OfferII031.最近最少使用缓存.md)-暂时没有理解
+  - [x] [剑指OfferII032.有效的变位词](剑指Offer专项突击版/剑指OfferII032.有效的变位词.md)
+- [ ] Day11 哈希表
+  - [x] [剑指OfferII033.变位词组](剑指Offer专项突击版/剑指OfferII033.变位词组.md)
+  - [x] [剑指OfferII034.外星语言是否排序](剑指Offer专项突击版/剑指OfferII034.外星语言是否排序.md)
+  - [ ] [剑指OfferII035.最小时间差](剑指Offer专项突击版/剑指OfferII035.最小时间差.md)
