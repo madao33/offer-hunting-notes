@@ -1,5 +1,4 @@
 package chap4;
-
 import java.util.*;
 
 public class ConstructorTest{

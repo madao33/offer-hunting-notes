@@ -806,7 +806,107 @@ if (myLock.tryLock(100, TimeUnit.MILLISECONDS)) ..
 
 ## 14.6 阻塞队列
 
+对于许多线程问题，可以通过使用一个或多个队列以优雅且安全的方式将其形式化。生产者线程向队列插人元素，消费者线程则取出它们。使用队列，可以安全地从一个线程向另一个线程传递数据。
+
 当试图向队列添加元素而队列已满，或是想从队列移出元素而队列为空的时候，阻塞队列（blocking queue)导致线程阻塞
+
+[BlockingQueueTest.java](blockingQueue\BlockingQueueTest.java)
+
+```java
+package chap14.blockingQueue;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
+public class BlockingQueueTest {
+    private static final  int FILE_QUEUE_SIZE = 10;
+    private static final int SEARCH_THREADS = 100;
+    private static final File DUMMY = new File("");
+    private static BlockingQueue<File> queue = new ArrayBlockingQueue<>(FILE_QUEUE_SIZE);
+
+    public static void main(String[] args)
+    {
+        try (Scanner in = new Scanner(System.in))
+        {
+            System.out.print("Enter base directory :");
+            String directory = in.nextLine();
+            System.out.print("Enter keyword: ");
+            String keyword = in.nextLine();
+
+            Runnable enumerator = () -> {
+                try
+                {
+                    enumerate(new File(directory));
+                    queue.put(DUMMY);
+                }
+                catch (InterruptedException e)
+                {
+                }
+            };
+
+            new Thread(enumerator).start();
+            for (int i = 1; i <= SEARCH_THREADS; i++) {
+                Runnable searcher = () -> {
+                    try
+                    {
+                        boolean done = false;
+                        while (!done)
+                        {
+                            File file = queue.take();
+                            if (file == DUMMY)
+                            {
+                                queue.put(file);
+                                done = true;
+                            }
+                            else search(file, keyword);
+                        }
+                    }
+                    catch (IOException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    catch (InterruptedException e)
+                    {
+                    }
+                };
+                new Thread(searcher).start();
+            }
+        }
+    }
+
+
+    public static void enumerate(File directory) throws InterruptedException
+    {
+        File[] files = directory.listFiles();
+        for (File file : files)
+        {
+            if (file.isDirectory()) enumerate(file);
+            else queue.put(file);
+        }
+    }
+
+    public static void search(File file, String keyword) throws IOException
+    {
+        try (Scanner in = new Scanner(file, "UTF-8"))
+        {
+            int lineNumber = 0;
+            while (in.hasNextLine())
+            {
+                lineNumber++;
+                String line = in.nextLine();
+                if (line.contains(keyword))
+                    System.out.printf("%s:%d:%s%n", file.getPath(), lineNumber, line);
+            }
+        }
+    }
+}
+
+```
+
+## 14.7 线程安全的集合
 
 
 
