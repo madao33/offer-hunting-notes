@@ -34,15 +34,15 @@
   - [x] [剑指OfferII018.有效的回文](剑指Offer专项突击版/剑指OfferII018.有效的回文.md)
   - [x] [剑指OfferII019.最多删除一个字符得到回文](剑指Offer专项突击版/剑指OfferII019.最多删除一个字符得到回文.md)
   - [ ] [剑指OfferII020.回文子字符串的个数](剑指Offer专项突击版/剑指OfferII020.回文子字符串的个数.md)
-- [ ] Day7 链表
+- [x] Day7 链表
   - [x] [剑指OfferII021.删除链表的倒数第n个结点](剑指Offer专项突击版/剑指OfferII021.删除链表的倒数第n个结点.md)
   - [x] [剑指OfferII022.链表中环的入口节点](剑指Offer专项突击版/剑指OfferII022.链表中环的入口节点.md)
   - [x] [剑指OfferII023.两个链表的第一个重合节点](剑指Offer专项突击版/剑指OfferII023.两个链表的第一个重合节点.md)
-- [ ] Day8 链表
+- [x] Day8 链表
   - [x] [剑指OfferII024.反转链表](剑指Offer专项突击版/剑指OfferII024.反转链表.md)
   - [x] [剑指OfferII025.链表中的两数相加](剑指Offer专项突击版/剑指OfferII025.链表中的两数相加.md)
   - [x] [剑指OfferII026.重排链表](剑指Offer专项突击版/剑指OfferII026.重排链表.md)
-- [ ] Day9 链表
+- [x] Day9 链表
   - [x] [剑指OfferII027.回文链表](剑指Offer专项突击版/剑指OfferII027.回文链表.md)
   - [ ] [剑指OfferII028.展平多级双向链表](剑指Offer专项突击版/剑指OfferII028.展平多级双向链表.md)-DFS以及双链表没有掌握熟练
   - [x] [剑指OfferII029.排序的循环链表](剑指Offer专项突击版/剑指OfferII029.排序的循环链表.md)
@@ -50,7 +50,13 @@
   - [x] [剑指OfferII030.插入、删除和随机访问都是O(1)的容器](剑指Offer专项突击版/剑指OfferII030.插入、删除和随机访问都是O(1)的容器.md)
   - [ ] [剑指OfferII031.最近最少使用缓存](剑指Offer专项突击版/剑指OfferII031.最近最少使用缓存.md)-暂时没有理解
   - [x] [剑指OfferII032.有效的变位词](剑指Offer专项突击版/剑指OfferII032.有效的变位词.md)
-- [ ] Day11 哈希表
+- [x] Day11 哈希表
   - [x] [剑指OfferII033.变位词组](剑指Offer专项突击版/剑指OfferII033.变位词组.md)
   - [x] [剑指OfferII034.外星语言是否排序](剑指Offer专项突击版/剑指OfferII034.外星语言是否排序.md)
-  - [ ] [剑指OfferII035.最小时间差](剑指Offer专项突击版/剑指OfferII035.最小时间差.md)
+  - [x] [剑指OfferII035.最小时间差](剑指Offer专项突击版/剑指OfferII035.最小时间差.md)
+- [ ] Day12 栈
+  - [x] [剑指OfferII036.后缀表达式](剑指Offer专项突击版/剑指OfferII036.后缀表达式.md)
+  - [ ] [剑指OfferII037.小行星碰撞](剑指Offer专项突击版/剑指OfferII037.小行星碰撞.md)
+  - [ ] [剑指OfferII038.每日温度](剑指Offer专项突击版/剑指OfferII038.每日温度.md)-单调栈，暂时没有完全理解
+- [ ] Day13 栈
+  - [ ] 

@@ -1,26 +1,21 @@
+import java.util.Stack;
 
 class Solution {
-    public boolean isAlienSorted(String[] words, String order) {
-        int[] alph = new int[26];
-        for (int i = 0; i < order.length(); i++)
-            alph[order.charAt(i) - 'a'] = i + 1;
-        for(int i = 0; i < words.length-1; i++) {
-            if (!isAlph(words[i], words[i+1], alph))
-                return false;
+    public int evalRPN(String[] tokens) {
+        Stack<Integer> stack = new Stack<>();
+        for (String token : tokens) {
+            if(token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")) {
+                calc(stack, token);
+            } else stack.push(Integer.parseInt(token));
         }
-        return true;
+        return stack.pop();
     }
 
-    public boolean isAlph(String A, String B, int[] alph) {
-        int index = 0;
-        while(index < A.length() && index < B.length()) {
-            if (alph[A.charAt(index) - 'a'] < alph[B.charAt(index) - 'a'])
-                return true;
-            if (alph[A.charAt(index) - 'a'] > alph[B.charAt(index) - 'a'])
-                return false;
-            index++;
-        }
-        if (index < A.length()) return false;
-        return true;
+    public void calc(Stack<Integer> stack, String operator) {
+        int num2 = stack.pop(), num1 = stack.pop();
+        if (operator.equals("+")) stack.push(num1 + num2);
+        else if (operator.equals("-")) stack.push(num1 - num2);
+        else if (operator.equals("*")) stack.push(num1 * num2);
+        else stack.push(num1 / num2);
     }
 }
