@@ -908,6 +908,27 @@ public class BlockingQueueTest {
 
 ## 14.7 线程安全的集合
 
+如果多线程要并发地修改一个数据结构，例如散列表，那么很容易会破坏这个数据结构。可以通过提供锁来保护共享数据结构，但是选择线程安全的实现作为替代可能更容易。
+
+### 14.7.1 高效的映射、集和队列
+
+`java.util.concurrent`包提供了映射、有序集和队列的高效实现：
+
+* `ConcurrentHashMap`
+* ``ConcurrentSkipListMap`
+* `ConcurrentSkipListSet`
+* ``ConcurrentLinkedQueue`
+
+这些集合使用复杂的算法，通过允许并发地访问数据结构的不同部分来使竞争极小化
+
+### 14.7.2 映射条目的原子更新
+
+
+
+
+
+
+
 
 
 
