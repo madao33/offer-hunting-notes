@@ -52,3 +52,41 @@
 
 ## 题解
 
+这道栈的题目难点应该主要是在分析场景上了。
+我们需要明确什么时候无脑入栈，什么时候需要判断，理解这两点就可以轻松解题了。
+首先，循环每一个元素时，在什么情况下无脑入栈呢？
+
+栈为空
+栈顶元素为负数(下一个为负数则一起向左，下一个为正数则分向两边)
+当前元素为正数（栈顶为正一起向右，栈顶为负分向两边）
+下来，我们需要看碰撞的场景又细分为什么情况：
+
+栈顶元素大于abs(当前元素)，当前元素被撞毁
+栈顶元素等于abs(当前元素)，栈顶弹出和当前元素抵消
+栈顶元素小于abs(当前元素)，栈顶弹出，并与新栈顶完成上述判断
+最终返回栈即可。
+
+```java
+class Solution {
+    public int[] asteroidCollision(int[] asteroids) {
+        Stack<Integer> stack = new Stack<>();
+        int p = 0;
+        while ( p < asteroids.length) {
+            if (stack.isEmpty() || stack.peek() < 0 || asteroids[p] > 0)
+                stack.push(asteroids[p]);
+            else if (stack.peek() <= -asteroids[p]) {
+                if (stack.pop() < -asteroids[p])
+                    continue;
+            }
+            p++;
+        }
+
+        int[] ans = new int[stack.size()];
+        for (int i = stack.size() - 1; i >= 0; i--) ans[i] = stack.pop();
+        return ans;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$

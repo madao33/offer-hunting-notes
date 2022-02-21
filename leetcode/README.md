@@ -56,7 +56,8 @@
   - [x] [剑指OfferII035.最小时间差](剑指Offer专项突击版/剑指OfferII035.最小时间差.md)
 - [ ] Day12 栈
   - [x] [剑指OfferII036.后缀表达式](剑指Offer专项突击版/剑指OfferII036.后缀表达式.md)
-  - [ ] [剑指OfferII037.小行星碰撞](剑指Offer专项突击版/剑指OfferII037.小行星碰撞.md)
-  - [ ] [剑指OfferII038.每日温度](剑指Offer专项突击版/剑指OfferII038.每日温度.md)-单调栈，暂时没有完全理解
+  - [x] [剑指OfferII037.小行星碰撞](剑指Offer专项突击版/剑指OfferII037.小行星碰撞.md)
+  - [x] [剑指OfferII038.每日温度](剑指Offer专项突击版/剑指OfferII038.每日温度.md)-单调栈，不太熟悉
 - [ ] Day13 栈
-  - [ ] 
+  - [x] [剑指OfferII039.直方图最大矩形面积](剑指Offer专项突击版/剑指OfferII039.直方图最大矩形面积.md)
+  - [ ] [剑指OfferII040.矩阵中最大的矩形](剑指Offer专项突击版/剑指OfferII040.矩阵中最大的矩形.md)
