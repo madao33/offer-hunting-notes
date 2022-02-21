@@ -923,7 +923,22 @@ public class BlockingQueueTest {
 
 ### 14.7.2 映射条目的原子更新
 
+传统的做法是使用`replace`操作，它会以原子方式用一个新值替换原值，前提是之前没有其他线程把原值替换为其他值
 
+```java
+do
+{
+    oldValue = map.get(word);
+    newValue = oldValue == null ? 1 : oldValue + 1;
+} while (!map.replace(word, oldValue, newValue));
+```
+
+或者，可以使用一个`ConcurrentHashMap<String，AtomicLong>`，或者在JavaSE8中，还可以使用`ConcurrentHashMap<String，LongAdder>`。
+
+```java
+map.putIfAbsent(word, new LongAdder());
+map.get(word).increment();
+```
 
 
 
