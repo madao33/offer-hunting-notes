@@ -59,5 +59,10 @@
   - [x] [剑指OfferII037.小行星碰撞](剑指Offer专项突击版/剑指OfferII037.小行星碰撞.md)
   - [x] [剑指OfferII038.每日温度](剑指Offer专项突击版/剑指OfferII038.每日温度.md)-单调栈，不太熟悉
 - [ ] Day13 栈
-  - [x] [剑指OfferII039.直方图最大矩形面积](剑指Offer专项突击版/剑指OfferII039.直方图最大矩形面积.md)
-  - [ ] [剑指OfferII040.矩阵中最大的矩形](剑指Offer专项突击版/剑指OfferII040.矩阵中最大的矩形.md)
+  - [x] [剑指OfferII039.直方图最大矩形面积](剑指Offer专项突击版/剑指OfferII039.直方图最大矩形面积.md)-难题，需要仔细揣摩
+  - [x] [剑指OfferII040.矩阵中最大的矩形](剑指Offer专项突击版/剑指OfferII040.矩阵中最大的矩形.md)-难题，后续需要再次揣摩
+- [ ] Day14 队列
+  - [x] [剑指OfferII041.滑动窗口的平均值](剑指Offer专项突击版/剑指OfferII041.滑动窗口的平均值.md)
+  - [x] [剑指OfferII042.最近请求次数](剑指Offer专项突击版/剑指OfferII042.最近请求次数.md)
+  - [ ] [剑指OfferII043.往完全二叉树添加节点](剑指Offer专项突击版/剑指OfferII043.往完全二叉树添加节点.md)
+  - [ ] 

@@ -57,3 +57,42 @@
 
 ## 题解
 
+对于每一行的矩阵，可以定义一个`heights`数组，对应于这一列数字可以看做是`1`高度的数组，然后通过[剑指OfferII039.直方图最大矩形面积](https://leetcode-cn.com/problems/0ynMMM/)的算法计算出直方图的最大矩形面积
+
+```java
+class Solution {
+    public int maximalRectangle(String[] matrix) {
+        if (matrix.length == 0) return 0;
+
+        int[] heights = new int[matrix[0].length()];
+        int maxArea = 0;
+        for (String rows : matrix) {
+            for (int i = 0; i < rows.length(); i++) {
+                if (rows.charAt(i) == '0') {
+                    heights[i] = 0;
+                } else {
+                    heights[i]++;
+                }
+            }
+            maxArea = Math.max(maxArea, largestRectangleArea(heights));
+        }
+        return maxArea;
+    }
+	// 直方图最大矩形面积
+    public int largestRectangleArea(int[] heights) {
+        int maxArea = 0, n = heights.length;
+        for (int i = 0; i < n; i++) {
+            int left = i - 1, right = i + 1;
+            if ( n * heights[i] > maxArea) {
+                while (left >= 0 && heights[left] >= heights[i]) left--;
+                while (right < n && heights[right] >= heights[i]) right++;
+                maxArea = Math.max(maxArea, (right - left - 1) * heights[i]);
+            }
+        }
+        return maxArea;
+    }
+}
+```
+
+* 时间复杂度：$O(n^3)$
+* 空间复杂度：$O(n)$
