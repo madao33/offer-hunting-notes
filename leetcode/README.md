@@ -64,5 +64,7 @@
 - [ ] Day14 队列
   - [x] [剑指OfferII041.滑动窗口的平均值](剑指Offer专项突击版/剑指OfferII041.滑动窗口的平均值.md)
   - [x] [剑指OfferII042.最近请求次数](剑指Offer专项突击版/剑指OfferII042.最近请求次数.md)
-  - [ ] [剑指OfferII043.往完全二叉树添加节点](剑指Offer专项突击版/剑指OfferII043.往完全二叉树添加节点.md)
-  - [ ] 
+  - [x] [剑指OfferII043.往完全二叉树添加节点](剑指Offer专项突击版/剑指OfferII043.往完全二叉树添加节点.md)
+- [ ] Day15 队列
+  - [x] [剑指OfferII044.二叉树每层的最大值](剑指Offer专项突击版/剑指OfferII044.二叉树每层的最大值.md)
+  - [x] [剑指OfferII045.二叉树最底层最左边的值](剑指Offer专项突击版/剑指OfferII045.二叉树最底层最左边的值.md)

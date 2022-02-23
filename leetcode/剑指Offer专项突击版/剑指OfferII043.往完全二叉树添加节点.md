@@ -38,3 +38,63 @@
 
 ## 题解
 
+使用一个队列遍历完全二叉树，如果左右结点都不为空，将左右结点添加到队列中，如果为空，则中断遍历，这时队列中的头结点是第一个不满的结点，判断其左右是否为空，然后进行插入
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class CBTInserter {
+    
+    Queue<TreeNode> queue;
+    TreeNode root;
+    public CBTInserter(TreeNode root) {
+        this.root = root;
+        queue = new LinkedList<>();
+        queue.offer(root);
+    }
+    
+    public int insert(int v) {
+        TreeNode insertNode = new TreeNode(v);
+        while(queue.peek().left != null && queue.peek().right != null) {
+            TreeNode temp = queue.poll();
+            queue.offer(temp.left);
+            queue.offer(temp.right);   
+        }
+        TreeNode temp = queue.peek();
+        if(temp.left == null) {
+            temp.left = insertNode;
+            return temp.val;
+        }
+        temp.right = insertNode;
+        return temp.val;
+    }
+    
+    public TreeNode get_root() {
+        return root;
+    }
+}
+
+/**
+ * Your CBTInserter object will be instantiated and called as such:
+ * CBTInserter obj = new CBTInserter(root);
+ * int param_1 = obj.insert(v);
+ * TreeNode param_2 = obj.get_root();
+ */
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$
+
