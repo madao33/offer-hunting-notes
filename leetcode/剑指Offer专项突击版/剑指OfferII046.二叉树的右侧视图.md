@@ -38,3 +38,43 @@
 
 ## 题解
 
+同样的也是二叉树层序遍历，和这道题类似[剑指OfferII045.二叉树最底层最左边的值](剑指Offer专项突击版/剑指OfferII045.二叉树最底层最左边的值.md)，不过需要一个数组来存储每一层的最右边的结点
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> ans = new LinkedList<>();
+        if (root == null) return ans;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = size; i > 0; i--) {
+                TreeNode temp = queue.poll();
+                if (i == size) ans.add(temp.val);
+                if (temp.right != null) queue.add(temp.right);
+                if (temp.left != null) queue.add(temp.left);
+            }
+        }
+        return ans;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$

@@ -68,3 +68,6 @@
 - [ ] Day15 队列
   - [x] [剑指OfferII044.二叉树每层的最大值](剑指Offer专项突击版/剑指OfferII044.二叉树每层的最大值.md)
   - [x] [剑指OfferII045.二叉树最底层最左边的值](剑指Offer专项突击版/剑指OfferII045.二叉树最底层最左边的值.md)
+  - [x] [剑指OfferII046.二叉树的右侧视图](剑指Offer专项突击版/剑指OfferII046.二叉树的右侧视图.md)
+- [ ] Day16 树
+  - [ ]  [剑指OfferII047.二叉树剪枝](剑指Offer专项突击版/剑指OfferII047.二叉树剪枝.md)
