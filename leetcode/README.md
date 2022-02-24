@@ -54,20 +54,24 @@
   - [x] [剑指OfferII033.变位词组](剑指Offer专项突击版/剑指OfferII033.变位词组.md)
   - [x] [剑指OfferII034.外星语言是否排序](剑指Offer专项突击版/剑指OfferII034.外星语言是否排序.md)
   - [x] [剑指OfferII035.最小时间差](剑指Offer专项突击版/剑指OfferII035.最小时间差.md)
-- [ ] Day12 栈
+- [x] Day12 栈
   - [x] [剑指OfferII036.后缀表达式](剑指Offer专项突击版/剑指OfferII036.后缀表达式.md)
   - [x] [剑指OfferII037.小行星碰撞](剑指Offer专项突击版/剑指OfferII037.小行星碰撞.md)
   - [x] [剑指OfferII038.每日温度](剑指Offer专项突击版/剑指OfferII038.每日温度.md)-单调栈，不太熟悉
 - [ ] Day13 栈
   - [x] [剑指OfferII039.直方图最大矩形面积](剑指Offer专项突击版/剑指OfferII039.直方图最大矩形面积.md)-难题，需要仔细揣摩
   - [x] [剑指OfferII040.矩阵中最大的矩形](剑指Offer专项突击版/剑指OfferII040.矩阵中最大的矩形.md)-难题，后续需要再次揣摩
-- [ ] Day14 队列
+- [x] Day14 队列
   - [x] [剑指OfferII041.滑动窗口的平均值](剑指Offer专项突击版/剑指OfferII041.滑动窗口的平均值.md)
   - [x] [剑指OfferII042.最近请求次数](剑指Offer专项突击版/剑指OfferII042.最近请求次数.md)
   - [x] [剑指OfferII043.往完全二叉树添加节点](剑指Offer专项突击版/剑指OfferII043.往完全二叉树添加节点.md)
-- [ ] Day15 队列
+- [x] Day15 队列
   - [x] [剑指OfferII044.二叉树每层的最大值](剑指Offer专项突击版/剑指OfferII044.二叉树每层的最大值.md)
   - [x] [剑指OfferII045.二叉树最底层最左边的值](剑指Offer专项突击版/剑指OfferII045.二叉树最底层最左边的值.md)
   - [x] [剑指OfferII046.二叉树的右侧视图](剑指Offer专项突击版/剑指OfferII046.二叉树的右侧视图.md)
 - [ ] Day16 树
-  - [ ]  [剑指OfferII047.二叉树剪枝](剑指Offer专项突击版/剑指OfferII047.二叉树剪枝.md)
+  - [x]  [剑指OfferII047.二叉树剪枝](剑指Offer专项突击版/剑指OfferII047.二叉树剪枝.md)
+  - [x]  [剑指OfferII048.序列化与反序列化二叉树](剑指Offer专项突击版/剑指OfferII048.序列化与反序列化二叉树.md)-没有熟练掌握
+  - [x]  [剑指OfferII049.从根节点到叶节点的路径数字之和](剑指Offer专项突击版/剑指OfferII049.从根节点到叶节点的路径数字之和.md)-没有熟练掌握二叉树的广度优先遍历
+- [ ] Day17 树
+  - [ ] 
