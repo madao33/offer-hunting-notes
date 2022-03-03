@@ -1,0 +1,3 @@
+com\itheima\service\BookServiceTest.class
+com\itheima\service\BookServiceTestCase.class
+com\itheima\dao\BookDaoTestCase.class
