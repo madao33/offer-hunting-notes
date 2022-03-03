@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <!--指定pom的模型版本-->
+  <modelVersion>4.0.0</modelVersion>
+  <!--打包方式，web工程打包为war，java工程打包为jar-->
+  <packaging>war</packaging>
+
+  <!--组织id-->
+  <groupId>com.itheima</groupId>
+  <!--项目id-->
+  <artifactId>web01</artifactId>
+  <!--版本号:release,snapshot-->
+  <version>1.0-SNAPSHOT</version>
+
+  <!--设置当前工程的所有依赖-->
+  <dependencies>
+    <!--具体的依赖-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
+  </dependencies>
+
+  <!--构建-->
+  <build>
+    <!--设置插件-->
+    <plugins>
+      <!--具体的插件配置-->
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <port>80</port>
+          <path>/</path>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

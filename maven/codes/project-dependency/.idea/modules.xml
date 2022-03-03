@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/project01/project01.iml" filepath="$PROJECT_DIR$/project01/project01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project02/project02.iml" filepath="$PROJECT_DIR$/project02/project02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project03/project03.iml" filepath="$PROJECT_DIR$/project03/project03.iml" />
+    </modules>
+  </component>
+</project>
