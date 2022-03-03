@@ -6,4 +6,5 @@
 
 - [x] [Maven配置](notes\MAVEN配置.md)
 - [x] [第一个Maven项目](notes\第一个Maven项目.md)
+- [x] [Maven依赖](notes\Maven依赖.md)
 - [ ] 

@@ -15,11 +15,13 @@
             <version>3.5.3</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.13</version>
         </dependency>
+
         <dependency>
             <groupId>com.itheima</groupId>
             <artifactId>project03</artifactId>
@@ -31,5 +33,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+
     </dependencies>
 </project>

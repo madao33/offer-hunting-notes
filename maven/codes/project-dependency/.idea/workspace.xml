@@ -1,50 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="784d6af5-6733-4003-8237-452fcb3255a5" name="Default" comment="" />
-    <ignored path="$PROJECT_DIR$/project03/target/" />
-    <ignored path="$PROJECT_DIR$/project01/target/" />
-    <ignored path="$PROJECT_DIR$/project02/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
+    <list default="true" id="784d6af5-6733-4003-8237-452fcb3255a5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/java01/java01.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/java01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/java01/target/classes/com/itheima/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java01/target/classes/com/itheima/Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/java01/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java01/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/java02/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java02/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/java02/src/test/java/com/itheima/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java02/src/test/java/com/itheima/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/web01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/web01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/web01/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/web01/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/web01/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/web01/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/web01/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/web01/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project01/project01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project01/project01.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project02/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project02/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project02/project02.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project02/project02.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project03/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project03/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project03/project03.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project03/project03.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project03/target/classes/com/itheima/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/project03/target/classes/com/itheima/Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project03/target/test-classes/com/itheima/DemoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/project03/target/test-classes/com/itheima/DemoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/第一个Maven项目.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/第一个Maven项目.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/Springboot0101QuickstartApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/Springboot0101QuickstartApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/controller/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/springboot_01_01_quickstart-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/surefire-reports/TEST-com.itheima.Springboot0101QuickstartApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/surefire-reports/com.itheima.Springboot0101QuickstartApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/test-classes/com/itheima/Springboot0101QuickstartApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/test-classes/com/itheima/Springboot0101QuickstartApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../机器学习/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../机器学习/强化学习/README.md" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project01/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project02/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/project03/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,6 +71,17 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -75,11 +105,13 @@
       </list>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/soft/apache-maven-3.6.1" />
-        <option name="userSettingsFile" value="D:\soft\apache-maven-3.6.1\conf\settings.xml" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../../../../Program Files/Java/apache-maven-3.8.4" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -104,6 +136,8 @@
     <option name="width" value="1378" />
     <option name="height" value="734" />
   </component>
+  <component name="ProjectId" id="25rrR50SpNuZydze3V0eoIEYFyh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -188,8 +222,16 @@
       <pane id="Scope" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../maven-project/web01" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -200,18 +242,6 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -221,83 +251,38 @@
       <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
+    <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -308,6 +293,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575900607449</updated>
+      <workItem from="1646296045099" duration="4709000" />
     </task>
     <servers />
   </component>
@@ -370,12 +356,19 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/project01/pom.xml">
