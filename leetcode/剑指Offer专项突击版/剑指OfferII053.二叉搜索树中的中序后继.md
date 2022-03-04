@@ -38,3 +38,33 @@
 
 ##  题解
 
+二叉排序树的查找，使用迭代方式
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+        TreeNode ans = null;
+        while (root != null) {
+            if (root.val > p.val) {
+                ans = root;
+                root = root.left;
+            } else {
+                root = root.right;
+            }
+        }
+        return ans;
+    }
+}
+```
+
+* 时间复杂度：$O(\log(N))$
+* 空间复杂度：$O(1)$
