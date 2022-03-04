@@ -5,58 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="784d6af5-6733-4003-8237-452fcb3255a5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/ideatest/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven-project/webtest/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maven-project/java01/java01.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maven-project/java01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java01/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maven-project/java01/target/classes/com/itheima/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java01/target/classes/com/itheima/Demo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maven-project/java01/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java01/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maven-project/java02/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java02/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maven-project/java02/src/test/java/com/itheima/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java02/src/test/java/com/itheima/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maven-project/web01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/web01/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maven-project/web01/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/web01/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maven-project/web01/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/web01/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maven-project/web01/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/web01/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/ideatest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/ideatest/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/ideatest/target/classes/org/itheima/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/ideatest/target/classes/org/itheima/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/ideatest/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/ideatest/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/ideatest/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/ideatest/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/ideatest/target/surefire-reports/TEST-org.itheima.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/ideatest/target/surefire-reports/org.itheima.AppTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/ideatest/target/test-classes/org/itheima/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/ideatest/target/test-classes/org/itheima/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/java02/target/classes/com/itheima/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java02/target/classes/com/itheima/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/java02/target/test-classes/com/itheima/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maven-project/java02/target/test-classes/com/itheima/AppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maven-project/webtest/target/tomcat/logs/access_log.2022-03-03" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project01/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project01/project01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project01/project01.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project02/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project02/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project02/project02.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project02/project02.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project02/target/classes/App.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project03/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project03/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project03/project03.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project03/project03.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project03/target/classes/com/itheima/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/project03/target/classes/com/itheima/Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project03/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project03/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project03/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/project03/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project03/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/project03/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project03/target/project03-1.0-SNAPSHOT-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project03/target/project03-1.0-SNAPSHOT-sources.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project03/target/project03-1.0-SNAPSHOT-test-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project03/target/project03-1.0-SNAPSHOT-test-sources.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project03/target/project03-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/project03/target/project03-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project03/target/test-classes/com/itheima/DemoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/project03/target/test-classes/com/itheima/DemoTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../notes/第一个Maven项目.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/第一个Maven项目.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/Springboot0101QuickstartApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/Springboot0101QuickstartApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/classes/com/itheima/controller/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/springboot_01_01_quickstart-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/surefire-reports/TEST-com.itheima.Springboot0101QuickstartApplicationTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/surefire-reports/com.itheima.Springboot0101QuickstartApplicationTests.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/test-classes/com/itheima/Springboot0101QuickstartApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../springboot/doc/codes/springboot_01_01_quickstart/target/test-classes/com/itheima/Springboot0101QuickstartApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../doc/01-Maven基础.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/MAVEN配置.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../机器学习/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../机器学习/强化学习/README.md" beforeDir="false" />
     </list>
@@ -231,11 +209,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../maven-project/web01" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -294,6 +273,8 @@
       <option name="presentableId" value="Default" />
       <updated>1575900607449</updated>
       <workItem from="1646296045099" duration="4709000" />
+      <workItem from="1646303529143" duration="62000" />
+      <workItem from="1646360231005" duration="3352000" />
     </task>
     <servers />
   </component>
@@ -369,6 +350,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/project01/pom.xml">

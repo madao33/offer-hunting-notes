@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.UserDao">
+
+    <!--添加-->
+    <insert id="save" parameterType="user">
+        insert into user(userName,password,realName,gender,birthday)values(#{userName},#{password},#{realName},#{gender},#{birthday})
+    </insert>
+
+    <!--删除-->
+    <delete id="delete" parameterType="int">
+        delete from user where uuid = #{uuid}
+    </delete>
+
+    <!--修改-->
+    <update id="update" parameterType="user">
+        update user set userName=#{userName},password=#{password},realName=#{realName},gender=#{gender},birthday=#{birthday} where uuid=#{uuid}
+    </update>
+
+    <!--查询单个-->
+    <select id="get" resultType="user" parameterType="int">
+        select * from user where uuid = #{uuid}
+    </select>
+
+    <!--分页查询-->
+    <select id="getAll" resultType="user">
+        select * from user
+    </select>
+
+    <!--登录-->
+    <select id="getByUserNameAndPassword" resultType="user" >
+        select * from user where userName=#{userName} and password=#{password}
+    </select>
+
+</mapper>

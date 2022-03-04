@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [25/Feb/2020:16:24:48 +0800] "POST /user?userName=Jock&password=1234&realName=JockisSuperMan&gender=1&birthday=1999/09/09 HTTP/1.1" 200 52 http-bio-80-exec-2 1218
+0:0:0:0:0:0:0:1 - - [25/Feb/2020:16:25:10 +0800] "PUT /user?userName=Jock123321&password=1234&realName=JockMe&gender=1&birthday=1999/09/09&uuid=2 HTTP/1.1" 200 52 http-bio-80-exec-3 9
+0:0:0:0:0:0:0:1 - - [25/Feb/2020:16:25:14 +0800] "GET /user/1/411 HTTP/1.1" 200 1119 http-bio-80-exec-4 89
+0:0:0:0:0:0:0:1 - - [25/Feb/2020:16:25:21 +0800] "PUT /user?userName=Jock123321&password=1234&realName=JockMe&gender=1&birthday=1999/09/09&uuid=5 HTTP/1.1" 200 52 http-bio-80-exec-5 10
+0:0:0:0:0:0:0:1 - - [25/Feb/2020:16:25:27 +0800] "DELETE /user/5 HTTP/1.1" 200 52 http-bio-80-exec-6 7
+0:0:0:0:0:0:0:1 - - [25/Feb/2020:16:25:32 +0800] "GET /user/1 HTTP/1.1" 200 153 http-bio-80-exec-7 8
+0:0:0:0:0:0:0:1 - - [25/Feb/2020:16:25:35 +0800] "GET /user/1/411 HTTP/1.1" 200 1015 http-bio-80-exec-8 13
+0:0:0:0:0:0:0:1 - - [25/Feb/2020:16:25:40 +0800] "GET /user/1/4 HTTP/1.1" 200 793 http-bio-80-exec-9 10
+0:0:0:0:0:0:0:1 - - [25/Feb/2020:16:25:46 +0800] "POST /user/login?userName=Jockme&password=root1 HTTP/1.1" 200 52 http-bio-80-exec-10 10
+0:0:0:0:0:0:0:1 - - [25/Feb/2020:18:53:34 +0800] "POST /user?userName=Jock&password=1234&realName=JockisSuperMan&gender=1&birthday=1999/09/09 HTTP/1.1" 200 52 http-bio-80-exec-2 1180

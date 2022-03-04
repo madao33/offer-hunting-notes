@@ -4,7 +4,9 @@
 
 目前进度
 
-- [x] [Maven配置](notes\MAVEN配置.md)
-- [x] [第一个Maven项目](notes\第一个Maven项目.md)
-- [x] [Maven依赖](notes\Maven依赖.md)
-- [ ] 
+- [x] [Maven基础](Maven基础.md)
+- [ ] [Maven高级](Maven高级.md)-后续补充学习
+
+bug记录
+
+* [Maven提示jdk版本不正确](notes\Maven提示jdk版本不正确.md)
