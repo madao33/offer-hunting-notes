@@ -4,8 +4,8 @@
 
 目前进度
 
-- [x] [Maven基础](Maven基础.md)
-- [ ] [Maven高级](Maven高级.md)-后续补充学习
+- [x] [Maven基础](notes\Maven基础.md)
+- [ ] [Maven高级](notes\Maven高级.md)-后续补充学习
 
 bug记录
 
