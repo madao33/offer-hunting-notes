@@ -1,4 +1,4 @@
-# hap3-Deep-Learning-with-Pytorch
+# chap3-Deep-Learning-with-Pytorch
 
 ## Gradients
 
