@@ -103,45 +103,45 @@ class Springboot18EsApplicationTests {
     }
 
     @Test
-    //添加文档
+        //添加文档
     void testCreateDoc() throws IOException {
         Book book = bookDao.selectById(1);
         IndexRequest request = new IndexRequest("books").id(book.getId().toString());
         String json = JSON.toJSONString(book);
-        request.source(json,XContentType.JSON);
-        client.index(request,RequestOptions.DEFAULT);
+        request.source(json, XContentType.JSON);
+        client.index(request, RequestOptions.DEFAULT);
     }
 
     @Test
-    //添加文档
+        //添加文档
     void testCreateDocAll() throws IOException {
         List<Book> bookList = bookDao.selectList(null);
         BulkRequest bulk = new BulkRequest();
         for (Book book : bookList) {
             IndexRequest request = new IndexRequest("books").id(book.getId().toString());
             String json = JSON.toJSONString(book);
-            request.source(json,XContentType.JSON);
+            request.source(json, XContentType.JSON);
             bulk.add(request);
         }
-        client.bulk(bulk,RequestOptions.DEFAULT);
+        client.bulk(bulk, RequestOptions.DEFAULT);
     }
 
     @Test
-    //按id查询
+        //按id查询
     void testGet() throws IOException {
-        GetRequest request = new GetRequest("books","1");
+        GetRequest request = new GetRequest("books", "1");
         GetResponse response = client.get(request, RequestOptions.DEFAULT);
         String json = response.getSourceAsString();
         System.out.println(json);
     }
 
     @Test
-    //按条件查询
+        //按条件查询
     void testSearch() throws IOException {
         SearchRequest request = new SearchRequest("books");
 
         SearchSourceBuilder builder = new SearchSourceBuilder();
-        builder.query(QueryBuilders.termQuery("all","spring"));
+        builder.query(QueryBuilders.termQuery("all", "spring"));
         request.source(builder);
 
         SearchResponse response = client.search(request, RequestOptions.DEFAULT);
@@ -153,10 +153,6 @@ class Springboot18EsApplicationTests {
             System.out.println(book);
         }
     }
-
-
-
-
 
 
 }

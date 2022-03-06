@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bfcd509e-8c27-4388-bbc3-5b1cac4ea7b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../codes.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_01_01_quickstart/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_01_01_quickstart/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_01_01_quickstart/springboot_01_01_quickstart.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_01_01_quickstart/springboot_01_01_quickstart.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_01_01_quickstart/src/main/java/com/itheima/controller/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_01_02_quickstart/src/main/java/com/itheima/Springboot0102QuickstartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_01_02_quickstart/src/main/java/com/itheima/Springboot0102QuickstartApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_03_yaml/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_03_yaml/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_03_yaml/src/main/java/com/itheima/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_03_yaml/src/main/java/com/itheima/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_03_yaml/src/main/java/com/itheima/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_03_yaml/src/main/java/com/itheima/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_03_yaml/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_03_yaml/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_03_yaml/src/test/java/com/itheima/Springboot0102QuickstartApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_03_yaml/src/test/java/com/itheima/Springboot0102QuickstartApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_03_yaml/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_03_yaml/target/classes/com/itheima/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_03_yaml/target/classes/com/itheima/MyDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_03_yaml/target/classes/com/itheima/controller/BookController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_03_yaml/target/test-classes/com/itheima/Springboot0102QuickstartApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_08_ssmp/springboot_08_ssmp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_08_ssmp/springboot_08_ssmp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/controller/BookController2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/controller/BookController2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/controller/utils/ProjectExceptionAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/controller/utils/ProjectExceptionAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/controller/utils/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/controller/utils/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/service/impl/BookServiceImpl2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/com/itheima/service/impl/BookServiceImpl2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/config/MPConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/java/config/MPConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/resources/static/js/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_08_ssmp/src/main/resources/static/js/vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_11_log/bak/BaseClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_11_log/bak/BaseClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_11_log/bak/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_11_log/bak/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_11_log/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_11_log/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_11_log/src/main/java/com/itheima/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_11_log/src/main/java/com/itheima/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_11_log/src/main/java/com/itheima/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_11_log/src/main/java/com/itheima/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_11_log/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_11_log/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_11_log/src/test/java/com/itheima/Springboot0102QuickstartApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_11_log/src/test/java/com/itheima/Springboot0102QuickstartApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_11_log/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_11_log/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_12_hot_deploy/springboot_12_hot_deploy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_12_hot_deploy/springboot_12_hot_deploy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_15_sql/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_15_sql/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_15_sql/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_15_sql/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_15_sql/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_15_sql/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_15_sql/src/test/java/com/itheima/Springboot15SqlApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_15_sql/src/test/java/com/itheima/Springboot15SqlApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_18_es/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_18_es/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_18_es/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_18_es/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot_18_es/src/test/java/com/itheima/Springboot18EsApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot_18_es/src/test/java/com/itheima/Springboot18EsApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../../../../../Program Files/Java/apache-maven-3.8.4" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="260otmKd54qnOK8IOMNkauKrqpv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="16" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Demo3" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Demo1Application">
+    <configuration name="Demo2Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.demo2.Demo2Application" />
+      <module name="demo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo1" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Demo1Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo2.Demo2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo3Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo3" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Demo3Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Demo2Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bfcd509e-8c27-4388-bbc3-5b1cac4ea7b3" name="Changes" comment="" />
+      <created>1646570084512</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646570084512</updated>
+      <workItem from="1646570084512" duration="914000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

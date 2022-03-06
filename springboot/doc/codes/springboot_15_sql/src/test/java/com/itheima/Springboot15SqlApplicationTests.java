@@ -25,7 +25,7 @@ class Springboot15SqlApplicationTests {
     }
 
     @Test
-    void testJdbcTemplate(@Autowired JdbcTemplate jdbcTemplate){
+    void testJdbcTemplate(@Autowired JdbcTemplate jdbcTemplate) {
 
         String sql = "select * from tbl_book";
 //        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql);
@@ -46,11 +46,10 @@ class Springboot15SqlApplicationTests {
     }
 
     @Test
-    void testJdbcTemplateSave(@Autowired JdbcTemplate jdbcTemplate){
+    void testJdbcTemplateSave(@Autowired JdbcTemplate jdbcTemplate) {
         String sql = "insert into tbl_book values(3,'springboot1','springboot2','springboot3')";
         jdbcTemplate.update(sql);
     }
-
 
 
 }

@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 //Rest模式
 @RestController
 @RequestMapping("/books")
-public class BookController extends BaseClass{
+public class BookController extends BaseClass {
     //创建记录日志的的对象
 //    private static final Logger log = LoggerFactory.getLogger(BookController.class);
 
     @GetMapping
-    public String getById(){
+    public String getById() {
         System.out.println("springboot is running...2");
 
         log.debug("debug...");

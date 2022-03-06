@@ -40,14 +40,14 @@ public class BookController {
     private MyDataSource myDataSource;
 
     @GetMapping
-    public String getById(){
+    public String getById() {
         System.out.println("springboot is running...");
-        System.out.println("country1===>"+country1);
-        System.out.println("name1===>"+name1);
-        System.out.println("likes1===>"+likes1);
-        System.out.println("age1===>"+age1);
-        System.out.println("port===>"+port);
-        System.out.println("tempDir===>"+tempDir);
+        System.out.println("country1===>" + country1);
+        System.out.println("name1===>" + name1);
+        System.out.println("likes1===>" + likes1);
+        System.out.println("age1===>" + age1);
+        System.out.println("port===>" + port);
+        System.out.println("tempDir===>" + tempDir);
         System.out.println("-----------------------------");
         System.out.println(env.getProperty("server.port"));
         System.out.println(env.getProperty("user.name"));

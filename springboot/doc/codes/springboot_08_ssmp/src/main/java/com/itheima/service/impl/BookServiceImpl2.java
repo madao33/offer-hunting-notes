@@ -43,8 +43,8 @@ public class BookServiceImpl2 implements BookService {
 
     @Override
     public IPage<Book> getPage(int currentPage, int pageSize) {
-        IPage page = new Page(currentPage,pageSize);
-        bookDao.selectPage(page,null);
+        IPage page = new Page(currentPage, pageSize);
+        bookDao.selectPage(page, null);
         return page;
     }
 }

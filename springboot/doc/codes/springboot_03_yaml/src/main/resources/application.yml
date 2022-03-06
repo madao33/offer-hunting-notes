@@ -29,7 +29,7 @@ likes:
   - music
   - sleep
 
-likes2: [game,music,sleep]
+likes2: [ game,music,sleep ]
 
 users:
   - name: zhangsan
@@ -37,29 +37,27 @@ users:
   - name: lisi
     age: 17
 
-users3: [{name:zhangsan,age:18},{name:lisi,age:17}]
+users3: [ { name:zhangsan,age:18 },{ name:lisi,age:17 } ]
 
 users2:
-  -
-    name: zhangsan
+  - name: zhangsan
     age: 18
-  -
-    name: lisi
+  - name: lisi
     age: 17
 
 
 
 baseDir: c:\win10
 
-#Ê¹ÓÃ${ÊôĞÔÃû}ÒıÓÃÊı¾İ
+#Ê¹ï¿½ï¿½${ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 tempDir: ${baseDir}\temp
-#Ê¹ÓÃÒıºÅ°ü¹üµÄ×Ö·û´®£¬ÆäÖĞµÄ×ªÒå×Ö·û¿ÉÒÔÉúĞ§
+#Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½×ªï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§
 tempDir2: "${baseDir}\temp \t1 \t2 \t3"
 
 
-# ´´½¨Àà£¬ÓÃÓÚ·â×°ÏÂÃæµÄÊı¾İ
-# ÓÉspring°ïÎÒÃÇÈ¥¼ÓÔØÊı¾İµ½¶ÔÏóÖĞ£¬Ò»¶¨Òª¸æËßspring¼ÓÔØÕâ×éĞÅÏ¢
-# Ê¹ÓÃÊ±ºò´ÓspringÖĞÖ±½Ó»ñÈ¡ĞÅÏ¢Ê¹ÓÃ
+# ï¿½ï¿½ï¿½ï¿½ï¿½à£¬ï¿½ï¿½ï¿½Ú·ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+# ï¿½ï¿½springï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ£ï¿½Ò»ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½springï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+# Ê¹ï¿½ï¿½Ê±ï¿½ï¿½ï¿½springï¿½ï¿½Ö±ï¿½Ó»ï¿½È¡ï¿½ï¿½Ï¢Ê¹ï¿½ï¿½
 
 datasource:
   driver: com.mysql.jdbc.Driver

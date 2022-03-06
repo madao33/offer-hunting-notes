@@ -9,7 +9,7 @@
 ### Java基础
 
 - [X] [java核心技术笔记](java核心技术笔记/README.md)
-- [X] [leetcode刷题笔记-剑指Offer专项突击版](leetcode/README.md)
+- [X] [leetcode刷题笔记-剑指Offer专项突击版](leetcode/README.md)-暂时反内卷中…
 - [X] [MAVEN学习笔记](maven/README.md)
 
 ### 计算机基础
@@ -26,8 +26,8 @@
 
 ## 框架
 
-- [ ] [SpringBoot](springboot/README.md)
+- [ ] [SpringBoot](springboot/README.md)-进行中…
 
 ## 机器学习
 
-- [ ] [强化学习](machineLearning/reinforcementLearning/REAMDE.md)
+- [ ] [强化学习](machineLearning/reinforcementLearning/REAMDE.md)-进行中…

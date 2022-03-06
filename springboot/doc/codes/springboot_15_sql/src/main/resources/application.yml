@@ -30,7 +30,7 @@ spring:
   datasource:
     url: jdbc:h2:~/test
     hikari:
-#      driver-class-name: org.h2.Driver
+      #      driver-class-name: org.h2.Driver
       username: sa
       password: 123456
 

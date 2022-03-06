@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 
     @GetMapping
-    public String getById(){
+    public String getById() {
         System.out.println("springboot is running...2");
 
         log.debug("debug...");
