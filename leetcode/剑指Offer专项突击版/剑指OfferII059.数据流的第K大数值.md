@@ -44,6 +44,14 @@ kthLargest.add(4);   // return 8
 
 使用一个大小为`k`优先队列，队列中仅保存`k`个元素，如果超过，队头出队
 
+对于优先队列`PriorityQueue`
+
+* `peek()` 返回队首元素
+* `poll()` 队首元素出队，并返回队首元素
+* `add()` 添加元素
+* `size()` 返回队伍中元素个数
+* `isEmpty()` 判断队伍是否为空，为空返回`true`，不空返回`false`
+
 ```java
 class KthLargest {
     PriorityQueue<Integer> pqueue;
