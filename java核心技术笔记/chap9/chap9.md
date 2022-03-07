@@ -341,14 +341,83 @@ public class PriotityQueueTest {
 
 ### 9.3.1 基本映射操作
 
-`Java`类库为映射提供了两个通用的实现
+`Java`类库为映射提供了两个通用的实现，以下两个类都实现了`Map`接口
 
 * `HashMap`
 * `TreeMap`
 
-> 如果不按照排列顺序访问键，最后选择散列-`HashMap`
+> * 如果不按照排列顺序访问键，最后选择散列-`HashMap`
+>   * `HashMap`顾名思义，底层实现是哈希映射
+> * `TreeMap`是一个能比较元素大小的`Map`集合，会对传入的`key`进行大小排序，可以使用元素自然大小排序，也可以使用集合中自定义的比较器来排序
+>   * `TreeMap`的实现是红黑树，形成了一棵二叉树
 >
 > 键必须是唯一的，对同一键调用两次`put`方法，第二个值就会取代第一个值
+>
+> 做`leetcode`遇到一个使用`TreeMap`的题，列一下`TreeMap`相关的API
+>
+> ```java
+> public interface NavigableMap<K,V> extends SortedMap<K,V> {
+> 
+>     //返回小于key的第一个元素：
+>     Map.Entry<K,V> lowerEntry(K key);
+> 
+>     //返回小于key的第一个键：
+>     K lowerKey(K key);
+> 
+>     //返回小于等于key的第一个元素：
+>     Map.Entry<K,V> floorEntry(K key);
+> 
+>     //返回小于等于key的第一个键：
+>     K floorKey(K key);
+> 
+>     //返回大于或者等于key的第一个元素：
+>     Map.Entry<K,V> ceilingEntry(K key);
+> 
+>     //返回大于或者等于key的第一个键：
+>     K ceilingKey(K key);
+> 
+>     //返回大于key的第一个元素：
+>     Map.Entry<K,V> higherEntry(K key);
+> 
+>     //返回大于key的第一个键：
+>     K higherKey(K key);
+> 
+>     //返回集合中第一个元素：
+>     Map.Entry<K,V> firstEntry();
+> 
+>     //返回集合中最后一个元素：
+>     Map.Entry<K,V> lastEntry();
+> 
+>     //返回集合中第一个元素，并从集合中删除：
+>     Map.Entry<K,V> pollFirstEntry();
+> 
+>     //返回集合中最后一个元素，并从集合中删除：
+>     Map.Entry<K,V> pollLastEntry();
+> 
+>     //返回倒序的Map集合：
+>     java.util.NavigableMap<K,V> descendingMap();
+> 
+>     NavigableSet<K> navigableKeySet();
+> 
+>     //返回Map集合中倒序的Key组成的Set集合：
+>     NavigableSet<K> descendingKeySet();
+> 
+>     java.util.NavigableMap<K,V> subMap(K fromKey, boolean fromInclusive,
+>                                        K toKey, boolean toInclusive);
+> 
+>     java.util.NavigableMap<K,V> headMap(K toKey, boolean inclusive);
+> 
+>     java.util.NavigableMap<K,V> tailMap(K fromKey, boolean inclusive);
+> 
+>     SortedMap<K,V> subMap(K fromKey, K toKey);
+> 
+>     SortedMap<K,V> headMap(K toKey);
+> 
+>     SortedMap<K,V> tailMap(K fromKey);
+> }
+> ```
+>
+> 
 
 `map/MapTest.java`
 
