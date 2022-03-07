@@ -1,2 +1,49 @@
 server:
-  port: 82
+  port: 81
+
+
+country: china
+province: beijing
+city: beijing
+area: haidian
+
+port: 8080
+party: true
+birthdate: 1949-10-01
+
+user:
+  name: madao33
+  age: 24
+
+user2:
+  name: theXun
+  age: 25
+
+a:
+  b:
+    c:
+      d:
+        e: 123
+
+likes:
+  - game
+  - music
+  - sleep
+
+likes2: [game,music,sleep]
+
+users:
+  - name: zhangsan
+    age: 18
+  - name: lisi
+    age: 17
+
+users2:
+  -
+    name: zhangsan
+    age: 18
+  -
+    name: lisi
+    age: 17
+
+users3: [{name:zhangsan,age:18},{name:lisi,age:17}]

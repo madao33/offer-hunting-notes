@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/codes.iml" filepath="$PROJECT_DIR$/codes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/codes.iml" filepath="$PROJECT_DIR$/.idea/codes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_01_01_quickstart/springboot_01_01_quickstart.iml" filepath="$PROJECT_DIR$/springboot_01_01_quickstart/springboot_01_01_quickstart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_01_02_quickstart/springboot_01_02_quickstart.iml" filepath="$PROJECT_DIR$/springboot_01_02_quickstart/springboot_01_02_quickstart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_01_03_quickstart/springboot_01_03_quickstart.iml" filepath="$PROJECT_DIR$/springboot_01_03_quickstart/springboot_01_03_quickstart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_01_04_quickstart/springboot_01_04_quickstart.iml" filepath="$PROJECT_DIR$/springboot_01_04_quickstart/springboot_01_04_quickstart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_02_base_configuration/springboot_02_base_configuration.iml" filepath="$PROJECT_DIR$/springboot_02_base_configuration/springboot_02_base_configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_03_yaml/springboot_03_yaml.iml" filepath="$PROJECT_DIR$/springboot_03_yaml/springboot_03_yaml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_04_junit/springboot_04_junit.iml" filepath="$PROJECT_DIR$/springboot_04_junit/springboot_04_junit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_05_mybatis/springboot_05_mybatis.iml" filepath="$PROJECT_DIR$/springboot_05_mybatis/springboot_05_mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_06_mybatis_plus/springboot_06_mybatis_plus.iml" filepath="$PROJECT_DIR$/springboot_06_mybatis_plus/springboot_06_mybatis_plus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_07_druid/springboot_07_druid.iml" filepath="$PROJECT_DIR$/springboot_07_druid/springboot_07_druid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_08_ssmp/springboot_08_ssmp.iml" filepath="$PROJECT_DIR$/springboot_08_ssmp/springboot_08_ssmp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_09_config/springboot_09_config.iml" filepath="$PROJECT_DIR$/springboot_09_config/springboot_09_config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_10_profiles/springboot_10_profiles.iml" filepath="$PROJECT_DIR$/springboot_10_profiles/springboot_10_profiles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_11_log/springboot_11_log.iml" filepath="$PROJECT_DIR$/springboot_11_log/springboot_11_log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_12_hot_deploy/springboot_12_hot_deploy.iml" filepath="$PROJECT_DIR$/springboot_12_hot_deploy/springboot_12_hot_deploy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_13_configuration/springboot_13_configuration.iml" filepath="$PROJECT_DIR$/springboot_13_configuration/springboot_13_configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_14_test/springboot_14_test.iml" filepath="$PROJECT_DIR$/springboot_14_test/springboot_14_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_15_sql/springboot_15_sql.iml" filepath="$PROJECT_DIR$/springboot_15_sql/springboot_15_sql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_16_redis/springboot_16_redis.iml" filepath="$PROJECT_DIR$/springboot_16_redis/springboot_16_redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_17_mongodb/springboot_17_mongodb.iml" filepath="$PROJECT_DIR$/springboot_17_mongodb/springboot_17_mongodb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_18_es/springboot_18_es.iml" filepath="$PROJECT_DIR$/springboot_18_es/springboot_18_es.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_19_cache/springboot_19_cache.iml" filepath="$PROJECT_DIR$/springboot_19_cache/springboot_19_cache.iml" />
     </modules>
   </component>
 </project>

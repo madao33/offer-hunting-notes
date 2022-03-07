@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="true" project-jdk-name="14" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/springboot_18_es/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_11_log/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_15_sql/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_03_yaml/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_08_ssmp/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_14_test/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_04_junit/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_07_druid/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_16_redis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_19_cache/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_09_config/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_05_mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_17_mongodb/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_10_profiles/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_12_hot_deploy/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_06_mybatis_plus/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_01_01_quickstart/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_01_02_quickstart/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_01_03_quickstart/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_01_04_quickstart/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_13_configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_02_base_configuration/pom.xml" />
+      </list>
+    </option>
   </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="16" project-jdk-type="JavaSDK" />
 </project>

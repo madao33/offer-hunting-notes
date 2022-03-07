@@ -1,0 +1,76 @@
+country: china
+province: beijing
+city: beijing
+area: haidian
+
+port: 8080
+
+party: true
+
+birthday: 1949-10-01
+
+user:
+  name: itcast
+  age: 16
+
+user2:
+  name: itheima
+  age: 16
+
+
+a:
+  b:
+    c:
+      d:
+        e: 123
+
+likes:
+  - game
+  - music
+  - sleep
+
+likes2: [ game,music,sleep ]
+
+users:
+  - name: zhangsan
+    age: 18
+  - name: lisi
+    age: 17
+
+users3: [ { name:zhangsan,age:18 },{ name:lisi,age:17 } ]
+
+users2:
+  - name: zhangsan
+    age: 18
+  - name: lisi
+    age: 17
+
+
+
+baseDir: c:\win10
+
+#ʹ��${������}��������
+tempDir: ${baseDir}\temp
+#ʹ�����Ű������ַ��������е�ת���ַ�������Ч
+tempDir2: "${baseDir}\temp \t1 \t2 \t3"
+
+
+# �����࣬���ڷ�װ���������
+# ��spring������ȥ�������ݵ������У�һ��Ҫ����spring����������Ϣ
+# ʹ��ʱ���spring��ֱ�ӻ�ȡ��Ϣʹ��
+
+datasource:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost/springboot_db
+  username: root
+  password: root666123
+server:
+  port: 80
+  servlet:
+    context-path: /test123
+
+
+
+
+
+
