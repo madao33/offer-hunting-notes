@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 //Rest模式
 @RestController
 @RequestMapping("/books")
-public class BookController {
+public class bookController {
 
     @GetMapping
     public String getById(){
