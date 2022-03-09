@@ -10,7 +10,8 @@
 
 - [X] [java核心技术笔记](java核心技术笔记/README.md)
 - [X] [leetcode刷题笔记-剑指Offer专项突击版](leetcode/README.md)-进行中…
-- [X] [MAVEN学习笔记](maven/README.md)
+- [x] [MAVEN学习笔记](maven/README.md)
+- [x] [java补充知识点](java补充知识点/README.md)
 
 ### 计算机基础
 
