@@ -61,3 +61,47 @@ solution.pickIndex(); // 返回 0，返回下标 0，返回该下标概率为 1/
 
 ## 题解
 
+前缀和加二分查找，首先计算前缀和数组，例如对于`w=[3, 1, 2, 4]`，得到前缀和数组`pre=[3, 4, 6, 10]`，然后生成随机数`x=Math.random *pre[w.length-1] `，然后查找`x`在前缀和数组中的位置或者插入位置，就是返回生成的随机数
+
+```java
+class Solution {
+    int[] pre;
+    int total;
+
+    public Solution(int[] w) {
+        pre = new int[w.length];
+        pre[0] = w[0];
+        for (int i = 1; i < w.length; i++)
+            pre[i] = pre[i - 1] + w[i];
+        total = pre[w.length-1];
+    }
+    
+    public int pickIndex() {
+        int x = (int) (Math.random() * total) + 1;
+        return binarySearch(x);
+    }
+
+    private int binarySearch(int x) {
+        int low = 0, high = pre.length - 1;
+        while (low < high) {
+            int mid = (high - low) / 2 + low;
+            if (pre[mid] < x) {
+                low = mid + 1;
+            } else {
+                high = mid;
+            }
+        }
+        return low;
+    }
+}
+
+/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution obj = new Solution(w);
+ * int param_1 = obj.pickIndex();
+ */
+```
+
+* 时间复杂度：$O(log(N))$
+* 空间复杂度：$O(N)$
+

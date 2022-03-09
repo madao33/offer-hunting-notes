@@ -42,3 +42,44 @@
 - `1 <= piles.length <= 10^4`
 - `piles.length <= H <= 10^9`
 - `1 <= piles[i] <= 10^9`
+
+## 题解
+
+狒狒每次只能吃一堆香蕉，所以可以设定最多是一个小时内吃完一堆香蕉，最快的吃香蕉速度是一次吃完最大的一堆香蕉，最慢可以设定吃一根
+
+以某个吃香蕉的速度`k`吃完香蕉需要向上取整
+
+```java
+class Solution {
+    int[] piles;
+    public int minEatingSpeed(int[] piles, int h) {
+        this.piles = piles;
+        int maxK = Integer.MIN_VALUE;
+        for (int pile : piles) {
+            maxK = Math.max(pile, maxK);
+        }
+        int left = 1, right = maxK;
+        while (left < right) {
+            int mid = (right - left) / 2 + left;
+            if (eatBanana(mid) > h) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        
+        return left;
+    }
+
+    private int eatBanana(int speed) {
+        int ans = 0;
+        for (int pile : piles) {
+            ans += (pile + speed - 1) / speed;
+        }
+        return ans;
+    }
+}
+```
+
+* 时间复杂度：$O(nlog(K))$
+* 空间复杂度：$O(n)$
