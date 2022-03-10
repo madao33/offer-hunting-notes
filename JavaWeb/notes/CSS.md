@@ -162,3 +162,12 @@ div .f32{
 
 > 不同的浏览器的显示效果都不同，会存在一些兼容性问题，上述代码在chrome浏览器显示的处于居中位置
 
+## css布局
+
+`position`:
+
+* `absolute `-- 绝对定位 , 需要配合使用 `left `, `top`
+* `relative `-- 相对定位 , 一般会和 `float `, `margin `, `padding `.... 一起使用
+
+
+

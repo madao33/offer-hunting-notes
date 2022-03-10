@@ -5,7 +5,7 @@
 前端
 
 * [x] [HTML](notes/HTML.md) 超文本标记语言
-* [ ] [CSS](notes/css.md) 页面上的内容显示的风格
+* [x] [CSS](notes/css.md) 页面上的内容显示的风格
 * [ ] [JavaScript](notes/JavaScript.md) 页面特效
 
 
