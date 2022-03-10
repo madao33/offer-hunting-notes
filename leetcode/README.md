@@ -106,11 +106,13 @@
   - [x] [剑指OfferII075.数组相对排序](剑指Offer专项突击版/剑指OfferII075.数组相对排序.md)-没有理解
 - [ ] Day26 排序
   - [x] [剑指OfferII076.数组中的第 k 大的数字](剑指Offer专项突击版/剑指OfferII076.数组中的第 k 大的数字.md)
-  - [x] [剑指OfferII077.链表排序](剑指Offer专项突击版/剑指OfferII077.链表排序.md)-使用优先队列排序，效率较低
+  - [x] [剑指OfferII077.链表排序](剑指Offer专项突击版/剑指OfferII077.链表排序.md)-使用优先队列排序，效率较低n
   - [x] [剑指OfferII078.合并排序链表](剑指Offer专项突击版/剑指OfferII078.合并排序链表.md)-归并排序
 - [ ] Day27 回朔法
   - [x] [剑指OfferII079.所有子集](剑指Offer专项突击版/剑指OfferII079.所有子集.md)-dfs加回溯
   - [x] [剑指OfferII080.含有 k 个元素的组合](剑指Offer专项突击版/剑指OfferII080.含有 k 个元素的组合.md)-dfs加回溯
   - [x] [剑指OfferII081.允许重复选择元素的组合](剑指Offer专项突击版/剑指OfferII081.允许重复选择元素的组合.md)-dfs回溯
 - [ ] Day28 回溯法
+  - [x] [剑指OfferII082.含有重复元素集合的组合](剑指Offer专项突击版/剑指OfferII082.含有重复元素集合的组合.md)
+  - [ ] [剑指OfferII083.没有重复元素集合的全排列](剑指Offer专项突击版/剑指OfferII083.没有重复元素集合的全排列.md)-有点问题没有解决
   - [ ] 
