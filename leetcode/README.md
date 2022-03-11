@@ -83,11 +83,11 @@
   - [x] [剑指OfferII055.二叉搜索树迭代器](剑指Offer专项突击版/剑指OfferII055.二叉搜索树迭代器.md)-二叉树中序遍历模板
 - [ ] Day19 树
   - [x] [剑指OfferII056.二叉搜索树中两个节点之和](剑指Offer专项突击版/剑指OfferII056.二叉搜索树中两个节点之和.md)-二叉排序树中序遍历序列化&双指针
-  - [ ] [剑指OfferII057.值和下标之差都在给定的范围内](剑指Offer专项突击版/剑指OfferII057.值和下标之差都在给定的范围内.md)-**桶**-完全没有理解
+  - [ ] [剑指OfferII057.值和下标之差都在给定的范围内](剑指Offer专项突击版/剑指OfferII057.值和下标之差都在给定的范围内.md)-**桶**-<font color="red">完全没有理解</font>
   - [x] [剑指OfferII058.日程表](剑指Offer专项突击版/剑指OfferII058.日程表.md)-`TreeMap`使用
 - [ ] Day20 堆
   - [x] [剑指OfferII059.数据流的第K大数值](剑指Offer专项突击版/剑指OfferII059.数据流的第K大数值.md)-`PriorityQueue`的使用
-  - [x] [剑指OfferII060.出现频率最高的k个数字](剑指Offer专项突击版/剑指OfferII060.出现频率最高的k个数字.md)-`comparator`不够熟练
+  - [x] [剑指OfferII060.出现频率最高的k个数字](剑指Offer专项突击版/剑指OfferII060.出现频率最高的k个数字.md)-`comparator`<font color="red">不够熟练</font>
   - [x] [剑指OfferII061.和最小的k个数对](剑指Offer专项突击版/剑指OfferII061.和最小的k个数对.md)-`PriorityQueue`
 - [ ] Day21 前缀树
   - [ ] [剑指OfferII062.实现前缀树](剑指Offer专项突击版/剑指OfferII062.实现前缀树.md)
@@ -96,7 +96,7 @@
 - [ ] Day23 二分查找
   - [x] [剑指OfferII068.查找插入位置](剑指Offer专项突击版/剑指OfferII068.查找插入位置.md)-二分查找模板
   - [x] [剑指OfferII069.山峰数组的顶部](剑指Offer专项突击版/剑指OfferII069.山峰数组的顶部.md)
-  - [x] [剑指OfferII070.排序数组中只出现一次的数字](剑指Offer专项突击版/剑指OfferII070.排序数组中只出现一次的数字.md)-奇偶索引二分查找-暂时没有熟练掌握
+  - [x] [剑指OfferII070.排序数组中只出现一次的数字](剑指Offer专项突击版/剑指OfferII070.排序数组中只出现一次的数字.md)-奇偶索引二分查找-<font color="red">暂时没有熟练掌握</font>
 - [ ] Day24 二分查找
   - [x] [剑指OfferII071.按权重生成随机数](剑指Offer专项突击版/剑指OfferII071.按权重生成随机数.md)
   - [x] [剑指OfferII072.求平方根](剑指Offer专项突击版/剑指OfferII072.求平方根.md)
@@ -113,6 +113,8 @@
   - [x] [剑指OfferII080.含有 k 个元素的组合](剑指Offer专项突击版/剑指OfferII080.含有 k 个元素的组合.md)-dfs加回溯
   - [x] [剑指OfferII081.允许重复选择元素的组合](剑指Offer专项突击版/剑指OfferII081.允许重复选择元素的组合.md)-dfs回溯
 - [ ] Day28 回溯法
-  - [x] [剑指OfferII082.含有重复元素集合的组合](剑指Offer专项突击版/剑指OfferII082.含有重复元素集合的组合.md)
-  - [x] [剑指OfferII083.没有重复元素集合的全排列](剑指Offer专项突击版/剑指OfferII083.没有重复元素集合的全排列.md)-有点问题没有解决
+  - [x] [剑指OfferII082.含有重复元素集合的组合](剑指Offer专项突击版/剑指OfferII082.含有重复元素集合的组合.md)-dfs+回溯+剪枝
+  - [x] [剑指OfferII083.没有重复元素集合的全排列](剑指Offer专项突击版/剑指OfferII083.没有重复元素集合的全排列.md)-dfs+回溯+剪枝
+  - [x] [剑指OfferII084.含有重复元素集合的全排列](剑指Offer专项突击版/剑指OfferII084.含有重复元素集合的全排列.md)-dfs+回溯+剪枝<font color="red">暂时没有理解</font>
+- [ ] Day29 回朔法
   - [ ] 
