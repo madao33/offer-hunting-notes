@@ -37,7 +37,7 @@
 
 ## 题解
 
-暂时还没有做出来
+全排列的过程中需要注意去重
 
 ```java
 class Solution {
@@ -54,9 +54,12 @@ class Solution {
         }
 
         for (int i = 0; i < nums.length; i++) {
-            combine.add(nums[i]);
-            dfs(nums, combine, ans);
-            combine.remove(combine.size() - 1);
+            if (combine.contains(nums[i]))
+                continue;
+                combine.add(nums[i]);
+                dfs(nums, combine, ans);
+                combine.remove(combine.size() - 1);
+            
         }
     }
 }
