@@ -117,4 +117,10 @@
   - [x] [剑指OfferII083.没有重复元素集合的全排列](剑指Offer专项突击版/剑指OfferII083.没有重复元素集合的全排列.md)-dfs+回溯+剪枝
   - [x] [剑指OfferII084.含有重复元素集合的全排列](剑指Offer专项突击版/剑指OfferII084.含有重复元素集合的全排列.md)-dfs+回溯+剪枝<font color="red">暂时没有理解</font>
 - [ ] Day29 回朔法
-  - [ ] 
+  - [x] [剑指OfferII085.生成匹配的括号](剑指Offer专项突击版/剑指OfferII085.生成匹配的括号.md)-回溯没有删除原先的括号，<font color="red">没有理解</font>
+  - [ ] [剑指OfferII086.分割回文子字符串](剑指Offer专项突击版/剑指OfferII086.分割回文子字符串.md)
+  - [x] [剑指OfferII087.复原IP](剑指Offer专项突击版/剑指OfferII087.复原IP.md)-<font color="red">没有理解</font>
+- [ ] Day30 动态规划
+  - [x] [剑指OfferII088.爬楼梯的最少成本](剑指Offer专项突击版/剑指OfferII088.爬楼梯的最少成本.md)-滚动数据优化空间复杂度
+  - [x] [剑指OfferII089.房屋偷盗](剑指Offer专项突击版/剑指OfferII089.房屋偷盗.md)-同上
+  - [x] [剑指OfferII090.环形房屋偷盗](剑指Offer专项突击版/剑指OfferII090.环形房屋偷盗.md)

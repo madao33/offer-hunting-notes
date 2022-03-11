@@ -37,7 +37,7 @@
 * 当前数组已经访问过
 * 当前数字和之前数字相同
 
-```
+```java
 class Solution {
     public List<List<Integer>> permuteUnique(int[] nums) {
         Arrays.sort(nums);
