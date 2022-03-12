@@ -125,4 +125,10 @@
   - [x] [剑指OfferII089.房屋偷盗](剑指Offer专项突击版/剑指OfferII089.房屋偷盗.md)-同上
   - [x] [剑指OfferII090.环形房屋偷盗](剑指Offer专项突击版/剑指OfferII090.环形房屋偷盗.md)
 - [ ] Day31 动态规划
-  - [ ] 
+  - [x] [剑指OfferII091.粉刷房子](剑指Offer专项突击版/剑指OfferII091.粉刷房子.md)
+  - [ ] [剑指OfferII092.翻转字符](剑指Offer专项突击版/剑指OfferII092.翻转字符.md)-<font color="red">暂时没有理解题意中的状态转移方程</font>
+  - [x] [剑指OfferII093.最长斐波那契数列](剑指Offer专项突击版/剑指OfferII093.最长斐波那契数列.md)
+- [ ] Day32 动态规划
+  - [x] [剑指OfferII094.最少回文分割](剑指Offer专项突击版/剑指OfferII094.最少回文分割.md)-<font color="red">时间复杂度过高，需要优化</font>
+  - [x] [剑指OfferII095.最长公共子序列](剑指Offer专项突击版/剑指OfferII095.最长公共子序列.md)
+  - [ ] [剑指OfferII096.字符串交织](剑指Offer专项突击版/剑指OfferII096.字符串交织.md)
