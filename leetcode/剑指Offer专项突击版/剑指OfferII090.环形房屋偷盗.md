@@ -47,7 +47,7 @@
 class Solution {
     public int rob(int[] nums) {
         int n = nums.length;
-        if (n <= 3) return Arrays.stream(nums).max().getAsInt();
+        if (n == 1) return nums[0];
         return Math.max(subrob(nums, 0, n-1), subrob(nums, 1, n));
     }
 
