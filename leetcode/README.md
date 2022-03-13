@@ -131,4 +131,5 @@
 - [ ] Day32 动态规划
   - [x] [剑指OfferII094.最少回文分割](剑指Offer专项突击版/剑指OfferII094.最少回文分割.md)-<font color="red">时间复杂度过高，需要优化</font>
   - [x] [剑指OfferII095.最长公共子序列](剑指Offer专项突击版/剑指OfferII095.最长公共子序列.md)
-  - [ ] [剑指OfferII096.字符串交织](剑指Offer专项突击版/剑指OfferII096.字符串交织.md)
+  - [x] [剑指OfferII096.字符串交织](剑指Offer专项突击版/剑指OfferII096.字符串交织.md)-<font color="red">动态规划，注意数组索引开始和结尾</font>
+- [ ] 
