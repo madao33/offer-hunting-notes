@@ -136,4 +136,9 @@
   - [x] [剑指OfferII097.子序列的数目](剑指Offer专项突击版/剑指OfferII097.子序列的数目.md)-<font color="red">注意边界条件初始化</font>
   - [x] [剑指OfferII098.路径的数目](剑指Offer专项突击版/剑指OfferII098.路径的数目.md)
   - [x] [剑指OfferII099.最小路径之和](剑指Offer专项突击版/剑指OfferII099.最小路径之和.md)
-- [ ] 
+- [ ] Day34 动态规划
+  - [x] [剑指OfferII100.三角形中最小路径之和](剑指Offer专项突击版/剑指OfferII100.三角形中最小路径之和.md)
+  - [x] [剑指OfferII101.分割等和子集](剑指Offer专项突击版/剑指OfferII101.分割等和子集.md)-<font color="red">背包问题的典型例子</font>
+  - [x] [剑指OfferII102.加减的目标值](剑指Offer专项突击版/剑指OfferII102.加减的目标值.md)-<font color="red">背包问题的变形</font>
+- [ ] Day35 动态规划
+  - [ ] 
