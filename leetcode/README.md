@@ -141,4 +141,7 @@
   - [x] [剑指OfferII101.分割等和子集](剑指Offer专项突击版/剑指OfferII101.分割等和子集.md)-<font color="red">背包问题的典型例子</font>
   - [x] [剑指OfferII102.加减的目标值](剑指Offer专项突击版/剑指OfferII102.加减的目标值.md)-<font color="red">背包问题的变形</font>
 - [ ] Day35 动态规划
+  - [x] [剑指OfferII103.最少的硬币数目](剑指Offer专项突击版/剑指OfferII103.最少的硬币数目.md)-<font color="red">数量无限的背包问题</font>
+  - [x] [剑指OfferII104.排列的数目](剑指Offer专项突击版/剑指OfferII104.排列的数目.md)<font color="red">背包排列问题</font>
+- [ ] Day36 图
   - [ ] 
