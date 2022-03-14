@@ -30,10 +30,10 @@
   - [x] [剑指OfferII015.字符串中的所有变位词](剑指Offer专项突击版/剑指OfferII015.字符串中的所有变位词.md)
   - [x] [剑指OfferII015.字符串中的所有变位词](剑指Offer专项突击版/剑指OfferII015.字符串中的所有变位词.md)
 - [ ] Day6 字符串
-  - [ ] [剑指OfferII017.含有所有字符的最短字符串](剑指Offer专项突击版/剑指OfferII017.含有所有字符的最短字符串.md)
+  - [x] [剑指OfferII017.含有所有字符的最短字符串](剑指Offer专项突击版/剑指OfferII017.含有所有字符的最短字符串.md)-<font color="red">效率较低，需要优化</font>
   - [x] [剑指OfferII018.有效的回文](剑指Offer专项突击版/剑指OfferII018.有效的回文.md)
   - [x] [剑指OfferII019.最多删除一个字符得到回文](剑指Offer专项突击版/剑指OfferII019.最多删除一个字符得到回文.md)
-  - [ ] [剑指OfferII020.回文子字符串的个数](剑指Offer专项突击版/剑指OfferII020.回文子字符串的个数.md)
+  - [x] [剑指OfferII020.回文子字符串的个数](剑指Offer专项突击版/剑指OfferII020.回文子字符串的个数.md)-<font color="red">暂时没有理解Manacher算法</font>
 - [x] Day7 链表
   - [x] [剑指OfferII021.删除链表的倒数第n个结点](剑指Offer专项突击版/剑指OfferII021.删除链表的倒数第n个结点.md)
   - [x] [剑指OfferII022.链表中环的入口节点](剑指Offer专项突击版/剑指OfferII022.链表中环的入口节点.md)
@@ -44,11 +44,11 @@
   - [x] [剑指OfferII026.重排链表](剑指Offer专项突击版/剑指OfferII026.重排链表.md)
 - [x] Day9 链表
   - [x] [剑指OfferII027.回文链表](剑指Offer专项突击版/剑指OfferII027.回文链表.md)
-  - [ ] [剑指OfferII028.展平多级双向链表](剑指Offer专项突击版/剑指OfferII028.展平多级双向链表.md)-DFS以及双链表没有掌握熟练
+  - [x] [剑指OfferII028.展平多级双向链表](剑指Offer专项突击版/剑指OfferII028.展平多级双向链表.md)-<font color="red">DFS以及双链表没有掌握熟练</font>
   - [x] [剑指OfferII029.排序的循环链表](剑指Offer专项突击版/剑指OfferII029.排序的循环链表.md)
 - [ ] Day10 哈希表
   - [x] [剑指OfferII030.插入、删除和随机访问都是O(1)的容器](剑指Offer专项突击版/剑指OfferII030.插入、删除和随机访问都是O(1)的容器.md)
-  - [ ] [剑指OfferII031.最近最少使用缓存](剑指Offer专项突击版/剑指OfferII031.最近最少使用缓存.md)-暂时没有理解
+  - [x] [剑指OfferII031.最近最少使用缓存](剑指Offer专项突击版/剑指OfferII031.最近最少使用缓存.md)-<font color="red">暂时没有理解</font>
   - [x] [剑指OfferII032.有效的变位词](剑指Offer专项突击版/剑指OfferII032.有效的变位词.md)
 - [x] Day11 哈希表
   - [x] [剑指OfferII033.变位词组](剑指Offer专项突击版/剑指OfferII033.变位词组.md)
@@ -57,7 +57,7 @@
 - [x] Day12 栈
   - [x] [剑指OfferII036.后缀表达式](剑指Offer专项突击版/剑指OfferII036.后缀表达式.md)
   - [x] [剑指OfferII037.小行星碰撞](剑指Offer专项突击版/剑指OfferII037.小行星碰撞.md)
-  - [x] [剑指OfferII038.每日温度](剑指Offer专项突击版/剑指OfferII038.每日温度.md)-单调栈，不太熟悉
+  - [x] [剑指OfferII038.每日温度](剑指Offer专项突击版/剑指OfferII038.每日温度.md)-<font color="red">单调栈，不太熟悉</font>
 - [ ] Day13 栈
   - [x] [剑指OfferII039.直方图最大矩形面积](剑指Offer专项突击版/剑指OfferII039.直方图最大矩形面积.md)-难题，需要仔细揣摩
   - [x] [剑指OfferII040.矩阵中最大的矩形](剑指Offer专项突击版/剑指OfferII040.矩阵中最大的矩形.md)-难题，后续需要再次揣摩
@@ -83,14 +83,16 @@
   - [x] [剑指OfferII055.二叉搜索树迭代器](剑指Offer专项突击版/剑指OfferII055.二叉搜索树迭代器.md)-二叉树中序遍历模板
 - [ ] Day19 树
   - [x] [剑指OfferII056.二叉搜索树中两个节点之和](剑指Offer专项突击版/剑指OfferII056.二叉搜索树中两个节点之和.md)-二叉排序树中序遍历序列化&双指针
-  - [ ] [剑指OfferII057.值和下标之差都在给定的范围内](剑指Offer专项突击版/剑指OfferII057.值和下标之差都在给定的范围内.md)-**桶**-<font color="red">完全没有理解</font>
+  - [x] [剑指OfferII057.值和下标之差都在给定的范围内](剑指Offer专项突击版/剑指OfferII057.值和下标之差都在给定的范围内.md)-<font color="red">TreeSet和桶没有理解</font>
   - [x] [剑指OfferII058.日程表](剑指Offer专项突击版/剑指OfferII058.日程表.md)-`TreeMap`使用
 - [ ] Day20 堆
   - [x] [剑指OfferII059.数据流的第K大数值](剑指Offer专项突击版/剑指OfferII059.数据流的第K大数值.md)-`PriorityQueue`的使用
   - [x] [剑指OfferII060.出现频率最高的k个数字](剑指Offer专项突击版/剑指OfferII060.出现频率最高的k个数字.md)-`comparator`<font color="red">不够熟练</font>
   - [x] [剑指OfferII061.和最小的k个数对](剑指Offer专项突击版/剑指OfferII061.和最小的k个数对.md)-`PriorityQueue`
 - [ ] Day21 前缀树
-  - [ ] [剑指OfferII062.实现前缀树](剑指Offer专项突击版/剑指OfferII062.实现前缀树.md)
+  - [x] [剑指OfferII062.实现前缀树](剑指Offer专项突击版/剑指OfferII062.实现前缀树.md)-<font color="red">前缀树模板</font>
+  - [x] [剑指OfferII063.替换单词](剑指Offer专项突击版/剑指OfferII063.替换单词.md)-<font color="blue">前缀树的应用</font>
+  - [ ] [剑指OfferII064.神奇的字典](剑指Offer专项突击版/剑指OfferII064.神奇的字典.md)<font color="red">测试出现bug，待修改</font>
 - [ ] Day22 前缀树
   - [ ] 
 - [ ] Day23 二分查找
