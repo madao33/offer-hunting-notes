@@ -47,3 +47,64 @@
 - `org` 是数字 `1` 到 `n` 的一个排列
 - `1 <= segs[i].length <= 105`
 - `seqs[i][j]` 是 `32` 位有符号整数
+
+## 题解
+
+拓扑排序，暂时没有理解
+
+```java
+class Solution 
+{
+    public boolean sequenceReconstruction(int[] org, List<List<Integer>> seqs) 
+    {
+        //----建图
+        Set<Integer> us = new HashSet<>();
+        Map<Integer, List<Integer>> adjvex = new HashMap<>();
+        Map<Integer, Integer> indegree = new HashMap<>();
+        for (List<Integer> seq : seqs)
+        {
+            us.add(seq.get(0));
+            for (int i = 0; i < seq.size() - 1; i ++)
+            {
+                int x = seq.get(i),    y = seq.get(i + 1);
+                adjvex.putIfAbsent(x, new ArrayList<>());
+                adjvex.get(x).add(y);
+                indegree.put(y, indegree.getOrDefault(y, 0) + 1);
+                us.add(y);
+            }
+        }
+
+        int N = org.length;     //结点个数
+        if (us.size() != N)
+            return false;
+        
+        //----topsort()
+        int [] path = new int [N];
+        int pn = 0;
+        Queue<Integer> q = new LinkedList<Integer>();
+        for (int x : us)
+            if (indegree.containsKey(x) == false)
+                q.offer(x);
+        while (!q.isEmpty())
+        {
+            if (q.size() > 1)
+                return false;
+            int x = q.poll();
+            path[pn ++] = x;
+            for (int y : adjvex.getOrDefault(x, new ArrayList<>()))
+            {
+                indegree.put(y, indegree.get(y) - 1);
+                if (indegree.get(y) == 0)
+                    q.offer(y);
+            }
+        }
+
+        if (pn == N && Arrays.equals(org, path) == true)
+            return true;
+        return false;
+    }
+}
+```
+
+
+

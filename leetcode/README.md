@@ -58,7 +58,7 @@
   - [x] [剑指OfferII036.后缀表达式](剑指Offer专项突击版/剑指OfferII036.后缀表达式.md)
   - [x] [剑指OfferII037.小行星碰撞](剑指Offer专项突击版/剑指OfferII037.小行星碰撞.md)
   - [x] [剑指OfferII038.每日温度](剑指Offer专项突击版/剑指OfferII038.每日温度.md)-<font color="red">单调栈，不太熟悉</font>
-- [ ] Day13 栈
+- [x] Day13 栈
   - [x] [剑指OfferII039.直方图最大矩形面积](剑指Offer专项突击版/剑指OfferII039.直方图最大矩形面积.md)-难题，需要仔细揣摩
   - [x] [剑指OfferII040.矩阵中最大的矩形](剑指Offer专项突击版/剑指OfferII040.矩阵中最大的矩形.md)-难题，后续需要再次揣摩
 - [x] Day14 队列
@@ -69,101 +69,101 @@
   - [x] [剑指OfferII044.二叉树每层的最大值](剑指Offer专项突击版/剑指OfferII044.二叉树每层的最大值.md)
   - [x] [剑指OfferII045.二叉树最底层最左边的值](剑指Offer专项突击版/剑指OfferII045.二叉树最底层最左边的值.md)
   - [x] [剑指OfferII046.二叉树的右侧视图](剑指Offer专项突击版/剑指OfferII046.二叉树的右侧视图.md)
-- [ ] Day16 树
+- [x] Day16 树
   - [x]  [剑指OfferII047.二叉树剪枝](剑指Offer专项突击版/剑指OfferII047.二叉树剪枝.md)
   - [x]  [剑指OfferII048.序列化与反序列化二叉树](剑指Offer专项突击版/剑指OfferII048.序列化与反序列化二叉树.md)-没有熟练掌握
   - [x]  [剑指OfferII049.从根节点到叶节点的路径数字之和](剑指Offer专项突击版/剑指OfferII049.从根节点到叶节点的路径数字之和.md)-没有熟练掌握二叉树的广度优先遍历
-- [ ] Day17 树
+- [x] Day17 树
   - [x] [剑指OfferII050.向下的路径节点之和](剑指Offer专项突击版/剑指OfferII050.向下的路径节点之和.md)-深度优先遍历以及前缀和，不够熟练，需要再次揣摩
   - [x] [剑指OfferII051.节点之和最大的路径](剑指Offer专项突击版/剑指OfferII051.节点之和最大的路径.md)
   - [x] [剑指OfferII052.展平二叉搜索树](剑指Offer专项突击版/剑指OfferII052.展平二叉搜索树.md)-二叉树的中序遍历
-- [ ] Day18 树
+- [x] Day18 树
   - [x] [剑指OfferII053.二叉搜索树中的中序后继](剑指Offer专项突击版/剑指OfferII053.二叉搜索树中的中序后继.md)-二叉排序树的查找-迭代方式不太熟练
   - [x] [剑指OfferII054.所有大于等于节点的值之和](剑指Offer专项突击版/剑指OfferII054.所有大于等于节点的值之和.md)-二叉排序树反序中序遍历-**递归全局参数设置**
   - [x] [剑指OfferII055.二叉搜索树迭代器](剑指Offer专项突击版/剑指OfferII055.二叉搜索树迭代器.md)-二叉树中序遍历模板
-- [ ] Day19 树
+- [x] Day19 树
   - [x] [剑指OfferII056.二叉搜索树中两个节点之和](剑指Offer专项突击版/剑指OfferII056.二叉搜索树中两个节点之和.md)-二叉排序树中序遍历序列化&双指针
   - [x] [剑指OfferII057.值和下标之差都在给定的范围内](剑指Offer专项突击版/剑指OfferII057.值和下标之差都在给定的范围内.md)-<font color="red">TreeSet和桶没有理解</font>
   - [x] [剑指OfferII058.日程表](剑指Offer专项突击版/剑指OfferII058.日程表.md)-`TreeMap`使用
-- [ ] Day20 堆
+- [x] Day20 堆
   - [x] [剑指OfferII059.数据流的第K大数值](剑指Offer专项突击版/剑指OfferII059.数据流的第K大数值.md)-`PriorityQueue`的使用
   - [x] [剑指OfferII060.出现频率最高的k个数字](剑指Offer专项突击版/剑指OfferII060.出现频率最高的k个数字.md)-`comparator`<font color="red">不够熟练</font>
   - [x] [剑指OfferII061.和最小的k个数对](剑指Offer专项突击版/剑指OfferII061.和最小的k个数对.md)-`PriorityQueue`
-- [ ] Day21 前缀树
+- [x] Day21 前缀树
   - [x] [剑指OfferII062.实现前缀树](剑指Offer专项突击版/剑指OfferII062.实现前缀树.md)-<font color="red">前缀树模板</font>
   - [x] [剑指OfferII063.替换单词](剑指Offer专项突击版/剑指OfferII063.替换单词.md)-<font color="blue">前缀树的应用</font>
   - [x] [剑指OfferII064.神奇的字典](剑指Offer专项突击版/剑指OfferII064.神奇的字典.md)-<font color="red">使用HashMap解决，没有想到使用前缀树的方法</font>
-- [ ] Day22 前缀树
+- [x] Day22 前缀树
   - [x] [剑指OfferII065.最短的单词编码](剑指Offer专项突击版/剑指OfferII065.最短的单词编码.md)-<font color="red">没有完全理解这种使用方式</font>
   - [x] [剑指OfferII066.单词之和](剑指Offer专项突击版/剑指OfferII066.单词之和.md)-<font color="red">前缀树+BFS</font>
   - [x] [剑指OfferII067.最大的异或](剑指Offer专项突击版/剑指OfferII067.最大的异或.md)-<font color="red">完全没懂</font>
-- [ ] Day23 二分查找
+- [x] Day23 二分查找
   - [x] [剑指OfferII068.查找插入位置](剑指Offer专项突击版/剑指OfferII068.查找插入位置.md)-二分查找模板
   - [x] [剑指OfferII069.山峰数组的顶部](剑指Offer专项突击版/剑指OfferII069.山峰数组的顶部.md)
   - [x] [剑指OfferII070.排序数组中只出现一次的数字](剑指Offer专项突击版/剑指OfferII070.排序数组中只出现一次的数字.md)-奇偶索引二分查找-<font color="red">暂时没有熟练掌握</font>
-- [ ] Day24 二分查找
+- [x] Day24 二分查找
   - [x] [剑指OfferII071.按权重生成随机数](剑指Offer专项突击版/剑指OfferII071.按权重生成随机数.md)
   - [x] [剑指OfferII072.求平方根](剑指Offer专项突击版/剑指OfferII072.求平方根.md)
   - [x] [剑指OfferII073.狒狒吃香蕉](剑指Offer专项突击版/剑指OfferII073.狒狒吃香蕉.md)
-- [ ] Day25 排序
+- [x] Day25 排序
   - [x] [剑指OfferII074.合并区间](剑指Offer专项突击版/剑指OfferII074.合并区间.md)
   - [x] [剑指OfferII075.数组相对排序](剑指Offer专项突击版/剑指OfferII075.数组相对排序.md)-没有理解
-- [ ] Day26 排序
+- [x] Day26 排序
   - [x] [剑指OfferII076.数组中的第 k 大的数字](剑指Offer专项突击版/剑指OfferII076.数组中的第 k 大的数字.md)
   - [x] [剑指OfferII077.链表排序](剑指Offer专项突击版/剑指OfferII077.链表排序.md)-使用优先队列排序，效率较低n
   - [x] [剑指OfferII078.合并排序链表](剑指Offer专项突击版/剑指OfferII078.合并排序链表.md)-归并排序
-- [ ] Day27 回朔法
+- [x] Day27 回朔法
   - [x] [剑指OfferII079.所有子集](剑指Offer专项突击版/剑指OfferII079.所有子集.md)-dfs加回溯
   - [x] [剑指OfferII080.含有 k 个元素的组合](剑指Offer专项突击版/剑指OfferII080.含有 k 个元素的组合.md)-dfs加回溯
   - [x] [剑指OfferII081.允许重复选择元素的组合](剑指Offer专项突击版/剑指OfferII081.允许重复选择元素的组合.md)-dfs回溯
-- [ ] Day28 回溯法
+- [x] Day28 回溯法
   - [x] [剑指OfferII082.含有重复元素集合的组合](剑指Offer专项突击版/剑指OfferII082.含有重复元素集合的组合.md)-dfs+回溯+剪枝
   - [x] [剑指OfferII083.没有重复元素集合的全排列](剑指Offer专项突击版/剑指OfferII083.没有重复元素集合的全排列.md)-dfs+回溯+剪枝
   - [x] [剑指OfferII084.含有重复元素集合的全排列](剑指Offer专项突击版/剑指OfferII084.含有重复元素集合的全排列.md)-dfs+回溯+剪枝<font color="red">暂时没有理解</font>
-- [ ] Day29 回朔法
+- [x] Day29 回朔法
   - [x] [剑指OfferII085.生成匹配的括号](剑指Offer专项突击版/剑指OfferII085.生成匹配的括号.md)-回溯没有删除原先的括号，<font color="red">没有理解</font>
   - [x] [剑指OfferII086.分割回文子字符串](剑指Offer专项突击版/剑指OfferII086.分割回文子字符串.md)-<font color="red">没有理解</font>
   - [x] [剑指OfferII087.复原IP](剑指Offer专项突击版/剑指OfferII087.复原IP.md)-<font color="red">没有理解</font>
-- [ ] Day30 动态规划
+- [x] Day30 动态规划
   - [x] [剑指OfferII088.爬楼梯的最少成本](剑指Offer专项突击版/剑指OfferII088.爬楼梯的最少成本.md)-滚动数据优化空间复杂度
   - [x] [剑指OfferII089.房屋偷盗](剑指Offer专项突击版/剑指OfferII089.房屋偷盗.md)-同上
   - [x] [剑指OfferII090.环形房屋偷盗](剑指Offer专项突击版/剑指OfferII090.环形房屋偷盗.md)
-- [ ] Day31 动态规划
+- [x] Day31 动态规划
   - [x] [剑指OfferII091.粉刷房子](剑指Offer专项突击版/剑指OfferII091.粉刷房子.md)
   - [x] [剑指OfferII092.翻转字符](剑指Offer专项突击版/剑指OfferII092.翻转字符.md)-<font color="red">暂时没有理解题意中的状态转移方程</font>
   - [x] [剑指OfferII093.最长斐波那契数列](剑指Offer专项突击版/剑指OfferII093.最长斐波那契数列.md)
-- [ ] Day32 动态规划
+- [x] Day32 动态规划
   - [x] [剑指OfferII094.最少回文分割](剑指Offer专项突击版/剑指OfferII094.最少回文分割.md)-<font color="red">时间复杂度过高，需要优化</font>
   - [x] [剑指OfferII095.最长公共子序列](剑指Offer专项突击版/剑指OfferII095.最长公共子序列.md)
   - [x] [剑指OfferII096.字符串交织](剑指Offer专项突击版/剑指OfferII096.字符串交织.md)-<font color="red">动态规划，注意数组索引开始和结尾</font>
-- [ ] Day33 动态规划
+- [x] Day33 动态规划
   - [x] [剑指OfferII097.子序列的数目](剑指Offer专项突击版/剑指OfferII097.子序列的数目.md)-<font color="red">注意边界条件初始化</font>
   - [x] [剑指OfferII098.路径的数目](剑指Offer专项突击版/剑指OfferII098.路径的数目.md)
   - [x] [剑指OfferII099.最小路径之和](剑指Offer专项突击版/剑指OfferII099.最小路径之和.md)
-- [ ] Day34 动态规划
+- [x] Day34 动态规划
   - [x] [剑指OfferII100.三角形中最小路径之和](剑指Offer专项突击版/剑指OfferII100.三角形中最小路径之和.md)
   - [x] [剑指OfferII101.分割等和子集](剑指Offer专项突击版/剑指OfferII101.分割等和子集.md)-<font color="red">背包问题的典型例子</font>
   - [x] [剑指OfferII102.加减的目标值](剑指Offer专项突击版/剑指OfferII102.加减的目标值.md)-<font color="red">背包问题的变形</font>
-- [ ] Day35 动态规划
+- [x] Day35 动态规划
   - [x] [剑指OfferII103.最少的硬币数目](剑指Offer专项突击版/剑指OfferII103.最少的硬币数目.md)-<font color="red">数量无限的背包问题</font>
   - [x] [剑指OfferII104.排列的数目](剑指Offer专项突击版/剑指OfferII104.排列的数目.md)-<font color="red">背包排列问题</font>
-- [ ] Day36 图
+- [x] Day36 图
   - [x] [剑指OfferII105.岛屿的最大面积](剑指Offer专项突击版/剑指OfferII105.岛屿的最大面积.md)-<font color="red">图的遍历基本模板</font>
   - [x] [剑指OfferII106.二分图](剑指Offer专项突击版/剑指OfferII106.二分图.md)-<font color="red">染色对照，没有理解</font>
   - [x] [剑指OfferII107.矩阵中的距离](剑指Offer专项突击版/剑指OfferII107.矩阵中的距离.md)-<font color="red">两次动态规划，没有完全掌握</font>
-- [ ] Day37 图
+- [x] Day37 图
   - [x] [剑指OfferII108.单词演变](剑指Offer专项突击版/剑指OfferII108.单词演变.md)-<font color="red">暂时跳过，还没仔细看</font>
   - [x] [剑指OfferII109.开密码锁](剑指Offer专项突击版/剑指OfferII109.开密码锁.md)-<font color="red">图的广度遍历</font>
   - [x] [剑指OfferII110.所有路径](剑指Offer专项突击版/剑指OfferII110.所有路径.md)-<font color="red">图的深度遍历模板，使用栈辅助完成</font>
-- [ ] Day38 图
+- [x] Day38 图
   - [x] [剑指OfferII111.计算除法](剑指Offer专项突击版/剑指OfferII111.计算除法.md)-<font color="red">图的最短路径，floyd算法，没有理解</font>
   - [x] [剑指OfferII112.最长递增路径](剑指Offer专项突击版/剑指OfferII112.最长递增路径.md)-<font color="red"> 深度优先搜索，辅助矩阵减少重复搜索</font>
   - [x] [剑指OfferII113.课程顺序](剑指Offer专项突击版/剑指OfferII113.课程顺序.md)-<font color="red">拓扑排序</font>
-- [ ] Day39 图
-  - [ ] [剑指OfferII114.外星文字典](剑指Offer专项突击版/剑指OfferII114.外星文字典.md)
-  - [ ] [剑指OfferII115.重建序列](剑指Offer专项突击版/剑指OfferII115.重建序列.md)
-  - [ ] [剑指OfferII116.省份数量](剑指Offer专项突击版/剑指OfferII116.省份数量.md)
-- [ ] Day40 图
-  - [ ] [剑指OfferII117.相似的字符串](剑指Offer专项突击版/剑指OfferII117.相似的字符串.md)
-  - [ ] [剑指OfferII118.多余的边](剑指Offer专项突击版/剑指OfferII118.多余的边.md)
-  - [ ] [剑指OfferII119.最长连续序列](剑指Offer专项突击版/剑指OfferII119.最长连续序列.md)
+- [x] Day39 图
+  - [x] [剑指OfferII114.外星文字典](剑指Offer专项突击版/剑指OfferII114.外星文字典.md)-<font color="red">建立图，然后进行拓扑排序</font>
+  - [x] [剑指OfferII115.重建序列](剑指Offer专项突击版/剑指OfferII115.重建序列.md)-<font color="red">拓扑排序</font>
+  - [x] [剑指OfferII116.省份数量](剑指Offer专项突击版/剑指OfferII116.省份数量.md)-<font color="red">连接图的连通分量计算</font>
+- [x] Day40 图
+  - [x] [剑指OfferII117.相似的字符串](剑指Offer专项突击版/剑指OfferII117.相似的字符串.md)-<font color="red">图BFS和并查集</font>
+  - [x] [剑指OfferII118.多余的边](剑指Offer专项突击版/剑指OfferII118.多余的边.md)-<font color="red">并查集</font>
+  - [x] [剑指OfferII119.最长连续序列](剑指Offer专项突击版/剑指OfferII119.最长连续序列.md)-<font color="red">并查集</font>

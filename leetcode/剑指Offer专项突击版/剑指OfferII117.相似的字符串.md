@@ -36,3 +36,54 @@
 - `1 <= strs[i].length <= 300`
 - `strs[i]` 只包含小写字母。
 - `strs` 中的所有单词都具有相同的长度，且是彼此的字母异位词。
+
+## 题解
+
+图BFS和并查集
+
+```java
+class Solution {
+    public int numSimilarGroups(String[] strs) {
+        int n = strs.length;
+        int cnt = n;
+        int[] fathers = new int[n];
+        for(int i = 0; i < n; ++i){
+            fathers[i] = i;
+        }
+        for(int i = 0; i < n; ++i){
+            for(int j = i+1; j < n; ++j){
+                if(isSimilar(strs[i], strs[j]) && union(fathers, i, j)){
+                    cnt--;
+                }
+            }
+        }
+        return cnt;
+    }
+
+    public boolean isSimilar(String s1, String s2){
+        int cnt = 0;
+        for(int i = 0; i < s1.length(); ++i){
+            if(s1.charAt(i) != s2.charAt(i)) cnt++;
+        }
+        return cnt<=2;
+    }
+
+    public boolean union(int[] fathers, int i, int j){
+        int a = findFather(fathers, i);
+        int b = findFather(fathers, j);
+        if(a != b){
+            fathers[a] = b;
+            return true;
+        }
+        return false;
+    }
+
+    public int findFather(int[] fathers, int i){
+        if(fathers[i] != i){
+            fathers[i] = findFather(fathers, fathers[i]);
+        }
+        return fathers[i];
+    }
+}
+```
+
