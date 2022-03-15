@@ -42,3 +42,51 @@ magicDictionary.search("leetcoded"); // 返回 False
 - `searchWord` 仅由小写英文字母组成
 - `buildDict` 仅在 `search` 之前调用一次
 - 最多调用 `100` 次 `search`
+
+## 题解
+
+可以将变位词添加到一个`HashMap`中，例如`apple`有变位词`*pple, a*ple, ap*le, app*e, appl*`，然后判断搜索的单词的变位词是否和变位词字典相等，且单词不与字典词完全相等，则返回`false`，否则返回`true`
+
+```java
+class MagicDictionary {
+
+    Set<String> words;
+    Map<String, Integer> neighborCount;
+
+    public MagicDictionary() {
+        words = new HashSet<>();
+        neighborCount = new HashMap<>();
+    }
+    
+    public String[] getNeighbors(String word) {
+        String[] neighbors = new String[word.length()];
+        StringBuilder str = new StringBuilder(word);
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            str.setCharAt(i, '*');
+            neighbors[i] = str.toString();
+            str.setCharAt(i, ch);
+        }
+        return neighbors;
+    }
+
+    public void buildDict(String[] dictionary) {
+        for (String word : dictionary) {
+            words.add(word);
+            for (String neighbor : getNeighbors(word)) {
+                neighborCount.put(neighbor, neighborCount.getOrDefault(neighbor, 0) + 1);
+            }
+        }
+    }
+    
+    public boolean search(String searchWord) {
+        for (String neighbor : getNeighbors(searchWord)) {
+            int searchNum = neighborCount.getOrDefault(neighbor, 0);
+            if (searchNum > 1 || searchNum == 1 && !words.contains(searchWord))
+                return true;
+        }
+        return false;
+    }
+}
+```
+

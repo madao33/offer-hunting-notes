@@ -92,9 +92,11 @@
 - [ ] Day21 前缀树
   - [x] [剑指OfferII062.实现前缀树](剑指Offer专项突击版/剑指OfferII062.实现前缀树.md)-<font color="red">前缀树模板</font>
   - [x] [剑指OfferII063.替换单词](剑指Offer专项突击版/剑指OfferII063.替换单词.md)-<font color="blue">前缀树的应用</font>
-  - [ ] [剑指OfferII064.神奇的字典](剑指Offer专项突击版/剑指OfferII064.神奇的字典.md)<font color="red">测试出现bug，待修改</font>
+  - [x] [剑指OfferII064.神奇的字典](剑指Offer专项突击版/剑指OfferII064.神奇的字典.md)-<font color="red">使用HashMap解决，没有想到使用前缀树的方法</font>
 - [ ] Day22 前缀树
-  - [ ] 
+  - [x] [剑指OfferII065.最短的单词编码](剑指Offer专项突击版/剑指OfferII065.最短的单词编码.md)-<font color="red">没有完全理解这种使用方式</font>
+  - [x] [剑指OfferII066.单词之和](剑指Offer专项突击版/剑指OfferII066.单词之和.md)-<font color="red">前缀树+BFS</font>
+  - [x] [剑指OfferII067.最大的异或](剑指Offer专项突击版/剑指OfferII067.最大的异或.md)-<font color="red">完全没懂</font>
 - [ ] Day23 二分查找
   - [x] [剑指OfferII068.查找插入位置](剑指Offer专项突击版/剑指OfferII068.查找插入位置.md)-二分查找模板
   - [x] [剑指OfferII069.山峰数组的顶部](剑指Offer专项突击版/剑指OfferII069.山峰数组的顶部.md)
@@ -120,7 +122,7 @@
   - [x] [剑指OfferII084.含有重复元素集合的全排列](剑指Offer专项突击版/剑指OfferII084.含有重复元素集合的全排列.md)-dfs+回溯+剪枝<font color="red">暂时没有理解</font>
 - [ ] Day29 回朔法
   - [x] [剑指OfferII085.生成匹配的括号](剑指Offer专项突击版/剑指OfferII085.生成匹配的括号.md)-回溯没有删除原先的括号，<font color="red">没有理解</font>
-  - [ ] [剑指OfferII086.分割回文子字符串](剑指Offer专项突击版/剑指OfferII086.分割回文子字符串.md)
+  - [x] [剑指OfferII086.分割回文子字符串](剑指Offer专项突击版/剑指OfferII086.分割回文子字符串.md)-<font color="red">没有理解</font>
   - [x] [剑指OfferII087.复原IP](剑指Offer专项突击版/剑指OfferII087.复原IP.md)-<font color="red">没有理解</font>
 - [ ] Day30 动态规划
   - [x] [剑指OfferII088.爬楼梯的最少成本](剑指Offer专项突击版/剑指OfferII088.爬楼梯的最少成本.md)-滚动数据优化空间复杂度
@@ -128,7 +130,7 @@
   - [x] [剑指OfferII090.环形房屋偷盗](剑指Offer专项突击版/剑指OfferII090.环形房屋偷盗.md)
 - [ ] Day31 动态规划
   - [x] [剑指OfferII091.粉刷房子](剑指Offer专项突击版/剑指OfferII091.粉刷房子.md)
-  - [ ] [剑指OfferII092.翻转字符](剑指Offer专项突击版/剑指OfferII092.翻转字符.md)-<font color="red">暂时没有理解题意中的状态转移方程</font>
+  - [x] [剑指OfferII092.翻转字符](剑指Offer专项突击版/剑指OfferII092.翻转字符.md)-<font color="red">暂时没有理解题意中的状态转移方程</font>
   - [x] [剑指OfferII093.最长斐波那契数列](剑指Offer专项突击版/剑指OfferII093.最长斐波那契数列.md)
 - [ ] Day32 动态规划
   - [x] [剑指OfferII094.最少回文分割](剑指Offer专项突击版/剑指OfferII094.最少回文分割.md)-<font color="red">时间复杂度过高，需要优化</font>
