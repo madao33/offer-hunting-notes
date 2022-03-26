@@ -19,7 +19,3 @@ BS：浏览器服务器架构模式
 
 Tomcat叫做 `WebContainer`，相当于是一个容器
 
-
-
-
-
