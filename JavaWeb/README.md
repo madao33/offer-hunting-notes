@@ -6,7 +6,11 @@
 
 * [x] [HTML](notes/HTML.md) 超文本标记语言
 * [x] [CSS](notes/css.md) 页面上的内容显示的风格
-* [ ] [JavaScript](notes/JavaScript.md) 页面特效
+* [x] [JavaScript](notes/JavaScript.md) 页面特效
+
+web后端
+
+- [x] [JavaWeb后端](notes/JavaWeb后端.md)
 
 
 

@@ -1,0 +1,53 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function onclickFun() {
+            alert("静态注册onclick事件");
+        }
+
+        window.onload = function() {
+            /*
+            * document是JavaScript语言提供的一个对象
+            * getElementById 通过Id获取html中元素标签
+            */
+            var btnobj = document.getElementById("btn01");
+            btnobj.onclick = function() {
+                alert("动态注册的onclick事件");
+            }
+        }
+
+        function showBGColor() {
+            // alert(event.srcElement);
+            // alert(event.srcElement.tagName);
+            if(event && event.srcElement.tagName=="BUTTON") {
+                var btn = event.srcElement;
+                btn.style.backgroundColor = "navy";
+                btn.style.color="white";
+            }
+        }
+
+        function clearBGColor() {
+            if (event && event.srcElement && event.srcElement.tagName=="BUTTON") {
+                var btn = event.srcElement;
+                btn.style.backgroundColor = "transparent";
+                btn.style.color = "black";
+            }
+        }
+
+        function showhand() {
+            if (event && event.srcElement && event.srcElement.tagName=="BUTTON") {
+                var btn = event.srcElement;
+                btn.style.cursor = "hand";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="onclickFun()" onmouseover="showhand()">按钮1</button>
+    <button id="btn01" onmouseOver="showBGColor()" onmouseOut="clearBGColor()">按钮2</button>
+</body>
+</html>
