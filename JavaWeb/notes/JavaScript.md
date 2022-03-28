@@ -287,4 +287,238 @@ function 函数名(形参列表){
 }
 ```
 
-040
+> 在`javascript`中返回值，直接使用`return`返回值即可
+
+示例代码
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script type="text/javascript">
+            function fun(){
+                alert("无参函数fun()被调用了");
+            }
+            fun();
+
+            function fun2(a, b) {
+                alert("有参函数fun2()被调用了a=" + a + "b=" + b);
+            }
+            fun2(2, 1);
+
+            function sum(num1, num2) {
+                var result = num1 + num2;
+                return result;
+            }
+
+            alert(sum(100, 50))
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
+```
+
+另一种定义方式是
+
+```javascript
+var 函数名 = function(形参列表) {
+	函数体
+	}
+```
+
+示例代码
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script type="text/javascript">
+            var fun = function() {
+                alert("无参函数");
+            }
+            fun();
+
+            var fun2 = function(a, b) {
+                alert("有参函数a=" + a + ", b=" + b);
+            }
+            fun2(1, 2);
+
+            var fun3 = function(num1, num2) {
+                return num1 + num2;
+            }
+            alert(fun3(100, 200));
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
+```
+
+> `javascript`不允许函数重载，会导致函数的覆盖
+
+### 函数中的`arguments`隐形参数
+
+在`function`函数中不需要定义，但却可以直接用来获取所有参数的变量，称作是隐形参数
+
+隐形参数类似于`java`基础的可变长参数一样
+
+```java
+public void fun(Object ... args) { ... };
+```
+
+可变长参数其实是一个数组
+
+`javascript`中的隐形参数也跟`java`中类似，也是一个数组
+
+```javascript
+function sum() {
+    var result = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        if (typeof(arguments[i])=="number")
+            result += arguments[i];
+    }
+    return result;
+}
+
+alert(sum(1, 2, 3, "abc", 5, 6, 7, 8, 9));
+```
+
+## 自定义对象
+
+### Object形式自定义对象
+
+```javascript
+var 变量名 = new Object();
+变量名.属性名 = 值;
+变量名.函数名 = function(){}
+
+对象的访问：
+	变量名.属性名 / 函数名
+```
+
+例如下面的代码
+
+```javascript
+var obj = new Object();
+obj.name = "madao33";
+obj.age = 24;
+obj.fun = function() {
+    alert("姓名：" + this.name + "，年龄：" + this.age);
+}
+
+obj.fun();
+```
+
+### `{}`花括号形式的自定义对象
+
+```javascript
+var 变量名 = {
+    属性名 : 值,
+    属性名 : 值,
+    函数名 : function(){}
+};
+```
+
+示例代码
+
+```javascript
+var obj = {
+    name : "madao33",
+    age : 24,
+    fun : function() {
+        alert("姓名： " + this.name + " 年龄：" + this.age);
+    }
+};
+
+obj.fun();
+```
+
+## JavaScript事件
+
+电脑输入设备与页面进行交互的响应
+
+### 常用事件
+
+* `onload `加载完成事件：页面加载完成之后，常用于做页面 js 代码初始化操作
+* `onclick `单击事件：常用于按钮的点击响应操作。
+* `onblur `失去焦点事件：常用用于输入框失去焦点后验证其输入内容是否合法。
+* `onchange `内容发生改变事件：常用于下拉列表和输入框内容发生改变后操作
+* `onsubmit `表单提交事件：常用于表单提交前，验证所有表单项是否合法。
+
+事件注册：其实就是告诉浏览器，当事件响应后要执行哪些操作代码，叫事件注册或事件绑定，事件的注册又分为静态注册和动态注册两种:
+
+* 静态注册事件：通过 html 标签的事件属性直接赋于事件响应后的代码，这种方式我们叫静态注册
+* 动态注册事件：是指先通过 js 代码得到标签的 `dom `对象，然后再通过 dom 对象.事件名 = function(){} 这种形式赋于事件响应后的代码，叫动态注册。动态注册基本步骤：
+  * 1、获取标签对象
+  * 2、标签对象.事件名 = fucntion(){}
+
+`onload`示例
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function onloadFun() {
+            alert('静态注册onload事件，所有代码');
+        }
+
+        window.onload = function() {
+            alert("动态注册onload事件");
+        }
+    </script>
+</head>
+
+
+<body>
+
+</body>
+</html>
+```
+
+`onclick`事件
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function onclickFun() {
+            alert("静态注册onclick事件");
+        }
+
+        window.onload = function() {
+            /*
+            * document是JavaScript语言提供的一个对象
+            * getElementById 通过Id获取html中元素标签
+            */
+            var btnobj = document.getElementById("btn01");
+            btnobj.onclick = function() {
+                alert("动态注册的onclick事件");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="onclickFun();">按钮1</button>
+    <button id="btn01">按钮2</button>
+</body>
+</html>
+```
+
+
+
