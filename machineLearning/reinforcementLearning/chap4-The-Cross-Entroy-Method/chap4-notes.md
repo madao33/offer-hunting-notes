@@ -22,5 +22,17 @@ $$
 $$
 严格地说，上述公式忽略了规范化项，但在没有规范化项的情况下，它在实践中仍然有效。因此，方法非常明确：我们使用当前策略（从一些随机初始策略开始）对事件进行采样，并最小化最成功的样本负对数可能性。
 
+上述代码的运行结果，在tensorboard查看的效果如下：
 
+loss
+
+![](imgs/loss.svg)
+
+reward_bound
+
+![](imgs/reward_bound.svg)
+
+reward_mean
+
+![](imgs/reward_mean.svg)
 
