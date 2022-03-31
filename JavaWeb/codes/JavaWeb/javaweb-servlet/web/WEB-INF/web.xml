@@ -22,4 +22,31 @@
         <servlet-name>Demo02Servlet</servlet-name>
         <url-pattern>/demo02</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Demo03Servlet</servlet-name>
+        <servlet-class>com.madao.servlets.Demo03Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo03Servlet</servlet-name>
+        <url-pattern>/demo03</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Demo04Servlet</servlet-name>
+        <servlet-class>com.madao.servlets.Demo04Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo04Servlet</servlet-name>
+        <url-pattern>/demo04</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Demo05Servlet</servlet-name>
+        <servlet-class>com.madao.servlets.Demo05Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo05Servlet</servlet-name>
+        <url-pattern>/demo05</url-pattern>
+    </servlet-mapping>
 </web-app>

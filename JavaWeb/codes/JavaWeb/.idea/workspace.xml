@@ -7,15 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2efe2de5-0ba3-4b00-946b-2e877dc7d2e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaweb-begin/src/com/madao/servlets/AddServlets.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-begin/src/com/madao/servlets/AddServlets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaweb-begin/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-begin/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/WEB-INF/classes/com/madao/servlets/AddServlets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/WEB-INF/classes/com/madao/servlets/AddServlets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaweb-begin/com/madao/servlets/AddServlets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaweb-begin/com/madao/servlets/AddServlets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-servlet/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-servlet/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +71,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.77" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="14">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/demo02" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/demo03" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
@@ -181,6 +174,7 @@
       <workItem from="1648630302544" duration="93000" />
       <workItem from="1648630418810" duration="2086000" />
       <workItem from="1648688750250" duration="11995000" />
+      <workItem from="1648726798420" duration="2612000" />
     </task>
     <servers />
   </component>
