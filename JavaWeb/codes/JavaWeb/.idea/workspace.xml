@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="javaweb-servlet:war exploded" />
+      <artifact name="javaweb-thymeleaf:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2efe2de5-0ba3-4b00-946b-2e877dc7d2e1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javaweb-servlet/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-servlet/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
       </list>
@@ -50,13 +55,13 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -64,20 +69,30 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.27915195" />
+    <property name="project.structure.side.proportion" value="0.12104283" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb" />
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf\web" />
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf\web\css" />
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\lib" />
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf\web\imgs" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.77" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="14">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/demo03" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/index" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="javaweb-servlet:war exploded">
+        <artifact name="javaweb-thymeleaf:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -157,7 +172,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="javaweb-servlet:war exploded" />
+          <artifact name="javaweb-thymeleaf:war exploded" />
         </option>
       </method>
     </configuration>
@@ -175,6 +190,8 @@
       <workItem from="1648630418810" duration="2086000" />
       <workItem from="1648688750250" duration="11995000" />
       <workItem from="1648726798420" duration="2612000" />
+      <workItem from="1648776224776" duration="11059000" />
+      <workItem from="1648800950143" duration="177000" />
     </task>
     <servers />
   </component>

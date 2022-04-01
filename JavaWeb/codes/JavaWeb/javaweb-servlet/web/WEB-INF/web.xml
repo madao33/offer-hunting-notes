@@ -49,4 +49,22 @@
         <servlet-name>Demo05Servlet</servlet-name>
         <url-pattern>/demo05</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Demo06Servlet</servlet-name>
+        <servlet-class>com.madao.servlets.Demo06Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo06Servlet</servlet-name>
+        <url-pattern>/demo06</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Demo07Servlet</servlet-name>
+        <servlet-class>com.madao.servlets.Demo07Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo07Servlet</servlet-name>
+        <url-pattern>/demo07</url-pattern>
+    </servlet-mapping>
 </web-app>

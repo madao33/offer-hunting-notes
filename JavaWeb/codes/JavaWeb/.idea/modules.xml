@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/JavaWeb.iml" filepath="$PROJECT_DIR$/JavaWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-begin/javaweb-begin.iml" filepath="$PROJECT_DIR$/javaweb-begin/javaweb-begin.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-servlet/javaweb-servlet.iml" filepath="$PROJECT_DIR$/javaweb-servlet/javaweb-servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf/javaweb-thymeleaf.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf/javaweb-thymeleaf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf02/javaweb-thymeleaf02.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf02/javaweb-thymeleaf02.iml" />
     </modules>
   </component>
 </project>

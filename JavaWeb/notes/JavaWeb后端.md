@@ -94,6 +94,8 @@ IDEA部署总是有中文乱码，参考这篇文章解决了
 </servlet-mapping>
 ```
 
+`Servlet3.0`开始支持**注解**：`@WebServlet`
+
 ### 编码设置
 
 #### POST方式
@@ -251,6 +253,24 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 * 线程不安全：一个线程需要根据这个实例中的某个成员变量值去做逻辑判断，但是在中间某个时机，另一个线程改变了这个成员变量的值，从而导致第一个线程的执行路径发生了变化
 * 所以尽量不要在`servlet`中定义成员变量，或者如果定义了成员变量，不要通过成员变量的值去做一些逻辑运算
 
+### 保存作用域
+
+* `page`
+
+  页面级别，现在几乎不用
+
+* `request`
+
+  一次请求响应范围
+
+* `session`
+
+  一次会话范围
+
+* `response`
+
+  
+
 ## Http协议
 
 * HTTP：**H**yper **T**ext **T**ransfer **P**rotocol超文本传输协议。HTTP最大的作用就是确定了请求和响应数据的格式。浏览器发送给服务器的数据：请求报文；服务器返回给浏览器的数据：响应报文。
@@ -360,9 +380,56 @@ Http请求包含三个部分：
 
 >  保存重复的`key`会覆盖掉之前的`key`
 
+## 服务器内部转发以及客户端重定向
 
+* 服务器内部转向 `request.getRequestDispatcher("...").forward(request, response);`
 
+  * 一次请求响应的过程，对于客户端而言，内部经过了多少次转发，客户端是不知道的
+  * 地址栏没有变化
 
+  ![image-20220401093053489](imgs/image-20220401093053489.png)
+
+* 客户端重定向 `response.sendRedirect("...");`
+
+  * 两次请求响应的过程，客户端肯定知道请求URL有变化
+  * 地址栏有变化
+
+  <img src="imgs/image-20220401093249477.png" alt="image-20220401093249477" style="zoom: 50%;" />
+
+## Thymeleaf视图模板技术
+
+在`html`页面上加载java内存中的数据的过程称之为渲染`render`
+
+* 添加`thymeleaf`的`jar`包
+
+* 在`web.xml`文件中添加配置
+
+  ```xml
+  <context-param>
+      <param-name>view-prefix</param-name>
+      <param-value>/WEB-INF/view/</param-value>
+  </context-param>
+  <context-param>
+      <param-name>view-suffix</param-name>
+      <param-value>.html</param-value>
+  </context-param>
+  ```
+
+  
+
+* 新建一个`Servlet`类`viewBaseServlet`
+
+* 使得我们的`Servlet`继承`ViewBaseServlet`
+
+* 逻辑视图名称得到物理视图名称
+
+  * 逻辑视图名称：`index`
+  * 物理视图名称：`view-prefix` + 逻辑视图名称 + `view-suffix`
+  * 所以真实的视图名称是 `/index.html`
+
+* 使用`thymeleaf`的标签
+
+  `th:if`, `th:unless`, `th:each`
 
 
 
