@@ -129,7 +129,7 @@ fname = ne wString(bytes, "UTF-8");
 
 > 目前大多数使用的都是`tomcat8`，不用进行以上的操作
 
-### Servlet的继承关系
+### 继承关系
 
 * `javax.servlet.Servlet`接口
 * `javax.servlet.GenericServlet`抽象类
@@ -216,7 +216,7 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 
 ![image-20220331154139976](imgs/image-20220331154139976.png)
 
-### Servlet的生命周期
+### 生命周期
 
 生命周期：从出生到死亡的过程，对应`Servlet`三个方法:`init()`，`service()`，`destroy()`
 
@@ -263,23 +263,42 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 
   一次请求响应范围
 
+  !![01.Request保存作用域](imgs/01.Request保存作用域.png)
+
 * `session`
 
   一次会话范围
 
-* `response`
+  ![02.Session保存作用域](imgs/02.Session保存作用域.png)
 
+* `application`
+
+  一次应用范围
   
+  ![03.Application保存作用域](imgs/03.Application保存作用域.png)
+
+### 路径问题
+
+* ==相对路径==  相对于当前文件的目录级别来设置路径，上一级目录用`../`
+* ==绝对路径==  绝对路径添加一个根路径，类似于`http://localhost:8080/project/css/login.css`
+
+> base标签`<base href="http://localhost:8080/pro10/" />`，作用是当前页面的所有路径都以这个为基础`<link href=css/shopping.css>`
+>
+> 其中`thymeleaf`设置绝对路径是
+>
+> ```html
+> <link th:href="@{/css/shopping.css}"
+> ```
 
 ## Http协议
 
 * HTTP：**H**yper **T**ext **T**ransfer **P**rotocol超文本传输协议。HTTP最大的作用就是确定了请求和响应数据的格式。浏览器发送给服务器的数据：请求报文；服务器返回给浏览器的数据：响应报文。
 
-* Http是无状态的
+* Http是==无状态==的
 
   * 服务器无法判断两次请求是同一个客户端发过来的，还是不同客户端发过来的。这样带来一个问题就是无法区分不同的用户之间的访问
 
-  * 可以通过会话跟踪技术解决
+  * 可以通过==会话跟踪技术==解决
 
     > * 客户端第一次发请求给服务器，服务器获取`session`，获取不到，则创建新的，然后响应给客户端
     > * 下次客户端给服务器发请求时，会把`sessionID`带给服务器，服务器就能获取到了，那么服务器就判断这一次请求和上一次是同一个客户端
@@ -433,7 +452,7 @@ Http请求包含三个部分：
 
 
 
-
+update to 36 end-point
 
 
 

@@ -2,18 +2,29 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="javaweb-thymeleaf:war exploded" />
+      <artifact name="javaweb-thymeleaf02:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2efe2de5-0ba3-4b00-946b-2e877dc7d2e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/javaweb_begin_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/javaweb_servlet_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/javaweb_thymeleaf_war_exploded.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaweb-servlet/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-servlet/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/WEB-INF/classes/com/madao/servlets/AddServlets.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo01Servlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo02Servlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo03Servlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo04Servlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo05Servlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo06Servlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo07Servlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/index.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,13 +35,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_ON_COMMIT_AND_PUSH" value="false" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="WARN_ABOUT_CRLF" value="false" />
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -43,8 +57,8 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -60,6 +74,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -69,37 +84,40 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/javaweb-thymeleaf02/web" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.12104283" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="project.structure.side.proportion" value="0.20461783" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf02\web" />
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf02\web\user" />
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf02\src\com\madao\demo" />
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\.idea\artifacts" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb" />
-      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf\web" />
-      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf\web\css" />
-      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\lib" />
-      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf\web\imgs" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.madao.demo" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.77" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="14">
+    <configuration name="Tomcat 8.5.77" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.77" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/index" />
-      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="javaweb-thymeleaf:war exploded">
+        <artifact name="javaweb-thymeleaf02:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="48bf77ef-d65d-4849-a289-6621af679db7" />
+        <option name="BASE_DIRECTORY_NAME" value="c98bc301-7b5e-4005-988d-4483055f2f18" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -107,7 +125,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="1987" />
+        <option name="DEBUG_PORT" value="13383" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -172,7 +190,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="javaweb-thymeleaf:war exploded" />
+          <artifact name="javaweb-thymeleaf02:war exploded" />
         </option>
       </method>
     </configuration>
@@ -192,6 +210,9 @@
       <workItem from="1648726798420" duration="2612000" />
       <workItem from="1648776224776" duration="11059000" />
       <workItem from="1648800950143" duration="1663000" />
+      <workItem from="1648963971935" duration="2036000" />
+      <workItem from="1648967853168" duration="384000" />
+      <workItem from="1648968257443" duration="13875000" />
     </task>
     <servers />
   </component>
@@ -208,6 +229,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/javaweb-thymeleaf02/src/com/madao/fruit/dao/impl/FruitDAOImpl.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
