@@ -8,10 +8,15 @@
 
 ### Java基础
 
-- [X] [java核心技术笔记](java核心技术笔记/README.md)
-- [X] [leetcode刷题笔记-剑指Offer专项突击版](leetcode/README.md)-进行中…
+- [x] [java核心技术笔记](java核心技术笔记/README.md)
+- [x] [leetcode刷题笔记-剑指Offer专项突击版](leetcode/README.md)
 - [x] [MAVEN学习笔记](maven/README.md)
 - [x] [java补充知识点](java补充知识点/README.md)
+- [ ] [深入理解Java虚拟机](深入理解Java虚拟机/README.md)-进行中
+
+### 编程通用
+
+- [ ] [设计模式](设计模式/README.md)
 
 ### 计算机基础
 
