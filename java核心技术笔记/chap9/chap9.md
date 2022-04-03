@@ -80,7 +80,7 @@ public interface Iterator<E>
 }
 ```
 
-如果想要查看及恶化中的所有元素，就请求一个迭代器，并在`hasNext`返回`true`时反复调用`next`方法
+如果想要查看集合中的所有元素，就请求一个迭代器，并在`hasNext`返回`true`时反复调用`next`方法
 
 ```java
 Collection<String> c = ... ;
@@ -107,7 +107,7 @@ for(String eleemnt : c)
 iterator.forEachRemaining(element -> do something with element);
 ```
 
-`Iterator`接口的`remove`方法将会删除上次调用`next`方法时返回的元素，注意在调用`remove`之前没有调用`next`将是不合法的
+> `Iterator`接口的`remove`方法将会删除上次调用`next`方法时返回的元素，注意在调用`remove`之前没有调用`next`将是不合法的
 
 ### 9.1.4 泛型实用方法
 
