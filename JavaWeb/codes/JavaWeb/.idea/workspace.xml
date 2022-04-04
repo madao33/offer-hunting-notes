@@ -2,29 +2,12 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="javaweb-thymeleaf02:war exploded" />
+      <artifact name="javaweb-thymeleaf-pagination:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2efe2de5-0ba3-4b00-946b-2e877dc7d2e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/javaweb_begin_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/javaweb_servlet_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/javaweb_thymeleaf_war_exploded.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/WEB-INF/classes/com/madao/servlets/AddServlets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/add.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_begin_war_exploded/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo01Servlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo02Servlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo03Servlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo04Servlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo05Servlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo06Servlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/classes/com/madao/servlets/Demo07Servlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/javaweb_servlet_war_exploded/index.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,19 +67,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/javaweb-thymeleaf02/web" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/javaweb-thymeleaf-pagination" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.20461783" />
     <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf02\web" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf02\web\user" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\javaweb-thymeleaf02\src\com\madao\demo" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\.idea\artifacts" />
-      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.madao.demo" />
@@ -110,7 +93,7 @@
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="javaweb-thymeleaf02:war exploded">
+        <artifact name="javaweb-thymeleaf-pagination:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -190,7 +173,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="javaweb-thymeleaf02:war exploded" />
+          <artifact name="javaweb-thymeleaf-pagination:war exploded" />
         </option>
       </method>
     </configuration>
@@ -213,6 +196,7 @@
       <workItem from="1648963971935" duration="2036000" />
       <workItem from="1648967853168" duration="384000" />
       <workItem from="1648968257443" duration="13875000" />
+      <workItem from="1649054191987" duration="1654000" />
     </task>
     <servers />
   </component>
