@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="javaweb-thymeleaf-pagination:war exploded" />
+      <artifact name="javaweb-thymeleaf-keyword:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -67,10 +67,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/javaweb-thymeleaf-pagination" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/javaweb-thymeleaf-keyword" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.20461783" />
+    <property name="project.structure.side.proportion" value="0.30388692" />
     <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RecentsManager">
@@ -93,7 +93,7 @@
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="javaweb-thymeleaf-pagination:war exploded">
+        <artifact name="javaweb-thymeleaf-keyword:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -173,7 +173,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="javaweb-thymeleaf-pagination:war exploded" />
+          <artifact name="javaweb-thymeleaf-keyword:war exploded" />
         </option>
       </method>
     </configuration>
@@ -196,7 +196,7 @@
       <workItem from="1648963971935" duration="2036000" />
       <workItem from="1648967853168" duration="384000" />
       <workItem from="1648968257443" duration="13875000" />
-      <workItem from="1649054191987" duration="1654000" />
+      <workItem from="1649054191987" duration="3582000" />
     </task>
     <servers />
   </component>
@@ -221,6 +221,11 @@
           <url>file://$PROJECT_DIR$/javaweb-thymeleaf02/src/com/madao/fruit/dao/impl/FruitDAOImpl.java</url>
           <line>32</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/javaweb-thymeleaf-keyword/src/com/madao/fruit/servlets/IndexServlet.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
