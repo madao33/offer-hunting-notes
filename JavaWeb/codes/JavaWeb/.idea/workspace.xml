@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2efe2de5-0ba3-4b00-946b-2e877dc7d2e1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../leetcode/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../leetcode/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,6 +198,7 @@
       <workItem from="1648967853168" duration="384000" />
       <workItem from="1648968257443" duration="13875000" />
       <workItem from="1649054191987" duration="3582000" />
+      <workItem from="1649126672567" duration="21000" />
     </task>
     <servers />
   </component>
