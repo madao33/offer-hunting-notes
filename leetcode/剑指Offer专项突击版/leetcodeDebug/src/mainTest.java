@@ -2,15 +2,12 @@ import java.util.List;
 
 public class mainTest {
     public static void main(String[] args){
-//        String[] words = new String[]{"hello", "leetcode"};
-//        String order = "hlabcdefgijkmnopqrstuvwxyz";
-//        boolean res = new Solution().isAlienSorted(words, order);
-        int num1 = 1, num2 = -3;
-        System.out.println(isSameSign(num1, num2));
+        int[] nums = new int[]{5, 7, 7, 8, 8, 10};
+        int[] res = new Solution().searchRange(nums, 8);
+        for (int r : res)
+            System.out.print(r + "\t");
 
-    }
-
-    public static boolean isSameSign(int num1, int num2) {
-        return num1 * num2 >= 0;
     }
 }
+
+

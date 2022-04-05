@@ -1,21 +1,24 @@
-import java.util.Stack;
-
 class Solution {
-    public int evalRPN(String[] tokens) {
-        Stack<Integer> stack = new Stack<>();
-        for (String token : tokens) {
-            if(token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")) {
-                calc(stack, token);
-            } else stack.push(Integer.parseInt(token));
+    public int[] searchRange(int[] nums, int target) {
+        int leftIdx = binarySearch(nums, target, true);
+        int rightIdx = binarySearch(nums, target, false) - 1;
+        if (leftIdx <= rightIdx && rightIdx < nums.length && nums[leftIdx] == target && nums[rightIdx] == target) {
+            return new int[]{leftIdx, rightIdx};
         }
-        return stack.pop();
+        return new int[]{-1, -1};
     }
 
-    public void calc(Stack<Integer> stack, String operator) {
-        int num2 = stack.pop(), num1 = stack.pop();
-        if (operator.equals("+")) stack.push(num1 + num2);
-        else if (operator.equals("-")) stack.push(num1 - num2);
-        else if (operator.equals("*")) stack.push(num1 * num2);
-        else stack.push(num1 / num2);
+    public int binarySearch(int[] nums, int target, boolean lower) {
+        int left = 0, right = nums.length - 1, ans = nums.length;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] > target || (lower && nums[mid] >= target)) {
+                right = mid - 1;
+                ans = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return ans;
     }
 }

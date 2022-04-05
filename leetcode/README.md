@@ -6,7 +6,7 @@
 
 
 
-## 刷题计划：剑指Offer专项突破
+## 剑指Offer专项突破
 
 - [x] Day1 整数
   - [x] [剑指OfferII001.整数除法](剑指Offer专项突击版/剑指OfferII001.整数除法.md)-暂时没有理解
@@ -167,3 +167,9 @@
   - [x] [剑指OfferII117.相似的字符串](剑指Offer专项突击版/剑指OfferII117.相似的字符串.md)-<font color="red">图BFS和并查集</font>
   - [x] [剑指OfferII118.多余的边](剑指Offer专项突击版/剑指OfferII118.多余的边.md)-<font color="red">并查集</font>
   - [x] [剑指OfferII119.最长连续序列](剑指Offer专项突击版/剑指OfferII119.最长连续序列.md)-<font color="red">并查集</font>
+
+## leetcode算法基础
+
+- [ ] 第一天 二分查找
+  - [x] [34.在排序数组中查找元素的第一个和最后一个位置](leetcode算法基础/34.在排序数组中查找元素的第一个和最后一个位置.md) ==二分查找的变种，查找第一个大于等于目标数的方法==
+  - [ ] 
