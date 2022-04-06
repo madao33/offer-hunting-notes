@@ -1,34 +1,13 @@
 class Solution {
-    public boolean searchMatrix(int[][] matrix, int target) {
-        int n = matrix.length, m = matrix[0].length;
-        int l = -1, r = n - 1, row = 0;
-        // 查找是否存在行
+    public int findMin(int[] nums) {
+        int l = 0, r = nums.length - 1, res = Math.min(nums[r], nums[l]);
         while(l < r) {
-            int mid = (r - l + 1) / 2 + l;
-            if (matrix[mid][0] > target) {
-                r = mid - 1;
-            } else {
-                l = mid;
-            }
-        }
-        row = l;
-        if (row < 0)
-            return false;
-
-        // 查找列
-        l = 0;
-        r = m - 1;
-        while(l <= r) {
             int mid = (l + r) / 2;
-            if (matrix[row][mid] == target)
-                return true;
-            if (matrix[row][mid] < target)
+            if (nums[mid] >= nums[0])
                 l = mid + 1;
             else
-                r = mid - 1;
+                r = mid;
         }
-
-        return false;
-
+        return Math.min(res, nums[l]);
     }
 }
