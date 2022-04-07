@@ -200,7 +200,7 @@ public class LambdaTest {
 }
 ```
 
-## 6.4
+## 6.4 内部类
 
 内部类（`innerclass`）是定义在另一个类中的类，使用内部类的原因：
 

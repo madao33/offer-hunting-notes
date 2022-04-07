@@ -462,6 +462,18 @@ Http请求包含三个部分：
 
 ![02.mvc02](imgs/02.mvc02.png)
 
+### dispatcherServlet引入
+
+所有的请求交给`DispatcherServlet`，根据请求不同定义到不同的`Servlet`上，然后`Servlet`再转到不同的方法上
+
+![03.MVC03](imgs/03.MVC03.png)
+
+
+
+
+
+
+
 
 
 

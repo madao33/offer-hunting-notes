@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf/javaweb-thymeleaf.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf/javaweb-thymeleaf.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf-keyword/javaweb-thymeleaf-keyword.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf-keyword/javaweb-thymeleaf-keyword.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf-mvc/javaweb-thymeleaf-mvc.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf-mvc/javaweb-thymeleaf-mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf-mvc-controller/javaweb-thymeleaf-mvc-controller.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf-mvc-controller/javaweb-thymeleaf-mvc-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf-mvc-dispatcher/javaweb-thymeleaf-mvc-dispatcher.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf-mvc-dispatcher/javaweb-thymeleaf-mvc-dispatcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf-mvc-reflect/javaweb-thymeleaf-mvc-reflect.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf-mvc-reflect/javaweb-thymeleaf-mvc-reflect.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf-pagination/javaweb-thymeleaf-pagination.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf-pagination/javaweb-thymeleaf-pagination.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf02/javaweb-thymeleaf02.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf02/javaweb-thymeleaf02.iml" />
     </modules>

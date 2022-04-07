@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="javaweb-thymeleaf-mvc:war exploded" />
+      <artifact name="javaweb-thymeleaf-mvc-controller:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -72,11 +72,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/javaweb-thymeleaf-mvc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../尚硅谷javaWeb2022代码素材资料/Day6-servlet-mvc/代码" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.30388692" />
-    <property name="settings.editor.selected.configurable" value="advanced.settings" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -87,6 +87,7 @@
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\.idea\artifacts" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.madao.myssm.myspringmvc" />
       <recent name="com.madao.demo" />
     </key>
   </component>
@@ -98,7 +99,7 @@
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="javaweb-thymeleaf-mvc:war exploded">
+        <artifact name="javaweb-thymeleaf-mvc-controller:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -178,7 +179,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="javaweb-thymeleaf-mvc:war exploded" />
+          <artifact name="javaweb-thymeleaf-mvc-controller:war exploded" />
         </option>
       </method>
     </configuration>
@@ -204,7 +205,7 @@
       <workItem from="1649054191987" duration="3582000" />
       <workItem from="1649126672567" duration="21000" />
       <workItem from="1649315221748" duration="3388000" />
-      <workItem from="1649320084067" duration="1973000" />
+      <workItem from="1649320084067" duration="14171000" />
     </task>
     <servers />
   </component>
@@ -232,6 +233,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.reflect.Method" memberName="parameterTypes" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 
 @WebServlet("/fruit.do")
@@ -30,26 +32,26 @@ public class FruitServlet extends ViewBaseServlet {
             operate = "index";
         }
 
-        switch (operate) {
-            case "index":
-                index(request, response);
-                break;
-            case "add":
-                add(request, response);
-                break;
-            case "del":
-                del(request, response);
-                break;
-            case "edit":
-                edit(request, response);
-                break;
-            case "update":
-                update(request, response);
-                break;
-            default :
-                throw new RuntimeException("operate值非法");
-//                break;
+        Method[] methods = this.getClass().getDeclaredMethods();
+
+        for (Method m : methods) {
+            String methodName = m.getName();
+            if(operate.equals(methodName)) {
+                try {
+                    // 找到和operate同名的方法，那么通过反射方式调用它
+                    m.invoke(this, request, response);
+                    return ;
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+            }
         }
+
+        throw new RuntimeException("operate值非法");
+
+
     }
 
     private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,7 +61,7 @@ public class FruitServlet extends ViewBaseServlet {
         Integer pageNo = 1;
         String oper = request.getParameter("oper");
 
-        String keyword = null;             
+        String keyword = null;
         if (StringUtil.isNotEmpty(oper) && "search".equals(oper)) {
             pageNo = 1;
             keyword = request.getParameter("keyword");
