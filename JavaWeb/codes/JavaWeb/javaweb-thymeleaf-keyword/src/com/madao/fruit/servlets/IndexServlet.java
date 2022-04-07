@@ -61,7 +61,8 @@ public class IndexServlet extends ViewBaseServlet {
         int fruitCount = fruitDAO.getFruitCount(keyword);
         int pageCount = (fruitCount + 5 - 1) / 5;
         session.setAttribute("pageCount", pageCount);
-        /**
+
+        /*
          * 此处的视图名称是index,那么thymeleaf会将这个逻辑视图对应到物理视图名称上去
          * 逻辑视图名称：index
          * 物理视图名称：view-prefix + 逻辑视图名称 + view-suffix

@@ -450,7 +450,21 @@ Http请求包含三个部分：
 
   `th:if`, `th:unless`, `th:each`
 
-39-start
+## Servlet优化
+
+### 合并servlet
+
+最开始的项目流程如下图所示：
+
+![01.mvc01](imgs/01.mvc01.png)
+
+如果可以把所有servlet整合到一起，只用一个servlet实现，其中包含不同的方法，根据不同的请求来调用不同的方法
+
+![02.mvc02](imgs/02.mvc02.png)
+
+
+
+
 
 
 

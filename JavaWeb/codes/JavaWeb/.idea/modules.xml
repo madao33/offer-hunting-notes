@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/javaweb-servlet/javaweb-servlet.iml" filepath="$PROJECT_DIR$/javaweb-servlet/javaweb-servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf/javaweb-thymeleaf.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf/javaweb-thymeleaf.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf-keyword/javaweb-thymeleaf-keyword.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf-keyword/javaweb-thymeleaf-keyword.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf-mvc/javaweb-thymeleaf-mvc.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf-mvc/javaweb-thymeleaf-mvc.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf-pagination/javaweb-thymeleaf-pagination.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf-pagination/javaweb-thymeleaf-pagination.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf02/javaweb-thymeleaf02.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf02/javaweb-thymeleaf02.iml" />
     </modules>
