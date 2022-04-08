@@ -452,6 +452,45 @@ Http请求包含三个部分：
 
 ## Servlet优化
 
+* 最初的做法是：一个请求对应一个`servlet`，这样存在的问题是`servlet`太多了
+
+* 把一些列的请求都对应一个`Servlet`，`IndexServlet/AddServlet/EditServlet/DelServlet/UpdateServlet`->合并为`FruitServlet`，通过`operate`的值来决定调用`FruitServlet`中的哪一个方法
+
+  使用的`switch case`
+
+* 在上一个版本中，`Servlet`中充斥着大量的`switch-case`，试想一下，随着我们的项目的业务规模扩大，那么会有很多的`Servlet`，也就意味着会有很多的`switch-case`，这是一种代码冗余
+
+  因此，我们在`servlet`中使用了反射技术，我们规定`operate`的值和方法名一致，那么接收到`operate`的值是什么就表明我们需要调用对应的方法进行响应，如果找不到对应的方法，则抛异常
+
+* 在上一个版本中我们使用了反射技术，但是其实还是存在一定的问题：每一个`servlet`中都有类似的反射技术的代码。因此继续抽取，设计了中央控制器类：`DispatcherServlet`
+     `DispatcherServlet`这个类的工作分为两大部分：
+
+  * 根据`url`==定位==到能够处理这个请求的controller组件：
+    * 从`url`中提取`servletPath : /fruit.do -> fruit`
+    * 根据fruit找到对应的组件:`FruitController `， 这个对应的依据我们存储在`applicationContext.xml`中
+          `<bean id="fruit" class="com.atguigu.fruit.controllers.FruitController/>`
+            通过DOM技术我们去解析XML文件，在中央控制器中形成一个`beanMap`容器，用来存放所有的`Controller`组件
+    * 根据获取到的`operate`的值定位到我们`FruitController`中需要调用的方法
+  * `Controller`组件中的==方法调用==：
+    * 获取参数
+      获取即将要调用的方法的参数签名信息: `Parameter[] parameters = method.getParameters();`
+      通过`parameter.getName()`获取参数的名称；
+      准备了`Object[] parameterValues` 这个数组用来存放对应参数的参数值
+      另外，我们需要考虑参数的类型问题，需要做类型转化的工作。通过`parameter.getType()`获取参数的类型
+    * 执行方法
+      `Object returnObj = method.invoke(controllerBean , parameterValues);`
+    * 视图处理
+      `String returnStr = (String)returnObj;
+      if(returnStr.startWith("redirect:")){
+       ....
+      }else if.....`
+
+  
+
+  
+
+  
+
 ### 合并servlet
 
 最开始的项目流程如下图所示：

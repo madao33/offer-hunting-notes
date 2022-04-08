@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JavaWeb.iml" filepath="$PROJECT_DIR$/JavaWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-begin/javaweb-begin.iml" filepath="$PROJECT_DIR$/javaweb-begin/javaweb-begin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/javaweb-fruit2.2-mvc-service-ioc.iml" filepath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/javaweb-fruit2.2-mvc-service-ioc.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-servlet/javaweb-servlet.iml" filepath="$PROJECT_DIR$/javaweb-servlet/javaweb-servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf/javaweb-thymeleaf.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf/javaweb-thymeleaf.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaweb-thymeleaf-keyword/javaweb-thymeleaf-keyword.iml" filepath="$PROJECT_DIR$/javaweb-thymeleaf-keyword/javaweb-thymeleaf-keyword.iml" />

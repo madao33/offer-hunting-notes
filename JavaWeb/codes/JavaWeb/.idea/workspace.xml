@@ -7,12 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2efe2de5-0ba3-4b00-946b-2e877dc7d2e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/javaweb_thymeleaf_keyword_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaweb-thymeleaf-keyword/src/com/madao/fruit/servlets/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-thymeleaf-keyword/src/com/madao/fruit/servlets/IndexServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../java补充知识点/Java基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java补充知识点/Java基础.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../尚硅谷javaWeb2022代码素材资料/Day6-servlet-mvc/代码" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.30388692" />
@@ -99,7 +95,7 @@
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="javaweb-thymeleaf-mvc-controller:war exploded">
+        <artifact name="javaweb-fruit2.2-mvc-service-ioc:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -179,7 +175,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="javaweb-thymeleaf-mvc-controller:war exploded" />
+          <artifact name="javaweb-fruit2.2-mvc-service-ioc:war exploded" />
         </option>
       </method>
     </configuration>
@@ -206,6 +202,7 @@
       <workItem from="1649126672567" duration="21000" />
       <workItem from="1649315221748" duration="3388000" />
       <workItem from="1649320084067" duration="14171000" />
+      <workItem from="1649377982986" duration="2507000" />
     </task>
     <servers />
   </component>
