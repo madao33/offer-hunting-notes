@@ -1,30 +1,15 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 class Solution {
-    public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> ans = new ArrayList<List<Integer>>();
-        Arrays.sort(nums);
-        int n = nums.length;
-        for (int i = 0; i < n; i++) {
-            int target = -nums[i];
-            int l = i+1, r = n - 1;
-            while(l < r) {
-                if (nums[l] + nums[r] < target) {
-                    l++;
-                }else if(nums[l] + nums[r] > target) {
-                    r--;
-                }else {
-                    List<Integer> temp = new ArrayList<Integer>();
-                    temp.add(nums[i]);
-                    temp.add(nums[l]);
-                    temp.add(nums[r]);
-                    ans.add(temp);
-                    break;
-                }
-            }
+    public int maxArea(int[] height) {
+        int res = 0;
+        int l = 0, r = height.length - 1;
+        while(l < r) {
+            int h = Math.min(height[l], height[r]);
+            res = Math.max(res, h * (r-l));
+            if (height[l+1] < height[r-1])
+                r--;
+            else
+                l++;
         }
-        return ans;
+        return res;
     }
 }
