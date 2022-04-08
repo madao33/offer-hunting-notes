@@ -1040,8 +1040,7 @@ try{
 
 ### 5.7.3 利用反射分析类的能力
 
-在`java.lang.reflect`包中有三个类`Field`、`Method`和`Constructor`分别用于描述类的域、方
-法和构造器
+在`java.lang.reflect`包中有三个类`Field`、`Method`和`Constructor`分别用于描述类的域、方法和构造器
 
 可以用以下程序查看类内部的构造
 
