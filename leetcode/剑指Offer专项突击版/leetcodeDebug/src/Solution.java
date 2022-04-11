@@ -1,15 +1,24 @@
-class Solution {
-    public int minSubArrayLen(int target, int[] nums) {
-        int res = nums.length + 1, left = 0, acc = 0;
-        for (int right = 0; right < nums.length; right++) {
-            acc += nums[right];
+import java.util.LinkedList;
+import java.util.Queue;
 
-            while(acc >= target) {
-                res = Math.min(res, right - left + 1);
-                acc -= nums[left++];
+class Solution {
+    public Node connect(Node root) {
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            Node pre = null;
+            for (int i = queue.size(); i > 0; i--) {
+                Node temp = queue.poll();
+                if (pre != null) {
+                    pre.next = temp;
+
+                }
+                temp.next = null;
+                pre = temp;
+                if (temp.left != null) queue.add(temp.left);
+                if (temp.right != null) queue.add(temp.right);
             }
         }
-
-        return res < nums.length + 1 ? res : 0;
+        return root;
     }
 }
