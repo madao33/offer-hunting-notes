@@ -9,13 +9,17 @@
 ### Java基础
 
 - [x] [java核心技术笔记](java核心技术笔记/README.md)
+
 - [x] [leetcode刷题笔记](leetcode/README.md)
+  
   - [x] [剑指offer专项突破](leetcode\剑指Offer专项突击版\README.md)
   - [ ] [图解算法与数据结构](leetcode\图解算法与数据结构\README.md) ==进行中==
-  - [ ] [leetcode算法基础](leetcode\leetcode算法基础\README.md) ==进行中==
-  
+  - [ ] [leetcode算法基础](leetcode/leetcode算法基础/README.md) ==进行中==
+
 - [x] [MAVEN学习笔记](maven/README.md)
+
 - [x] [java补充知识点](java补充知识点/README.md)
+
 - [ ] [深入理解Java虚拟机](深入理解Java虚拟机/README.md) ==进行中==
 
 ### 编程通用
@@ -30,7 +34,7 @@
 
 ### Java开发基础
 
-- [X] [MySQL数据库](数据库/MySQL/README.md)
+- [x] [MySQL数据库](数据库/MySQL/README.md)
 - [x] [JavaWeb](JavaWeb/README.md) ==进行中==
 - [ ] [Spring5](Spring5/README.md)
 
