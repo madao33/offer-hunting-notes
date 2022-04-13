@@ -2,13 +2,45 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="javaweb-thymeleaf-mvc-controller:war exploded" />
+      <artifact name="javaweb-servlet-api:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2efe2de5-0ba3-4b00-946b-2e877dc7d2e1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/javaweb_fruit2_2_mvc_service_ioc_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a3d2921-6839-4b24-afb7-f4b07e4ea832.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5a3d2921-6839-4b24-afb7-f4b07e4ea832.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/demo/Demo01Servlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/demo/Demo02Servlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/demo/Demo03Servlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/demo/Demo04Servlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/demo/Demo05Servlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/demo/Demo06Servlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/fruit/controllers/FruitController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/fruit/dao/FruitDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/fruit/dao/impl/FruitDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/fruit/pojo/Fruit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/myssm/basedao/BaseDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/myssm/myspringmvc/DispatcherServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/myssm/myspringmvc/ViewBaseServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/src/com/madao/myssm/util/StringUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/CSS/add.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/CSS/edit.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/CSS/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/CSS/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/imgs/del.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-fruit2.2-mvc-service-ioc/web/user/login.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../java补充知识点/Java基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../java补充知识点/Java基础.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,13 +121,13 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.77" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.77" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/fruit.do" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/demo01" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="javaweb-fruit2.2-mvc-service-ioc:war exploded">
+        <artifact name="javaweb-servlet-api:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -175,7 +207,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="javaweb-fruit2.2-mvc-service-ioc:war exploded" />
+          <artifact name="javaweb-servlet-api:war exploded" />
         </option>
       </method>
     </configuration>
@@ -203,6 +235,7 @@
       <workItem from="1649315221748" duration="3388000" />
       <workItem from="1649320084067" duration="14171000" />
       <workItem from="1649377982986" duration="2507000" />
+      <workItem from="1649675761221" duration="3563000" />
     </task>
     <servers />
   </component>

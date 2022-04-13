@@ -5,7 +5,7 @@
 CS：客户端服务器架构模式
 
 * 优点：充分利用客户端机器的资源，减轻服务器的负荷
-
+  
   一部分安全要求不高的计算任务存储在客户端执行，不需要把所有的计算和存储都在服务器端执行，从而减轻服务器的压力，也能够减轻网络负荷
 
 * 缺点：需要安装；升级维护成本较高
@@ -69,7 +69,7 @@ IDEA部署总是有中文乱码，参考这篇文章解决了
 * 在控制台打印添加成功
 
 > `DAO`是数据访问层
->
+> 
 > `Service`是业务层
 
 在IDEA中的操作步骤：
@@ -202,16 +202,17 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
   * 在`HttpServlet`这个抽象类中，`do`方法都差不多
 
 > * 继承关系：`HttpServlet`->`GenericServlet`->`Servlet`
->
+> 
 > * `Servlet`中的核心方法：`init()`，`service()`，`destroy()`
->
+> 
 > * 服务方法：当有请求过来时，`service`方法会自动响应，其实是`tomcat`容器调用的
->
+>   
 >   * 在`HttpServlet`中我们会分析请求的方式：到底是`get`、`post`、`head`还是`delete`等等
->
+>   
 >   * 然后再决定调用时哪个`do`开头的方法
+>   
 >   * 那么在`HttpSevlet`中这些`do`方法默认都是`405`的实现风格，需要我们子类去实现对应的方法
->
+> 
 > * 因此，我们在新建`Servlet`时，我们才会考虑请求方法，从而决定重写哪个`do`方法
 
 ![image-20220331154139976](imgs/image-20220331154139976.png)
@@ -256,26 +257,26 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 ### 保存作用域
 
 * `page`
-
+  
   页面级别，现在几乎不用
 
 * `request`
-
+  
   一次请求响应范围
-
+  
   !![01.Request保存作用域](imgs/01.Request保存作用域.png)
 
 * `session`
-
+  
   一次会话范围
-
+  
   ![02.Session保存作用域](imgs/02.Session保存作用域.png)
 
 * `application`
-
+  
   一次应用范围
   
-  ![03.Application保存作用域](imgs/03.Application保存作用域.png)
+  <img title="" src="imgs/03.Application保存作用域.png" alt="03.Application保存作用域" width="360">
 
 ### 路径问题
 
@@ -283,9 +284,9 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 * ==绝对路径==  绝对路径添加一个根路径，类似于`http://localhost:8080/project/css/login.css`
 
 > base标签`<base href="http://localhost:8080/pro10/" />`，作用是当前页面的所有路径都以这个为基础`<link href=css/shopping.css>`
->
+> 
 > 其中`thymeleaf`设置绝对路径是
->
+> 
 > ```html
 > <link th:href="@{/css/shopping.css}"
 > ```
@@ -295,11 +296,11 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 * HTTP：**H**yper **T**ext **T**ransfer **P**rotocol超文本传输协议。HTTP最大的作用就是确定了请求和响应数据的格式。浏览器发送给服务器的数据：请求报文；服务器返回给浏览器的数据：响应报文。
 
 * Http是==无状态==的
-
+  
   * 服务器无法判断两次请求是同一个客户端发过来的，还是不同客户端发过来的。这样带来一个问题就是无法区分不同的用户之间的访问
-
+  
   * 可以通过==会话跟踪技术==解决
-
+    
     > * 客户端第一次发请求给服务器，服务器获取`session`，获取不到，则创建新的，然后响应给客户端
     > * 下次客户端给服务器发请求时，会把`sessionID`带给服务器，服务器就能获取到了，那么服务器就判断这一次请求和上一次是同一个客户端
     > * 常用API：
@@ -317,31 +318,31 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 Http请求包含三个部分：
 
 * **请求方式**
-
+  
   * 访问地址
   * HTTP协议的版本
 
 * **请求消息头**
-
+  
   作用：通过具体的参数对本次请求进行详细的说明
-
+  
   格式：键值对，键和值之间使用冒号隔开
-
+  
   相对比较重要的请求消息头：
-
-  | 名称           | 功能                                                 |
-  | -------------- | ---------------------------------------------------- |
-  | Host           | 服务器的主机地址                                     |
-  | Accept         | 声明当前请求能够接受的『媒体类型』                   |
-  | Referer        | 当前请求来源页面的地址                               |
-  | Content-Length | 请求体内容的长度                                     |
+  
+  | 名称             | 功能                         |
+  | -------------- | -------------------------- |
+  | Host           | 服务器的主机地址                   |
+  | Accept         | 声明当前请求能够接受的『媒体类型』          |
+  | Referer        | 当前请求来源页面的地址                |
+  | Content-Length | 请求体内容的长度                   |
   | Content-Type   | 请求体的内容类型，这一项的具体值是媒体类型中的某一种 |
-  | Cookie         | 浏览器访问服务器时携带的Cookie数据                   |
+  | Cookie         | 浏览器访问服务器时携带的Cookie数据       |
 
 * **请求体**
-
+  
   作为请求的主体，发送数据给服务器。具体来说其实就是POST请求方式下的请求参数
-
+  
   * `get`方式，没有请求题，但是有一个`queryString`
   * `post`方式，有请求体，`form data`
   * `json`方式，有请求体，`request payload`
@@ -351,33 +352,33 @@ Http请求包含三个部分：
 响应同样也分为三个部分：
 
 * **响应行**
-
+  
   包含三个信息：
-
+  
   * 协议
   * 响应状态码
   * 响应状态
-
+  
   > ```http
   > HTTP/1.1 200 OK
   > ```
 
 * **响应头**
-
+  
   - 响应体的说明书。
   - 服务器端对浏览器端设置数据，例如：服务器端返回Cookie信息。
-
-  | 名称             | 功能                                                 |
-  | ---------------- | ---------------------------------------------------- |
-  | `Content-Type`   | 响应体的内容类型                                     |
-  | `Content-Length` | 响应体的内容长度                                     |
-  | `Set-Cookie`     | 服务器返回新的Cookie信息给浏览器                     |
+  
+  | 名称               | 功能                           |
+  | ---------------- | ---------------------------- |
+  | `Content-Type`   | 响应体的内容类型                     |
+  | `Content-Length` | 响应体的内容长度                     |
+  | `Set-Cookie`     | 服务器返回新的Cookie信息给浏览器          |
   | `location`       | 在**重定向**的情况下，告诉浏览器访问下一个资源的地址 |
 
 * 响应体
-
+  
   响应的实际内容，服务器返回的数据主体，有可能是各种数据类型。
-
+  
   - `HTML`页面
   - 图片
   - 视频
@@ -390,11 +391,11 @@ Http请求包含三个部分：
 `Session`保存作用域和具体的某一个`session`对应的
 
 * 向当前`session`保存作用域保存一个数据`"lina"`，对应的key为`"uname"`
-
+  
   `session.setAttribute("uname", "lina");`
 
 * 从当前`session`保存作用域中获取指定的`key`，也就是`uname`，对应的value值
-
+  
   `session.getAttribute("uname");`
 
 >  保存重复的`key`会覆盖掉之前的`key`
@@ -402,17 +403,17 @@ Http请求包含三个部分：
 ## 服务器内部转发以及客户端重定向
 
 * 服务器内部转向 `request.getRequestDispatcher("...").forward(request, response);`
-
+  
   * 一次请求响应的过程，对于客户端而言，内部经过了多少次转发，客户端是不知道的
   * 地址栏没有变化
-
-  ![image-20220401093053489](imgs/image-20220401093053489.png)
+  
+  <img title="" src="imgs/image-20220401093053489.png" alt="image-20220401093053489" width="438" data-align="center">
 
 * 客户端重定向 `response.sendRedirect("...");`
-
+  
   * 两次请求响应的过程，客户端肯定知道请求URL有变化
   * 地址栏有变化
-
+  
   <img src="imgs/image-20220401093249477.png" alt="image-20220401093249477" style="zoom: 50%;" />
 
 ## Thymeleaf视图模板技术
@@ -422,7 +423,7 @@ Http请求包含三个部分：
 * 添加`thymeleaf`的`jar`包
 
 * 在`web.xml`文件中添加配置
-
+  
   ```xml
   <context-param>
       <param-name>view-prefix</param-name>
@@ -434,20 +435,18 @@ Http请求包含三个部分：
   </context-param>
   ```
 
-  
-
 * 新建一个`Servlet`类`viewBaseServlet`
 
 * 使得我们的`Servlet`继承`ViewBaseServlet`
 
 * 逻辑视图名称得到物理视图名称
-
+  
   * 逻辑视图名称：`index`
   * 物理视图名称：`view-prefix` + 逻辑视图名称 + `view-suffix`
   * 所以真实的视图名称是 `/index.html`
 
 * 使用`thymeleaf`的标签
-
+  
   `th:if`, `th:unless`, `th:each`
 
 ## Servlet优化
@@ -455,23 +454,29 @@ Http请求包含三个部分：
 * 最初的做法是：一个请求对应一个`servlet`，这样存在的问题是`servlet`太多了
 
 * 把一些列的请求都对应一个`Servlet`，`IndexServlet/AddServlet/EditServlet/DelServlet/UpdateServlet`->合并为`FruitServlet`，通过`operate`的值来决定调用`FruitServlet`中的哪一个方法
-
+  
   使用的`switch case`
 
 * 在上一个版本中，`Servlet`中充斥着大量的`switch-case`，试想一下，随着我们的项目的业务规模扩大，那么会有很多的`Servlet`，也就意味着会有很多的`switch-case`，这是一种代码冗余
-
+  
   因此，我们在`servlet`中使用了反射技术，我们规定`operate`的值和方法名一致，那么接收到`operate`的值是什么就表明我们需要调用对应的方法进行响应，如果找不到对应的方法，则抛异常
 
 * 在上一个版本中我们使用了反射技术，但是其实还是存在一定的问题：每一个`servlet`中都有类似的反射技术的代码。因此继续抽取，设计了中央控制器类：`DispatcherServlet`
      `DispatcherServlet`这个类的工作分为两大部分：
-
+  
   * 根据`url`==定位==到能够处理这个请求的controller组件：
+    
     * 从`url`中提取`servletPath : /fruit.do -> fruit`
+    
     * 根据fruit找到对应的组件:`FruitController `， 这个对应的依据我们存储在`applicationContext.xml`中
+      
           `<bean id="fruit" class="com.atguigu.fruit.controllers.FruitController/>`
             通过DOM技术我们去解析XML文件，在中央控制器中形成一个`beanMap`容器，用来存放所有的`Controller`组件
+    
     * 根据获取到的`operate`的值定位到我们`FruitController`中需要调用的方法
+  
   * `Controller`组件中的==方法调用==：
+    
     * 获取参数
       获取即将要调用的方法的参数签名信息: `Parameter[] parameters = method.getParameters();`
       通过`parameter.getName()`获取参数的名称；
@@ -484,12 +489,6 @@ Http请求包含三个部分：
       if(returnStr.startWith("redirect:")){
        ....
       }else if.....`
-
-  
-
-  
-
-  
 
 ### 合并servlet
 
@@ -505,39 +504,116 @@ Http请求包含三个部分：
 
 所有的请求交给`DispatcherServlet`，根据请求不同定义到不同的`Servlet`上，然后`Servlet`再转到不同的方法上
 
-![03.MVC03](imgs/03.MVC03.png)
+<img title="" src="imgs/03.MVC03.png" alt="03.MVC03" width="313" data-align="center">
 
+## Servlet初始化
 
+* `Servlet`的生命周期：实例化、初始化、服务、销毁
 
+* `Servlet`中的初始化方法有两个：`init()` , `init(config)  `其中带参数的方法代码如下：
+  
+  ```java
+  public void init(ServletConfig config) throws ServletException {
+      this.config = config ;
+      init();
+  }
+  ```
+  
+  另外一个无参的`init`方法如下：
+  
+  ```java
+  public void init() throws ServletException {
+  }
+  ```
+  
+  如果我们想要在`Servlet`初始化时做一些准备工作，那么我们可以重写`init`方法
 
+### 获取初始化配置
 
+我们可以通过如下步骤去获取初始化设置的数据
 
+- 获取`config`对象：`ServletConfig config = getServletConfig();`
 
+- 获取初始化参数值：` config.getInitParameter(key);`
 
+- 可以在`web.xml`文件中配置
+  
+  ```xml
+  <servlet>
+      <servlet-name>Demo01Servlet</servlet-name>
+      <servlet-class>com.madao.servlet.Demo01Servlet</servlet-class>
+      <init-param>
+          <param-name>hello</param-name>
+          <param-value>world</param-value>
+      </init-param>
+  
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>Demo01Servlet</servlet-name>
+      <url-pattern>/demo01</url-pattern>
+  </servlet-mapping>
+  ```
 
+- 也可以通过注解的方式
+  
+  ```java
+  @WebServlet(urlPatterns = {"/demo01"},
+              initParams = {
+                  @WebInitParam(name="hello", value="world"),
+                  @WebInitParam(name="madao", value="yangmuyi")
+              })
+  ```
 
+### ServletContext
 
+获取`ServletContext`，有很多方法：
 
+* 在初始化方法中：
+  
+  ```java
+  ServletContext servletContext = getServletContext();
+  ```
 
+* 在服务方法中，可以通过`request`对象来获取，也可以通过`session`来获取
+  
+  ```java
+  request.getServletContext();
+  session.getServletContext();
+  ```
 
+* 获取初始值
+  
+  ```java
+  servletContext.getInitParameter();
+  ```
 
+## 业务层
 
+### 什么是业务层
 
+Model1和Model2
+MVC : `Model`（模型）、`View`（视图）、`Controller`（控制器）
+==视图层==：用于做数据展示以及和用户交互的一个界面
+==控制层==：能够接受客户端的请求，具体的业务功能还是需要借助于模型组件来完成
+==模型层==：模型分为很多种：有比较简单的`pojo/vo`(value object)，有业务模型组件，有数据访问层组件
 
+    1) `pojo/vo` : 值对象
+    2) `DAO `： 数据访问对象
+    3) `BO `： 业务对象
 
+### 区分业务对象和数据访问对象
 
+* `DAO`中的方法都是单精度方法或者称之为==细粒度方法==。什么叫单精度？==一个方法只考虑一个操作==，比如添加，那就是`insert`操作、查询那就是`select`操作....
 
+* BO中的方法属于业务方法，而==实际的业务是比较复杂==的，因此业务方法的粒度是比较粗的，称作==粗粒度方法==
+  
+  注册这个功能属于业务功能，也就是说注册这个方法属于业务方法。
+  
+  那么这个业务方法中包含了多个`DAO`方法。也就是说注册这个业务功能需要通过多个`DAO`方法的组合调用，从而完成注册功能的开发。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+> * 检查用户名是否已经被注册 - `DAO`中的`select`操作
+> * 向用户表新增一条新用户记录 - `DAO`中的`insert`操作
+> * 向用户积分表新增一条记录（新用户默认初始化积分100分） - `DAO`中的`insert`操作
+> * 向系统消息表新增一条记录（某某某新用户注册了，需要根据通讯录信息向他的联系人推送消息） - `DAO`中的`insert`操作
+> * 向系统日志表新增一条记录（某用户在某IP在某年某月某日某时某分某秒某毫秒注册） - `DAO`中的`insert`操作

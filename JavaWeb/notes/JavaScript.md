@@ -5,7 +5,7 @@
 `Javascript `语言诞生主要是完成页面的数据验证。因此它运行在客户端，需要运行浏览器来解析执行 `JavaScript `代码
 
 > `JS `是弱类型，`Java `是强类型
->
+> 
 > 也就是`JS`类型可变
 
 JS特点：
@@ -60,11 +60,11 @@ alert("Hello, javascript");
 ```
 
 > 现在需要使用 script 引入外部的 js 文件来执行
->
+> 
 > src 属性专门用来引入 js 文件路径（可以是相对路径，也可以是绝对路径）
->
+> 
 > script 标签可以用来定义 js 代码，也可以用来引入 js 文件
->
+> 
 > 但是，两个功能二选一使用。不能同时使用两个功能
 
 ## 变量
@@ -103,10 +103,10 @@ var 变量名 = 值;
             // alert(i);
 
             i = 12;
-            
+
             i = "abc";
             alert(typeof(i));
-            
+
             var a = 12;
             var b = "abc";
 
@@ -211,7 +211,7 @@ var 变量名 = 值;
         <meta charset="UTF-8">
         <title>Title</title>
         <script type="text/javascript">
-            
+
             var a = "abc";
             var b = true;
             var d = false;
@@ -283,7 +283,7 @@ var 数组名 = [1 , ’abc’ , true];// 定义数组同时赋值元素
 
 ```javascript
 function 函数名(形参列表){
-	函数体
+    函数体
 }
 ```
 
@@ -327,8 +327,8 @@ function 函数名(形参列表){
 
 ```javascript
 var 函数名 = function(形参列表) {
-	函数体
-	}
+    函数体
+    }
 ```
 
 示例代码
@@ -402,7 +402,7 @@ var 变量名 = new Object();
 变量名.函数名 = function(){}
 
 对象的访问：
-	变量名.属性名 / 函数名
+    变量名.属性名 / 函数名
 ```
 
 例如下面的代码
@@ -519,6 +519,3 @@ obj.fun();
 </body>
 </html>
 ```
-
-
-
