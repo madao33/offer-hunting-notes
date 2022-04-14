@@ -1,21 +1,18 @@
 package com.madao.fruit.controllers;
 
-import com.madao.fruit.dao.FruitDAO;
-import com.madao.fruit.dao.impl.FruitDAOImpl;
+import com.madao.fruit.service.FruitService;
 import com.madao.fruit.pojo.Fruit;
 import com.madao.myssm.myspringmvc.ViewBaseServlet;
 import com.madao.myssm.util.StringUtil;
 
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
 
 public class FruitController extends ViewBaseServlet {
 
-    private FruitDAO fruitDAO = new FruitDAOImpl();
+    private FruitService fruitService = null;
 
 
     private String index(String oper, String keyword, Integer pageNo,  HttpServletRequest request) {
@@ -42,12 +39,10 @@ public class FruitController extends ViewBaseServlet {
 
         session.setAttribute("pageNo", pageNo);
 
-        FruitDAO fruitDAO = new FruitDAOImpl();
-        List<Fruit> fruitList = fruitDAO.getFruitList(keyword, pageNo);
+        List<Fruit> fruitList = fruitService.getFruitList(keyword, pageNo);
         session.setAttribute("fruitList", fruitList);
 
-        int fruitCount = fruitDAO.getFruitCount(keyword);
-        int pageCount = (fruitCount + 5 - 1) / 5;
+        int pageCount = fruitService.getPageCount(keyword);
         session.setAttribute("pageCount", pageCount);
 
         /*
@@ -64,13 +59,13 @@ public class FruitController extends ViewBaseServlet {
     private String add(String fname, Integer price, Integer fcount, String remark) {
 
         Fruit fruit = new Fruit(0, fname, price, fcount, remark);
-        fruitDAO.addFruit(fruit);
+        fruitService.addFruit(fruit);
         return "redirect:fruit.do";
     }
 
     private String del(Integer fid) {
         if (fid != null) {
-            fruitDAO.delFruit(fid);
+            fruitService.delFruit(fid);
             return "redirect:fruit.do";
         }
         return "error";
@@ -80,7 +75,7 @@ public class FruitController extends ViewBaseServlet {
     private String edit(Integer fid, HttpServletRequest request) {
 
         if (fid != null) {
-            Fruit fruit = fruitDAO.getFruitByFid(fid);
+            Fruit fruit = fruitService.getFruitByFid(fid);
             request.setAttribute("fruit", fruit);
 //            super.processTemplate("edit", request, response);
             return "edit";
@@ -91,7 +86,7 @@ public class FruitController extends ViewBaseServlet {
 
     private String update(Integer fid, String fname, Integer price, Integer fcount, String remark){
 
-        fruitDAO.updateFruit(new Fruit(fid, fname, price, fcount, remark));
+        fruitService.updateFruit(new Fruit(fid, fname, price, fcount, remark));
         return "redirect:fruit.do";
     }
 

@@ -618,3 +618,111 @@ MVC : `Model`（模型）、`View`（视图）、`Controller`（控制器）
 > * 向系统消息表新增一条记录（某某某新用户注册了，需要根据通讯录信息向他的联系人推送消息） - `DAO`中的`insert`操作
 > * 向系统日志表新增一条记录（某用户在某IP在某年某月某日某时某分某秒某毫秒注册） - `DAO`中的`insert`操作
 
+## IOC
+
+### 耦合/依赖
+
+依赖指的是某某某离不开某某某
+在软件系统中，层与层之间是存在依赖的。我们也称之为耦合。
+我们系统架构或者是设计的一个原则是： **高内聚低耦合**。
+**层内部的组成应该是高度聚合的，而层与层之间的关系应该是低耦合**的，最理想的情况0耦合（就是没有耦合）
+
+![01.MVC04](imgs/01.MVC04.png)
+
+### IOC-控制反转/DI-依赖注入
+
+#### 控制反转
+
+之前在`servlet`中，我们创建了`service`对象， `FruitServlet fruitServlet = new FruitServiceImpl();`
+
+* 这句话如果出现在`servlet`中的某个方法内部，那么这个`fruitService`的作用域(生命周期)应该就是这个方法级别
+* 如果这句话出现在`servlet`的类，也就是说`fruitService`是一个成员变量，那么这个`fruitService`的作用域应该就是这个`servlet`实例级别
+* 之后在`applicationContext.xml`中定义了这些`fruitService`，然后解析这些`XML`，产生`fruitService`实例，存放在`beanMap`中，这个`beanMap`在一个`beanFactory`中，因此我们转移了之前的`service`实例,`dao`实例等等的生命周期，控制权从程序员转移到`BeanFactory`。这个现象称之为**控制反转**
+
+#### 依赖注入
+
+* 之前我们在控制层出现代码：`FruitService fruitService = new FruitServiceImpl();`，那么控制层和`service`层存在耦合
+
+* 之后，我们将代码修改成`FruitService fruitService = null;`
+
+  然后，在配置文件中配置：
+
+  ```xml
+  <bean id="fruit" class="FruitController">
+  	<property name="fruitService" ref = "fruitService"/>
+  </bean>
+  ```
+
+## filter过滤器
+
+`filter`的基础知识
+
+1. `Filter`也属于`Servlet`规范
+
+2) `Filter`开发步骤：新建类实现`Filter`接口，然后实现其中的三个方法：`init`、`doFilter`、`destroy`
+   配置`Filter`，可以用注解`@WebFilte`r，也可以使用`xml`文件` <filter> <filter-mapping>`
+   
+3. `Filter`在配置时，和`servlet`一样，也可以配置通配符，例如` @WebFilter("*.do")`表示拦截所有以.`do`结尾的请求
+
+4. **过滤器链**
+
+   ![01.Filter](imgs/01.Filter.png)
+
+   * 执行的顺序依次是：` A B C demo03 C2 B2 A2`
+   * 如果采取的是注解的方式进行配置，那么**过滤器链的拦截顺序是按照全类名的先后顺序排序(字母的顺序)**的
+   * 如果采取的是`xml`的方式进行配置，那么**按照配置的先后顺序进行排序**
+
+2. 事务管理
+   1) 涉及到的组件：
+     - OpenSessionInViewFilter
+     - TransactionManager
+     - ThreadLocal
+     - ConnUtil
+     - BaseDAO
+
+   2) ThreadLocal
+     - get() , set(obj)
+     - ThreadLocal称之为本地线程 。 我们可以通过set方法在当前线程上存储数据、通过get方法在当前线程上获取数据
+     - set方法源码分析：
+       public void set(T value) {
+         Thread t = Thread.currentThread(); //获取当前的线程
+         ThreadLocalMap map = getMap(t);    //每一个线程都维护各自的一个容器（ThreadLocalMap）
+         if (map != null)
+             map.set(this, value);          //这里的key对应的是ThreadLocal，因为我们的组件中需要传输（共享）的对象可能会有多个（不止Connection）
+         else
+             createMap(t, value);           //默认情况下map是没有初始化的，那么第一次往其中添加数据时，会去初始化
+       }
+       -get方法源码分析：
+       public T get() {
+         Thread t = Thread.currentThread(); //获取当前的线程
+         ThreadLocalMap map = getMap(t);    //获取和这个线程（企业）相关的ThreadLocalMap（也就是工作纽带的集合）
+         if (map != null) {
+             ThreadLocalMap.Entry e = map.getEntry(this);   //this指的是ThreadLocal对象，通过它才能知道是哪一个工作纽带
+             if (e != null) {
+                 @SuppressWarnings("unchecked")
+                 T result = (T)e.value;     //entry.value就可以获取到工具箱了
+                 return result;
+             }
+         }
+         return setInitialValue();
+       }
+3. 监听器
+    1) ServletContextListener - 监听ServletContext对象的创建和销毁的过程
+    2) HttpSessionListener - 监听HttpSession对象的创建和销毁的过程
+    3) ServletRequestListener - 监听ServletRequest对象的创建和销毁的过程
+
+    4) ServletContextAttributeListener - 监听ServletContext的保存作用域的改动(add,remove,replace)
+    5) HttpSessionAttributeListener - 监听HttpSession的保存作用域的改动(add,remove,replace)
+    6) ServletRequestAttributeListener - 监听ServletRequest的保存作用域的改动(add,remove,replace)
+
+    7) HttpSessionBindingListener - 监听某个对象在Session域中的创建与移除
+    8) HttpSessionActivationListener - 监听某个对象在Session域中的序列化和反序列化
+
+4. ServletContextListener的应用 - ContextLoaderListener
+
+
+
+
+
+
+
