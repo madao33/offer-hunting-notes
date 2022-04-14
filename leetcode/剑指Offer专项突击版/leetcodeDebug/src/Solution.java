@@ -1,41 +1,35 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 class Solution {
-
-    int[][] dirs = new int[][]{{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
-    public void solve(char[][] board) {
-        int n = board.length, m = board[0].length;
-
-        // 第一行和最后一行
-        for (int j = 0; j < m; j++) {
-            dfs(board, 0, j);
-            dfs(board, n-1, j);
-        }
-
-        // 第一列和最后一列
-        for (int i = 1; i < n-1; i++) {
-            dfs(board, i, 0);
-            dfs(board, i, m-1);
-        }
-
-        // 不与边界连通的区域修改为'X'
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (board[i][j]=='A')
-                    board[i][j] = 'O';
-                else if (board[i][j]=='O')
-                    board[i][j] = 'X';
-            }
-        }
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        List<Integer> combine = new ArrayList<Integer>();
+        Arrays.sort(candidates);
+        dfs(candidates, target, 0, combine, ans);
+        return ans;
     }
 
-    public void dfs(char[][] board, int curi, int curj) {
-        int n = board.length, m = board[0].length;
-        // 越界或者不是'O'
-        if (curi < 0 || curi >= n || curj < 0 || curj >= m || board[curi][curj]!='O')
+    public void dfs(int[] candidates, int target, int idx, List<Integer> combine, List<List<Integer>> ans) {
+        if (target == 0) {
+            ans.add(new ArrayList<Integer>(combine));
             return ;
-        board[curi][curj] = 'A';
-        for (int[] dir : dirs) {
-            dfs(board, curi + dir[0], curj + dir[1]);
         }
-    }
 
+        for (int i = idx; i < candidates.length; i++) {
+            if (target - candidates[i] < 0)
+                break;
+
+            if (i > idx && candidates[i] == candidates[i-1])
+                continue;
+
+            combine.add(candidates[i]);
+            System.out.println("递归之前=>" + combine + ", 剩余" + (target - candidates[i]));
+            dfs(candidates, target - candidates[i], i + 1, combine, ans);
+            combine.remove(combine.size() - 1);
+            System.out.println("递归之后=>" + combine + ", 剩余" + (target));
+        }
+
+    }
 }
