@@ -47,6 +47,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../../../Program Files/Java/apache-tomcat-8.5.77/lib/servlet-api.jar!/javax/servlet/http/HttpServletRequest.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -217,7 +220,7 @@
       <workItem from="1649675761221" duration="8508000" />
       <workItem from="1649898547885" duration="2670000" />
       <workItem from="1649926497328" duration="6378000" />
-      <workItem from="1649939685928" duration="1626000" />
+      <workItem from="1649939685928" duration="3303000" />
     </task>
     <servers />
   </component>
