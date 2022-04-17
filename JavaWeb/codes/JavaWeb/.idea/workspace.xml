@@ -7,17 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2efe2de5-0ba3-4b00-946b-2e877dc7d2e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/javaweb_mvc_service_ioc_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaweb-mvc-service-ioc/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-mvc-service-ioc/src/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaweb-mvc-service-ioc/src/com/madao/fruit/biz/FruitService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaweb-mvc-service-ioc/src/com/madao/fruit/controllers/FruitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-mvc-service-ioc/src/com/madao/fruit/controllers/FruitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaweb-mvc-service-ioc/src/com/madao/fruit/dao/FruitDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaweb-mvc-service-ioc/src/com/madao/fruit/dao/impl/FruitDAOImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaweb-mvc-service-ioc/src/com/madao/myssm/myspringmvc/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-mvc-service-ioc/src/com/madao/myssm/myspringmvc/DispatcherServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../leetcode/leetcode算法基础/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../leetcode/leetcode算法基础/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../leetcode/剑指Offer专项突击版/leetcodeDebug/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../leetcode/剑指Offer专项突击版/leetcodeDebug/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../leetcode/剑指Offer专项突击版/leetcodeDebug/src/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../leetcode/剑指Offer专项突击版/leetcodeDebug/src/mainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,6 +216,7 @@
       <workItem from="1649898547885" duration="2670000" />
       <workItem from="1649926497328" duration="6378000" />
       <workItem from="1649939685928" duration="3303000" />
+      <workItem from="1650187781611" duration="599000" />
     </task>
     <servers />
   </component>
