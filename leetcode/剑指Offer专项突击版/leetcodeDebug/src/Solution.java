@@ -1,34 +1,36 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 class Solution {
-    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        List<List<Integer>> ans = new ArrayList<List<Integer>>();
-        List<Integer> combine = new ArrayList<Integer>();
-        Arrays.sort(candidates);
-        dfs(candidates, target, 0, combine, ans);
+    Map<Character, String> phoneMap = new HashMap<Character, String>() {{
+        put('2', "abc");
+        put('3', "def");
+        put('4', "ghi");
+        put('5', "jkl");
+        put('6', "mno");
+        put('7', "pqrs");
+        put('8', "tuv");
+        put('9', "wxyz");
+    }};
+    public List<String> letterCombinations(String digits) {
+        List<String> ans = new ArrayList<>();
+        if(digits.length() <= 0)
+            return ans;
+        dfs(digits, 0, new StringBuffer(), ans);
         return ans;
     }
 
-    public void dfs(int[] candidates, int target, int idx, List<Integer> combine, List<List<Integer>> ans) {
-        if (target == 0) {
-            ans.add(new ArrayList<Integer>(combine));
+    public void dfs(String digits, int cur, StringBuffer path, List<String> ans) {
+        if (cur == digits.length()) {
+            ans.add(path.toString());
             return ;
         }
-
-        for (int i = idx; i < candidates.length; i++) {
-            if (target - candidates[i] < 0)
-                break;
-
-            if (i > idx && candidates[i] == candidates[i-1])
-                continue;
-
-            combine.add(candidates[i]);
-            System.out.println("递归之前=>" + combine + ", 剩余" + (target - candidates[i]));
-            dfs(candidates, target - candidates[i], i + 1, combine, ans);
-            combine.remove(combine.size() - 1);
-            System.out.println("递归之后=>" + combine + ", 剩余" + (target));
+        char curchar = digits.charAt(cur);
+        String letters = phoneMap.get(curchar);
+        for (int i = 0; i < letters.length(); i++) {
+            char letter = letters.charAt(i);
+            path.append(letter);
+            dfs(digits, cur + 1, path, ans);
+            path.deleteCharAt(path.length() - 1);
         }
 
     }
