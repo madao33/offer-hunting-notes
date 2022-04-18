@@ -698,7 +698,7 @@ MVC : `Model`（模型）、`View`（视图）、`Controller`（控制器）
 >
 >     
 
-==52-tart==
+
 
 1) 涉及到的组件：
   - `OpenSessionInViewFilter`
@@ -707,10 +707,11 @@ MVC : `Model`（模型）、`View`（视图）、`Controller`（控制器）
   - `ConnUtil`
   - `BaseDAO`
 
-2) `ThreadLocal`
+### ThreadLocal
+
   - `get()` ,` set(obj)`
 
-  - `ThreadLocal`称之为本地线程 。 我们可以通过`set`方法在当前线程上存储数据、通过`get`方法在当前线程上获取数据
+  - `ThreadLocal`称之为**本地线程** 。 我们可以通过`set`方法在当前线程上存储数据、通过`get`方法在当前线程上获取数据
 
   - `set`方法源码分析：
     
@@ -720,8 +721,8 @@ MVC : `Model`（模型）、`View`（视图）、`Controller`（控制器）
           ThreadLocalMap map = getMap(t);    //每一个线程都维护各自的一个容器（ThreadLocalMap）
           if (map != null)
               map.set(this, value);          //这里的key对应的是ThreadLocal，因为我们的组件中需要传输（共享）的对象可能会有多个（不止Connection）
-      else
-          createMap(t, value);           //默认情况下map是没有初始化的，那么第一次往其中添加数据时，会去初始化
+          else
+              createMap(t, value);           //默认情况下map是没有初始化的，那么第一次往其中添加数据时，会去初始化
     }
     ```
 
@@ -743,7 +744,7 @@ MVC : `Model`（模型）、`View`（视图）、`Controller`（控制器）
     }
   ```
 
-  
+  ==54-listener==
 
 2. 监听器
     1) `ServletContextListener `- 监听`ServletContext`对象的创建和销毁的过程

@@ -19,7 +19,7 @@ public class ContextLoaderListener implements ServletContextListener {
         //2.获取上下文的初始化参数
         String path = application.getInitParameter("contextConfigLocation");
         //3.创建IOC容器
-        BeanFactory beanFactory = new ClassPathXmlApplicationContext(path);
+        BeanFactory beanFactory = new ClassPathXmlApplicationContext();
         //4.将IOC容器保存到application作用域
         application.setAttribute("beanFactory",beanFactory);
     }

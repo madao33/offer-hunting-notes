@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="pro20-fruit2.3-mvc-transaction:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/pro20_fruit2_3_mvc_transaction_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="pro20-fruit2.3-mvc-transaction" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="thymeleaf_lib" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="pro20-fruit2.3-mvc-transaction/web/Web" />
+    </root>
+  </artifact>
+</component>
