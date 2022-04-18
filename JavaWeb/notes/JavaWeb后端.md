@@ -744,22 +744,50 @@ MVC : `Model`（模型）、`View`（视图）、`Controller`（控制器）
     }
   ```
 
-  ==54-listener==
 
-2. 监听器
-    1) `ServletContextListener `- 监听`ServletContext`对象的创建和销毁的过程
-    2) `HttpSessionListener `- 监听`HttpSession`对象的创建和销毁的过程
-    3) `ServletRequestListener `- 监听`ServletRequest`对象的创建和销毁的过程
+### listener监听器
 
-    4) `ServletContextAttributeListener `- 监听`ServletContext`的保存作用域的改动(`add`,`remove`,`replace`)
-    5) `HttpSessionAttributeListener` - 监听`HttpSession`的保存作用域的改动(`add`,`remove`,`replace`)
-    6) `ServletRequestAttributeListener `- 监听`ServletRequest`的保存作用域的改动(`add`,`remove`,`replace`)
+* `ServletContextListener `- 监听`ServletContext`对象的创建和销毁的过程
 
-    7) `HttpSessionBindingListener `- 监听某个对象在`Session`域中的创建与移除
-    8) `HttpSessionActivationListener `- 监听某个对象在`Session`域中的序列化和反序列化
-3. `ServletContextListener`的应用 - `ContextLoaderListener`
+* `HttpSessionListener `- 监听`HttpSession`对象的创建和销毁的过程
 
+* `ServletRequestListener `- 监听`ServletRequest`对象的创建和销毁的过程
 
+  
+
+* `ServletContextAttributeListener `- 监听`ServletContext`的保存作用域的改动(`add`,`remove`,`replace`)
+
+* `HttpSessionAttributeListener` - 监听`HttpSession`的保存作用域的改动(`add`,`remove`,`replace`)
+
+* `ServletRequestAttributeListener `- 监听`ServletRequest`的保存作用域的改动(`add`,`remove`,`replace`)
+
+* `HttpSessionBindingListener `- 监听某个对象在`Session`域中的创建与移除
+* `HttpSessionActivationListener `- 监听某个对象在`Session`域中的序列化和反序列化
+
+`ServletContextListener`的应用 - `ContextLoaderListener`
+
+```java
+public class MyServletContextListener implements ServletContextListener {
+
+    @Override
+    public void contextInitialized(ServletContextEvent servletContextEvent) {
+        System.out.println("Servlet上下文对象初始化动作被我监听到了...");
+    }
+
+    @Override
+    public void contextDestroyed(ServletContextEvent servletContextEvent) {
+        System.out.println("Servlet上下文对象销毁动作被我监听到了...");
+    }
+}
+```
+
+在`web.xml`中配置
+
+```java
+<listener>
+    <listener-class>com.madao.listener.MyServletContextListener</listener-class>
+</listener>
+```
 
 
 

@@ -5,5 +5,8 @@
          version="4.0">
 
 
+    <listener>
+        <listener-class>com.madao.listener.MyServletContextListener</listener-class>
+    </listener>
 
 </web-app>
