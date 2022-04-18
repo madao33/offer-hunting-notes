@@ -1,37 +1,35 @@
-import java.util.*;
-
 class Solution {
-    Map<Character, String> phoneMap = new HashMap<Character, String>() {{
-        put('2', "abc");
-        put('3', "def");
-        put('4', "ghi");
-        put('5', "jkl");
-        put('6', "mno");
-        put('7', "pqrs");
-        put('8', "tuv");
-        put('9', "wxyz");
-    }};
-    public List<String> letterCombinations(String digits) {
-        List<String> ans = new ArrayList<>();
-        if(digits.length() <= 0)
-            return ans;
-        dfs(digits, 0, new StringBuffer(), ans);
-        return ans;
+    int[][] directions = new int[][]{{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
+    public boolean exist(char[][] board, String word) {
+        int n = board.length, m = board[0].length;
+        boolean[][] visited = new boolean[n][m];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (check(board, word, visited, i, j, 0))
+                    return true;
+            }
+        }
+        return false;
     }
 
-    public void dfs(String digits, int cur, StringBuffer path, List<String> ans) {
-        if (cur == digits.length()) {
-            ans.add(path.toString());
-            return ;
+    public boolean check(char[][] board, String word, boolean[][] visited, int i, int j, int k) {
+        if (i < 0 || i > board.length || j < 0 || j > board[0].length)
+            return false;
+        if (board[i][j] != word.charAt(k))
+            return false;
+        if (word.length()-1 == k)
+            return true;
+        visited[i][j] = true;
+        for (int[] dir : directions) {
+            int newi = i + dir[0], newj = j + dir[1];
+            if (newi >= 0 && newi < board.length && newj >= 0 && newj < board[0].length && !visited[newi][newj]) {
+                if(check(board, word, visited, newi, newj, k+1)) {
+                    visited[i][j] = false;
+                    return true;
+                }
+            }
         }
-        char curchar = digits.charAt(cur);
-        String letters = phoneMap.get(curchar);
-        for (int i = 0; i < letters.length(); i++) {
-            char letter = letters.charAt(i);
-            path.append(letter);
-            dfs(digits, cur + 1, path, ans);
-            path.deleteCharAt(path.length() - 1);
-        }
-
+        visited[i][j] = false;
+        return false;
     }
 }
