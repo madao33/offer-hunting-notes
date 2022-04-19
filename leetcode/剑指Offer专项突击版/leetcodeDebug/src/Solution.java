@@ -1,20 +1,44 @@
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 class Solution {
-    public boolean wordBreak(String s, List<String> wordDict) {
+    public int[] shortestToChar(String s, char c) {
         int n = s.length();
-        Set<String> hashSet = new HashSet<>(wordDict);
-        boolean[] dp = new boolean[n + 1];
-        dp[0] = true;
-        for (int i = 1; i <= n; i++) {
-            for (int j = i; j < n; j++)
-                if (dp[j] && hashSet.contains(s.substring(i, j))) {
-                    dp[i] = true;
-                    break;
-                }
+        int[] res = new int[n];
+
+        int right = 0, left = 0, pre = 0;
+        // 第一次遍历
+        while (left < n) {
+            while (right < n && s.charAt(right) != c)
+                right++;
+
+            if (right >= n)
+                break;
+
+            while (left <= right) {
+                res[left] = right - left;
+                left++;
+            }
+            pre = right;
+            right++;
+
+
         }
-        return dp[n];
+
+        right = n - 1;
+        left = n - 1;
+        while (right > 0) {
+            while (left >= 0 && s.charAt(left) != c)
+                left--;
+
+            if (left < 0)
+                break;
+
+            while (right >= left) {
+                res[right] = Math.min(right - left, res[right]);
+                right--;
+            }
+            left--;
+
+        }
+
+        return res;
     }
 }

@@ -2,8 +2,9 @@ import java.util.List;
 
 public class mainTest {
     public static void main(String[] args){
-        int[] nums = new int[]{1,2,3,4};
-        int res = new Solution().numberOfArithmeticSlices(nums);
+        String s = "aaba";
+        char c = 'b';
+        int[] res = new Solution().shortestToChar(s, c);
         System.out.println(res);
 
     }
