@@ -1,18 +1,20 @@
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 class Solution {
-    public int numberOfArithmeticSlices(int[] nums) {
-        int n = nums.length;
-        if (n <= 2)
-            return 0;
-        int t = 0, ans = 0, d = nums[0] - nums[1];
-        for (int i = 2; i < n; i++) {
-            if (nums[i-1] - nums[i] == d) {
-                t++;
-            } else {
-                d = nums[i-1] - nums[i];
-                t = 0;
-            }
-            ans += t;
+    public boolean wordBreak(String s, List<String> wordDict) {
+        int n = s.length();
+        Set<String> hashSet = new HashSet<>(wordDict);
+        boolean[] dp = new boolean[n + 1];
+        dp[0] = true;
+        for (int i = 1; i <= n; i++) {
+            for (int j = i; j < n; j++)
+                if (dp[j] && hashSet.contains(s.substring(i, j))) {
+                    dp[i] = true;
+                    break;
+                }
         }
-        return ans;
+        return dp[n];
     }
 }
