@@ -1,44 +1,16 @@
 class Solution {
-    public int[] shortestToChar(String s, char c) {
-        int n = s.length();
-        int[] res = new int[n];
-
-        int right = 0, left = 0, pre = 0;
-        // 第一次遍历
-        while (left < n) {
-            while (right < n && s.charAt(right) != c)
-                right++;
-
-            if (right >= n)
-                break;
-
-            while (left <= right) {
-                res[left] = right - left;
-                left++;
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length;
+        int[] dp = new int[n + 1];
+        int ans = 1;
+        for (int i = 0; i < n; i++) {
+            dp[i] = 1;
+            for (int j = 0; j < i; j++) {
+                if (nums[i] > nums[j])
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
             }
-            pre = right;
-            right++;
-
-
+            ans = Math.max(dp[i], ans);
         }
-
-        right = n - 1;
-        left = n - 1;
-        while (right > 0) {
-            while (left >= 0 && s.charAt(left) != c)
-                left--;
-
-            if (left < 0)
-                break;
-
-            while (right >= left) {
-                res[right] = Math.min(right - left, res[right]);
-                right--;
-            }
-            left--;
-
-        }
-
-        return res;
+        return ans;
     }
 }
