@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="fruitdb@localhost">
+<dataSource name="@localhost@qqzonedb">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.32">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
@@ -970,86 +970,57 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="273" parent="1" name="utf8mb4_0900_bin">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="274" parent="1" name="fruitdb">
+    <schema id="274" parent="1" name="qqzonedb2">
       <Current>1</Current>
       <CollationName>utf8_general_ci</CollationName>
     </schema>
     <schema id="275" parent="1" name="bjpowermode">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="276" parent="1" name="graph">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="277" parent="1" name="information_schema">
+    <schema id="276" parent="1" name="fruitdb">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="278" parent="1" name="labmanage">
+    <schema id="277" parent="1" name="graph">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="278" parent="1" name="information_schema">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="279" parent="1" name="mysql">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="280" parent="1" name="performance_schema">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="281" parent="1" name="sakila">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="282" parent="1" name="sys">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="283" parent="1" name="world">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <user id="284" parent="1" name="madao">
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="285" parent="1" name="mysql.infoschema">
-      <Host>localhost</Host>
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="286" parent="1" name="mysql.session">
-      <Host>localhost</Host>
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="287" parent="1" name="mysql.sys">
-      <Host>localhost</Host>
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="288" parent="1" name="root">
-      <Host>localhost</Host>
-    </user>
-    <table id="289" parent="274" name="t_fruit">
-      <Engine>InnoDB</Engine>
+    <schema id="279" parent="1" name="labmanage">
       <CollationName>utf8_general_ci</CollationName>
-    </table>
-    <column id="290" parent="289" name="fid">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="291" parent="289" name="fname">
-      <DataType>varchar(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="292" parent="289" name="price">
-      <DataType>int|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <column id="293" parent="289" name="fcount">
-      <DataType>int|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <column id="294" parent="289" name="remark">
-      <DataType>varchar(50)|0s</DataType>
-      <Position>5</Position>
-    </column>
-    <key id="295" parent="289" name="PRIMARY">
-      <ColNames>fid</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
+    </schema>
+    <schema id="280" parent="1" name="mysql">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="281" parent="1" name="performance_schema">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="282" parent="1" name="sakila">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="283" parent="1" name="sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="284" parent="1" name="world">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="285" parent="1" name="madao">
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <user id="286" parent="1" name="mysql.infoschema">
+      <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <user id="287" parent="1" name="mysql.session">
+      <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <user id="288" parent="1" name="mysql.sys">
+      <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <user id="289" parent="1" name="root">
+      <Host>localhost</Host>
+    </user>
   </database-model>
 </dataSource>
