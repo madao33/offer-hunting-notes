@@ -2,8 +2,8 @@ import java.util.List;
 
 public class mainTest {
     public static void main(String[] args){
-        String word1 = "sea", word2 = "eat";
-        int res = new Solution().minDistance(word1, word2);
+        int[] coins = new int[]{186, 419, 83, 408};
+        int res = new Solution().coinChange(coins, 6249);
         System.out.println(res);
 
     }
