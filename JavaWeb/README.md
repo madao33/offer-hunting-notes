@@ -11,7 +11,7 @@
 web后端
 
 - [x] [JavaWeb后端](notes/JavaWeb后端.md)
-- [ ] [QQ空间](notes\QQ空间.md)
+- [x] [QQ空间](notes\QQ空间.md)
 
 
 

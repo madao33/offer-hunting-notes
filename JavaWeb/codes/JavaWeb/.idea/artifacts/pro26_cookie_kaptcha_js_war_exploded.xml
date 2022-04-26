@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="pro26-cookie-kaptcha-js:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/pro26_cookie_kaptcha_js_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="pro26-cookie-kaptcha-js" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="thymeleaf_lib" />
+          <element id="library" level="project" name="lib" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="pro26-cookie-kaptcha-js/web/Web" />
+    </root>
+  </artifact>
+</component>
