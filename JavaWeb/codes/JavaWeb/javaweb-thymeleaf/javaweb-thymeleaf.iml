@@ -22,6 +22,5 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Tomcat 8.5.77" level="application_server_libraries" />
     <orderEntry type="library" name="thymeleaf_lib" level="project" />
-    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

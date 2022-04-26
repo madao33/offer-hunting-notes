@@ -7,12 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2efe2de5-0ba3-4b00-946b-2e877dc7d2e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9d87d04a-6f2f-46db-a836-3e7ef63a441d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9d87d04a-6f2f-46db-a836-3e7ef63a441d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/thymeleaf_lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/thymeleaf_lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/JavaWeb后端.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../machineLearning/reinforcementLearning/chap5-Deep-Q-Networks/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../machineLearning/reinforcementLearning/chap5-Deep-Q-Networks/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/misc.xml" afterDir="false" />
@@ -90,7 +88,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pro26-cookie-kaptcha-js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pro28-vue-axios-json" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.30388692" />
@@ -99,10 +97,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb" />
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\lib" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\pro22-qqzone1.0\web\imgs" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\pro21-qqzone1.0\src" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\pro21-qqzone1.0\src\com\madao" />
-      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\JavaWeb\codes\JavaWeb\pro21-qqzone1.0\web" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.madao.qqzone.dao" />
@@ -115,21 +113,15 @@
       <recent name="com.madao.demo" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat7">
-    <configuration name="qqzone.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/pro21-qqzone1.0/qqzone.sql" />
-      <script-mode>FILE</script-mode>
-      <data-source id="5a3d2921-6839-4b24-afb7-f4b07e4ea832" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="Tomcat7" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.77" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/cookie01" />
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/hello02.html" />
+      <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="pro26-cookie-kaptcha-js:war exploded">
+        <artifact name="pro28-vue-axios-json:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -209,19 +201,10 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="pro26-cookie-kaptcha-js:war exploded" />
+          <artifact name="pro28-vue-axios-json:war exploded" />
         </option>
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Database Script.qqzone.sql" />
-      <item itemvalue="Tomcat Server.Tomcat7" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Database Script.qqzone.sql" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -262,6 +245,7 @@
       <workItem from="1650680607173" duration="2844000" />
       <workItem from="1650719443145" duration="1218000" />
       <workItem from="1650935720517" duration="2141000" />
+      <workItem from="1650978051414" duration="2596000" />
     </task>
     <servers />
   </component>

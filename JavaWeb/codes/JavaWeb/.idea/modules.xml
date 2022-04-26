@@ -20,6 +20,7 @@
       <module fileurl="file://$PROJECT_DIR$/pro21-qqzone1.0/pro21-qqzone1.0.iml" filepath="$PROJECT_DIR$/pro21-qqzone1.0/pro21-qqzone1.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro22-qqzone1.0/pro22-qqzone1.0.iml" filepath="$PROJECT_DIR$/pro22-qqzone1.0/pro22-qqzone1.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/pro26-cookie-kaptcha-js/pro26-cookie-kaptcha-js.iml" filepath="$PROJECT_DIR$/pro26-cookie-kaptcha-js/pro26-cookie-kaptcha-js.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro28-vue-axios-json/pro28-vue-axios-json.iml" filepath="$PROJECT_DIR$/pro28-vue-axios-json/pro28-vue-axios-json.iml" />
     </modules>
   </component>
 </project>

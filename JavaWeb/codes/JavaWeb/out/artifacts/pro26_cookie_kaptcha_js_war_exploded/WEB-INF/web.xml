@@ -8,7 +8,7 @@
         <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
         <init-param>
             <param-name>kaptcha.border.color</param-name>
-            <param-value>red</param-value>
+            <param-value>no</param-value>
         </init-param>
         <init-param>
             <param-name>kaptcha.textproducer.char.string</param-name>
