@@ -2,8 +2,9 @@ import java.util.List;
 
 public class mainTest {
     public static void main(String[] args){
-        int[] coins = new int[]{186, 419, 83, 408};
-        int res = new Solution().coinChange(coins, 6249);
+        int[] nums = new int[]{2, 5, 5, 11};
+        int[] res = new Solution().twoSum(nums, 10);
+
         System.out.println(res);
 
     }
