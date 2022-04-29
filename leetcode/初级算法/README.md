@@ -1658,3 +1658,70 @@ class Solution {
 * 空间复杂度：$O(n \times m)$
 
 ![image-20220429135416877](imgs/image-20220429135416877.png)
+
+## 链表
+
+* 链表中也常用**双指针解法**
+* 可以添加一个头结点指针简化链表操作
+
+### [删除链表中的节点](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnarn7/)
+
+请编写一个函数，用于 **删除单链表中某个特定节点** 。在设计函数时需要注意，你无法访问链表的头节点 head ，只能直接访问 **要被删除的节点** 。
+
+题目数据保证需要删除的节点 **不是末尾节点** 。
+
+ 
+
+**示例 1：**
+
+![img](imgs/node1.jpg)
+
+```
+输入：head = [4,5,1,9], node = 5
+输出：[4,1,9]
+解释：指定链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -> 1 -> 9
+```
+
+**示例 2：**
+
+![img](imgs/node2.jpg)
+
+```
+输入：head = [4,5,1,9], node = 1
+输出：[4,5,9]
+解释：指定链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -> 5 -> 9
+```
+
+**提示：**
+
+- 链表中节点的数目范围是` [2, 1000]`
+- `-1000 <= Node.val <= 1000`
+- 链表中每个节点的值都是 **唯一** 的
+- 需要删除的节点 `node `是 **链表中的节点** ，且 **不是末尾节点**
+
+#### 题解
+
+将要删除结点下一个结点的值覆盖到待删除结点，然后删除待删除节点的的下一个结点
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+}
+```
+
+* 时间复杂度：$O(1)$
+* 空间复杂度：$O(1)$
+
+![image-20220430042424887](imgs/image-20220430042424887.png)
+
