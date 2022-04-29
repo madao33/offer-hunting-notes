@@ -2,8 +2,8 @@ import java.util.List;
 
 public class mainTest {
     public static void main(String[] args){
-        int[] nums = new int[]{2, 5, 5, 11};
-        int[] res = new Solution().twoSum(nums, 10);
+        String[] s = new String[]{"flower","flow","flight"};
+        String res = new Solution().longestCommonPrefix(s);
 
         System.out.println(res);
 

@@ -4,10 +4,6 @@
 
 ## 数组
 
-### 基础知识
-
-
-
 ### [删除排序数组中的重复项](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/x2gy9m/)
 
 给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。
@@ -841,17 +837,824 @@ class Solution {
 
 ![image-20220428183855572](imgs/image-20220428183855572-16511423372634.png)
 
+## 字符串
 
 
 
 
 
+### [反转字符串](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnhbqj/)
+
+编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 s 的形式给出。
+
+不要给另外的数组分配额外的空间，你必须**原地修改输入数组**、使用` O(1) `的额外空间解决这一问题。
+
+ 
+
+示例 1：
+
+```
+输入：s = ["h","e","l","l","o"]
+输出：["o","l","l","e","h"]
+```
+
+示例 2：
+
+```
+输入：s = ["H","a","n","n","a","h"]
+输出：["h","a","n","n","a","H"]
+```
+
+
+提示：
+
+- `1 <= s.length <= 105`
+- `s[i]` 都是 `ASCII `码表中的可打印字符
+
+#### 题解
+
+设置两个指针：左指针，右指针，分别指向字符串数组的开头和结尾，交换两个指针指向的字符，然后两个指针同时向中间移动，移动一次交换一次指向的字符，直到两个指针相遇
+
+```java
+class Solution {
+    public void reverseString(char[] s) {
+        int left = 0, right = s.length - 1;
+        while (left < right) {
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+            ++left;
+            --right;
+        }
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(1)$
+
+![image-20220429093337990](imgs/image-20220429093337990.png)
+
+### [整数反转](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnx13t/)
+
+给你一个 32 位的有符号整数 `x `，返回将 `x` 中的数字部分反转后的结果。
+
+如果反转后整数超过 32 位的有符号整数的范围` [−231,  231 − 1] `，就返回 0。
+
+**假设环境不允许存储 64 位整数（有符号或无符号）。**
+
+**示例 1：**
+
+```
+输入：x = 123
+输出：321
+```
+
+**示例 2：**
+
+```
+输入：x = -123
+输出：-321
+```
+
+**示例 3：**
+
+```
+输入：x = 120
+输出：21
+```
+
+**示例 4：**
+
+```
+输入：x = 0
+输出：0
+```
+
+**提示：**
+
+- `-231 <= x <= 231 - 1`
+
+#### 题解
+
+**使用java API来实现**
+
+时间开销很大，空间开销也很大，具体的思路是：
+
+* 记录数字符号，并将数字绝对化
+* 然后将数字转换为字符串，然后再转换为字符串数组
+* 将字符串数组进行反转
+* 然后将字符串数组转换为字符串
+* 然后将字符串根据符号和对应最大数字字符串进行比较，如果大于，返回0，不大于就转换为数字返回
+
+```java
+class Solution {
+    String max_str = String.valueOf(Integer.MAX_VALUE);
+    public int reverse(int x) {
+
+        boolean sign = true;
+        if (x < 0) {
+            x = -x;
+            sign = false;
+        }
+        String temp = String.valueOf(x);
+        char[] s = temp.toCharArray();
+        if (s.length > 10)
+            return 0;
+        reverseString(s);
+        String res = String.valueOf(s);
+        if (s.length == 10 && (sign ? res.compareTo(max_str) >= 0 : res.compareTo(max_str) >= 1))
+            return 0;
+        int ans = Integer.parseInt(res);
+
+        return sign ? ans : -ans;
+    }
+
+    public void reverseString(char[] s) {
+        int left = 0, right = s.length - 1;
+        while (left < right) {
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+            ++left;
+            --right;
+        }
+    }
+}
+```
+
+* 时间复杂度：$O(log10(x))$ 时间复杂度和输入数字的位数成线性关系
+* 空间复杂度：$O(log10(x))$ 空间复杂度也主要和输入数字的位数
+
+<img src="imgs/image-20220429100740337.png" alt="image-20220429100740337" style="zoom:80%;" />
+
+**直接利用long**
+
+使用`long`暂存中间值，从`x`的个位开始反向保存，最后将中间值转换为`int`比较是否和中间值相等，如果相等，则直接返回转换为`int`的值，否则返回0
+
+```java
+class Solution {
+    public int reverse(int x) {
+        long res = 0;
+        while (x != 0) {
+            res = res * 10 + x % 10;
+            x /= 10;
+        }
+        return (int)res == res ? (int)res : 0;
+    }
+}
+```
+
+* 时间复杂度：$O(log10(x))$ 时间复杂度和输入数字的位数成线性关系
+* 空间复杂度：$O(log10(x))$ 空间复杂度也主要和输入数字的位数
+
+<img src="imgs/image-20220429102733040.png" alt="image-20220429102733040" style="zoom:80%;" />
+
+### [字符串中的第一个唯一字符](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn5z8r/)
+
+给定一个字符串 `s` ，找到 **它的第一个不重复的字符，并返回它的索引** 。如果不存在，则返回 `-1` 。
+
+ 
+
+**示例 1：**
+
+```
+输入: s = "leetcode"
+输出: 0
+```
+
+**示例 2:**
+
+```
+输入: s = "loveleetcode"
+输出: 2
+```
+
+**示例 3:**
+
+```
+输入: s = "aabb"
+输出: -1
+```
+
+**提示:**
+
+- `1 <= s.length <= 105`
+- `s `只包含小写字母
+
+#### 题解
+
+**数组作为set**
+
+设置一个26长度的数组，分别保存小写字母出现的次数，首先遍历一次字符串，将对应字符出现的次数填写该数组中，然后再次遍历该数组，获取第一次出现次数为1的字符，返回当前索引，不存在就返回`-1`
+
+```java
+class Solution {
+    public int firstUniqChar(String s) {
+        int[] set = new int[26];
+        char[] sarr = s.toCharArray();
+        int len = sarr.length;
+        for (int i = 0; i < len; i++) {
+            int ch = sarr[i] - 'a';
+            ++set[ch];
+        }
+
+        for (int i = 0; i < len; i++) {
+            int ch = sarr[i] - 'a';
+            if (set[ch] == 1)
+                return i;
+        }
+        return -1;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(26)$
+
+![image-20220429103936846](imgs/image-20220429103936846.png)
+
+**可以使用string api实现**
+
+```java
+class Solution {
+    public int firstUniqChar(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            if (s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i)))
+                return i;
+        }
+        return -1;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O()$
+
+![image-20220429104326355](imgs/image-20220429104326355.png)
 
 
 
+### [有效的字母异位词](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn96us/)
+
+给定两个字符串 `s `和 `t` ，编写一个函数来判断 `t `是否是 `s` 的字母异位词。
+
+**注意：**若 `s` 和` t` 中每个字符出现的次数都相同，则称 `s` 和 `t `互为字母异位词。
+
+ 
+
+**示例 1:**
+
+```
+输入: s = "anagram", t = "nagaram"
+输出: true
+```
+
+**示例 2:**
+
+```
+输入: s = "rat", t = "car"
+输出: false
+```
+
+**提示:**
+
+- `1 <= s.length, t.length <= 5 * 104`
+- `s `和 `t` 仅包含小写字母
+
+**进阶:** 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
+
+#### 题解
+
+首先比较两个字符串长度是否相同，不同返回`false`
+
+使用26长度的数组保存字符串中字符出现的次数，首先遍历第一个字符串保存其字符出现次数，然后遍历第二个字符串，如果遍历过程中出现数组小于0，返回`false`，遍历结束之后返回`true`
+
+```java
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length())
+            return false;
+
+        int[] set = new int[26];
+
+        char[] cs = s.toCharArray(), ct = t.toCharArray();
+        int len = cs.length;
+        for (int i = 0; i < len; i++)
+            set[cs[i] - 'a']++;
+        
+        for (int i = 0; i < len; i++) {
+            int temp = ct[i] - 'a';
+            if (--set[temp] < 0)
+                return false;
+        }
+        return true;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(26)$
+
+![image-20220429110247575](imgs/image-20220429110247575.png)
+
+> 测试发现，对于字符串遍历，先转换为`char[]`数组遍历效率比直接遍历`string`要快很多
+
+### [验证回文串](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xne8id/)
+
+给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
+
+**说明：**本题中，我们将空字符串定义为有效的回文串。
+
+ 
+
+**示例 1:**
+
+```
+输入: "A man, a plan, a canal: Panama"
+输出: true
+解释："amanaplanacanalpanama" 是回文串
+```
+
+**示例 2:**
+
+```
+输入: "race a car"
+输出: false
+解释："raceacar" 不是回文串
+```
+
+**提示：**
+
+- `1 <= s.length <= 2 * 105`
+- 字符串 `s` 由 ASCII 字符组成
+
+#### 题解
+
+使用双指针分别指向字符串开头和结尾，如果不属于字母或者数字就跳过，然后比较两个指针指向的字符是否相等，不等则返回`false`，两个指针相遇返回`true`
+
+注意大小写转换
+
+```java
+class Solution {
+    public boolean isPalindrome(String s) {
+        int len = s.length();
+        char[] cs = s.toCharArray();
+
+        int left = 0, right = len - 1;
+        while(left < right) {
+            while(left < right && !isLegal(cs[left]))
+                ++left;
+            while(left < right && !isLegal(cs[right]))
+                --right;
+
+            if (isUpper(cs[left]))
+                cs[left] = toLowerCase(cs[left]);
+            if (isUpper(cs[right]))
+                cs[right] = toLowerCase(cs[right]);
+            if (cs[left] != cs[right])
+                return false;
+            ++left;
+            --right;
+        }
+        return true;
+    }
+
+    public boolean isLegal(char ch) {
+        return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9');
+    }
+
+    public boolean isUpper(char ch) {
+        return ch >= 'A' && ch <= 'Z';
+    }
+
+    public char toLowerCase(char ch) {
+        return (char) ((int)ch+32);
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$
+
+![image-20220429113314237](imgs/image-20220429113314237.png)
+
+**使用Java自带api**
+
+使用api简化代码
+
+```java
+class Solution {
+    public boolean isPalindrome(String s) {
+        int len = s.length();
+        char[] cs = s.toCharArray();
+
+        int left = 0, right = len - 1;
+        while(left < right) {
+            while(left < right && !Character.isLetterOrDigit(cs[left]))
+                ++left;
+            while(left < right && !Character.isLetterOrDigit(cs[right]))
+                --right;
 
 
+            if (Character.toLowerCase(cs[left]) != Character.toLowerCase(cs[right]))
+                return false;
+            ++left;
+            --right;
+        }
+        return true;
+    }
+}
+```
+
+![image-20220429113631076](imgs/image-20220429113631076.png)
+
+### [字符串转换整数 (atoi)](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnoilh/)
+
+请你来实现一个` myAtoi(string s) `函数，使其能将字符串转换成一个 32 位有符号整数（类似 C/C++ 中的 atoi 函数）。
+
+函数 `myAtoi(string s) `的算法如下：
+
+- 读入字符串并丢弃无用的前导空格
+
+- 检查下一个字符（假设还未到字符末尾）为正还是负号，读取该字符（如果有）。 确定最终结果是负数还是正数。 如果两者都不存在，则假定结果为正。
+- 读入下一个字符，直到到达下一个非数字字符或到达输入的结尾。字符串的其余部分将被忽略。
+- 将前面步骤读入的这些数字转换为整数（即，"123" -> 123， "0032" -> 32）。如果没有读入数字，则整数为` 0` 。必要时更改符号（从步骤 2 开始）。
+- 如果整数数超过 32 位有符号整数范围` [−231,  231 − 1] `，需要截断这个整数，使其保持在这个范围内。具体来说，小于$ −2^{31}$ 的整数应该被固定为$ −2^{31}$ ，大于 $2^{31} − 1 $的整数应该被固定为$2^{31} − 1$ 。
+- 返回整数作为最终结果。
+
+**注意：**
+
+- 本题中的空白字符只包括空格字符 ' ' 。
+- 除前导空格或数字后的其余字符串外，请勿忽略 任何其他字符。
+
+**示例 1：**
+
+```
+输入：s = "42"
+输出：42
+解释：加粗的字符串为已经读入的字符，插入符号是当前读取的字符。
+第 1 步："42"（当前没有读入字符，因为没有前导空格）
+         ^
+第 2 步："42"（当前没有读入字符，因为这里不存在 '-' 或者 '+'）
+         ^
+第 3 步："42"（读入 "42"）
+           ^
+解析得到整数 42 。
+由于 "42" 在范围 [-231, 231 - 1] 内，最终结果为 42 。
+```
+
+**示例 2：**
+
+```
+输入：s = "   -42"
+输出：-42
+解释：
+第 1 步："   -42"（读入前导空格，但忽视掉）
+            ^
+第 2 步："   -42"（读入 '-' 字符，所以结果应该是负数）
+             ^
+第 3 步："   -42"（读入 "42"）
+               ^
+解析得到整数 -42 。
+由于 "-42" 在范围 [-231, 231 - 1] 内，最终结果为 -42 。
+```
+
+**示例 3：**
+
+```
+输入：s = "4193 with words"
+输出：4193
+解释：
+第 1 步："4193 with words"（当前没有读入字符，因为没有前导空格）
+         ^
+第 2 步："4193 with words"（当前没有读入字符，因为这里不存在 '-' 或者 '+'）
+         ^
+第 3 步："4193 with words"（读入 "4193"；由于下一个字符不是一个数字，所以读入停止）
+             ^
+解析得到整数 4193 。
+由于 "4193" 在范围 [-231, 231 - 1] 内，最终结果为 4193 。
+```
+
+**提示：**
+
+- `0 <= s.length <= 200`
+- `s `由英文字母（大写和小写）、数字（`0-9`）、`' '`、`'+'`、`'-'` 和 `'.' `组成
+
+#### 题解
+
+可以分为以下三个步骤来解决
+
+* 首先通过空格去除函数去除字符串中的空格
+* 查看是否存在符号，如果存在，记录符号
+* 然后读取剩余字符串中的数字，并组合为结果，在组合之前，判断是否可能出现越界，如果越界，输出最大或最小的可能值，如果没有越界，添加符号，输出组合后的值
+
+为了方便组合，符号用`+1`和`-1`表示，并且为了提高运行速度，在去除空格之后将剩余的字符串转换为`char[]`类型
+
+```java
+class Solution {
+    public int myAtoi(String s) {
+        s = s.trim();
+        if (s.length() == 0)
+            return 0;
+
+        char[] cs = s.toCharArray();
+        int len = cs.length;
+        int sign = 1;
+        int index = 0;
+        int res = 0;
+        if (cs[index] == '-' || cs[index] == '+')
+            sign = cs[index++] == '+' ? 1 : -1;
+
+        while(index < len) {
+            int digit = cs[index] - '0';
+            if (digit < 0 || digit > 9)
+                break;
+
+            if (res > Integer.MAX_VALUE / 10 || (res == Integer.MAX_VALUE / 10 && digit > Integer.MAX_VALUE % 10))
+                return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            else
+                res = res * 10 + digit;
+            ++index;
+        }
+        return sign * res;
+
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$
+
+![image-20220429130633928](imgs/image-20220429130633928.png)
+
+### [实现 strStr()](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnr003/)-==KMP算法==
+
+实现` strStr() `函数。
+
+给你两个字符串 `haystack `和 needle` `，请你在 `haystack `字符串中找出 needle` `字符串出现的第一个位置（下标从 0 开始）。如果不存在，则返回  -1 。
+
+ 
+
+**说明：**
+
+当 `needle `是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
+
+对于本题而言，当 `needle `是空字符串时我们应当返回 0 。这与 C 语言的` strstr() `以及 Java 的 `indexOf() `定义相符。
+
+ 
+
+**示例 1：**
+
+```
+输入：haystack = "hello", needle = "ll"
+输出：2
+```
+
+**示例 2：**
+
+```
+输入：haystack = "aaaaa", needle = "bba"
+输出：-1
+```
+
+**示例 3：**
+
+```
+输入：haystack = "", needle = ""
+输出：0
+```
+
+**提示：**
+
+- `1 <= haystack.length, needle.length <= 104`
+- `haystack `和 `needle `仅由小写英文字符组成
+
+#### 题解
+
+可以使用kmp算法
+
+```java
+class Solution {
+    public int strStr(String haystack, String needle) {
+        if (needle.length() == 0)
+            return 0;
+        int i = 0;
+        int j = 0;
+        /**
+         * 数组next表示pattern指定的下标前具有相同的字符串数量，语言组织能力不好，可能不是太好理解，我举个例子吧
+         * ，比如ABCABA，数组next[0]是-1，这个是固定的，因为第一个A前面是没有字符的，next[1]是0，因为B的前面就一个A，没有
+         * 重复的，所以是0,同理next[2]也是,next[3]也是0,而next[4]是1，因为next[4]所指向的是第二个B，第二个B前面有一个A和
+         * 第一个A相同，所以是1,next[5]是2，因为next[5]所指向的是最后一个Ａ，因为前面的Ａ对比成功，并且Ｂ也对比成功，所以是２，
+         * 也就是ＡＢ两个字符串匹配成功,再举个例子，比如WABCABA，数组除了第一个为-1，其他的都是为0，因为只有第一个匹配成功之后
+         * 才能匹配后面的，虽然后面的AB和前面的AB匹配成功，但是后面AB的前面是C和前面AB的前面一个W不匹配，所以后面的匹配都是0.
+         * 要记住只有指定字符前面的字符和第一个字符匹配成功的时候才能往后匹配，否则后面的永远都是先和第一个匹配。
+         */
+        int[] next = new int[needle.length()];
+        getNext(needle, next);
+        while (i < haystack.length() && j < needle.length()) {
+            /**
+             * 这里j等于-1的时候也只有在下面next数组赋值的时候才会出现，并且只有在数组next[0]的时候才会等于-1，
+             其他时候是没有的，这一点要谨记，待会下面求next数组的时候就会用到。这里可以这样来理解，如果j不等于-1，
+             并且下标i和j所指向的字符相等，那么i和j分别往后移一位继续比较，这个很好理解，那么如果j==-1的时候，就表示
+             就表示前面没有匹配成功的，同时i往后移一位，j置为0（j==-1的时候，j++为0），再从0开始比较。
+             */
+            if (j == -1 || haystack.charAt(i) == needle.charAt(j)) {
+                i++;
+                j++;
+            } else {
+                /**
+                 * i = i - j + 1;
+                 j = 0;
+                 返回到指定的位置，不是返回到匹配失败的下一个位置，这里都好理解，重点是求数组next。
+                 这里只要j等于0，在next[j]赋值的之后，j就会等于-1；因为next[0]等于-1
+                 */
+                j = next[j]; // j回到指定位置
+            }
+            if (j == needle.length())
+                return i - j;
+        }
+        return -1;
+    }
+
+    private void getNext(String p, int next[]) {
+        int len = p.length();
+        int i = 0;
+        int j = -1;
+        next[0] = -1;//这个默认的，
+        /**
+         * 匹配的时候是当前字符的前一个和前面的匹配，所以最后一个是不参与匹配的，可以看strStr方法的注释，
+         */
+        while (i < len - 1) {
+            if (j == -1 || p.charAt(i) == p.charAt(j)) {
+                /**
+                 * 如果j不等于-1，指定的字符相等，那么i和j要往后移一位，这点很好理解，如果j为-1的时候，i往后移移位，j置为0
+                 * 重新开始匹配。next[i]是匹配成功的数量
+                 */
+                i++;
+                j++;
+                next[i] = j;
+            } else
+            /**
+             * 关键是这里不好理解，为什么匹配失败要让next[j]等于j，要记住这里的next[j]是指匹配成功的数量，有可能为0，也有可能是其他数.比如
+             * 字符串ABCABXYABCABATDM,对应的next数组为{-1	0	0	0	1	2	0	0	1	2	3	4	5	1	0	0	}
+             */
+                j = next[j];
+        }
+    }
+
+}
+```
+
+### [外观数列](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnpvdm/)
+
+给定一个正整数 `n` ，输出外观数列的第 `n `项。
+
+「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。
+
+你可以将其视作是由递归公式定义的数字字符串序列：
+
+- `countAndSay(1) = "1"`
+- `countAndSay(n) `是对 `countAndSay(n-1) `的描述，然后转换成另一个数字字符串。
+
+前五项如下：
+
+1.    ```
+      1.     1
+      2.     11
+      3.     21
+      4.     1211
+      5.     111221
+             第一项是数字 1 
+             描述前一项，这个数是 1 即 “ 一 个 1 ”，记作 "11"
+             描述前一项，这个数是 11 即 “ 二 个 1 ” ，记作 "21"
+             描述前一项，这个数是 21 即 “ 一 个 2 + 一 个 1 ” ，记作 "1211"
+             描述前一项，这个数是 1211 即 “ 一 个 1 + 一 个 2 + 二 个 1 ” ，记作 "111221"
+      ```
+
+要 描述 一个数字字符串，首先要将字符串分割为 最小 数量的组，每个组都由连续的最多 相同字符 组成。然后对于每个组，先描述字符的数量，然后描述字符，形成一个描述组。要将描述转换为数字字符串，先将每组中的字符数量用数字替换，再将所有描述组连接起来。
+
+例如，数字字符串 "3322251" 的描述如下图：
+
+![img](imgs/1629874763-TGmKUh-image.png)
+
+**示例 1：**
+
+```
+输入：n = 1
+输出："1"
+解释：这是一个基本样例。
+```
+
+**示例 2：**
+
+```
+输入：n = 4
+输出："1211"
+解释：
+countAndSay(1) = "1"
+countAndSay(2) = 读 "1" = 一 个 1 = "11"
+countAndSay(3) = 读 "11" = 二 个 1 = "21"
+countAndSay(4) = 读 "21" = 一 个 2 + 一 个 1 = "12" + "11" = "1211"
+```
+
+**提示：**
+
+- `1 <= n <= 30`
 
 
+#### 题解
 
+使用递归处理，递归出口为`1`
 
+```java
+class Solution {
+    public String countAndSay(int n) {
+        if (n == 1) return "1";
+        else {
+            String lastStr = countAndSay(n - 1); // 1 2 1 1
+            StringBuilder ans = new StringBuilder();
+            int i = 0, j = 1, len = lastStr.length();
+            while (j < len) {
+                if (lastStr.charAt(i) != lastStr.charAt(j)) {
+                    ans.append(j - i).append(lastStr.charAt(i));
+                    i = j;
+                }
+                j++;
+            }
+            ans.append(j - i).append(lastStr.charAt(i));
+            return ans.toString();
+        }
+    }
+}
+```
+
+* 时间复杂度：$O(n^2)$
+* 空间复杂度：$O(n)$
+
+![image-20220429133414150](imgs/image-20220429133414150.png)
+
+### [最长公共前缀](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnmav1/)
+
+编写一个函数来查找字符串数组中的最长公共前缀。
+
+如果不存在公共前缀，返回空字符串 ""。
+
+ 
+
+**示例 1：**
+
+```
+输入：strs = ["flower","flow","flight"]
+输出："fl"
+```
+
+**示例 2：**
+
+```
+输入：strs = ["dog","racecar","car"]
+输出：""
+解释：输入不存在公共前缀。
+```
+
+**提示：**
+
+- `1 <= strs.length <= 200`
+- `0 <= strs[i].length <= 200`
+- `strs[i] `仅由小写英文字母组成
+
+#### 题解
+
+使用第一个字符串作为模板，然后判断最长公共前缀，设置一个`resLen`记录当前最长公共前缀的长度，最后通过子串裁剪输出结果
+
+```java
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        int len = strs.length;
+        if (len < 2)
+            return strs[0];
+
+        int resLen = strs[0].length();
+        char[] s1 = strs[0].toCharArray();
+        for (int i = 1; i < len; i++) {
+            char[] s2 = strs[i].toCharArray();
+            resLen = Math.min(resLen, s2.length);
+            for (int j = 0; j < resLen; j++) {
+                if (s1[j] == s2[j])
+                    continue;
+                else {
+                    resLen = j;
+                    break;
+                }
+            }
+        }
+        String res = strs[0].substring(0, resLen);
+        return res;
+    }
+}
+```
+
+* 时间复杂度：$O(n \times m)$
+* 空间复杂度：$O(n \times m)$
+
+![image-20220429135416877](imgs/image-20220429135416877.png)

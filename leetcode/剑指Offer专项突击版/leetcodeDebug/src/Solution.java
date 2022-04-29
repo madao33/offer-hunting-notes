@@ -1,23 +1,24 @@
-import java.util.HashMap;
-import java.util.Map;
-
 class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        int n = nums.length;
-        int[] res = new int[2];
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < n; i++) {
-            map.put(target-nums[i], i);
-        }
+    public String longestCommonPrefix(String[] strs) {
+        int len = strs.length;
+        if (len < 2)
+            return strs[0];
 
-        for (int i = 0; i < n; i++) {
-            if (map.getOrDefault(nums[i], -1) != -1 && map.getOrDefault(nums[i], -1) != i) {
-                res[0] = map.get(nums[i]);
-                res[1] = i;
-                break;
+        int resLen = strs[0].length();
+        char[] s1 = strs[0].toCharArray();
+        for (int i = 1; i < len; i++) {
+            char[] s2 = strs[i].toCharArray();
+            resLen = Math.min(resLen, s2.length);
+            for (int j = 0; j < resLen; j++) {
+                if (s1[j] == s2[j])
+                    continue;
+                else {
+                    resLen = j;
+                    break;
+                }
             }
         }
-
+        String res = strs[0].substring(0, resLen);
         return res;
     }
 }
