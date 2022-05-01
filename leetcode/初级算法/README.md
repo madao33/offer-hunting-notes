@@ -1725,3 +1725,82 @@ class Solution {
 
 ![image-20220430042424887](imgs/image-20220430042424887.png)
 
+### [删除链表的倒数第N个节点](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn2925/)
+
+给你一个链表，删除链表的倒数第` n` 个结点，并且返回链表的头结点。
+
+ 
+
+**示例 1：**
+
+![img](imgs/remove_ex1.jpg)
+
+```
+输入：head = [1,2,3,4,5], n = 2
+输出：[1,2,3,5]
+```
+
+**示例 2：**
+
+```
+输入：head = [1], n = 1
+输出：[]
+```
+
+**示例 3：**
+
+```
+输入：head = [1,2], n = 1
+输出：[1]
+```
+
+**提示：**
+
+- 链表中结点的数目为 `sz`
+
+- `1 <= sz <= 30`
+- `0 <= Node.val <= 100`
+- `1 <= n <= sz`
+
+**进阶**：你能尝试使用一趟扫描实现吗？
+
+#### 题解
+
+可以设置两个指针，一个快指针，一个慢指针，快指针提前`n`步移动，然后慢指针再移动，如果快指针移动到末尾，那么慢指针就指向要删除的结点，执行删除
+
+注意如果快指针提前`n`步移动之后为`null`，说明`n`为当前链表长度，要删除的是头结点，可以直接返回`head.next`
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode cur = head;
+        while(n > 0) {
+            cur = cur.next;
+            --n;
+        }
+        if (cur == null) return head.next;
+        ListNode pre = head;
+        while (cur.next != null) {
+            cur = cur.next;
+            pre = pre.next;
+        }
+        pre.next = pre.next.next;
+        return head;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(1)$
+
+![image-20220501172344682](imgs/image-20220501172344682.png)
