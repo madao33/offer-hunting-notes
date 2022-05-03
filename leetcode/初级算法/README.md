@@ -1,6 +1,8 @@
-# 初级算法
+## 目录
 
-这是由 LeetCode 官方推出的经典面试题目清单，以下的题目是初级面试题目清单
+这是由 LeetCode 官方推出的经典面试题目清单初级算法版本，以下的题目是初级面试题目分类及目录
+
+[TOC]
 
 ## 数组
 
@@ -16,7 +18,7 @@
 
 判题标准:
 
-系统会用下面的代码来测试你的题解:
+系统会用下面的代码来测试你的**题解**:
 
 ```java
 int[] nums = [...]; // 输入数组
@@ -30,7 +32,7 @@ for (int i = 0; i < k; i++) {
 }
 ```
 
-如果所有断言都通过，那么您的题解将被通过。
+如果所有断言都通过，那么您的**题解**将被通过。
 
  
 
@@ -56,7 +58,7 @@ for (int i = 0; i < k; i++) {
 -104 <= nums[i] <= 104
 nums 已按 升序 排列
 
-#### 题解
+**题解**
 
 原数组已经按照升序排列，所以相同的元素必定是相邻的，可以设置两个指针，一个指针`ans`指向不重复数组元素的最后一位，一个指针`cur`指向遍历的元素，判断两个指针指向元素是否相同
 
@@ -132,7 +134,7 @@ class Solution {
 - 数组
 - 动态规划
 
-#### 题解
+**题解**
 
 如下图是表示的一个股票价格上涨曲线，要计算这段时间内股票的最大利润，可以直接将股票所有上涨时间段内的利润累加起来就得到了
 
@@ -195,7 +197,7 @@ class Solution {
 - 尽可能想出更多的解决方案，至少有 三种 不同的方法可以解决这个问题。
 - 你可以使用空间复杂度为` O(1) `的 原地 算法解决这个问题吗？
 
-#### 题解
+**题解**
 
 可以转换一下思路：
 
@@ -269,7 +271,7 @@ class Solution {
 - 哈希表
 - 排序
 
-#### 题解
+**题解**
 
 **HashSet实现**
 
@@ -344,7 +346,7 @@ class Solution {
 - 位运算
 - 数组
 
-#### 题解
+**题解**
 
 所有的元素都出现两次，相同的元素异或为0，剩下的只出现一次的元素和0异或的结果还是其本身
 
@@ -396,7 +398,7 @@ class Solution {
 - 如果 nums1 的大小比 nums2 小，哪种方法更优？
 - 如果 nums2 的元素存储在磁盘上，内存是有限的，并且你不能一次加载所有的元素到内存中，你该怎么办？
 
-#### 题解
+**题解**
 
 首先对两个数组进行排序，然后设置两个指针分别指向排序后数组开头，在两个指针都分别不超过数组的情况下，比较两个指针指向元素的大小
 
@@ -477,7 +479,7 @@ class Solution {
 - `1 <= digits.length <= 100`
 - `0 <= digits[i] <= 9`
 
-#### 题解
+**题解**
 
 这道题就是模拟加法进位，注意的是在执行加法进位的时候，需要从最后一位开始计算
 
@@ -545,7 +547,7 @@ class Solution {
 
 **进阶：**你能尽量减少完成的操作次数吗？
 
-#### 题解
+**题解**
 
 设置一个指针`index`保存不为0的元素，然后遍历数组中的所有元素，将其保存到`index`位置，然后`index++`，最后将`index, nums.length-1`位置的数组全部改为0
 
@@ -620,7 +622,7 @@ class Solution {
 
 **进阶：**你可以想出一个时间复杂度小于 O(n2) 的算法吗？
 
-#### 题解
+**题解**
 
 **HashMap法**
 
@@ -739,7 +741,7 @@ class Solution {
 
 
 
-#### 题解
+**题解**
 
 表格固定形状大小为`9 x 9`，需要查看每一行，每一列，以及`3 x 3` 大小表格是否有相同元素，可以设定3个2维数组分别表示对应行、列以及小网格内`0-9`是否存在，如果有任意一个出现重复元素则返回`false`，遍历结束返回`true`
 
@@ -801,7 +803,7 @@ class Solution {
 - `1 <= n <= 20`
 - `-1000 <= matrix[i][j] <= 1000`
 
-#### 题解
+**题解**
 
 如下图所示
 
@@ -871,7 +873,7 @@ class Solution {
 - `1 <= s.length <= 105`
 - `s[i]` 都是 `ASCII `码表中的可打印字符
 
-#### 题解
+**题解**
 
 设置两个指针：左指针，右指针，分别指向字符串数组的开头和结尾，交换两个指针指向的字符，然后两个指针同时向中间移动，移动一次交换一次指向的字符，直到两个指针相遇
 
@@ -935,7 +937,7 @@ class Solution {
 
 - `-231 <= x <= 231 - 1`
 
-#### 题解
+**题解**
 
 **使用java API来实现**
 
@@ -1042,7 +1044,7 @@ class Solution {
 - `1 <= s.length <= 105`
 - `s `只包含小写字母
 
-#### 题解
+**题解**
 
 **数组作为set**
 
@@ -1124,7 +1126,7 @@ class Solution {
 
 **进阶:** 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
 
-#### 题解
+**题解**
 
 首先比较两个字符串长度是否相同，不同返回`false`
 
@@ -1189,7 +1191,7 @@ class Solution {
 - `1 <= s.length <= 2 * 105`
 - 字符串 `s` 由 ASCII 字符组成
 
-#### 题解
+**题解**
 
 使用双指针分别指向字符串开头和结尾，如果不属于字母或者数字就跳过，然后比较两个指针指向的字符是否相等，不等则返回`false`，两个指针相遇返回`true`
 
@@ -1341,7 +1343,7 @@ class Solution {
 - `0 <= s.length <= 200`
 - `s `由英文字母（大写和小写）、数字（`0-9`）、`' '`、`'+'`、`'-'` 和 `'.' `组成
 
-#### 题解
+**题解**
 
 可以分为以下三个步骤来解决
 
@@ -1430,7 +1432,7 @@ class Solution {
 - `1 <= haystack.length, needle.length <= 104`
 - `haystack `和 `needle `仅由小写英文字符组成
 
-#### 题解
+**题解**
 
 可以使用kmp算法
 
@@ -1563,7 +1565,7 @@ countAndSay(4) = 读 "21" = 一 个 2 + 一 个 1 = "12" + "11" = "1211"
 - `1 <= n <= 30`
 
 
-#### 题解
+**题解**
 
 使用递归处理，递归出口为`1`
 
@@ -1623,7 +1625,7 @@ class Solution {
 - `0 <= strs[i].length <= 200`
 - `strs[i] `仅由小写英文字母组成
 
-#### 题解
+**题解**
 
 使用第一个字符串作为模板，然后判断最长公共前缀，设置一个`resLen`记录当前最长公共前缀的长度，最后通过子串裁剪输出结果
 
@@ -1699,7 +1701,7 @@ class Solution {
 - 链表中每个节点的值都是 **唯一** 的
 - 需要删除的节点 `node `是 **链表中的节点** ，且 **不是末尾节点**
 
-#### 题解
+**题解**
 
 将要删除结点下一个结点的值覆盖到待删除结点，然后删除待删除节点的的下一个结点
 
@@ -1764,7 +1766,7 @@ class Solution {
 
 **进阶**：你能尝试使用一趟扫描实现吗？
 
-#### 题解
+**题解**
 
 可以设置两个指针，一个快指针，一个慢指针，快指针提前`n`步移动，然后慢指针再移动，如果快指针移动到末尾，那么慢指针就指向要删除的结点，执行删除
 
@@ -1805,7 +1807,7 @@ class Solution {
 
 ![image-20220501172344682](imgs/image-20220501172344682.png)
 
-### **[反转链表](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnnhm6/)**
+### [反转链表](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnnhm6/)
 
 给你单链表的头节点` head` ，请你反转链表，并返回反转后的链表。
 
@@ -1842,7 +1844,266 @@ class Solution {
 
 **进阶**：链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？
 
-#### 题解
+**题解**
+
+可以使用一个辅助指针`pre`指向前一个结点的地址，然后反向修改`next`指向前一个结点的地址，之后将`pre`指针改为当前访问结点的地址，继续遍历下一个结点，直到所有结点都被遍历过结束
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode pre = null;
+        while(head != null) {
+            ListNode temp = head.next;
+            head.next = pre;
+            pre = head;
+            head = temp;
+        }
+        return pre;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(1)$
+
+![image-20220503203955275](imgs/image-20220503203955275-16515815971581.png)
+
+### [合并两个有序链表](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnnbp2/)
+
+将两个升序链表合并为一个新的 **升序** 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+
+ 
+
+**示例 1：**
+
+![img](imgs/merge_ex1.jpg)
+
+```
+输入：l1 = [1,2,4], l2 = [1,3,4]
+输出：[1,1,2,3,4,4]
+```
+
+**示例 2：**
+
+```
+输入：l1 = [], l2 = []
+输出：[]
+```
+
+**示例 3：**
+
+```
+输入：l1 = [], l2 = [0]
+输出：[0]
+```
+
+**提示：**
+
+- 两个链表的节点数目范围是` [0, 50]`
+
+- `-100 <= Node.val <= 100`
+- `l1 `和 `l2` 均按 非递减顺序 排列
+
+**题解**
+
+设置一个头结点`ans`方便操作，然后设置`cur`初始化等于`ans`，同时遍历两个链表开头的元素，小的元素插入到`ans`链表中，直到其中任意一个链表为空，然后将非空链表剩余部分再插入结果链表中
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode ans = new ListNode();
+        ListNode cur = ans;
+        while(list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                cur.next = list1;
+                list1 = list1.next;
+                cur = cur.next;
+                cur.next = null;
+            } else {
+                cur.next = list2;
+                list2 = list2.next;
+                cur = cur.next;
+                cur.next = null;
+            }
+        }
+
+        if (list1 != null || list2 != null) {
+            if (list1 != null) {
+                cur.next = list1;
+            } else {
+                cur.next = list2;
+            }
+        }
+
+        return ans.next;
+    }
+}
+```
+
+* 时间复杂度：$O(n+m)$
+* 空间复杂度：$O(1)$
+
+![image-20220503211404945](imgs/image-20220503211404945.png)
+
+### [回文链表](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnv1oc/)
+
+给你一个单链表的头节点 `head `，请你判断该链表是否为回文链表。如果是，返回 `true `；否则，返回 false` `。
+
+ 
+
+**示例 1：**
+
+![img](imgs/pal1linked-list.jpg)
+
+```
+输入：head = [1,2,2,1]
+输出：true
+```
+
+**示例 2：**
+
+![img](imgs/pal2linked-list.jpg)
+
+```
+输入：head = [1,2]
+输出：false
+```
+
+**提示：**
+
+- 链表中节点数目在范围$[1, 10^5] $内
+
+- `0 <= Node.val <= 9`
+
+**进阶：**你能否用 `O(n) `时间复杂度和` O(1)` 空间复杂度解决此题？
+
+**题解**
+
+首先找到链表的中间结点，然后反转中间结点开始之后的结点，之后比较反转之后的一半链表和前一半是否相同，不同返回`false`
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        if (head.next == null)
+            return true;
+        ListNode middle = findMiddle(head);
+        middle = reverseList(middle);
+        while(middle != null) {
+            if (head.val != middle.val)
+                return false;
+            head = head.next;
+            middle = middle.next;
+        }
+        return true;
+    }
+
+    public ListNode findMiddle(ListNode head) {
+        ListNode fast = head, slow = head;
+        while(fast != null && fast.next!=null && fast.next.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow.next;
+    }
+
+    public ListNode reverseList(ListNode head) {
+        ListNode pre = null;
+        while(head != null) {
+            ListNode temp = head.next;
+            head.next = pre;
+            pre = head;
+            head = temp;
+        }
+        return pre;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(1)$
+
+![image-20220503214648725](imgs/image-20220503214648725.png)
+
+### [环形链表](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnwzei/)
+
+给你一个链表的头节点 `head `，判断链表中是否有环。
+
+如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：`pos `不作为参数进行传递 。仅仅是为了标识链表的实际情况。
+
+如果链表中存在环 ，则返回 `true `。 否则，返回 `false `。
+
+ 
+
+**示例 1：**
+
+![img](imgs/circularlinkedlist.png)
+
+```
+输入：head = [3,2,0,-4], pos = 1
+输出：true
+解释：链表中有一个环，其尾部连接到第二个节点。
+```
+
+**示例 2：**
+
+![img](imgs/circularlinkedlist_test2.png)
+
+```
+输入：head = [1,2], pos = 0
+输出：true
+解释：链表中有一个环，其尾部连接到第一个节点。
+```
+
+**示例 3：**
+
+![img](imgs/circularlinkedlist_test3.png)
+
+```
+输入：head = [1], pos = -1
+输出：false
+解释：链表中没有环。
+```
+
+**提示：**
+
+- 链表中节点的数目范围是` [0, 104]`
+
+- `-105 <= Node.val <= 105`
+- `pos` 为` -1 `或者链表中的一个 **有效索引** 。
+
+**进阶：**你能用 `O(1)`（即，常量）内存解决此问题吗？
+
+**题解**
 
 
 
