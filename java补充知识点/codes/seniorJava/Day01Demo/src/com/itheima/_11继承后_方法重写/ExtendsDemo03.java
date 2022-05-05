@@ -6,10 +6,14 @@ package com.itheima._11继承后_方法重写;
     可以吗?  都不可以.
  */
 public class ExtendsDemo03 {
+    public static void main(String[] args) {
+        Mac m = new Mac();
+        m.test();
+    }
 }
 
 class Mac extends Computer{
-    //@Override
+//    @Override
     public void go(){
     }
 
@@ -20,6 +24,7 @@ class Mac extends Computer{
 
 class Computer{
     public static void test(){
+        System.out.println("super test");
     }
 
     private void go(){
