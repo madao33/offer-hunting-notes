@@ -2105,5 +2105,551 @@ class Solution {
 
 **题解**
 
+设置两个指针，一个慢指针`slow`，一个快指针`fast`，其中`slow`从`head`开始，一个从`head.next`开始
+
+`slow`指针一次移动一个节点，`fast`一次移动两个节点，如果`slow`节点追上`fast`节点说明链表中存在环，否则不存在环
+
+```java
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if(head == null || head.next == null)
+            return false;
+        
+        ListNode slow = head, fast = head.next;
+        while(slow != fast) {
+            if (fast != null && fast.next != null && fast.next.next != null)
+                fast = fast.next.next;    
+            else
+                return false;
+            slow = slow.next;
+        }
+        return true;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(1)$
+
+![image-20220505095938927](imgs/image-20220505095938927.png)
+
+## 树
+
+树比链表稍微复杂，因为链表是线性数据结构，而树不是。 树的问题可以由 **广度优先搜索**或 **深度优先搜索** 解决
+
+### [二叉树的最大深度](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnd69e/)
+
+给定一个二叉树，找出其最大深度。
+
+二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
+
+**说明:** 叶子节点是指没有子节点的节点。
+
+**示例：**
+给定二叉树` [3,9,20,null,null,15,7]`，
+
+```
+ 3
+/ \
+  9  20
+    /  \
+   15   7
+```
+
+返回它的最大深度 3 。
+
+**题解**
+
+直接使用递归实现
+
+* 如果当前根节点为`null`，返回0
+* 如果当前左右子树都为`null`，即表示当前根节点为叶子结点，直接返回1
+* 如果不是叶子结点，返回左右子树中最大深度+1
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if (root == null)
+            return 0;
+        if (root.left == null && root.right == null)
+            return 1;
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$ 递归调用的栈深度
+
+![image-20220505100552861](imgs/image-20220505100552861.png)
+
+### [验证二叉搜索树](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn08xg/)
+
+给你一个二叉树的根节点 `root `，判断其是否是一个有效的二叉搜索树。
+
+**有效** 二叉搜索树定义如下：
+
+节点的左子树只包含 **小于** 当前节点的数。
+节点的右子树只包含 **大于** 当前节点的数。
+所有左子树和右子树自身必须也是二叉搜索树。
+
+**示例 1：**
+
+![img](imgs/tree1.jpg)
+
+```
+输入：root = [2,1,3]
+输出：true
+```
+
+**示例 2：**
+
+![img](imgs/tree2.jpg)
+
+```
+输入：root = [5,1,4,null,null,3,6]
+输出：false
+解释：根节点的值是 5 ，但是右子节点的值是 4 。
+```
 
 
+**提示：**
+
+- 树中节点数目范围在`[1, 104] `内
+
+- $-2^{31} <= Node.val <= 2^{31} - 1$
+
+**题解**
+
+将二叉搜索树的中序遍历存放在数组中，然后判断数组是否有序
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    
+    public boolean isValidBST(TreeNode root) {
+        List<Integer> path = new ArrayList<Integer>();
+        dfs(root, path);
+        for (int i = 1; i < path.size(); i++) {
+            if (path.get(i) <= path.get(i-1))
+                return false;
+        }
+        return true;
+    }
+
+    public void dfs(TreeNode root, List<Integer> path) {
+        if (root == null)
+            return ;
+        dfs(root.left, path);
+        path.add(root.val);
+        dfs(root.right, path);
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$
+
+![image-20220505102952985](imgs/image-20220505102952985-16517177946343.png)
+
+**使用栈辅助实现二叉树的中序遍历**
+
+```java
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        Deque<TreeNode> stack = new LinkedList<TreeNode>();
+        double inorder = -Double.MAX_VALUE;
+
+        while (!stack.isEmpty() || root != null) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+              // 如果中序遍历得到的节点的值小于等于前一个 inorder，说明不是二叉搜索树
+            if (root.val <= inorder) {
+                return false;
+            }
+            inorder = root.val;
+            root = root.right;
+        }
+        return true;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$
+
+![image-20220505103627497](imgs/image-20220505103627497-16517181886724.png)
+
+**递归实现**
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        long lower = Long.MIN_VALUE, upper = Long.MAX_VALUE;
+        return dfs(root, lower, upper);
+    }
+
+    public boolean dfs(TreeNode root, long lower, long upper) {
+        if (root == null)
+            return true;
+        if (root.val <= lower || root.val >= upper)
+            return false;
+        return dfs(root.left, lower, root.val) && dfs(root.right, root.val, upper);
+
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$
+
+![image-20220505104736338](imgs/image-20220505104736338.png)
+
+### [对称二叉树](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn7ihv/)
+
+给你一个二叉树的根节点 `root `， 检查它是否轴对称。
+
+ 
+
+**示例 1：**
+
+![img](imgs/symtree1.jpg)
+
+```
+输入：root = [1,2,2,3,4,4,3]
+输出：true
+```
+
+**示例 2：**
+
+![img](imgs/symtree2.jpg)
+
+```
+输入：root = [1,2,2,null,3,null,3]
+输出：false
+```
+
+**提示：**
+
+- 树中节点数目在范围` [1, 1000] `内
+
+- `-100 <= Node.val <= 100`
+
+**进阶：**你可以运用递归和迭代两种方法解决这个问题吗？
+
+**题解**
+
+**递归实现**
+
+对称的二叉树可以看到是一个树的左右子树镜像对称，也就是判断两个子树是否镜像对称可以判断两棵树是否镜像，所以可以将判断二叉树对称简化为判断二叉树左右子树是否对称，设置两个指针，`p`和`q`指针，一开始都指向这棵树的根，然后`p`右移，`q`左移，`p`左移，`q`右移，每次检查当前`p`和`q`结点的值是否相等，如果相等再判断左右子树是否对称
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        return check(root, root);
+    }
+
+    public boolean check(TreeNode p, TreeNode q) {
+        if (p == null && q == null)
+            return true;
+        
+        if (p == null || q == null)
+            return false;
+        
+        return p.val == q.val && check(p.left, q.right) && check(p.right, q.left);
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$
+
+![image-20220505105820822](imgs/image-20220505105820822.png)
+
+**迭代的方式**
+
+使用队列
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            TreeNode p = queue.poll();
+            TreeNode q = queue.poll();
+            if (p == null && q == null)
+                continue;
+            
+            if (p == null || q == null || p.val != q.val)
+                return false;
+            
+            queue.add(p.left);
+            queue.add(q.right);
+
+            queue.add(p.right);
+            queue.add(q.left);
+        }
+        return true;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$
+
+![image-20220505110903493](imgs/image-20220505110903493.png)
+
+### [二叉树的层序遍历](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnldjj/)
+
+给你二叉树的根节点 `root `，返回其节点值的 **层序遍历** 。 （即逐层地，从左到右访问所有节点）。
+
+ 
+
+示例 1：
+
+![img](imgs/tree1-16517201816487.jpg)
+
+```
+输入：root = [3,9,20,null,null,15,7]
+输出：[[3],[9,20],[15,7]]
+```
+
+
+示例 2：
+
+```
+输入：root = [1]
+输出：[[1]]
+```
+
+示例 3：
+
+```
+输入：root = []
+输出：[]
+```
+
+
+提示：
+
+- 树中节点数目在范围 `[0, 2000] `内
+- `-1000 <= Node.val <= 1000`
+
+**题解**
+
+**使用栈来辅助完成二叉树的层序遍历**
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        if (root == null)
+            return ans;
+        
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            List<Integer> level = new ArrayList<>();
+            for (int i = queue.size(); i > 0; i--) {
+                TreeNode temp = queue.poll();
+                if (temp == null)
+                    continue;
+                level.add(temp.val);
+                if (temp.left != null) queue.add(temp.left);
+                if (temp.right != null) queue.add(temp.right);
+            }
+            ans.add(level);
+        }
+        return ans;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$
+
+![image-20220505111606212](imgs/image-20220505111606212.png)
+
+### [将有序数组转换为二叉搜索树](https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xninbt/)
+
+给你一个整数数组 `nums `，其中元素已经按 **升序** 排列，请你将其转换为一棵 **高度平衡** 二叉搜索树。
+
+**高度平衡** 二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过 1 」的二叉树。
+
+ 
+
+**示例 1：**
+
+![img](imgs/btree1.jpg)
+
+```
+输入：nums = [-10,-3,0,5,9]
+输出：[0,-3,9,-10,null,5]
+解释：[0,-10,5,null,-3,null,9] 也将被视为正确答案：
+```
+
+![img](imgs/btree2.jpg)
+
+**示例 2：**
+
+![img](imgs/btree.jpg)
+
+```
+输入：nums = [1,3]
+输出：[3,1]
+解释：[1,null,3] 和 [3,1] 都是高度平衡二叉搜索树。
+```
+
+**提示：**
+
+- `1 <= nums.length <= 104`
+- `-104 <= nums[i] <= 104`
+- `nums `按 严格递增 顺序排列
+
+**题解**
+
+本来以为还需要进行左旋右旋这些操作来的，其实这一道题的解法可以直接将数组中间的值当做根节点，然后迭代建树
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode sortedArrayToBST(int[] nums) {
+        return helper(nums, 0, nums.length - 1);
+    }
+
+    public TreeNode helper(int[] nums, int l, int r) {
+        if (l > r)
+            return null;
+        
+        int mid = (l + r) / 2;
+        TreeNode root = new TreeNode(nums[mid]);
+        root.left = helper(nums, l, mid - 1);
+        root.right = helper(nums, mid + 1, r);
+        return root;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(n)$
+
+![image-20220505113143917](imgs/image-20220505113143917.png)
