@@ -3226,7 +3226,184 @@ class MinStack {
 
 ![image-20220506165637305](imgs/image-20220506165637305.png)
 
+## 数学
 
+### [412. Fizz Buzz](https://leetcode-cn.com/problems/fizz-buzz/)
+
+难度简单177收藏分享切换为英文接收动态反馈
+
+给你一个整数 `n` ，找出从 `1` 到 `n` 各个整数的 Fizz Buzz 表示，并用字符串数组 `answer`（**下标从 1 开始**）返回结果，其中：
+
+- `answer[i] == "FizzBuzz"` 如果 `i` 同时是 `3` 和 `5` 的倍数。
+- `answer[i] == "Fizz"` 如果 `i` 是 `3` 的倍数。
+- `answer[i] == "Buzz"` 如果 `i` 是 `5` 的倍数。
+- `answer[i] == i` （以字符串形式）如果上述条件全不满足。
+
+ 
+
+**示例 1：**
+
+```
+输入：n = 3
+输出：["1","2","Fizz"]
+```
+
+**示例 2：**
+
+```
+输入：n = 5
+输出：["1","2","Fizz","4","Buzz"]
+```
+
+**示例 3：**
+
+```
+输入：n = 15
+输出：["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
+```
+
+ 
+
+**提示：**
+
+- `1 <= n <= 104`
+
+**题解**
+
+```java
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        List<String> ans = new ArrayList<String>();
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0 && i % 5 == 0)
+                ans.add("FizzBuzz");
+            else if (i % 3 == 0)
+                ans.add("Fizz");
+            else if (i % 5 == 0)
+                ans.add("Buzz");
+            else
+                ans.add(String.valueOf(i));
+        }
+        return ans;
+    }
+}
+```
+
+* 时间复杂度：$O(n)$
+* 空间复杂度：$O(1)$ 不算上返回结果的`List<String>`
+
+![image-20220506170549759](imgs/image-20220506170549759.png)
+
+### [204. 计数质数](https://leetcode-cn.com/problems/count-primes/)-==判断质数==
+
+难度中等883收藏分享切换为英文接收动态反馈
+
+给定整数 `n` ，返回 *所有小于非负整数 `n` 的质数的数量* 。
+
+ 
+
+**示例 1：**
+
+```
+输入：n = 10
+输出：4
+解释：小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。
+```
+
+**示例 2：**
+
+```
+输入：n = 0
+输出：0
+```
+
+**示例 3：**
+
+```
+输入：n = 1
+输出：0
+```
+
+ 
+
+**提示：**
+
+- `0 <= n <= 5 * 106`
+
+**题解**
+
+
+
+
+
+
+
+### [326. 3 的幂](https://leetcode-cn.com/problems/power-of-three/)
+
+难度简单252收藏分享切换为英文接收动态反馈
+
+给定一个整数，写一个函数来判断它是否是 3 的幂次方。如果是，返回 `true` ；否则，返回 `false` 。
+
+整数 `n` 是 3 的幂次方需满足：存在整数 `x` 使得 `n == 3x`
+
+ 
+
+**示例 1：**
+
+```
+输入：n = 27
+输出：true
+```
+
+**示例 2：**
+
+```
+输入：n = 0
+输出：false
+```
+
+**示例 3：**
+
+```
+输入：n = 9
+输出：true
+```
+
+**示例 4：**
+
+```
+输入：n = 45
+输出：false
+```
+
+ 
+
+**提示：**
+
+- `-231 <= n <= 231 - 1`
+
+**题解**
+
+```java
+class Solution {
+    public boolean isPowerOfThree(int n) {
+        if (n < 1)
+            return false;
+
+        while(n > 0) {
+            if (n % 3 != 0 && n != 1)
+                return false;
+            n /= 3;
+        }
+        return true;
+    }
+}
+```
+
+* 时间复杂度：$O(log_3(n))$
+* 空间复杂度：$O(1)$
+
+![image-20220506171945353](imgs/image-20220506171945353.png)
 
 
 
