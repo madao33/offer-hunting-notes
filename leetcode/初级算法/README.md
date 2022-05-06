@@ -3065,6 +3065,167 @@ class Solution {
 
 ![image-20220506164529132](imgs/image-20220506164529132.png)
 
+## 设计问题
+
+这类问题通常要求你实现一个给定的类的接口，并可能涉及使用一种或多种数据结构。 这些问题对于提高数据结构是很好的练习。
+
+### [384. 打乱数组](https://leetcode-cn.com/problems/shuffle-an-array/)
+
+难度中等
+
+给你一个整数数组 `nums` ，设计算法来打乱一个没有重复元素的数组。打乱后，数组的所有排列应该是 **等可能** 的。
+
+实现 `Solution` class:
+
+- `Solution(int[] nums)` 使用整数数组 `nums` 初始化对象
+- `int[] reset()` 重设数组到它的初始状态并返回
+- `int[] shuffle()` 返回数组随机打乱后的结果
+
+ 
+
+**示例 1：**
+
+```
+输入
+["Solution", "shuffle", "reset", "shuffle"]
+[[[1, 2, 3]], [], [], []]
+输出
+[null, [3, 1, 2], [1, 2, 3], [1, 3, 2]]
+
+解释
+Solution solution = new Solution([1, 2, 3]);
+solution.shuffle();    // 打乱数组 [1,2,3] 并返回结果。任何 [1,2,3]的排列返回的概率应该相同。例如，返回 [3, 1, 2]
+solution.reset();      // 重设数组到它的初始状态 [1, 2, 3] 。返回 [1, 2, 3]
+solution.shuffle();    // 随机返回数组 [1, 2, 3] 打乱后的结果。例如，返回 [1, 3, 2]
+```
+
+ 
+
+**提示：**
+
+- `1 <= nums.length <= 50`
+- `-106 <= nums[i] <= 106`
+- `nums` 中的所有元素都是 **唯一的**
+- 最多可以调用 `104` 次 `reset` 和 `shuffle`
+
+**题解**
+
+```java
+class Solution {
+    int[] nums;
+    int[] original;
+
+    public Solution(int[] nums) {
+        this.nums = nums;
+        this.original = new int[nums.length];
+        System.arraycopy(nums, 0, original, 0, nums.length);
+    }
+    
+    public int[] reset() {
+        System.arraycopy(original, 0, nums, 0, nums.length);
+        return nums;
+    }
+    
+    public int[] shuffle() {
+        int[] shuffled = new int[nums.length];
+        List<Integer> list = new ArrayList<Integer>();
+        for (int i = 0; i < nums.length; ++i) {
+            list.add(nums[i]);
+        }
+        Random random = new Random();
+        for (int i = 0; i < nums.length; ++i) {
+            int j = random.nextInt(list.size());
+            shuffled[i] = list.remove(j);
+        }
+        System.arraycopy(shuffled, 0, nums, 0, nums.length)
+        return nums;
+    }
+}
+```
+
+![image-20220506165325411](imgs/image-20220506165325411.png)
+
+### [155. 最小栈](https://leetcode-cn.com/problems/min-stack/)
+
+难度简单1297收藏分享切换为英文接收动态反馈
+
+设计一个支持 `push` ，`pop` ，`top` 操作，并能在常数时间内检索到最小元素的栈。
+
+实现 `MinStack` 类:
+
+- `MinStack()` 初始化堆栈对象。
+- `void push(int val)` 将元素val推入堆栈。
+- `void pop()` 删除堆栈顶部的元素。
+- `int top()` 获取堆栈顶部的元素。
+- `int getMin()` 获取堆栈中的最小元素。
+
+ 
+
+**示例 1:**
+
+```
+输入：
+["MinStack","push","push","push","getMin","pop","top","getMin"]
+[[],[-2],[0],[-3],[],[],[],[]]
+
+输出：
+[null,null,null,null,-3,null,0,-2]
+
+解释：
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> 返回 -3.
+minStack.pop();
+minStack.top();      --> 返回 0.
+minStack.getMin();   --> 返回 -2.
+```
+
+ 
+
+**提示：**
+
+- `-231 <= val <= 231 - 1`
+- `pop`、`top` 和 `getMin` 操作总是在 **非空栈** 上调用
+- `push`, `pop`, `top`, and `getMin`最多被调用 `3 * 104` 次
+
+**题解**
+
+```java
+class MinStack {
+    Deque<Integer> xStack;
+    Deque<Integer> minStack;
+
+    public MinStack() {
+        xStack = new LinkedList<Integer>();
+        minStack = new LinkedList<Integer>();
+        minStack.push(Integer.MAX_VALUE);
+    }
+    
+    public void push(int x) {
+        xStack.push(x);
+        minStack.push(Math.min(minStack.peek(), x));
+    }
+    
+    public void pop() {
+        xStack.pop();
+        minStack.pop();
+    }
+    
+    public int top() {
+        return xStack.peek();
+    }
+    
+    public int getMin() {
+        return minStack.peek();
+    }
+}
+
+```
+
+![image-20220506165637305](imgs/image-20220506165637305.png)
+
 
 
 
