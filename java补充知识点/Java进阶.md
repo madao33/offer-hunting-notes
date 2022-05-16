@@ -579,7 +579,602 @@ public class Student {
 }
 ```
 
-day02
+# day2-抽象类、接口、代码块、final、单例、枚举
+
+## 抽象类
+
+### 抽象类的概述
+
+父类指导之类一定要完成某个功能，但是每个之类完成的情况是不一样的。子类以后也只会用自己重写的功能，那么父类的该功能就可以定义成抽象方法，子类重写调用自己的方法。所以父类的该功能就可以定义为抽象的方法。拥有冲向方法的类必须定义为抽象类。
+
+> **抽象方法**：没有方法体，只有方法签名，必须用`abstract`修饰的方法就是抽象方法。
+>
+> **抽象类**：拥有抽象方法的类必须定义成抽象类，必须用`abstract`修饰。
+
+```java
+class Wolf extends Animal{
+    @Override
+    public void run(){
+        System.out.println("🐺跑的贼贼溜~~~");
+    }
+}
+
+// 抽象类：拥有了抽象方法的类必须定义成抽象类。抽象类必须加上abstract修饰。
+abstract class Animal{
+    // 抽象方法：没有方法体，只有方法签名，必须加上abstract修饰。
+    public abstract void run();
+}
+```
+
+### 抽象类的使用
+
+抽象类是为了被子类继承
+
+```java
+class Manager extends Employee{
+    @Override
+    public void work() {
+        System.out.println("班主任需要管理班级~~~~");
+    }
+
+     @Override
+     public void run() {
+
+     }
+ }
+
+class Techer extends Employee{
+    @Override
+    public void work() {
+        System.out.println("老师需要授课~~~~");
+    }
+
+    @Override
+    public void run() {
+
+    }
+}
+
+// 员工（老师，班主任 ） 每个员工都要工作，但是工作内容不一样。
+abstract class Employee{
+    public abstract void work();
+    public abstract void run();
+}
+```
+
+> * 一个类继承了抽象类，必须重写完抽象类的全部抽象方法，否则这个类必须定义成抽象类。
+> * 因为拥有抽象方法的类必须定义成抽象类。
+
+### 抽象类的特征
+
+抽象类的特征是：**有得有失**
+
+* 抽象类得到了拥有对象的能力
+* 抽象类失去了创建对象的能力，即抽象类不能创建对象
+
+> **抽象类是否有构造器，是否可以创建对象**，为什么?
+>
+> 抽象类作为类一定**有构造器**，而且必须有构造器。**提供给子类继承后调用父类构造器**使用的。
+>
+> 抽象类虽然有构造器，但是抽象类**绝对不能创建对象**。抽象类中可能存在抽象方法，**抽象方法不能执行**。抽象在学术上本身意味着不能实例化。
+
+### 抽象类的意义
+
+抽象类存在的意义有两点：
+
+* **被继承**：抽象类就是为了被子类继承，否则抽象类将毫无意义
+* 抽象类体现的**模板思想**：部分实现，部分抽象，可以使用抽象类设计一个模板模式
+
+### 抽象类设计模板模式
+
+**设计模式**：就是前人或者软件行业在生产实战中发现的优秀软件设计架构和思想。后来者可以直接用这些架构或者思想就可以设计出优秀的软件，提高开发效率，提高软件可扩展性和可维护性。
+
+模板设计模式就是一种经典的设计模式思想
+
+**模板设计模型的作用**：优化代码架构，提高代码的复用性，相同功能的重复代码无需重复书写。可以做到部分实现，部分抽象，抽象的东西交给使用模板的人重写实现
+
+```java
+class Teacher extends Template{
+    @Override
+    public String writeMain() {
+        return "\t\t我爸就是好，有多好，做他儿子才能懂~~~";
+    }
+}
+
+class Student extends Template{
+    @Override
+    public String writeMain() {
+        return "\t\t我爸爸很牛，我爸爸是马云，就是爽，很有钱~~~~";
+    }
+}
+// 1.写一个模板类：代表了作文模板。
+abstract class Template{
+    private String title = "\t\t\t\t\t\t《我的爸爸》";
+    private String one = "\t\t我的爸爸很牛逼，到底有多牛呢，请看如下说明：";
+    private String last = "\t\t以上就是我的爸爸，简直太好了，下辈子还要做他儿子！";
+
+    // 2.提供一个写作文方法
+    public void write(){
+        System.out.println(title);
+        System.out.println(one);
+        // 正文：正文部分模板是不知道怎么写的！应该把正文部分定义成抽象方法
+        // 交给使用模板的子类重写！
+        System.out.println(writeMain());
+        System.out.println(last);
+    }
+
+    // 正文部分定义成抽象方法，交给子类重写！！
+    public abstract String writeMain();
+}
+```
+
+### 抽象类的注意事项
+
+1. 抽象类不能创建对象，如果创建，编译无法通过而报错。只能创建其非抽象子类的对象。
+    理解：假设创建了抽象类的对象，调用抽象的方法，而抽象方法没有具体的方法体，没有意义。
+
+2. 抽象类一定有而且是必须有构造器，是供子类创建对象时，初始化父类成员使用的。
+    理解：子类的构造器中，有默认的super()，需要访问父类构造器。
+
+3. 抽象类中，不一定包含抽象方法，但是有抽象方法的类必定是抽象类。
+
+4. 抽象类的子类，必须重写抽象父类中所有的抽象方法，否则子类也必须定义成抽象类。
+
+5. 抽象类存在的意义是为了被子类继承，抽象类体现的是模板思想。
+   理解：抽象类中已经实现的是模板中确定的成员，
+   抽象类不确定如何实现的定义成抽象方法，交给具体的子类去实现。
+
+## 接口
+
+### 接口的概述
+
+接口体现的是规范思想，实现接口的子类必须重写完接口的全部抽象方法
+
+接口是更加彻底的抽象，在JDK 1.8之前接口中只能是抽象方法和常量
+
+定义格式
+
+```java
+修饰符 interface 接口名称{
+	// 在JDK 1.8 之前接口中只能是抽象方法和常量
+}
+```
+
+成分研究（JDK 1.8之前）
+
+* 接口中抽象方法默认加上`public abstract`修饰，可以省略不写
+
+* 常量是指有`public static final`修饰的成员变量，**有且仅能被复制一次**，值不能改变
+
+  常量名称规范要求全部大写，多个单词下划线连接
+
+  常量修饰`public static final`可以省略不写，默认会加上
+
+```java
+public interface InterfaceDemo {
+     // 2.常量
+     // 只有一份，在执行的过程中其值必须有，但是不能改变！
+     // 常量是public static final修饰
+     // 常量的名称建议字母全部大写，多个单词用“_”连接
+     // 在接口中常量可以省略public static final不写，默认会加上该三个修饰符！
+     //public static final String SCHOOL_NAME = "黑马";
+     String SCHOOL_NAME = "黑马";
+
+
+     // 1.抽象方法
+     // public abstract void run();
+     // 接口中的抽象方法默认会加上public abstract修饰,所以可以省略不写。
+     void run();
+     void work();
+}
+```
+
+### 接口的基本实现
+
+子类和父类是继承，实现类和接口是实现关系。接口是用来被类实现的，实现接口的类是实现类
+
+子类–>继承–>父类
+
+实现类–>实现–>接口
+
+类实现接口的格式：
+
+```java
+修饰符 class 实现类名称 implements 接口1,接口2,接口3,....{
+
+}
+```
+
+例如
+
+```java
+// 实现类 实现 SportMan接口
+// 一个类实现接口必须重写完接口中全部抽象方法，否则这个类必须定义成抽象类！！
+class PingPongMan implements SportMan{
+    private String name;
+    public PingPongMan(String name){
+        this.name = name;
+    }
+    @Override
+    public void run() {
+        System.out.println(name+"必须天天运动。正在🏃训练~~~‍");
+    }
+
+    @Override
+    public void win() {
+        System.out.println(name+"参加比赛中~~~‍");
+    }
+}
+
+// 定义一个接口：表示运动员的规范
+interface SportMan{
+    void run(); // 跑步
+    void win(); // 比赛得奖
+}
+```
+
+> * 接口的使命就是要求实现接口的类必须有`run()`和`win()`方法
+> * 接口可以多实现
+> * 一个类实现接口必须重写完接口中全部抽象方法，否则这个类必须定义成抽象类
+
+### 接口的多实现
+
+* 类与类是单继承
+* 类和接口是多实现
+
+一个类如果实现了多个接口，必须重写完全部接口中的全部抽象方法，否则这个类必须定义为抽象类
+
+```java
+class PingPongMan implements SportMan , Law{
+
+    @Override
+    public void rule() {
+
+    }
+
+    @Override
+    public void run() {
+
+    }
+
+    @Override
+    public void win() {
+
+    }
+}
+
+interface Law{
+    void rule();
+    void run();
+}
+
+interface SportMan{
+    void run();
+    void win();
+}
+```
+
+### 接口与接口的多继承
+
+* 类与类是单继承关系：一个类只能继承一个直接父类
+* 类与接口是多继承关系：一个类可以同时实现多个接口
+* 接口与接口是多继承关系：一个接口可以同时继承多个接口
+
+接口与接口的多继承，用一个接口合并多个接口
+
+```java
+class PingPongMan implements SportMan{
+
+    @Override
+    public void eat() {
+
+    }
+
+    @Override
+    public void rule() {
+
+    }
+
+    @Override
+    public void run() {
+
+    }
+
+    @Override
+    public void goAbroad() {
+
+    }
+}
+
+interface Food{
+    void eat();
+}
+
+interface Law{
+    void rule();
+}
+
+// 接口与接口的多继承！
+interface SportMan extends Law , Food {
+    void run();
+    void goAbroad();
+}
+```
+
+### JDK1.8之后接口新增的方法
+
+JDK1.8开始之后接口新增的三个方法，了解即可
+
+* **默认方法**	就是之前写的实例方法
+  * 必须用`default`修饰
+  * 默认会加`public`修饰
+  * 只能用接口的实现类的对象来调用
+* **静态方法**
+  * 可以直接加`static`修饰
+  * 默认会加`public`修饰
+  * 接口的静态方法只能用接口的类名称调用
+* **私有方法**    从JDK 1.9开始才支持的
+  * 其实就是私有的实例方法，必须加`private`修饰
+  * 只能在**本接口**被其他的默认方法或者私有方法访问
+
+```java
+public class InterfaceDemo {
+    public static void main(String[] args) {
+        // 1.默认方法调用：必须用接口的实现类对象调用。
+        PingPongMan zjk = new PingPongMan();
+        zjk.run();
+        zjk.work();
+
+        // 2.接口的静态方法必须用接口的类名本身来调用。
+        InterfaceJDK8.inAddr();
+    }
+}
+
+class PingPongMan implements InterfaceJDK8{
+    @Override
+    public void work() {
+        System.out.println("工作中。。。");
+    }
+}
+
+interface InterfaceJDK8{
+    // 之前的抽象方法！！
+    void work();
+
+    // a.默认方法（就是之前写的普通实例方法）
+    // 必须用接口的实现类的对象来调用。
+    default void run(){
+        go();
+        System.out.println("开始跑步🏃‍~~~~");
+    }
+
+    // b.静态方法
+    // 注意：接口的静态方法必须用接口的类名本身来调用
+    static void inAddr(){
+        System.out.println("我们在吉山区~~~~");
+    }
+
+    // c.私有方法（就是私有的实例方法）: JDK 1.9才开始有的。
+    //  -- 只能在本接口中被其他的默认方法或者私有方法访问。
+    private void go(){
+        System.out.println("开始。。");
+    }
+}
+```
+
+### 接口的注意事项
+
+* 如果实现了多个接口，多个接口存在同名的**静态方法**并不会从冲突，原因是只能通过各自接口方法访问各自静态方法
+* 当一个类，即继承一个父类，又实现若干个接口时，父类的成员方法与接口中的默认方法重名时，之类**就近**选择执行父类的成员方法
+* 当一个类实现多个接口时，多个接口存在同名的默认方法，实现类必须重写这个方法
+
+## 代码块
+
+代码块按照有无`static`修饰可以分为：静态代码块、实例代码块
+
+### 静态代码块
+
+静态代码块：必须用`static`修饰，必须放在类下，与类一起优先加载执行
+
+静态代码块可以用于执行类的方法之前进行静态资源的初始化操作
+
+```java
+public class CodeDemo01 {
+    public static String schoolName ;
+    public static ArrayList<String> lists = new ArrayList<>();
+
+    // 静态代码块,属于类，与类一起加载一次!
+    static {
+        System.out.println("静态代码块被触发执行~~~~~~~");
+        // 在静态代码块中进行静态资源的初始化操作
+        schoolName = "黑马";
+        lists.add("3");
+        lists.add("4");
+        lists.add("5");
+    }
+
+    public static void main(String[] args) {
+        System.out.println(schoolName);
+        System.out.println(lists);
+    }
+}
+```
+
+### 实例代码块
+
+* 实例代码块直接用`{}`括起来，无需`static`修饰
+* 会和类的对象一起加载，每次创建对象的时候，实例代码块会被加载且自动执行一次
+* 实例代码块的代码在底层实际上是提取到每个构造器中去执行的，**实例代码块属于对象**
+* 实例代码块可以在创建对象之前进行实例资源的初始化操作
+
+```java
+public class CodeDemo02 {
+    private String name;
+    private ArrayList<String> lists = new ArrayList<>();
+    // 实例代码块！属于对象！与对象一起加载!
+    {
+        name = "小手";
+        lists.add("东");
+        lists.add("南");
+        lists.add("西");
+        lists.add("北");
+        System.out.println("实例代码块被触发执行一次~~~~~~~~");
+    }
+
+    public CodeDemo02(){
+
+    }
+    public CodeDemo02(String name){
+
+    }
+
+    public static void main(String[] args) {
+        CodeDemo02 c = new CodeDemo02();
+        System.out.println(c.name);
+        System.out.println(c.lists);
+        new CodeDemo02();
+        new CodeDemo02();
+    }
+}
+```
+
+## final关键词
+
+`final`可以用于修饰类、方法、变量
+
+* `final`修饰类：类不能被继承了
+* `final`修饰方法：方法不能被重写
+* `final`修饰变量：变量有且仅能被赋值一次
+  * 局部变量-只能赋值一次，不能在更改
+  * 实例成员变量
+    * 显示初始化，在定义成员变量的时候立马赋值
+    * 实例代码块中赋值一次
+    * 构造器初始化，在构造器中赋值一次
+
+`final`和`abstract`的关系
+
+互斥关系，不能同时修饰类或者同时修饰方法
+
+**常量**：有`public static final`修饰，名称字母全部大写，多个单词用下划线连接
+
+## 单例设计模式
+
+**单例**的意思是一个类永远只存在一个对象，不能创建多个对象
+
+* 开发中有很多类的对象我们只需要一个对象，例如虚拟机，任务管理器对象
+* 对象越多越占内存，有时候只需要一个对象就可以实现业务，单例可以节约内存，提高性能
+
+### 饿汉单例设计模式
+
+通过类获取单例对象的时候，对象已经提前准备做好了
+
+设计步骤：
+
+* 定义一个类，把**构造器私有**
+* 定义一个静态变量存储一个对象
+* 提供一个返回单例对象的方法
+
+```java
+// 饿汉单例设计模式
+class Singleton01{
+    //  b.定义一个静态变量存储一个对象( 在用类获取对象的时候，对象已经提前为你创建好了。)
+    private static final Singleton01 INSTANCE = new Singleton01();
+    //  a.定义一个类，把构造器私有。
+    private Singleton01(){
+    }
+    // c.提供一个返回单例对象的方法。
+    public static Singleton01 getInstance(){
+        return INSTANCE;
+    }
+}
+```
+
+### 懒汉单例设计模式
+
+通过类获取单例对象的时候发现没有对象才会去创建一个对象
+
+设计步骤：
+
+* 定义一个类，把**构造器私有**
+* 定义一个静态成员变量用于存储一个对象
+* 提供一个返回单例对象的方法，判断对象不存在才创建一次，存在直接返回
+
+```java
+// 懒汉单例设计模式
+class Singleton02{
+    //  b.定义一个静态变量存储一个对象(这里不能创建对象，需要的时候才创建，这里只是一个变量用于存储对象！)
+    public static Singleton02  instance ;
+
+    //   a.定义一个类，把构造器私有。
+    private Singleton02(){
+
+    }
+    //  c.提供一个返回单例对象的方法。
+    public static Singleton02 getInstance(){
+        if(instance == null){
+            // 第一次来拿单例对象！需要创建一次对象，以后直接返回！！
+            instance = new Singleton02();
+        }
+        return instance;
+    }
+}
+```
+
+## 枚举
+
+枚举类的作用：是为了做信息的标志和信息分类
+
+### 枚举类基本语法
+
+```java
+修饰符 enum 枚举名称{
+	// 第一行罗列的必须的枚举类的对象名称
+}
+```
+
+例如
+
+```java
+enum Sex{
+    BOY , GIRL;
+}
+
+// 枚举
+enum Season {
+    SPRING , SUMMER , AUTUMN , WINTER;
+}
+```
+
+枚举类反编译以后的源代码
+
+```Java
+public final class Season extends java.lang.Enum<Season> {
+    public static final Season SPRING = new Season();
+    public static final Season SUMMER = new Season();
+    public static final Season AUTUMN = new Season();
+    public static final Season WINTER = new Season();
+
+    public static Season[] values();
+    public static Season valueOf(java.lang.String);
+}
+```
+
+### 枚举类的特点
+
+* 枚举类是`final`修饰的，不能被继承
+* 枚举类默认继承了枚举类型`java.lang.Enum`
+* 枚举类的第一行罗列的是枚举类的对象，而且是用常量存储的
+* 所以枚举类的第一行写的都是常量名称，默认存储了枚举对象
+* 枚举类的构造器默认是私有的
+* 枚举类相当于是多例设计模式
+
+> `Java`建议做信息标志和信息分类应该使用**枚举**实现，比较优雅，可以实现可读性，而且入参受限制，不能乱输入
+
+p51
+
+
+
+
 
 
 

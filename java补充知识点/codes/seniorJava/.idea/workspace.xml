@@ -1,9 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b398024a-5421-47ef-b124-da04b8733735" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+    <list default="true" id="b1d9aa9d-48fb-4136-bedc-0a71e59f7c6e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Java进阶.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java进阶.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_01知识回顾/ClassDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_01知识回顾/ClassDemo01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_01知识回顾/ClassDemo02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_01知识回顾/Package03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_01知识回顾/ThisDemo02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_01知识回顾/ThisDemo03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_02static关键字/StaticDemo01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_03成员变量的分类和访问/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_04成员方法的分类和访问/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_05成员变量和成员方法访问的拓展/MethodFieldDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_06继承的概述/ExtendsDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_07继承的使用案例/People.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_07继承的使用案例/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_07继承的使用案例/Teacher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_07继承的使用案例/TestMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_08继承_子类不能继承父类的内容/ExtendsDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_09继承后_成员变量的访问特点/TestDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_09继承后成员变量的访问特点/ExtendsDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_10继承后_成员方法的访问特点/TestDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_10继承后成员方法的访问特点/ExtendsDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_11继承后_方法重写/ExtendsDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_11继承后_方法重写/ExtendsDemo02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_11继承后_方法重写/ExtendsDemo03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_12继承后_构造器的特点/TestDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_12继承后构造器的特点/ExtendsDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_13super调用父类构造器/TestDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_13继承后super调用父类构造器/ExtendsDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_14this和super关键字使用总结/ThisDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_15继承的特点/ExtendsDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_16引用类型作为方法参数和返回值/TestDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_17引用类型作为成员变量的类型/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_17引用类型作为成员变量的类型/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_17引用类型作为成员变量的类型/TestDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day01Demo/src/com/itheima/_17引用类型定义成员变量/TestDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_01知识回顾/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_01知识回顾/Animal02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_01知识回顾/ClassDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_01知识回顾/ClassDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_01知识回顾/ClassDemo02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_01知识回顾/Package03.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_01知识回顾/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_01知识回顾/Pig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_01知识回顾/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_01知识回顾/ThisDemo02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_01知识回顾/ThisDemo03.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_02static关键字/StaticDemo01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_03成员变量的分类和访问/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_04成员方法的分类和访问/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_05成员变量和成员方法访问的拓展/MethodFieldDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_06继承的概述/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_06继承的概述/Cat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_06继承的概述/ExtendsDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_07继承的使用案例/People.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_07继承的使用案例/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_07继承的使用案例/Teacher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_07继承的使用案例/TestMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_08继承_子类不能继承父类的内容/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_08继承_子类不能继承父类的内容/Cat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_08继承_子类不能继承父类的内容/ExtendsDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_09继承后_成员变量的访问特点/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_09继承后_成员变量的访问特点/Cat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_09继承后_成员变量的访问特点/TestDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_09继承后成员变量的访问特点/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_09继承后成员变量的访问特点/ExtendsDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_09继承后成员变量的访问特点/Wolf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_10继承后_成员方法的访问特点/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_10继承后_成员方法的访问特点/Cat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_10继承后_成员方法的访问特点/TestDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_10继承后成员方法的访问特点/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_10继承后成员方法的访问特点/Dog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_10继承后成员方法的访问特点/ExtendsDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_11继承后_方法重写/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_11继承后_方法重写/Computer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_11继承后_方法重写/ExtendsDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_11继承后_方法重写/ExtendsDemo02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_11继承后_方法重写/ExtendsDemo03.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_11继承后_方法重写/Mac.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_11继承后_方法重写/People.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_11继承后_方法重写/SportMan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_11继承后_方法重写/Wolf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_12继承后_构造器的特点/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_12继承后_构造器的特点/TestDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_12继承后_构造器的特点/Tiger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_12继承后构造器的特点/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_12继承后构造器的特点/Dog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_12继承后构造器的特点/ExtendsDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_13super调用父类构造器/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_13super调用父类构造器/Monkey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_13super调用父类构造器/TestDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_13继承后super调用父类构造器/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_13继承后super调用父类构造器/ExtendsDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_13继承后super调用父类构造器/Monkey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_14this和super关键字使用总结/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_14this和super关键字使用总结/ThisDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_15继承的特点/A.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_15继承的特点/B.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_15继承的特点/C.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_15继承的特点/D.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_15继承的特点/ExtendsDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_16引用类型作为方法参数和返回值/Dog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_16引用类型作为方法参数和返回值/TestDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_17引用类型作为成员变量的类型/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_17引用类型作为成员变量的类型/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_17引用类型作为成员变量的类型/TestDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_17引用类型定义成员变量/Class.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_17引用类型定义成员变量/Student.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Day01Demo/com/itheima/_17引用类型定义成员变量/TestDemo.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../maven/codes/idea版/maven-project/.idea/misc.xml" afterDir="false" />
@@ -18,16 +128,9 @@
       <change beforePath="$PROJECT_DIR$/../../../maven/codes/maven-project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../maven/codes/maven-project/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_CONFLICTS" value="false" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -35,38 +138,33 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="28MPcthYs4jCWieS5BdNWq1O8lD" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="28sz6KlJBB9HZhl4r8N7eTUMnrv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/day02/src" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.ChangelistConflict" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava" />
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day02\src" />
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day01\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestDemo (3)">
-    <configuration name="ExtendsDemo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._12继承后构造器的特点.ExtendsDemo" />
-      <module name="Day01Demo" />
+  <component name="RunManager" selected="Application.EnumDemo02">
+    <configuration name="CodeDemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._13代码块.CodeDemo01" />
+      <module name="day02" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._12继承后构造器的特点.*" />
+          <option name="PATTERN" value="com.itheima._13代码块.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,12 +172,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDemo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._13super调用父类构造器.TestDemo" />
-      <module name="Day01Demo" />
+    <configuration name="CodeDemo02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._13代码块.CodeDemo02" />
+      <module name="day02" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._13super调用父类构造器.*" />
+          <option name="PATTERN" value="com.itheima._13代码块.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,12 +185,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDemo (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._16引用类型作为方法参数和返回值.TestDemo" />
-      <module name="Day01Demo" />
+    <configuration name="EnumDemo02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._16枚举的应用.EnumDemo02" />
+      <module name="day02" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._16引用类型作为方法参数和返回值.*" />
+          <option name="PATTERN" value="com.itheima._16枚举的应用.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,12 +198,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDemo (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._17引用类型作为成员变量的类型.TestDemo" />
-      <module name="Day01Demo" />
+    <configuration name="InterfaceDemo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._12实现多个接口的使用注意事项.InterfaceDemo" />
+      <module name="day02" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._17引用类型作为成员变量的类型.*" />
+          <option name="PATTERN" value="com.itheima._12实现多个接口的使用注意事项.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,12 +211,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._12继承后_构造器的特点.TestDemo" />
-      <module name="Day01Demo" />
+    <configuration name="SingleInstanceDemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._15单例模式.SingleInstanceDemo01" />
+      <module name="day02" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._12继承后_构造器的特点.*" />
+          <option name="PATTERN" value="com.itheima._15单例模式.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,39 +226,28 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestDemo (3)" />
-        <item itemvalue="Application.TestDemo (2)" />
-        <item itemvalue="Application.TestDemo (1)" />
-        <item itemvalue="Application.ExtendsDemo (1)" />
-        <item itemvalue="Application.TestDemo" />
+        <item itemvalue="Application.EnumDemo02" />
+        <item itemvalue="Application.SingleInstanceDemo01" />
+        <item itemvalue="Application.CodeDemo02" />
+        <item itemvalue="Application.CodeDemo01" />
+        <item itemvalue="Application.InterfaceDemo (1)" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b398024a-5421-47ef-b124-da04b8733735" name="Changes" comment="" />
-      <created>1651023566277</created>
+      <changelist id="b1d9aa9d-48fb-4136-bedc-0a71e59f7c6e" name="Changes" comment="" />
+      <created>1652019906148</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1651023566277</updated>
-      <workItem from="1651023566278" duration="3240000" />
-      <workItem from="1651027055466" duration="11395000" />
-      <workItem from="1651584850567" duration="9000" />
-      <workItem from="1651735418031" duration="6807000" />
+      <updated>1652019906148</updated>
+      <workItem from="1652019908376" duration="5282000" />
+      <workItem from="1652685432513" duration="5696000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/../../.." />
-    </ignored-roots>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
