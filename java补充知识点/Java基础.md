@@ -335,7 +335,302 @@ Java中，可以使用访问控制符来保护对类、变量、方法和构造�
 |  `default`  |   Y    |    Y     |       Y        |       N        |   N    |
 |  `private`  |   Y    |    N     |       N        |       N        |   N    |
 
-## 面试常问问题
+## Java Scanner类
+
+`next()`与`nextLine()`区别
+
+`next()`
+
+- 一定要读取到有效字符后才可以结束输入。
+- 对输入有效字符之前遇到的空白，`next() `方法会自动将其去掉。
+- 只有输入有效字符后才将其后面输入的空白作为分隔符或者结束符。
+- `next() `不能得到带有空格的字符串。
+
+`nextLine()`
+
+- 以`Enter`为结束符,也就是说 `nextLine()`方法返回的是输入回车之前的所有字符。
+- 可以获得空白。
+
+如果要输入 `int `或 `float` 类型的数据，在 `Scanner `类中也有支持，但是在输入之前最好先使用 `hasNextXxx() `方法进行验证，再使用 `nextXxx() `来读取
+
+```java
+import java.util.Scanner;
+
+public class ScannerDemo {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        // 从键盘接收数据
+        int i = 0;
+        float f = 0.0f;
+        System.out.print("输入整数：");
+        if (scan.hasNextInt()) {
+            // 判断输入的是否是整数
+            i = scan.nextInt();
+            // 接收整数
+            System.out.println("整数数据：" + i);
+        } else {
+            // 输入错误的信息
+            System.out.println("输入的不是整数！");
+        }
+        System.out.print("输入小数：");
+        if (scan.hasNextFloat()) {
+            // 判断输入的是否是小数
+            f = scan.nextFloat();
+            // 接收小数
+            System.out.println("小数数据：" + f);
+        } else {
+            // 输入错误的信息
+            System.out.println("输入的不是小数！");
+        }
+        scan.close();
+    }
+}
+```
+
+# Java面向对象
+
+## Java对象和类
+
+一个类可以包含以下类型变量：
+
+- **局部变量**：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。
+- **成员变量**：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。
+- **类变量**：类变量也声明在类中，方法体之外，但必须声明为`static`类型。
+
+### 构造方法
+
+每个类都有构造方法。如果没有显式地为类定义构造方法，Java编译器将会为该类提供一个默认构造方法。
+
+在创建一个对象的时候，至少要调用一个构造方法。构造方法的名称必须与类同名，一个类可以有多个构造方法。
+
+### 创建对象
+
+对象是根据类创建的。在`Java`中，使用关键字`new`来创建一个新的对象。创建对象需要以下三步：
+
+- **声明**：声明一个对象，包括对象名称和对象类型。
+- **实例化**：使用关键字`new`来创建一个对象。
+- **初始化**：使用`new`创建对象时，会调用构造方法初始化对象。
+
+### 源文件声明规则
+
+- 一个源文件中只能有一个`public`类
+- 一个源文件可以有多个非`public`类
+- 源文件的名称应该和`public`类的类名保持一致。例如：源文件中`public`类的类名是`Employee`，那么源文件应该命名为`Employee.java`。
+- 如果一个类定义在某个包中，那么`package`语句应该在源文件的首行。
+- 如果源文件包含`import`语句，那么应该放在`package`语句和类定义之间。如果没有`package`语句，那么`import`语句应该在源文件中最前面。
+- `import`语句和`package`语句对源文件中定义的所有类都有效。在同一源文件中，不能给不同的类不同的包声明。
+
+## Java封装
+
+封装（英语：Encapsulation）是指一种将抽象性函式接口的实现细节部份包装、隐藏起来的方法。封装可以被认为是一个保护屏障，防止该类的代码和数据被外部类定义的代码随机访问。要访问该类的代码和数据，必须通过严格的接口控制。封装最主要的功能在于我们能修改自己的实现代码，而不用修改那些调用我们代码的程序片段。适当的封装可以让程式码更容易理解与维护，也加强了程式码的安全性。
+
+封装的优点：
+
+- 良好的封装能够减少耦合。
+- 类内部的结构可以自由修改。
+- 可以对成员变量进行更精确的控制。
+- 隐藏信息，实现细节。
+
+## Java继承
+
+继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。
+
+### 继承的特性
+
+- 子类拥有父类非 private 的属性、方法。
+- 子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。
+- 子类可以用自己的方式实现父类的方法。
+- Java 的继承是单继承，但是可以多重继承，单继承就是一个子类只能继承一个父类，多重继承就是，例如 A 类继承 B 类，B 类继承 C 类，所以按照关系就是 C 类是 B 类的父类，B 类是 A 类的父类，这是 Java 继承区别于 C++ 继承的一个特性。
+- 提高了类之间的耦合性（继承的缺点，耦合度高就会造成代码之间的联系越紧密，代码独立性越差）。
+
+### 构造器
+
+子类是不继承父类的构造器（构造方法或者构造函数）的，它只是调用（隐式或显式）。如果父类的构造器带有参数，则必须在子类的构造器中显式地通过 `super`关键字调用父类的构造器并配以适当的参数列表。
+
+如果父类构造器没有参数，则在子类的构造器中不需要使用 `super` 关键字调用父类构造器，系统会自动调用父类的无参构造器。
+
+## Java重写与重载
+
+### 重写
+
+* 重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。**即外壳不变，核心重写**
+* 重写的好处在于子类可以根据需要，定义特定于自己的行为。 也就是说子类能够根据需要实现父类的方法
+* 重写方法不能抛出新的检查异常或者比被重写方法申明更加宽泛的异常。例如： 父类的一个方法申明了一个检查异常 IOException，但是在重写这个方法的时候不能抛出 `Exception `异常，因为 `Exception `是 `IOException `的父类，只能抛出 `IOException `的子类异常
+
+### 方法的重写规则
+
+- 参数列表必须完全与被重写方法的相同。
+- 返回类型与被重写方法的返回类型可以不相同，但是必须是父类返回值的派生类（java5 及更早版本返回类型要一样，java7 及更高版本可以不同）。
+- 访问权限不能比父类中被重写的方法的访问权限更低。例如：如果父类的一个方法被声明为 public，那么在子类中重写该方法就不能声明为 protected。
+- 父类的成员方法只能被它的子类重写。
+- 声明为 final 的方法不能被重写。
+- 声明为 static 的方法不能被重写，但是能够被再次声明。
+- 子类和父类在同一个包中，那么子类可以重写父类所有方法，除了声明为 private 和 final 的方法。
+- 子类和父类不在同一个包中，那么子类只能够重写父类的声明为 public 和 protected 的非 final 方法。
+- 重写的方法能够抛出任何非强制异常，无论被重写的方法是否抛出异常。但是，重写的方法不能抛出新的强制性异常，或者比被重写方法声明的更广泛的强制性异常，反之则可以。
+- 构造方法不能被重写。
+- 如果不能继承一个方法，则不能重写这个方法。
+
+### 重载(Overload)
+
+重载(overloading) 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。
+
+每个重载的方法（或者构造函数）都必须有一个独一无二的参数类型列表。
+
+最常用的地方就是构造器的重载。
+
+**重载规则:**
+
+- 被重载的方法必须改变参数列表(参数个数或类型不一样)；
+- 被重载的方法可以改变返回类型；
+- 被重载的方法可以改变访问修饰符；
+- 被重载的方法可以声明新的或更广的检查异常；
+- 方法能够在同一个类中或者在一个子类中被重载。
+- 无法以返回值类型作为重载函数的区分标准。
+
+> 方法的重写(Overriding)和重载(Overloading)是java多态性的不同表现，重写是父类与子类之间多态性的一种表现，重载可以理解成多态的具体表现形式。
+>
+> 1. 方法重载是一个类中定义了多个方法名相同,而他们的参数的数量不同或数量相同而类型和次序不同,则称为方法的重载(Overloading)。
+> 2. 方法重写是在子类存在方法与父类的方法的名字相同,而且参数的个数与类型一样,返回值也一样的方法,就称为重写(Overriding)。
+> 3. 方法重载是一个类的多态性表现,而方法重写是子类与父类的一种多态性表现。
+
+## Java多态
+
+多态是同一个行为具有多个不同表现形式或形态的能力
+
+**多态的优点**
+
+- 消除类型之间的耦合关系
+- 可替换性
+- 可扩充性
+- 接口性
+- 灵活性
+- 简化性
+
+**多态存在的三个必要条件**
+
+- 继承
+- 重写
+- 父类引用指向子类对象
+
+## Java抽象类
+
+在`Java`语言中使用`abstract class`来定义抽象类
+
+```java
+public abstract class Employee {
+   private String name;
+   private String address;
+   private int number;
+   public Employee(String name, String address, int number) {
+      System.out.println("Constructing an Employee");
+      this.name = name;
+      this.address = address;
+      this.number = number;
+   }
+   public double computePay() {
+     System.out.println("Inside Employee computePay");
+     return 0.0;
+   }
+   public void mailCheck() {
+      System.out.println("Mailing a check to " + this.name
+       + " " + this.address);
+   }
+   public String toString() {
+      return name + " " + address + " " + number;
+   }
+   public String getName() {
+      return name;
+   }
+   public String getAddress() {
+      return address;
+   }
+   public void setAddress(String newAddress) {
+      address = newAddress;
+   }
+   public int getNumber() {
+     return number;
+   }
+}
+```
+
+我们能通过一般的方法继承Employee类
+
+```java
+public class Salary extends Employee {
+   private double salary; //Annual salary
+   public Salary(String name, String address, int number, double salary) {
+       super(name, address, number);
+       setSalary(salary);
+   }
+   public void mailCheck() {
+       System.out.println("Within mailCheck of Salary class ");
+       System.out.println("Mailing check to " + getName()
+       + " with salary " + salary);
+   }
+   public double getSalary() {
+       return salary;
+   }
+   public void setSalary(double newSalary) {
+       if(newSalary >= 0.0) {
+          salary = newSalary;
+       }
+   }
+   public double computePay() {
+      System.out.println("Computing salary pay for " + getName());
+      return salary/52;
+   }
+}
+```
+
+### 抽象方法
+
+如果你想设计这样一个类，该类包含一个特别的成员方法，该方法的具体实现由它的子类确定，那么你可以在父类中声明该方法为抽象方法。
+
+`abstract `关键字同样可以用来声明抽象方法，抽象方法只包含一个方法名，而没有方法体。
+
+抽象方法没有定义，方法名后面直接跟一个分号，而不是花括号。
+
+```java
+public abstract class Employee {
+   private String name;
+   private String address;
+   private int number;
+
+   public abstract double computePay();
+
+   //其余代码
+}
+```
+
+声明抽象方法会造成以下两个结果：
+
+- 如果一个类包含抽象方法，那么该类必须是抽象类。
+- 任何子类必须重写父类的抽象方法，或者声明自身为抽象类。
+
+继承抽象方法的子类必须重写该方法。否则，该子类也必须声明为抽象类。最终，必须有子类实现该抽象方法，否则，从最初的父类到最终的子类都不能用来实例化对象。
+
+总结
+
+> - 抽象类不能被实例化(初学者很容易犯的错)，如果被实例化，就会报错，编译无法通过。只有抽象类的非抽象子类可以创建对象。
+> - 抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。
+> - 抽象类中的抽象方法只是声明，不包含方法体，就是不给出方法的具体实现也就是方法的具体功能。
+> - 构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法。
+> - 抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。
+
+## Java接口
+
+
+
+
+
+
+
+
+
+
+
+# 面试常问问题
 
 ### 为什么Java代码可以实现一次编写、到处运行
 
