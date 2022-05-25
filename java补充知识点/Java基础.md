@@ -620,11 +620,45 @@ public abstract class Employee {
 
 ## Java接口
 
+接口（英文：Interface），在JAVA编程语言中是一个抽象类型，是抽象方法的集合，接口通常以interface来声明。一个类通过继承接口的方式，从而来继承接口的抽象方法。
 
+接口并不是类，编写接口的方式和类很相似，但是它们属于不同的概念。类描述对象的属性和方法。接口则包含类要实现的方法。
 
+除非实现接口的类是抽象类，否则该类要定义接口中的所有方法。
 
+接口无法被实例化，但是可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法，否则就必须声明为抽象类。另外，在 Java 中，接口类型可用来声明一个变量，他们可以成为一个空指针，或是被绑定在一个以此接口实现的对象。
 
+## Java包
 
+为了更好地组织类，`Java` 提供了包机制，用于区别类名的命名空间
+
+### package的目录结构
+
+类放在包中会有两种主要的结果：
+
+- 包名成为类名的一部分，正如我们前面讨论的一样。
+- 包名必须与相应的字节码所在的目录结构相吻合。
+
+通常，一个公司使用它互联网域名的颠倒形式来作为它的包名.例如：互联网域名是 `nowcoder.com`，所有的包名都以 `com.nowcoder `开头。包名中的每一个部分对应一个子目录。
+
+类目录的绝对路径叫做 **class path**。设置在系统变量 **CLASSPATH** 中。编译器和 java 虚拟机通过将 package 名字加到 class path 后来构造 .class 文件的路径。
+
+### 设置 CLASSPATH 系统变量
+
+用下面的命令显示当前的CLASSPATH变量：
+
+- Windows 平台（DOS 命令行下）：`C:> set CLASSPATH`
+- UNIX 平台（Bourne shell 下）：# `echo $CLASSPATH`
+
+删除当前CLASSPATH变量内容：
+
+- Windows 平台（DOS 命令行下）：`C:> set CLASSPATH=`
+- UNIX 平台（Bourne shell 下）：# `unset CLASSPATH; export CLASSPATH`
+
+设置CLASSPATH变量:
+
+- Windows 平台（DOS 命令行下）： C:> set CLASSPATH=C:\users\jack\java\classes
+- UNIX 平台（Bourne shell 下）：# CLASSPATH=/home/jack/java/classes; export CLASSPATH
 
 
 
