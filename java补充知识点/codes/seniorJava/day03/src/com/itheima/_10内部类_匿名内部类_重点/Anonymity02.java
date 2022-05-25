@@ -27,7 +27,7 @@ public class Anonymity02 {
         go(new Swim() {
             @Override
             public void swimming() {
-                System.out.println("波妞学生快乐的狗爬式~~~");
+                System.out.println("波妞2学生快乐的狗爬式~~~");
             }
         });
     }
