@@ -2,8 +2,6 @@
 
 主要的知识点来自于黑马程序员的视频：`BV1TE41177mP`
 
-[TOC]
-
 # day1-复习回顾、静态、继承、引用类型使用
 
 ## 定义类
@@ -711,10 +709,10 @@ abstract class Template{
 ### 抽象类的注意事项
 
 1. 抽象类不能创建对象，如果创建，编译无法通过而报错。只能创建其非抽象子类的对象。
-    理解：假设创建了抽象类的对象，调用抽象的方法，而抽象方法没有具体的方法体，没有意义。
+   理解：假设创建了抽象类的对象，调用抽象的方法，而抽象方法没有具体的方法体，没有意义。
 
 2. 抽象类一定有而且是必须有构造器，是供子类创建对象时，初始化父类成员使用的。
-    理解：子类的构造器中，有默认的super()，需要访问父类构造器。
+   理解：子类的构造器中，有默认的super()，需要访问父类构造器。
 
 3. 抽象类中，不一定包含抽象方法，但是有抽象方法的类必定是抽象类。
 
@@ -1921,23 +1919,655 @@ public class DateDemo02 {
 * `Date`日期对象 ->` getTime()` -> 时间毫秒值
 * 时间毫秒值 ->` new Date(时间毫秒值)` -> `Date`日期对象
 
+# day4-常用API、正则表达式、泛型、Collection集合API
+
+## 第一章 DateFormat类
+
+简单日期格式化类`SimpleDateFormat`可以把日期对象格式化成我们喜欢的时间形式
+
+```java
+// 1.得到此刻日期对象
+Date d = new Date();
+System.out.println(d);
+
+// 2.创建一个简单日期格式化对象负责格式化日期对象
+// 注意：参数是之间的格式。
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss EEE a");
+
+// 3.开始调用方法格式化时间得到格式化的字符串时间形式
+String rs = sdf.format(d);
+System.out.println(rs);
+```
+
+也可以直接格式化时间毫秒值
+
+```java
+// 1.问121s后的时间是多少。格式化输出。
+// a.得到此刻日期对象
+Date date = new Date();
+System.out.println(date);
+
+// b.得到当前时间的时间毫秒值
+long time = date.getTime();
+time += 121 * 1000;
+
+// c.格式化时间毫秒值
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss EEE a");
+System.out.println(sdf.format(time));
+```
+
+简单日期格式化类`SimpleDateFormat`解析字符串时间成为日期对象
+
+```java
+// a.定义一个字符串时间
+String date = "2019-11-04 09:30:30";
+
+// b.把字符串的时间解析成Date日期对象 。（重点）
+// 1.创建一个简单日期格式化对象负责解析字符串的时间成为日期对象
+// 注意：参数必须与被解析的时间的格式完全一致，否则执行报错！！
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+// 2.开始解析成日期对象
+Date newDate = sdf.parse(date);
+
+// c.得到日期对象的时间毫秒值 + 往后走 1天15小时，30分29s
+long time = newDate.getTime() + (24L *60*60 + 15*60*60 + 30*60 + 29) * 1000;
+
+// d.把时间毫秒值格式化成喜欢的字符串的时间形式!
+System.out.println(sdf.format(time));
+```
+
+## 第二章 Calendar类
+
+`Calendar`代表了系统此刻日期对应的日历对象。
+
+`Calendar`是一个抽象类，不能直接创建对象。
+
+`Calendar`日历类创建日历对象的语法：
+
+```java
+Calendar rightNow = Calendar.getInstance();
+```
+
+`Calendar`的方法：
+
+* `public static Calendar getInstance()`: 返回一个日历类的对象。
+* `public int get(int field)`：取日期中的某个字段信息。
+* `public void set(int field,int value)`：修改日历的某个字段信息。
+* `public void add(int field,int amount)`：为某个字段增加/减少指定的值
+* `public final Date getTime()`: 拿到此刻日期对象。
+* `public long getTimeInMillis()`: 拿到此刻时间毫秒值
+
+```java
+// 1.通过调用日历类的静态方法getInstance得到一个当前此刻日期对象对应的日历对象。
+Calendar rightNow = Calendar.getInstance();
+System.out.println(rightNow);
+
+// 2.获取年：
+int year = rightNow.get(Calendar.YEAR);
+System.out.println(year);
+
+int mm = rightNow.get(Calendar.MONTH) + 1;
+System.out.println(mm);
+
+// 3.一年中的第几天: 308
+int days = rightNow.get(Calendar.DAY_OF_YEAR);
+System.out.println(days);
+
+// 4.修改日历的信息
+//rightNow.set(Calendar.YEAR , 2099);
+//System.out.println(rightNow.get(Calendar.YEAR));
+
+// 5.日历可以得到此刻日期对象。
+Date d = rightNow.getTime();
+System.out.println(d);
+
+// 6.此刻时间毫秒值
+long time = rightNow.getTimeInMillis();
+System.out.println(time);
+
+// 7.请问701天  15小时后是哪个日期
+// 让日历的一年中的第几天往后走 701天！
+rightNow.add(Calendar.DAY_OF_YEAR , 701);
+rightNow.add(Calendar.HOUR , 15);
+long time1 = rightNow.getTimeInMillis();
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss EEE a");
+System.out.println(sdf.format(time1));
+```
+
+## 第三章 Math类
+
+* `Math`用于做数学运算
+* `Math`类中的方法全部是静态方法，直接用类名调用即可。
+
+常用方法
+
+- `public static int abs(int a)`                  获取参数a的绝对值：
+- `public static double ceil(double a) `          向上取整
+- `public static double floor(double a)`     向下取整
+- `public static double pow(double a, double b) ` 获取a的b次幂        
+- `public static long round(double a)`         四舍五入取整
+
+## 第四章 System类
+
+`System`系统类的使用，`System`代表当前系统
+
+静态方法：
+
+* `public static void exit(int status)`:终止JVM虚拟机，非0是异常终止。
+* `public static long currentTimeMillis()`:获取当前系统此刻时间毫秒值。
+* 可以做数组的拷贝。
+  `arraycopy(Object var0, int var1, Object var2, int var3, int var4);`
+     * 参数一：原数组
+     * 参数二：从原数组的哪个位置开始赋值。
+     * 参数三：目标数组
+     * 参数四：赋值到目标数组的哪个位置
+     * 参数五：赋值几个。
+
+## 第五章 BigDecimal类
+
+`BigDecimal`大数据类
+
+* 浮点型运算的时候直接+  * / 可能会出现数据失真（精度问题）
+* `BigDecimal`可以解决浮点型运算数据失真的问题
+
+包：`java.math.`
+创建对象的方式（最好的方式：）
+      `public static BigDecimal valueOf(double val)` :包装浮点数成为大数据对象。
+方法声明
+
+- `public BigDecimal add(BigDecimal value)`       加法运算
+- `public BigDecimal subtract(BigDecimal value)`  减法运算 
+- `public BigDecimal multiply(BigDecimal value) ` 乘法运算 
+- `public BigDecimal divide(BigDecimal value)`    除法运算
+- `public double doubleValue()`     把`BigDecimal`转换成`double`类型。
+
+```java
+double a = 0.1 ;
+double b = 0.2 ;
+// 1.把浮点数转换成大数据对象运算
+BigDecimal a1 = BigDecimal.valueOf(a);
+BigDecimal b1 = BigDecimal.valueOf(b);
+//BigDecimal c1 = a1.add(b1);  // 加法
+BigDecimal c1 = a1.divide(b1); // 除法
+System.out.println(c1);
+
+// 结果可能需要继续使用!!!
+// BigDecimal只是解决精度问题的手段，double数据才是我们的目的！！
+double rs = c1.doubleValue();
+System.out.println(rs);
+```
+
+## 第六章 包装类
+
+`Java`认为一切皆对象。引用数据类型就是对象了
+
+但是在`Java中8`基本数据类型不是对象，只是表示一种数据的类型形式,这8种数据类型显得很突兀
+
+`Java`为了一切皆对象的思想统一，把8种基本数据类型转换成对应的类，这个类称为基本数据类型的包装类。
+
+基本数据类型                    包装类（引用数据类型）
+     byte                      			Byte
+     short                    			 Short
+     int                    			   Integer(特殊)
+     long                    			  Long
+
+​     float                  	  		 Float
+​     double                   		 Double
+​     char                   		   Character(特殊)
+​     boolean                 			  Boolean
+
+* 自动装箱：可以直接把基本数据类型的值或者变量赋值给包装类
+* 自动拆箱：可以把包装类的变量直接赋值给基本数据类型
+
+```java
+int a = 12 ;
+Integer a1 = 12 ;  // 自动装箱
+Integer a2 = a ;   // 自动装箱
+
+double b = 99.9;
+Double b1 = 99.9; // 自动装箱
+Double b2 = b ;   // 自动装箱
+
+Integer c = 100 ;
+int c1 = c ;      // 自动拆箱
+
+int d = 12;
+Integer d1 = null; // 引用数据类型的默认值可以为null
+Integer d2 = 0;
+
+System.out.println("-----------------");
+Integer it = Integer.valueOf(12);  // 手工装箱！
+// Integer it1 = new Integer(12); // 手工装箱！
+Integer it2 = 12;
 
 
-p73
+Integer it3 = 111 ;
+int it33 = it3.intValue(); // 手工拆箱
+int it333 = it3;
+```
+
+* Java为包装类做了一些特殊功能，以便程序员使用
+* 包装类作为类首先拥有了`Object`类的方法
+* 包装类作为引用类型的变量可以存储`null`值
+
+* 可以把基本数据类型的值转换成字符串类型的值。（没啥用）
+  * 调用`toString()`方法
+  * 调用`Integer.toString`(基本数据类型的值)得到字符串
+  * 直接把基本数据类型+空字符串就得到了字符串
+* 把字符串类型的数值转换成对应的基本数据类型的值。（真的很有用）
+  * `Xxx.parseXxx("字符串类型的数值")`
+  * `Xxx.valueOf("字符串类型的数值")` 推荐使用
+
+## 第七章 正则表达式
+
+是一些特殊字符组成的校验规则，可以校验信息的正确性，校验邮箱是否合法，例如电话号码，金额等。
+
+字符类
+     
+
+```
+[abc] a、b 或 c（简单类）
+[^abc] 任何字符，除了 a、b 或 c（否定）
+[a-zA-Z] a 到 z 或 A 到 Z，两头的字母包括在内（范围）
+[a-d[m-p]] a 到 d 或 m 到 p：[a-dm-p]（并集）
+[a-z&&[def23]] d、e 或 f（交集）
+[a-z&&[^bc]] a 到 z，除了 b 和 c：[ad-z]（减去）
+[a-z&&[^m-p]] a 到 z，而非 m 到 p：[a-lq-z]（减去）
+```
+
+ 预定义字符类
+
+```
+. 任何字符
+\d 数字：[0-9]
+\D 非数字： [^0-9]
+\s 空白字符：[ \t\n\x0B\f\r]
+\S 非空白字符：[^\s]
+\w 单词字符：[a-zA-Z_0-9]
+\W 非单词字符：[^\w]
+```
+
+以上正则匹配只能校验单个字符。
+
+Greedy 数量词
+
+```
+X? X，一次或一次也没有
+X* X，零次或多次
+X+ X，一次或多次
+X{n} X，恰好 n 次
+X{n,} X，至少 n 次
+X{n,m} X，至少 n 次，但是不超过 m 次
+```
+
+```java
+private static void checkPhone() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("请您输入电话号码：");
+        String phone = sc.nextLine();
+        if(phone.matches("0\\d{2,5}-?\\d{5,15}")){
+            System.out.println("电话号码合法了！");
+        }else{
+            System.err.println("电话号码不正确！");
+        }
+    }
 
 
+    private static void checkTel() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("请您输入手机号码：");
+        String tel = sc.nextLine();
+        if(tel.matches("1[3-9]\\d{9}")){
+            System.out.println("手机号码合法了！");
+        }else{
+            System.err.println("手机号码不正确！");
+        }
+    }
 
+    // 校验邮箱
+    public static void checkEmail(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("请您输入邮箱：");
+        String email = sc.nextLine();
+        // 3232323@qq.com
+        // dlei082@163.com
+        // dlei@pic.com.cn
+        if(email.matches("\\w{1,}@\\w{2,10}(\\.\\w{2,10}){1,2}")){
+            System.out.println("邮箱合法了！");
+        }else{
+            System.err.println("邮箱格式不正确！");
+        }
+    }
+```
 
+`split`可以结合正则表达式分割
 
+```java
+// 1.split的基础用法
+String names = "贾乃亮,王宝强,陈羽凡";
+// 以“，”分割成字符串数组
+String[] nameArrs = names.split(",");
+for(int i = 0 ; i < nameArrs.length ; i++ ){
+    String name = nameArrs[i];
+    System.out.println(name);
+}
 
+System.out.println("----------------------");
+// 2.split集合正则表达式做分割
+String names1 = "贾乃亮lv434fda324王宝强87632fad2342423陈羽凡";
+// 以匹配正则表达式的内容为分割点分割成字符串数组
+String[] nameArrs1 = names1.split("\\w+");
+for(int i = 0 ; i < nameArrs1.length ; i++ ){
+    String name = nameArrs1[i];
+    System.out.println(name);
+}
+System.out.println("----------------------");
+// 3. public String replaceAll(String regex,String newStr)
+String names2 = "贾乃亮lv434fda324王宝强87632fad2342423陈羽凡";
+// 使用正则表达式定位出内容，替换成/
+System.out.println(names2.replaceAll("\\w+" , "/"));
 
+String names3 = "贾乃亮,王宝强,羽凡";
+System.out.println(names3.replaceAll(",","-"));
+```
 
+正则表达式爬取信息中的内容
 
+可以通过`|`将正则表达式连接起来，是**或**的关系
 
+```java
+String rs = "来黑马程序学习Java,电话020-43422424，或者联系邮箱" +
+    "itcast@itcast.cn,电话18762832633，0203232323" +
+    "邮箱bozai@itcast.cn，400-100-3233 ，4001003232";
+// 需求：从上面的内容中爬取出 电话号码和邮箱。
+// 1.定义爬取规则
+String regex = "(\\w{1,}@\\w{2,10}(\\.\\w{2,10}){1,2})|(1[3-9]\\d{9})|(0\\d{2,5}-?\\d{5,15})|400-?\\d{3,8}-?\\d{3,8}";
+// 2.编译正则表达式成为一个匹配规则对象
+Pattern pattern = Pattern.compile(regex);
+// 3.通过匹配规则对象得到一个匹配数据内容的匹配器对象
+Matcher matcher = pattern.matcher(rs);
+// 4.通过匹配器去内容中爬取出信息
+while(matcher.find()){
+    System.out.println(matcher.group());
+}
+```
 
+## 第八章 泛型
 
+### 泛型概念
 
+什么是泛型
 
+* 泛型就是一个标签：`<数据类型>`
+* 泛型可以在编译阶段约束只能操作某种数据类型
+
+> * JDK 1.7开始之后，泛型后面的申明可以省略不写
+> * **泛型和集合都只能支持引用数据类型，不支持基本数据类型**
+
+### 泛型的好处
+
+* 泛型在编译阶段约束了操作的数据类型，从而不会出现类型转换异常
+* 体现的是Java的严谨性和规范性，数据类型,经常需要进行统一
+
+### 自定义泛型
+
+使用了泛型定义的类就是泛型类
+
+```java
+class MyArrayList<E>{
+
+    private ArrayList lists = new ArrayList();
+
+    public void add(E e){
+        lists.add(e);
+    }
+
+    public void remove(E e){
+        lists.remove(e);
+    }
+    @Override
+    public String toString() {
+        return lists.toString();
+    }
+}
+```
+
+### 自定义泛型方法
+
+定义了泛型的方法就是泛型方法
+
+泛型方法定义格式
+
+```java
+修饰符 <泛型变量> 返回值类型 方法名称(形参列表){
+
+}
+```
+
+一个泛型方法的例子
+
+```java
+public static <T> String arrToString(T[] nums){
+    StringBuilder sb = new StringBuilder();
+    sb.append("[");
+    if(nums!=null && nums.length > 0){
+        for(int i = 0 ; i < nums.length ; i++ ){
+            T ele = nums[i];
+            sb.append(i == nums.length-1 ? ele : ele+", ");
+        }
+    }
+    sb.append("]");
+    return sb.toString();
+}
+```
+
+> 泛型方法是一个通用技术
+
+### 泛型接口
+
+使用了泛型定义的接口就是泛型接口
+
+定义格式
+
+```java
+修饰符 interface 接口名称<泛型变量>{
+
+}
+```
+
+例如
+
+```java
+public interface Data<E> {
+    void add(E stu);
+    void delete(E stu);
+    void update(E stu);
+    E query(int id);
+}
+```
+
+> 泛型接口的核心思想，在实现接口的时候传入真实的数据类型
+>
+> 这样重写的方法就是对该数据类型进行操作
+
+### 泛型的通配符
+
+通配符：`?`
+
+* `?`可以用在**使用泛型**的时候代表一切类型
+* `E , T , K , V`是在**定义泛型**的时候使用代表一切类型
+
+泛型的上下限：
+
+* `? extends Car` : 那么`?`必须是`Car`或者其子类。(泛型的上限)
+* `? super  Car` :那么`?`必须是`Car`或者其父类。（泛型的下限。不是很常见）
+
+```java
+public class GenericDemo {
+    public static void main(String[] args) {
+        ArrayList<BMW> bmws = new ArrayList<>();
+        bmws.add(new BMW());
+        bmws.add(new BMW());
+        bmws.add(new BMW());
+        run(bmws);
+
+        ArrayList<BENZ> benzs = new ArrayList<>();
+        benzs.add(new BENZ());
+        benzs.add(new BENZ());
+        benzs.add(new BENZ());
+        run(benzs);
+
+        ArrayList<Dog> dogs = new ArrayList<>();
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+        // run(dogs); // 就进不来了！
+    }
+
+    // 定义一个方法，可以让很多汽车一起进入参加比赛
+    public static void run(ArrayList<? extends Car> cars){
+
+    }
+}
+
+class Car{
+}
+class BMW extends Car{
+
+}
+class BENZ extends Car{
+
+}
+class Dog{
+
+}
+```
+
+## 第九章 Collection集合
+
+### 集合概述
+
+什么是集合
+
+- 集合是一个大小可变的容器
+- 容器中的每个数据称为一个元素。数据==元素
+- 集合的特点是：类型可以不确定，大小不固定。集合有很多种，不同的集合特点和使用场景不同
+- 数组：类型和长度一旦定义出来就都固定了
+
+集合用处
+
+- 在开发中，很多时候元素的个数是不确定的。
+- 而且经常要进行元素的增删该查操作，集合都是非常合适的。
+- 开发中集合用的更多
+
+> - Java中集合的代表是：`Collection`
+> - `Collection`集合是Java中集合的祖宗类
+> - 学习Collection集合的功能，那么一切集合都可以用这些功能
+
+集合体系
+
+```
+								Collection<E>(接口)
+                      /                                \
+                 Set<E>(接口)                            List<E>(接口)
+                /               \                       /                \
+         HashSet<E>(实现类)  TreeSet<>(实现类)     ArrayList<E>(实现类)  LinekdList<>(实现类)
+             /
+         LinkedHashSet<>(实现类)
+```
+
+集合的特点：
+
+* `Set`系列集合：添加的元素是无序，不重复，无索引的
+  * `HashSet`: 添加的元素是无序，不重复，无索引的
+  * `LinkedHashSet`: 添加的元素是有序，不重复，无索引的
+  * `TreeSet`: 不重复，无索引，按照大小默认升序排序
+* `List`系列集合：添加的元素是有序，可重复，有索引
+  * `ArrayList`：添加的元素是有序，可重复，有索引
+  * `LinekdList`：添加的元素是有序，可重复，有索引
+
+```java
+// 多态写法：
+//  HashSet:添加的元素是无序，不重复，无索引的。
+Collection<String> sets = new HashSet<>();
+sets.add("MyBatis");
+sets.add("Java");
+sets.add("Java");
+sets.add("Spring");
+sets.add("MySQL");
+sets.add("MySQL");
+// [Java, MySQL, MyBatis, Spring]
+System.out.println(sets);
+
+// ArrayList:添加的元素是有序，可重复，有索引。
+Collection<String> lists = new ArrayList<>();
+lists.add("MyBatis");
+lists.add("Java");
+lists.add("Java");
+lists.add("Spring");
+lists.add("MySQL");
+lists.add("MySQL");
+// [MyBatis, Java, Java, Spring, MySQL, MySQL]
+System.out.println(lists);
+```
+
+### 集合常用API
+
+`Collection`是集合的祖宗类，它的功能是全部集合都可以继承使用的，所以要学习它。
+Collection API如下：
+
+- `public boolean add(E e)`：  把给定的对象添加到当前集合中 。
+- `public void clear()` :清空集合中所有的元素。
+- `public boolean remove(E e)`: 把给定的对象在当前集合中删除。
+- `public boolean contains(Object obj)`: 判断当前集合中是否包含给定的对象。
+- `public boolean isEmpty()`: 判断当前集合是否为空。
+- `public int size()`: 返回集合中元素的个数。
+- `public Object[] toArray()`: 把集合中的元素，存储到数组中
+
+```java
+// HashSet:添加的元素是无序，不重复，无索引。
+Collection<String> sets = new HashSet<>();
+// 1.添加元素，添加成功返回true.
+System.out.println(sets.add("贾乃亮")); // true
+System.out.println(sets.add("贾乃亮")); // false
+System.out.println(sets.add("王宝强")); // true
+sets.add("陈羽凡");
+System.out.println(sets); // 集合重写了toString()方法，默认打印出内容信息
+// 2.清空集合的元素。
+//sets.clear();
+//System.out.println(sets);
+
+// 3.判断集合是否为空 是空返回true 反之
+System.out.println(sets.isEmpty()); // false
+
+// 4.获取集合的大小
+System.out.println(sets.size()); // 3
+
+// 5.判断集合中是否包含某个元素 。
+System.out.println(sets.contains("贾乃亮"));
+
+// 6.删除某个元素:如果有多个重复元素默认删除前面的第一个！
+sets.remove("陈羽凡");
+System.out.println(sets);
+
+// 7.把集合转换成数组
+Object[] arrs = sets.toArray();
+System.out.println("数组："+ Arrays.toString(arrs));
+
+String[] arrs1 = sets.toArray(String[]::new); // 以后再了解，指定转换的数组类型！
+System.out.println("数组："+ Arrays.toString(arrs1));
+
+System.out.println("---------------------拓展---------------------------");
+Collection<String> c1 = new ArrayList<>();
+c1.add("李小璐");
+c1.add("马蓉");
+
+Collection<String> c2 = new ArrayList<>();
+c2.add("白百合");
+
+c1.addAll(c2); // 把c2集合的元素全部倒入到c1
+System.out.println(c1);
+```
 
 
 
