@@ -2569,11 +2569,486 @@ c1.addAll(c2); // 把c2集合的元素全部倒入到c1
 System.out.println(c1);
 ```
 
+# day5-迭代器、数据结构、List、Set、TreeSet集合、Collections工具类
+
+## 第一章 Iterator迭代器
+
+`Collection`集合的遍历方式
+
+* 迭代器
+* `for-each`
+* `Lambda`表达式
+
+### 迭代器遍历
+
+* `public Iterator iterator()` 获取集合对应的迭代器，用来遍历集合中的元素
+* `E next()` 获取下一个元素值
+* `boolean hasNext()` 判断是否有下一个元素
+
+```java
+Collection<String> lists = new ArrayList<>();
+lists.add("赵敏");
+lists.add("小昭");
+lists.add("殷素素");
+lists.add("周芷若");
+System.out.println(lists);
+// 1.得到集合的迭代器对象。
+Iterator<String> it = lists.iterator();
+
+// 2.使用while循环遍历。
+while(it.hasNext()){
+    String ele = it.next();
+    System.out.println(ele);
+}
+```
+
+### for-each遍历
+
+`for-each`遍历实际上是迭代器遍历的简化写法
+
+* `for-each`遍历集合或者数组很方便
+* `for-each`遍历无法知道遍历到了哪个元素，因为没有索引
+
+```java
+Collection<String> lists = new ArrayList<>();
+lists.add("赵敏");
+lists.add("小昭");
+lists.add("殷素素");
+lists.add("周芷若");
+System.out.println(lists);
+// lists = [赵敏, 小昭, 殷素素, 周芷若]
+//  ele
+for (String ele : lists) {
+    System.out.println(ele);
+}
+
+int[] ages = new int[]{17 , 18 , 38 , 21};
+for (int age : ages) {
+    System.out.println(age);
+}
+```
+
+### lambda表达式
+
+```java
+Collection<String> lists = new ArrayList<>();
+lists.add("赵敏");
+lists.add("小昭");
+lists.add("殷素素");
+lists.add("周芷若");
+System.out.println(lists);
+//   [赵敏, 小昭, 殷素素, 周芷若]
+//   s
+lists.forEach(s -> {
+System.out.println(s);
+});
+//      lists.forEach(s ->  System.out.println(s));
+//      lists.forEach(System.out::println);
+```
+
+## 第二章 Java常见数据结构种类
+
+队列（queue）
+
+- 先进先出，后进后出。
+- 场景：各种排队。叫号系统。
+- 有很多集合可以实现队列。
+
+栈（stack）
+
+- 后进先出，先进后出
+  压栈 == 入栈
+  弹栈 == 出栈
+  场景：手枪的弹夹。
+
+数组
+
+- 数组是内存中的连续存储区域。
+- 分成若干等分的小区域（每个区域大小是一样的）
+- 元素存在索引
+- 特点：查询元素快（根据索引快速计算出元素的地址，然后立即去定位）
+             增删元素慢（创建新数组，迁移元素）
+
+链表
+
+- 元素不是内存中的连续区域存储。
+- 元素是游离存储的。每个元素会记录下个元素的地址。
+- 特点：查询元素慢
+             增删元素快（针对于首尾元素，速度极快，一般是双链表）
+
+红黑树
+
+- 二叉树：binary tree 永远只有一个根节点，是每个结点不超过2个节点的树（tree） 。
+- 查找二叉树,排序二叉树：小的左边，大的右边，但是可能树很高，性能变差。
+- 为了做排序和搜索会进行左旋和右旋实现平衡查找二叉树，让树的高度差不大于1
+- 红黑树（就是基于红黑规则实现了自平衡的排序二叉树）：树尽量的保证到了很矮小，但是又排好序了，性能最高的树。
+- 红黑树的增删查改性能都好！！！
 
 
+这些结构，其实Java早就通过代码实现了，我们要知道有这些结构即可!
+
+## 第三章 List系列集合的使用
+
+### ArrayList集合
+
+![image-20220601213800419](imgs/image-20220601213800419.png)
+
+`Collection`集合体系的特点:
+
+`Set`系列集合：添加的元素，是无序，不重复，无索引的。
+
+- `HashSet`：添加的元素，是无序，不重复，无索引的。
+- `LinkedHashSet`：添加的元素，是有序，不重复，无索引的。
+
+`List`系列集合：添加的元素，是有序，可重复，有索引的。
+
+- `LinkedList`： 添加的元素，是有序，可重复，有索引的。
+- `ArrayList`： 添加的元素，是有序，可重复，有索引的。
+- `Vector `：是线程安全的，速度慢，工作中很少使用。
+
+`List`集合继承了`Collection`集合的全部功能，同时因为`List`系列集合有索引，
+
+因为`List`集合多了索引，所以多了很多按照索引操作元素的功能
+
+`ArrayList`实现类集合底层基于数组存储数据的，查询快，增删慢！
+
+- `public void add(int index, E element)`: 将指定的元素，添加到该集合中的指定位置上。
+- `public E get(int index)`:返回集合中指定位置的元素。
+- `public E remove(int index)`: 移除列表中指定位置的元素, 返回的是被移除的元素。
+- `public E set(int index, E element)`:用指定元素替换集合中指定位置的元素,返回更新前的元素值。
+
+> * `List`系列集合有序，可重复，有索引的。
+> * `ArrayList`实现类集合底层基于数组存储数据的，查询快，增删慢！！
+> * 开发中`ArrayList`集合用的最多！！
+
+### List集合的遍历方式
+
+`List`遍历方式有四种：
+
+* `for`循环
+* 迭代器
+* `for-each`
+* lambda表达式
+
+```java
+List<String> lists = new ArrayList<>();
+lists.add("java1");
+lists.add("java2");
+lists.add("java3");
+
+/** （1）for循环。 */
+for(int i = 0 ; i < lists.size() ; i++ ) {
+    String ele = lists.get(i);
+    System.out.println(ele);
+}
+System.out.println("-----------------------");
+
+/** （2）迭代器。 */
+Iterator<String> it = lists.iterator();
+while(it.hasNext()){
+    System.out.println(it.next());
+}
+System.out.println("-----------------------");
+
+/** （3）foreach。 */
+for(String ele : lists){
+    System.out.println(ele);
+}
+System.out.println("-----------------------");
+
+/** （4）JDK 1.8开始之后的Lambda表达式*/
+lists.forEach(s -> {
+    System.out.println(s);
+});
+```
+
+### LinkedList集合
+
+`LinkedList`也是`List`的实现类：底层是基于链表的，增删比较快，查询慢！！
+`LinkedList`是支持双链表，定位前后的元素是非常快的，增删首尾的元素也是最快的
+所以`LinkedList`除了拥有`List`集合的全部功能还多了很多操作首尾元素的特殊功能：
+
+- `public void addFirst(E e)`:将指定元素插入此列表的开头。
+- `void addLast(E e)`:将指定元素添加到此列表的结尾。
+- `public E getFirst()`:返回此列表的第一个元素。
+- `public E getLast()`:返回此列表的最后一个元素。
+- `public E removeFirst()`:移除并返回此列表的第一个元素。
+- `public E removeLast()`:移除并返回此列表的最后一个元素。
+- `public E pop()`:从此列表所表示的堆栈处弹出一个元素。
+- `public void push(E e)`:将元素推入此列表所表示的堆栈。
+
+> * `LinkedList`是支持双链表，定位前后的元素是非常快的，增删首尾的元素也是最快的。
+> * 所以提供了很多操作首尾元素的特殊API可以做栈和队列的实现。
+> * 如果查询多而增删少用`ArrayList`集合。(用的最多的)
+> * 如果查询少而增删首尾较多用`LinkedList`集合。
+
+## 第四章 Set系列集合
+
+研究两个问题==面试热点==
+
+* `Set`集合添加的元素是不重复的，是如何去重复的
+* `Set`集合元素无序的原因是什么
+
+### Set系列集合元素去重复的流程
+
+* 对于有值特性的，`Set`集合可以直接判断进行去重复。
+* 对于引用数据类型的类对象，Set集合是按照如下流程进行是否重复的判断。
+  * `Set`集合会让两两对象，先调用自己的`hashCode()`方法得到彼此的哈希值（所谓的内存地址）
+  * 然后比较两个对象的哈希值是否相同，如果不相同则直接认为两个对象不重复。
+  * 如果哈希值相同，会继续让两个对象进行`equals`比较内容是否相同，如果相同认为真的重复了
+  * 如果不相同认为不重复。
+
+```java
+Set<Integer> sets = new HashSet<>(); // 一行经典代码！！
+sets.add(1);
+sets.add(1);
+sets.add(2);
+sets.add(2);
+System.out.println(sets);
+
+// 存储一些自定义类型数据:无序不重复
+Set<Apple> apples = new HashSet<>();
+Apple a1 = new Apple("红富士",59.9 ,"红色");
+Apple a2 = new Apple("阿克苏",39.9 ,"青红色");
+Apple a3 = new Apple("阿克苏",39.9 ,"青红色");
+System.out.println(a1.hashCode()); // 哈希值，相当于是内存地址
+System.out.println(a2.hashCode()); // 哈希值，相当于是内存地址
+System.out.println(a3.hashCode()); // 哈希值，相当于是内存地址
+apples.add(a1);
+apples.add(a2);
+apples.add(a3);
+System.out.println(apples);
+```
+
+### Set系列集合元素无序==面试必考==
+
+`Set`系列集合添加元素无序的根本原因是因为底层采用了哈希表存储元素。
+
+* JDK 1.8之前：哈希表 = 数组 + 链表  + （哈希算法）
+* JDK 1.8之后：哈希表 = 数组 + 链表 + 红黑树  + （哈希算法）
+
+​    当链表长度超过阈值（8）时，将链表转换为红黑树，这样大大减少了查找时间。
+
+### LinkedHashSet
+
+是`HashSet`的子类，元素是“有序” 不重复，无索引.
+
+* `LinkedHashSet`底层依然是使用哈希表存储元素的，
+* 但是每个元素都额外带一个链来维护添加顺序！！
+* 不光增删查快，还有序。缺点是多了一个存储顺序的链会占内存空间!!而且不允许重复，无索引。
+
+> * 如果希望元素可以重复，又有索引，查询要快用`ArrayList`集合。（用的最多）
+> * 如果希望元素可以重复，又有索引，增删要快要用`LinkedList`集合。（适合查询元素比较少的情况，经常要首尾操作元素的情况）
+> * 如果希望增删改查都很快，但是元素不重复以及无序无索引，那么用`HashSet`集合。
+> * 如果希望增删改查都很快且有序，但是元素不重复以及无索引，那么用`LinkedHashSet`集合。
+
+### TreeSet集合
+
+`TreeSet`: 不重复，无索引，按照大小默认升序排序!!
+
+`TreeSet`集合称为排序不重复集合，可以对元素进行默认的升序排序。
+
+`TreeSet`集合自自排序的方式：
+
+* 有值特性的元素直接可以升序排序。（浮点型，整型）
+* 字符串类型的元素会按照首字符的编号排序。
+* 对于自定义的引用数据类型，`TreeSet`默认无法排序，执行的时候直接报错，因为人家不知道排序规则。
+
+自定义的引用数据类型的排序实现：
+
+对于自定义的引用数据类型，`TreeSet`默认无法排序
+
+所以我们需要定制排序的大小规则，程序员定义大小规则的方案有2种：
+
+* 直接为对象的类实现比较器规则接口Comparable，重写比较方法（拓展方式）
+           // 如果程序员认为比较者大于被比较者 返回正数！
+           // 如果程序员认为比较者小于被比较者 返回负数！
+           // 如果程序员认为比较者等于被比较者 返回0！
+* 直接为集合设置比较器Comparator对象,重写比较方法
+           // 如果程序员认为比较者大于被比较者 返回正数！
+           // 如果程序员认为比较者小于被比较者 返回负数！
+           // 如果程序员认为比较者等于被比较者 返回0！
+
+> 如果类和集合都带有比较规则，优先使用集合自带的比较规则。
+
+```java
+// TreeSet : 排序不重复集合。
+Set<Double> scores = new TreeSet<>();
+scores.add(100.0);
+scores.add(99.9);
+scores.add(69.5);
+scores.add(0.1);
+scores.add(89.3);
+System.out.println(scores);
+
+// 字符串按照首字符的编号进行排序。
+Set<String> names = new TreeSet<>();
+names.add("Jack");
+names.add("rose");
+names.add("Dlei");
+names.add("about");
+names.add("曹雪芹");
+names.add("bozai");
+names.add("caocao");
+names.add("angel");
+System.out.println(names);
+
+// 引用数据类型定义TreeSet集合。
+Set<Employee> employees = new TreeSet<>();
+employees.add(new Employee("播仔",6500.0,21));
+employees.add(new Employee("播妞",7500.0,19));
+employees.add(new Employee("乔治",4500.0,23));
+System.out.println(employees);
 
 
+// public TreeSet(Comparator<? super E> comparator)
+// 集合自带比较器对象
+// 如果类和集合都存在大小规则，默认使用集合自带的规则进行大小排序！！
+Set<Employee> employees1 = new TreeSet<>(new Comparator<Employee>() {
+    @Override
+    public int compare(Employee o1, Employee o2) {
+        // o1比较者   o2被比较者
+        // 如果程序员认为比较者大于被比较者 返回正数！
+        // 如果程序员认为比较者小于被比较者 返回负数！
+        // 如果程序员认为比较者等于被比较者 返回0！
+        return o1.getAge() - o2.getAge();
+    }
+});
+employees1.add(new Employee("播仔",6500.0,21));
+employees1.add(new Employee("播妞",7500.0,19));
+employees1.add(new Employee("乔治",4500.0,23));
+System.out.println(employees1);
+```
+
+## 第五章 Collections工具类
+
+`Collections`并不属于集合，而是用来操作集合的工具类
+
+`Collections`有几个常用的API:
+
+- `public static <T> boolean addAll(Collection<? super T> c, T... elements)`
+    
+    给集合对象批量添加元素！
+    
+- `public static void shuffle(List<?> list)`
+
+    打乱集合顺序。
+
+- `public static <T> void sort(List<T> list)`
+
+    将集合中元素按照默认规则排序。
+
+- `public static <T> void sort(List<T> list，Comparator<? super T> )`
+
+    将集合中元素按照指定规则排序。
+
+```java
+// 1.给集合批量添加元素
+Collection<String> names = new ArrayList<>();
+/**
+* 参数一：被添加元素的集合
+* 参数二：可变参数，一批元素
+*/
+Collections.addAll(names,"曹操","贾乃亮","王宝强","陈羽凡");
+System.out.println(names);
+
+// 2.打乱集合的顺序：public static void shuffle(List<?> list)
+// 注意：只能打乱有序的List集合。
+List<String> newnames = new ArrayList<>();
+Collections.addAll(newnames,"曹操","贾乃亮","王宝强","陈羽凡");
+Collections.shuffle(newnames); // 打乱顺序
+System.out.println(newnames);
+
+// 3.public static <T> void sort(List<T> list)：给List集合升序排序。
+List<Double> scores = new ArrayList<>();
+Collections.addAll(scores, 98.5, 66.5 , 59.5 , 66.5 , 99.5 );
+Collections.sort(scores); // 默认升序排序！
+System.out.println(scores);
+```
+
+引用类型的排序
+
+字符串按照首字符的编号升序排序！
+
+自定义类型的比较方法API:
+- `public static <T> void sort(List<T> list)`
+
+     集合中元素按照默认规则排序。
+
+     对于自定义的引用类型的排序人家根本不知道怎么排，直接报错！
+
+     如果希望自定义的引用类型排序不报错，可以给类提供比较规则:Comparable。
+
+- `public static <T> void sort(List<T> list，Comparator<? super T> c)`
+
+     将集合中元素按照指定规则排序,自带比较器
+
+     注意：如果类有比较规则，而这里有比较器，优先使用比较器。
+
+```java
+// 自定义类型如何排序！
+List<Orange> oranges = new ArrayList<>();
+Orange o1 = new Orange("红橘子",654.0 ,"贼便宜~");
+Orange o2 = new Orange("黄橘子",454.0 ,"贼便宜~");
+Orange o3 = new Orange("黄橘子",454.0 ,"贼便宜~");
+Orange o4 = new Orange("青橘子",456.0 ,"贼便宜~");
+Collections.addAll(oranges,o1,o2,o3,o4);
+Collections.sort(oranges); // 排序，按照类实现的比较规则进行排序！！
+System.out.println(oranges);
 
 
+List<Orange> oranges1 = new ArrayList<>();
+Orange o11 = new Orange("红橘子",654.0 ,"贼便宜~");
+Orange o22 = new Orange("黄橘子",454.0 ,"贼便宜~");
+Orange o33 = new Orange("黄橘子",454.0 ,"贼便宜~");
+Orange o44 = new Orange("青橘子",456.0 ,"贼便宜~");
+Collections.addAll(oranges1,o11,o22,o33,o44);
+// 优先用方法自带的比较器对象Comparator而不会用类的比较规则！！
+Collections.sort(oranges1, new Comparator<Orange>() {
+    @Override
+    public int compare(Orange o1, Orange o2) {
+        if(o1.getWeight() > o2.getWeight()) return -1;
+        if(o1.getWeight() < o2.getWeight()) return 1;
+        return 0;
+    }
+});
+System.out.println(oranges1);
+```
 
+## 第六章 可变参数
+
+可变参数用在形参中可以接收多个数据。
+
+可变参数的格式：数据类型... 参数名称
+
+可变参数的作用：
+
+- 传输参数非常灵活，方便。
+- 可以不传输参数。
+- 可以传输一个参数。
+- 可以传输多个参数。
+- 可以传输一个数组。
+
+可变参数在方法内部本质上就是一个数组。
+
+可变参数的注意事项：
+
+* 一个形参列表中可变参数只能有一个！！
+* 可变参数必须放在形参列表的最后面！！
+
+```java
+public static void main(String[] args) {
+    sum(); // 可以不传输参数。
+    sum(10); // 可以传输一个参数。
+    sum(10,20,30); // 可以传输多个参数。
+    sum(new int[]{10,30,50,70,90}); // 可以传输一个数组。
+}
+
+public static void sum(int...nums){
+    // 可变参数在方法内部本质上就是一个数组。
+    System.out.println("元素个数："+nums.length);
+    System.out.println("元素内容："+ Arrays.toString(nums));
+    System.out.println("--------------------------");
+}
+```
 

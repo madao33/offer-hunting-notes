@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0c1ad69f-551e-4e9e-95d2-8235da577ed2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Java进阶.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Java进阶.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seniorJava/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/seniorJava/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seniorJava/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/seniorJava/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../笔试模拟/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../笔试模拟/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../笔试模拟/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../笔试模拟/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../笔试模拟/out/production/笔试模拟/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../笔试模拟/out/production/笔试模拟/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../笔试模拟/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../笔试模拟/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../笔试模拟/广联达笔试.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../笔试模拟/广联达笔试.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="29xZZJGcXry6271vj05607gMtLw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0c1ad69f-551e-4e9e-95d2-8235da577ed2" name="Changes" comment="" />
+      <created>1654056753996</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654056753996</updated>
+      <workItem from="1654056755404" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
