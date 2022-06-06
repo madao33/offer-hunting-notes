@@ -47,52 +47,52 @@
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day08\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ExchangerDemo">
-    <configuration name="ConcurrentHashMapDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._08并发包_ConcurrentHashMap.ConcurrentHashMapDemo" />
-      <module name="day08" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itheima._08并发包_ConcurrentHashMap.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CountDownLatchDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._09并发包_CountDownLatch.CountDownLatchDemo" />
-      <module name="day08" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itheima._09并发包_CountDownLatch.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CyclicBarrierDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._10并发包_CyclicBarrier.CyclicBarrierDemo" />
-      <module name="day08" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itheima._10并发包_CyclicBarrier.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.LambdaDemo01">
     <configuration name="ExchangerDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.itheima._12并发包_Exchanger.ExchangerDemo" />
       <module name="day08" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.itheima._12并发包_Exchanger.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LambdaDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._02Lambda表达式简化Runnable接口匿名内部类.LambdaDemo" />
+      <module name="day09" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima._02Lambda表达式简化Runnable接口匿名内部类.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LambdaDemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._01Lambda表达式的概述.LambdaDemo01" />
+      <module name="day09" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima._01Lambda表达式的概述.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MethodDemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._06方法引用方式一_静态方法的引用.MethodDemo01" />
+      <module name="day09" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima._06方法引用方式一_静态方法的引用.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,11 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LambdaDemo01" />
+        <item itemvalue="Application.LambdaDemo" />
+        <item itemvalue="Application.MethodDemo01" />
         <item itemvalue="Application.ExchangerDemo" />
         <item itemvalue="Application.SemaphoreDemo" />
-        <item itemvalue="Application.CyclicBarrierDemo" />
-        <item itemvalue="Application.CountDownLatchDemo" />
-        <item itemvalue="Application.ConcurrentHashMapDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +132,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654201847490</updated>
       <workItem from="1654201847491" duration="11028000" />
-      <workItem from="1654479480589" duration="7883000" />
+      <workItem from="1654479480589" duration="11316000" />
     </task>
     <servers />
   </component>

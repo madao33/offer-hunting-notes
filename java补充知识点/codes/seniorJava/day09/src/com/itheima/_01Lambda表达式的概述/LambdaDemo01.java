@@ -34,9 +34,9 @@ public class LambdaDemo01 {
 //                System.out.println(Thread.currentThread().getName()+":执行~~~");
 //            }
 //        };
-//        Thread t = () -> {
-//                System.out.println(Thread.currentThread().getName()+":执行~~~");
-//        };
-//        t.start();
+        Thread t = new Thread(() -> {
+                System.out.println(Thread.currentThread().getName()+":执行~~~");
+        });
+        t.start();
     }
 }

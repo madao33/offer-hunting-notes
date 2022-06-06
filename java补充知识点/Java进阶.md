@@ -4671,7 +4671,7 @@ class PeopleThread extends Thread{
 ### Semaphore
 
 - `Semaphore`（发信号）的主要作用是控制线程的并发数量。
-       
+  
 - `synchronized`可以起到"锁"的作用，但某个时间段内，只能有一个线程允许执行。
 - `Semaphore`可以设置同时允许几个线程执行。
 - `Semaphore`字面意思是信号量的意思，它的作用是控制访问特定资源的线程数目。
@@ -4796,4 +4796,279 @@ class ThreadB extends Thread{
     }
 }
 ```
+
+# day9-方法引用、Lambda表达式、Stream流
+
+## 第一章 方法引用
+
+### 方法引用概述
+
+方法引用是为了进一步简化Lambda表达式的写法。
+
+方法引用的格式：类型或者对象::引用的方法。
+
+方法引用有四种形式：
+
+- 静态方法的引用
+- 实例方法的引用
+- 特定类型方法的引用
+- 构造器引用
+
+```java
+ist<String> lists = new ArrayList<>();
+lists.add("java1");
+lists.add("java2");
+lists.add("java3");
+
+lists.forEach( s -> System.out.println(s));
+// 方法引用！
+lists.forEach(System.out::println);
+```
+
+### 静态方法引用
+
+引用格式：类名::静态方法
+
+简化步骤：定义一个静态方法，把需要简化的代码放到一个静态方法中去。
+
+静态方法引用的注意事项：**被引用的方法的参数列表要和函数式接口中的抽象方法的参数列表一致**
+
+`Student`
+
+```java
+public class Student {
+    private String name ;
+    private int age ;
+    private char sex ;
+
+    public static int compareByAge(Student o1 , Student o2){
+        return  o1.getAge() - o2.getAge();
+    }
+    // ...
+}
+```
+
+排序
+
+```java
+List<Student> lists = new ArrayList<>();
+Student s1 = new Student("李铭",18,'男');
+Student s2 = new Student("冯龙",23,'男');
+Student s3 = new Student("王乐乐",21,'男');
+Collections.addAll(lists , s1 , s2 , s3);
+
+Collections.sort(lists, ( o1, o2) -> Student.compareByAge(o1 , o2));
+// 如果前后参数是一样的，而且方法是静态方法，既可以使用静态方法引用
+Collections.sort(lists, Student::compareByAge);
+```
+
+### 实例方法引用
+
+格式： 对象::实例方法
+
+简化步骤：定义一个实例方法，把需要的代码放到实例方法中去。
+
+实例方法引用的注意事项：**被引用的方法的参数列表要和函数式接口中的抽象方法的参数列表一致**
+
+```java
+List<String> lists = new ArrayList<>();
+lists.add("java1");
+lists.add("java2");
+lists.add("java3");
+
+// 对象是 System.out = new PrintStream();
+// 实例方法：println()
+// 前后参数正好都是一个
+lists.forEach(s -> System.out.println(s));
+lists.forEach(System.out::println);
+```
+
+### 特定类型方法的引用
+
+特定类型：String ,任何类型
+
+格式：特定类型::方法
+
+注意：如果第一个参数列表中的形参中的第一个参数作为了后面的方法的调用者，并且其余参数作为后面方法的形参，那么就可以用特定类型方法引用了
+
+```java
+String[] strs = new String[]{"James", "AA", "John",
+                             "Patricia","Dlei" , "Robert","Boom", "Cao" ,"black" ,
+                             "Michael", "Linda","cao","after","sBBB"};
+
+// public static <T> void sort(T[] a, Comparator<? super T> c)
+// 需求：按照元素的首字符(忽略大小写)升序排序！！！
+Arrays.sort(strs, new Comparator<String>() {
+    @Override
+    public int compare(String s1, String s2) {
+        return s1.compareToIgnoreCase(s2);// 按照元素的首字符(忽略大小写)比较。
+    }
+});
+Arrays.sort(strs, (String s1, String s2) -> {
+    return s1.compareToIgnoreCase(s2);// 按照元素的首字符(忽略大小写)比较。
+});
+
+Arrays.sort(strs, ( s1,  s2 ) ->  s1.compareToIgnoreCase(s2));
+
+// 特定类型的方法引用：
+Arrays.sort(strs,  String::compareToIgnoreCase);
+
+System.out.println(Arrays.toString(strs));
+```
+
+### 构造器引用
+
+格式是：类名::new
+
+注意点：前后参数一致的情况下，又在创建对象就可以使用构造器引用`s -> new Student(s) => Student::new`
+
+```java
+List<String> lists = new ArrayList<>();
+lists.add("java1");
+lists.add("java2");
+lists.add("java3");
+
+// 集合默认只能转成Object类型的数组。
+Object[] objs = lists.toArray();
+System.out.println("Object类型的数组："+ Arrays.toString(objs));
+
+// 我们想指定转换成字符串类型的数组！！
+// 最新的写法可以结合构造器引用实现 。
+// default <T> T[] toArray(IntFunction<T[]> generator)
+String[] strs = lists.toArray(new IntFunction<String[]>() {
+    @Override
+    public String[] apply(int value) {
+        return new String[value];
+    }
+});
+
+String[] strs1 = lists.toArray(s -> new String[s] );
+
+String[] strs2 = lists.toArray(String[]::new);
+
+System.out.println("String类型的数组："+ Arrays.toString(strs2));
+```
+
+## 第二章 Lambda表达式
+
+Lambda表达式是JDK1.8开始之后的新技术，是一种代码的新语法，作用是为了简化匿名内部类的代码写法
+
+Lambda表达式的格式
+
+```java
+(匿名内部类被重写方法的形参列表) -> {
+	// 被重写方法的方法代码
+}
+```
+
+Lambda表达式的使用前提：
+
+* Lambda表达式并不能简化所有匿名内部类的写法。
+* Lambda表达式只能简化接口中只有一个抽象方法的匿名内部类形式。
+
+Lambda表达式**只能简化函数式接口的匿名内部类写法**：
+
+- 首先必须是接口
+- 接口中只能有一个抽象方法
+
+### Lambda表达式简化Runnable接口匿名内部类
+
+`@FunctionalInterface`函数式接口注解：一旦某个接口加上了这个注解，这个接口只能有且仅有一个抽象方法。
+   这个接口就可以被Lambda表达式简化。
+
+```java
+Thread t = new Thread(new Runnable() {
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName()+":执行~~~");
+    }
+});
+t.start();
+
+Thread t1 = new Thread(() -> {
+    System.out.println(Thread.currentThread().getName()+":执行~~~");
+});
+t1.start();
+
+new Thread(() -> {
+    System.out.println(Thread.currentThread().getName()+":执行~~~");
+}).start();
+
+new Thread(() -> System.out.println(Thread.currentThread().getName()+":执行~~~")).start();
+```
+
+### Lambda表达式简化Comparator接口匿名内部类写法
+
+```java
+List<Student> lists = new ArrayList<>();
+Student s1 = new Student("李铭",18,'男');
+Student s2 = new Student("冯龙",23,'男');
+Student s3 = new Student("王乐乐",21,'男');
+Collections.addAll(lists , s1 , s2 , s3);
+
+// 按照年龄进行升序排序！
+Collections.sort(lists, new Comparator<Student>() {
+    @Override
+    public int compare(Student s1, Student s2) {
+        return s1.getAge() - s2.getAge();
+    }
+});
+
+// 简化写法
+Collections.sort(lists ,(Student t1, Student t2) -> {
+    return t1.getAge() - t2.getAge();
+});
+
+Collections.sort(lists ,(Student t1, Student t2) -> t1.getAge() - t2.getAge());
+
+// 参数类型可以省略
+Collections.sort(lists ,( t1,  t2) -> t1.getAge() - t2.getAge());
+
+System.out.println(lists);
+```
+
+### Lambda表达式的省略写法
+
+Lambda表达式的省略写法（进一步在Lambda表达式的基础上继续简化）
+
+- 如果Lambda表达式的方法体代码只有一行代码。可以省略大括号不写,同时要省略分号
+- 如果Lambda表达式的方法体代码只有一行代码。可以省略大括号不写。此时，如果这行代码是return语句，必须省略return不写，同时也必须省略";"不写
+- 参数类型可以省略不写
+- 如果只有一个参数，参数类型可以省略，同时()也可以省略
+
+```java
+List<String> names = new ArrayList<>();
+names.add("胡伟光");
+names.add("甘挺");
+names.add("洪磊");
+
+names.forEach(new Consumer<String>() {
+    @Override
+    public void accept(String s) {
+        System.out.println(s);
+    }
+});
+
+names.forEach((String s) -> {
+    System.out.println(s);
+});
+
+names.forEach((s) -> {
+    System.out.println(s);
+});
+
+names.forEach(s -> {
+    System.out.println(s);
+});
+
+names.forEach(s -> System.out.println(s) );
+
+names.forEach(System.out::println);
+```
+
+
+
+
+
+
 
