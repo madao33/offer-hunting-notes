@@ -4094,7 +4094,414 @@ public class Ticket implements Runnable{
 }
 ```
 
+# day8-线程状态、volatile关键字、原子性、并发包、死锁、线程池
 
+## 第一章 线程状态
 
+### 线程状态概述
 
+当线程被创建并启动以后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，有几种状态呢？在API中`java.lang.Thread.State`这个枚举中给出了六种线程状态：
 
+这里先列出各个线程状态发生的条件，下面将会对每种状态进行详细解析
+
+| 线程状态                | 导致状态发生条件                                             |
+| ----------------------- | ------------------------------------------------------------ |
+| NEW(新建)               | 线程刚被创建，但是并未启动。还没调用start方法。MyThread t = new MyThread只有线程对象，没有线程特征。 |
+| Runnable(可运行)        | 线程可以在java虚拟机中运行的状态，可能正在运行自己代码，也可能没有，这取决于操作系统处理器。调用了t.start()方法   ：就绪（经典教法） |
+| Blocked(锁阻塞)         | 当一个线程试图获取一个对象锁，而该对象锁被其他的线程持有，则该线程进入Blocked状态；当该线程持有锁时，该线程将变成Runnable状态。 |
+| Waiting(无限等待)       | 一个线程在等待另一个线程执行一个（唤醒）动作时，该线程进入Waiting状态。进入这个状态后是不能自动唤醒的，必须等待另一个线程调用notify或者notifyAll方法才能够唤醒。 |
+| Timed Waiting(计时等待) | 同waiting状态，有几个方法有超时参数，调用他们将进入Timed Waiting状态。这一状态将一直保持到超时期满或者接收到唤醒通知。带有超时参数的常用方法有Thread.sleep 、Object.wait。 |
+| Teminated(被终止)       | 因为run方法正常退出而死亡，或者因为没有捕获的异常终止了run方法而死亡。 |
+
+### 睡眠方法
+
+我们看到状态中有一个状态叫做计时等待，可以通过Thread类的方法来进行演示.
+
+`public static void  sleep(long time)`  让当前线程进入到睡眠状态，到毫秒后自动醒来继续执行
+
+```java
+public class Test{
+  public static void main(String[] args){
+    for(int i = 1;i<=5;i++){
+      	Thread.sleep(1000);
+        System.out.println(i)   
+    } 
+  }
+}
+```
+
+这时我们发现主线程执行到sleep方法会休眠1秒后再继续执行。
+
+### 等待和唤醒
+
+Object类的方法
+
+`public void wait()` : 让当前线程进入到等待状态 此方法必须锁对象调用.
+
+```java
+public class Demo1_wait {
+    public static void main(String[] args) throws InterruptedException {
+	   // 步骤1 : 子线程开启,进入无限等待状态, 没有被唤醒,无法继续运行.
+        new Thread(() -> {
+            try {
+
+                System.out.println("begin wait ....");
+                synchronized ("") {
+                    "".wait();
+                }
+                System.out.println("over");
+            } catch (Exception e) {
+            }
+        }).start();
+    }
+```
+
+`public void notify()` : 唤醒当前锁对象上等待状态的线程  此方法必须锁对象调用.
+
+```java
+public class Demo2_notify {
+    public static void main(String[] args) throws InterruptedException {
+	   // 步骤1 : 子线程开启,进入无限等待状态, 没有被唤醒,无法继续运行.
+        new Thread(() -> {
+            try {
+
+                System.out.println("begin wait ....");
+                synchronized ("") {
+                    "".wait();
+                }
+                System.out.println("over");
+            } catch (Exception e) {
+            }
+        }).start();
+
+        //步骤2:  加入如下代码后, 3秒后,会执行notify方法, 唤醒wait中线程.
+        Thread.sleep(3000);
+        new Thread(() -> {
+            try {
+                synchronized ("") {
+                    System.out.println("唤醒");
+                    "".notify();
+                }
+            } catch (Exception e) {
+            }
+        }).start();
+    }
+}
+```
+
+## 第二章 线程通信
+
+- 多个线程因为在同一个进程中，所以互相通信比较容易
+- 线程通信一定是多个线程在操作同一个资源才需要进行通信
+- 线程通信必须先保证线程安全，否则毫无意义
+
+线程通信的核心方法：
+
+- `public void wait()`: 让当前线程进入到等待状态 此方法必须锁对象调用.
+- `public void notify()` : 唤醒当前锁对象上等待状态的某个线程  此方法必须锁对象调用
+- `public void notifyAll()` : 唤醒当前锁对象上等待状态的全部线程  此方法必须锁对象调用
+
+## 第三章 线程池
+
+线程池:其实就是一个容纳多个线程的容器,其中的线程可以反复的使用，省去了频繁创建和销毁线程对象的操作,无需反复创建线程而消耗过多资源。
+
+合理利用线程池能够带来三个好处
+
+1. 降低资源消耗。
+   减少了创建和销毁线程的次数，每个工作线程都可以被重复利用，可执行多个任务。
+2. 提高响应速度
+   不需要频繁的创建线程，如果有线程可以直接用，不会出现系统僵死！
+3. 提高线程的可管理性（线程池可以约束系统最多只能有多少个线程，不会因为线程过多而死机）
+
+>  线程池的核心思想：线程复用，同一个线程可以被重复使用，来处理多个任务。
+
+### 创建线程池
+
+线程池在Java中的代表类：ExecutorService(接口)。
+
+Java在Executors类下提供了一个静态方法得到一个线程池的对象：
+`public static ExecutorService newFixedThreadPool(int nThreads)`：创建一个线程池返回。
+
+- ExecutorService提交线程任务对象执行的方法：
+  `Future<?> submit(Runnable task)`:提交一个Runnable的任务对象给线程池执行。
+- `Future<?> submit(Callable task)`:提交一个Callable的任务对象给线程池执行。
+
+> * `pools.shutdown();` // 等待任务执行完毕以后才会关闭线程池
+> * `pools.shutdownNow();` // 立即关闭线程池的代码，无论任务是否执行完毕
+> * 线程池中的线程可以被复用，线程用完以后可以继续去执行其他任务。
+
+`Runnable`任务对象给线程池执行
+
+```java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ThreadPoolsDemo02 {
+    public static void main(String[] args) {
+        // a.创建一个线程池，指定线程的固定数量是3.
+        // new ThreadPoolExecutor(nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue());
+        ExecutorService pools = Executors.newFixedThreadPool(3);
+        // b.创建线程的任务对象。
+        Runnable target = new MyRunnable();
+        // c.把线程任务放入到线程池中去执行。
+        pools.submit(target); // 提交任务，此时会创建一个新线程,自动启动线程执行！
+        pools.submit(target); // 提交任务，此时会创建一个新线程,自动启动线程执行！
+        pools.submit(target); // 提交任务，此时会创建一个新线程,自动启动线程执行！
+        pools.submit(target); // 不会再创建新线程，会复用之前的线程来处理这个任务
+
+        pools.shutdown(); // 等待任务执行完毕以后才会关闭线程池
+        //pools.shutdownNow(); // 立即关闭线程池的代码，无论任务是否执行完毕！
+    }
+}
+
+class MyRunnable implements Runnable{
+    @Override
+    public void run() {
+        for(int i  = 0 ; i < 5 ; i++ ){
+            System.out.println(Thread.currentThread().getName()+" => "+i);
+        }
+    }
+}
+```
+
+`Callable`任务对象给线程池执行
+
+```java
+public class ThreadPoolsDemo03 {
+    public static void main(String[] args) {
+        // a.创建一个线程池，指定线程的固定数量是3.
+        // new ThreadPoolExecutor(nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue());
+        ExecutorService pools = Executors.newFixedThreadPool(3);
+        Future<String> t1 = pools.submit(new MyCallable(10)); // 提交任务，此时会创建一个新线程,自动启动线程执行！
+        Future<String> t2 = pools.submit(new MyCallable(20)); // 提交任务，此时会创建一个新线程,自动启动线程执行！
+        Future<String> t3 = pools.submit(new MyCallable(30)); // 提交任务，此时会创建一个新线程,自动启动线程执行！
+        Future<String> t4 = pools.submit(new MyCallable(40)); // 复用之前的某个线程
+
+        try{
+            // b.可以得到线程池执行的任务结构
+            String rs1 = t1.get();
+            String rs2 = t2.get();
+            String rs3 = t3.get();
+            String rs4 = t4.get();
+            System.out.println(rs1);
+            System.out.println(rs2);
+            System.out.println(rs3);
+            System.out.println(rs4);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+
+// 1.定义一个线程任务类实现Callable接口 ， 申明线程执行的结果类型。
+class MyCallable implements Callable<String>{
+    private int n;
+    public MyCallable(int n){
+        this.n = n;
+    }
+    // 2.重写线程任务类的call方法，这个方法可以直接返回执行的结果。
+    @Override
+    public String call() throws Exception {
+        int sum = 0 ;
+        for(int i = 1 ; i <= n ; i++){
+            System.out.println(Thread.currentThread().getName()+" => "+i);
+            sum += i ;
+        }
+        return Thread.currentThread().getName()+"计算1-"+n+"的和："+sum;
+    }
+}
+```
+
+## 第四章 死锁
+
+死锁是这样一种情形：多个线程同时被阻塞，它们中的一个或者全部都在等待某个资源被释放。由于线程被无限期地阻塞，因此程序不可能正常终止。
+
+java 死锁产生的四个必要条件：
+
+* **互斥使用**，即当资源被一个线程使用(占有)时，别的线程不能使用
+* **不可抢占**，资源请求者不能强制从资源占有者手中夺取资源，资源只能由资源占有者主动释放
+* **求和保持**，即当资源请求者在请求其他的资源的同时保持对原有资源的占有
+* **循环等待**，即存在一个等待循环队列：p1要p2的资源，p2要p1的资源。这样就形成了一个等待环路
+
+​    当上述四个条件都成立的时候，便形成死锁。当然，死锁的情况下如果打破上述任何一个条件，便可让死锁消失
+
+## 第五章 volatile关键字
+
+**问题**：线程修改了某个成员变量的值，但是在主线程中读取到的还是之前的值修改后的值无法读取到。
+
+**原因**：按照JMM模型，所有的成员变量和静态变量都存在于主内存中，主内存中的变量可以被多个线程共享。每个线程都存在一个专属于自己的工作内存，工作内存一开始存储的是成员变量的副本。所以线程很多时候都是直接访问自己工作内存中的该变量，其他线程对主内存变量值的修改将不可见
+
+![image-20220606111513140](imgs/image-20220606111513140.png)
+
+希望所有线程对于主内存的成员变量修改，其他线程是可见的。
+
+* **加锁**：可以实现其他线程对变量修改的可见性
+  某一个线程进入`synchronized`代码块前后，执行过程入如下：
+  * 线程获得锁
+  * 清空工作内存
+  * 从主内存拷贝共享变量最新的值到工作内存成为副本
+* 可以给成员变量加上一个`volatile`关键字，立即就实现了成员变量多线程修改的可见性
+
+> `volatile`与`synchronized`的区别。
+>
+> - `volatile`只能修饰实例变量和静态变量，而`synchronized`可以修饰方法，以及代码块。
+> - `volatile`保证数据的可见性，但是不保证原子性(多线程进行写操作，不保证线程安全);而`synchronized`是一种排他（互斥）的机制，
+
+```java
+public class VolatileDemo01 {
+    public  static void main(String[] args) {
+        // 1.启动线程，把线程对象中的flag改为true。
+        VolatileThread t = new VolatileThread();
+        t.start();
+
+        // 2.定义一个死循环
+        while(true){
+            // 这里读取到了flag值一直是false,虽然线程已经把它的值改成了true。
+            if(t.isFlag()){
+                System.out.println("执行了循环一次~~~~~~~");
+            }
+        }
+       /* while(true){
+            synchronized ("ddd"){
+                // 这里读取到了flag值一直是false,虽然线程已经把它的值改成了true。
+                if(t.isFlag()){
+                    System.out.println("执行了循环一次~~~~~~~");
+                }
+            }
+        }*/
+    }
+}
+// 线程类。
+class VolatileThread extends Thread {
+    // 定义成员变量
+    // volatile可以实现变量一旦被子线程修改，其他线程可以马上看到它修改后的最新值！
+    private volatile boolean flag = false ;
+    public boolean isFlag() {
+        return flag;
+    }
+
+    @Override
+    public void run() {
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // 将flag的值更改为true
+        this.flag = true ;
+        System.out.println("线程修改了flag=" + flag);
+    }
+}
+```
+
+## 第六章 原子性
+
+**原子性**是指在一次操作或者多次操作中，所有的操作全部都得到了执行并且不会受到任何因素的干扰。最终结果要保证线程安全。
+
+> 在多线程环境下，`volatile`关键字可以保证共享数据的可见性，但是并不能保证对数据操作的原子性（在多线程环境下volatile修饰的变量也是线程不安全的）。
+>   `volatile`的使用场景
+>
+> - 开关控制
+>      用可见性特点，控制某一段代码执行或者关闭
+>
+> - 多个线程操作共享变量，但是是有一个线程对其进行写操作，其他的线程都是读
+>
+>   此时加上更好，其他线程可以立即读取到最新值。`volatile`不能保证变量操作的原子性（安全性）。
+
+### 解决方法一-加锁
+
+```java
+public class VolatileAtomicThread implements Runnable {
+    // 定义一个int类型的遍历
+    private volatile int count = 0 ;
+    @Override
+    public void run() {
+        // 对该变量进行++操作，100次
+        for(int x = 0 ; x < 100 ; x++) {
+           synchronized (this){
+               count++ ;
+               System.out.println(Thread.currentThread().getName() + "count =========>>>> " + count);
+           }
+        }
+    }
+}
+
+class VolatileAtomicThreadDemo {
+    public static void main(String[] args) {
+        // 创建VolatileAtomicThread对象
+        Runnable target = new VolatileAtomicThread() ;
+        // 开启100个线程对执行这一个任务。
+        for(int x = 0 ; x < 100 ; x++) {
+            new Thread(target).start();
+        }
+    }
+
+}
+```
+
+> 这种方法虽然安全性得到了保证，但是性能不好
+
+### 解决方法二-基于CAS方式的原子类
+
+Java已经提供了一些本身即可实现原子性（线程安全）的类。
+
+- 概述：java从JDK1.5开始提供了java.util.concurrent.atomic包(简称Atomic包)，这个包中的原子操作类提供了一种用法简单，性能高效，线程安全地更新一个变量的方式。
+- 操作整型的原子类
+  - `public AtomicInteger()`：           初始化一个默认值为0的原子型`Integer`
+  - `public AtomicInteger(int initialValue)`： 初始化一个指定值的原子型`Integer`
+  - `int get()`:                                        获取值
+  - `int getAndIncrement()`:               以原子方式将当前值加1，注意，这里返回的是自增前的值。
+  - `int incrementAndGet()`:               以原子方式将当前值加1，注意，这里返回的是自增后的值。
+  - `int addAndGet(int data)`:            以原子方式将输入的数值与实例中的值（`AtomicInteger`里的value）相加，并返回结果。
+  - `int getAndSet(int value)`:            以原子方式设置为`newValue`的值，并返回旧值。
+
+```java
+public class VolatileAtomicThread implements Runnable {
+    // 原子类中封装好了整型变量，默认值是0
+    private AtomicInteger atomicInteger = new AtomicInteger();
+    @Override
+    public void run() {
+        // 对该变量进行++操作，100次
+        for(int x = 0 ; x < 100 ; x++) {
+            int count = atomicInteger.incrementAndGet(); // 底层变量+1且返回！
+            System.out.println("count =========>>>> " + count);
+        }
+    }
+}
+
+class VolatileAtomicThreadDemo {
+    public static void main(String[] args) {
+        // 创建VolatileAtomicThread对象
+        Runnable target = new VolatileAtomicThread() ;
+        // 开启100个线程对执行这一个任务。
+        for(int x = 0 ; x < 100 ; x++) {
+            new Thread(target).start();
+        }
+    }
+
+}
+```
+
+>  **CAS与Synchronized总结**
+>
+> `Synchronized`是从悲观的角度出发：总是假设最坏的情况，每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会阻塞直到它拿到锁（**共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程**）。因此`Synchronized`我们也将其称之为**悲观锁**。jdk中的`ReentrantLock`也是一种悲观锁。性能较差
+>
+> `CAS`是从乐观的角度出发:总是假设最好的情况，每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在更新的时候会判断一下在此期间别人有没有去更新这个数据。CAS这种机制我们也可以将其称之为**乐观锁**。综合性能较好
+
+## 第七章 并发包
+
+并发包的来历：
+在实际开发中如果不需要考虑线程安全问题，大家不需要做线程安全，因为如果做了反而性能不好！
+但是开发中有很多业务是需要考虑线程安全问题的，此时就必须考虑了。否则业务出现问题。
+Java为很多业务场景提供了性能优异，且线程安全的并发包，程序员可以选择使用！
+
+`Map`集合中的经典集合：`HashMap`它是线程不安全的，性能好，如果在要求线程安全的业务情况下就不能用这个集合做Map集合，否则业务会崩溃
+
+为了保证线程安全，可以使用`Hashtable`。注意：线程中加入了计时，`Hashtable`是线程安全的`Map`集合，但是性能较差！(已经被淘汰了，虽然安全，但是性能差)
+
+为了保证线程安全，再看`ConcurrentHashMap`（不止线程安全，而且效率高，性能好，最新最好用的线程安全的Map集合）`ConcurrentHashMap`保证了线程安全，综合性能较好！
+
+> * `HashMap`是线程不安全的。
+> *  `Hashtable`线程安全基于`synchronized`，综合性能差,被淘汰了。
+> * `ConcurrentHashMap`：线程安全的，分段式锁，综合性能最好，线程安全开发中推荐使用
