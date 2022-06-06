@@ -4496,6 +4496,8 @@ class VolatileAtomicThreadDemo {
 但是开发中有很多业务是需要考虑线程安全问题的，此时就必须考虑了。否则业务出现问题。
 Java为很多业务场景提供了性能优异，且线程安全的并发包，程序员可以选择使用！
 
+### ConcurrentHashMap
+
 `Map`集合中的经典集合：`HashMap`它是线程不安全的，性能好，如果在要求线程安全的业务情况下就不能用这个集合做Map集合，否则业务会崩溃
 
 为了保证线程安全，可以使用`Hashtable`。注意：线程中加入了计时，`Hashtable`是线程安全的`Map`集合，但是性能较差！(已经被淘汰了，虽然安全，但是性能差)
@@ -4505,3 +4507,293 @@ Java为很多业务场景提供了性能优异，且线程安全的并发包，�
 > * `HashMap`是线程不安全的。
 > *  `Hashtable`线程安全基于`synchronized`，综合性能差,被淘汰了。
 > * `ConcurrentHashMap`：线程安全的，分段式锁，综合性能最好，线程安全开发中推荐使用
+
+```java
+public class ConcurrentHashMapDemo {
+    // 定义一个静态的HashMap集合，只有一个容器。
+    // public static Map<String,String> map = new HashMap<>();
+     public static Map<String,String> map = new Hashtable<>();
+    //public static Map<String,String> map = new ConcurrentHashMap<>();
+
+    public static void main(String[] args) throws InterruptedException {
+        // HashMap线程不安全演示。
+        // 需求：多个线程同时往HashMap容器中存入数据会出现安全问题。
+        // 具体需求：提供2个线程分别给map集合加入50万个数据！
+        new AddMapDataThread().start();
+        new AddMapDataThread().start();
+
+        //休息10秒，确保两个线程执行完毕
+        Thread.sleep(1000 * 4);
+        //打印集合大小
+        System.out.println("Map大小：" + map.size());
+    }
+}
+
+class AddMapDataThread extends Thread{
+    @Override
+    public void run() {
+        for(int i = 0 ; i < 1000000 ; i++ ){
+            ConcurrentHashMapDemo.map.put(Thread.currentThread().getName()+"键："+i , "值"+i);
+        }
+    }
+}
+```
+
+### CountDownLatch
+
+`CountDownLatch`允许一个或多个线程等待其他线程完成操作，再执行自己。
+
+例如：
+
+线程1要执行打印：A和C，线程2要执行打印：B，但线程1在打印A后，要线程2打印B之后才能打印C，所以：线程1在打印A后，必须等待线程2打印完B之后才能继续执行
+
+需求：
+
+提供A线程，打印 A , C
+提供B线程，打印 B
+
+构造器：
+
+`public CountDownLatch(int count)`// 初始化唤醒需要的down几步。
+
+方法：
+`public void await() throws InterruptedException`// 让当前线程等待，必须down完初始化的数字才可以被唤醒，否则进入无限等待
+`public void countDown()`    // 计数器进行减1 （down 1）
+
+```java
+public class CountDownLatchDemo {
+    public static void main(String[] args) {
+        //创建1个计数器：用来控制 A , B线程的执行流程的。
+        CountDownLatch down = new CountDownLatch(1);
+        new ThreadA(down).start();
+        new ThreadB(down).start();
+    }
+}
+
+class ThreadA extends Thread{
+    private CountDownLatch down;
+    public ThreadA(CountDownLatch down){
+        this.down = down;
+    }
+    @Override
+    public void run() {
+        System.out.println("A");
+        try {
+            down.await(); // A线程你进入等待，让B线程执行自己！
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("C");
+    }
+}
+
+class ThreadB extends Thread{
+    private CountDownLatch down;
+    public ThreadB(CountDownLatch down){
+        this.down = down;
+    }
+    @Override
+    public void run() {
+        System.out.println("B");
+        down.countDown(); // 这里相当于是-1，代表自己执行完毕了。A线程被唤醒！！
+    }
+}
+```
+
+### CyclicBarrier
+
+`CyclicBarrier`作用：某个线程任务必须等待其他线程执行完毕以后才能最终触发自己执行。
+
+例如：公司召集5名员工开会，等5名员工都到了，会议开始。我们创建5个员工线程，1个开会任务，几乎同时启动。使用`CyclicBarrier`保证5名员工线程全部执行后，再执行开会线程。
+
+构造器：
+`public CyclicBarrier(int parties, Runnable barrierAction)`
+     // 用于在线程到达屏障5时，优先执行`barrierAction`，方便处理更复杂的业务场景
+方法：
+   `  public int await()`
+     // 每个线程调用await方法告诉`CyclicBarrier`我已经到达了屏障，然后当前线程被阻塞
+
+> - 可以实现多线程中，某个任务在等待其他线程执行完毕以后触发。
+> - 循环屏障可以实现达到一组屏障就触发一个任务执行！
+
+```java
+public class CyclicBarrierDemo {
+    public static void main(String[] args) {
+        // 1.创建一个任务循环屏障对象。
+        /**
+         * 参数一：代表多少个线程的执行。
+         * 参数二：到达执行屏障就开始触发的线程任务。
+         */
+        CyclicBarrier cb = new CyclicBarrier(5 , new MeetingRunnable());
+        new PeopleThread(cb).start();
+        new PeopleThread(cb).start();
+        new PeopleThread(cb).start();
+        new PeopleThread(cb).start();
+        new PeopleThread(cb).start();
+
+        new PeopleThread(cb).start();
+        new PeopleThread(cb).start();
+        new PeopleThread(cb).start();
+        new PeopleThread(cb).start();
+        new PeopleThread(cb).start();
+
+    }
+}
+
+// 任务类：开始开会的任务
+class MeetingRunnable implements Runnable{
+    @Override
+    public void run() {
+        System.out.println("人员到齐了开始由"+Thread.currentThread().getName()+"主持会议！");
+    }
+}
+
+// 员工类
+class PeopleThread extends Thread{
+    private CyclicBarrier cb ;
+    public PeopleThread(CyclicBarrier cb) {
+        this.cb = cb;
+    }
+
+    @Override
+    public void run() {
+        try {
+            Thread.sleep(1000);
+            System.out.println("员工："+Thread.currentThread().getName()+"进入会议室");
+            cb.await(); // 自己做完了，告诉循环屏障我结束了！
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Semaphore
+
+- `Semaphore`（发信号）的主要作用是控制线程的并发数量。
+       
+- `synchronized`可以起到"锁"的作用，但某个时间段内，只能有一个线程允许执行。
+- `Semaphore`可以设置同时允许几个线程执行。
+- `Semaphore`字面意思是信号量的意思，它的作用是控制访问特定资源的线程数目。
+
+`Semaphore`的构造器：
+
+- `public Semaphore(int permits)`：    permits 表示许可线程的数量
+- `public Semaphore(int permits, boolean fair)`：fair 表示公平性，如果这个设为 true 的话，下次执行的线程会是等待最久的线程
+
+`Semaphore`的方法：
+
+- `public void acquire() throws InterruptedException` 表示获取许可
+- `public void release() release()` 表示释放许可
+
+```java
+public class SemaphoreDemo {
+    public static void main(String[] args) {
+        Service service = new Service();
+        for(int i = 1 ; i <= 5 ; i++ ){
+            new MyThread(service,"线程："+i).start();
+        }
+    }
+}
+// 执行的任务。
+class Service{
+    // 可以同时支持多个线程进入共享资源区执行。
+    private Semaphore semaphore = new Semaphore(2);
+    public void showMethod(){
+        try {
+            semaphore.acquire();
+            long startTimer = System.currentTimeMillis();
+            System.out.println("进入时间："+startTimer);
+            System.out.println(Thread.currentThread().getName()+"进入资源执行");
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        long endTimer = System.currentTimeMillis();
+        System.out.println("结束时间："+endTimer);
+        semaphore.release();
+        //acquire()和release()方法之间的代码为"同步代码"
+    }
+}
+
+// 线程类。
+class MyThread extends Thread{
+    private Service service;
+    public MyThread(Service service , String name){
+        super(name);
+        this.service = service;
+    }
+    @Override
+    public void run() {
+        service.showMethod();
+    }
+}
+```
+
+### Exchanger
+
+Exchanger（交换者）是一个用于线程间协作的工具类。Exchanger用于进行线程间的数据交换。这两个线程通过exchange方法交换数据，如果第一个线程先执行exchange()方法，它会一直等待第二个线程也执行exchange方法，当两个线程都到达同步点时，这两个线程就可以交换数据，将本线程生产出来的数据传递给对方。
+
+ Exchanger构造方法：public Exchanger()
+
+ Exchanger重要方法：public V exchange(V x)
+
+ 分析：
+    （1）需要2个线程
+    （2）需要一个交换对象负责交换两个线程执行的结果。
+
+> - Exchanger可以实现线程间的数据交换。
+> - 一个线程如果等不到对方的数据交换就会一直等待。
+> - 我们也可以控制一个线程等待的时间。
+> - 必须双方都进行交换才可以正常进行数据的交换。
+
+```java
+public class ExchangerDemo {
+    public static void main(String[] args) {
+        // 创建交换对象（信使）
+        Exchanger<String> exchanger = new Exchanger<>();
+        // 创建2给线程对象。
+        new ThreadA(exchanger).start();
+        new ThreadB(exchanger).start();
+    }
+}
+
+class ThreadA extends Thread{
+    private Exchanger<String> exchanger;
+    public ThreadA(Exchanger<String> exchanger) {
+        this.exchanger = exchanger;
+    }
+    @Override
+    public void run() {
+        try {
+            // 礼物A
+            System.out.println("线程A,做好了礼物A,等待线程B送来的礼物B.....");
+            // 开始交换礼物。参数是送给其他线程的礼物!
+            // System.out.println("线程A收到线程B的礼物："+exchanger.exchange("礼物A"));
+            // 如果等待了5s还没有交换它就去死（抛出异常）！
+            System.out.println("线程A收到线程B的礼物："+exchanger.exchange("礼物A", 5 , TimeUnit.SECONDS));
+        } catch (Exception e) {
+            System.out.println("线程A等待了5s，没有收到礼物,最终就执行结束了!");
+        }
+    }
+}
+
+class ThreadB extends Thread{
+    private Exchanger<String> exchanger;
+    public ThreadB(Exchanger<String> exchanger) {
+        this.exchanger = exchanger;
+    }
+    @Override
+    public void run() {
+        try {
+            // 礼物B
+             System.out.println("线程B,做好了礼物B,等待线程A送来的礼物A.....");
+            // 开始交换礼物。参数是送给其他线程的礼物!
+             System.out.println("线程B收到线程A的礼物："+exchanger.exchange("礼物B"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+

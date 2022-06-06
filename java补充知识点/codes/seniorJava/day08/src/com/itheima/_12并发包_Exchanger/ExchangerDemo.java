@@ -62,9 +62,9 @@ class ThreadB extends Thread{
     public void run() {
         try {
             // 礼物B
-            // System.out.println("线程B,做好了礼物B,等待线程A送来的礼物A.....");
+             System.out.println("线程B,做好了礼物B,等待线程A送来的礼物A.....");
             // 开始交换礼物。参数是送给其他线程的礼物!
-            // System.out.println("线程B收到线程A的礼物："+exchanger.exchange("礼物B"));
+             System.out.println("线程B收到线程A的礼物："+exchanger.exchange("礼物B"));
         } catch (Exception e) {
             e.printStackTrace();
         }

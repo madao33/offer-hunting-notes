@@ -47,13 +47,13 @@
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day08\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.VolatileAtomicThreadDemo (1)">
-    <configuration name="ThreadDead" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._03死锁.ThreadDead" />
+  <component name="RunManager" selected="Application.ExchangerDemo">
+    <configuration name="ConcurrentHashMapDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._08并发包_ConcurrentHashMap.ConcurrentHashMapDemo" />
       <module name="day08" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._03死锁.*" />
+          <option name="PATTERN" value="com.itheima._08并发包_ConcurrentHashMap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -61,12 +61,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThreadPoolsDemo03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._02线程池.ThreadPoolsDemo03" />
+    <configuration name="CountDownLatchDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._09并发包_CountDownLatch.CountDownLatchDemo" />
       <module name="day08" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._02线程池.*" />
+          <option name="PATTERN" value="com.itheima._09并发包_CountDownLatch.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,12 +74,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VolatileAtomicThreadDemo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._07原子性问题的解决02.VolatileAtomicThreadDemo" />
+    <configuration name="CyclicBarrierDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._10并发包_CyclicBarrier.CyclicBarrierDemo" />
       <module name="day08" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._07原子性问题的解决02.*" />
+          <option name="PATTERN" value="com.itheima._10并发包_CyclicBarrier.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,12 +87,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VolatileAtomicThreadDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._06原子性问题的解决.VolatileAtomicThreadDemo" />
+    <configuration name="ExchangerDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._12并发包_Exchanger.ExchangerDemo" />
       <module name="day08" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._06原子性问题的解决.*" />
+          <option name="PATTERN" value="com.itheima._12并发包_Exchanger.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VolatileDemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._04volatile关键字深入学习.VolatileDemo01" />
+    <configuration name="SemaphoreDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._11并发包_Semaphore.SemaphoreDemo" />
       <module name="day08" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._04volatile关键字深入学习.*" />
+          <option name="PATTERN" value="com.itheima._11并发包_Semaphore.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,11 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.VolatileAtomicThreadDemo (1)" />
-        <item itemvalue="Application.VolatileAtomicThreadDemo" />
-        <item itemvalue="Application.VolatileDemo01" />
-        <item itemvalue="Application.ThreadDead" />
-        <item itemvalue="Application.ThreadPoolsDemo03" />
+        <item itemvalue="Application.ExchangerDemo" />
+        <item itemvalue="Application.SemaphoreDemo" />
+        <item itemvalue="Application.CyclicBarrierDemo" />
+        <item itemvalue="Application.CountDownLatchDemo" />
+        <item itemvalue="Application.ConcurrentHashMapDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +132,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654201847490</updated>
       <workItem from="1654201847491" duration="11028000" />
-      <workItem from="1654479480589" duration="5463000" />
+      <workItem from="1654479480589" duration="7883000" />
     </task>
     <servers />
   </component>
