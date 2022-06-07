@@ -5066,9 +5066,544 @@ names.forEach(s -> System.out.println(s) );
 names.forEach(System.out::println);
 ```
 
+## 第三章 Stream流
+
+### Stream流概述
+
+在Java 8中，得益于Lambda所带来的函数式编程，引入了一个全新的Stream流概念 ，用于解决已有集合/数组类库有的弊端。
+
+Stream流能解决什么问题：
+
+- 可以解决已有集合类库或者数组API的弊端。
+- Stream认为集合和数组操作的API很不好用，所以采用了Stream流简化集合和数组的操作
+
+```java
+List<String> list = new ArrayList<>();
+list.add("张无忌");
+list.add("周芷若");
+list.add("赵敏");
+list.add("张强");
+list.add("张三丰");
+
+list.stream().filter(s -> s.startsWith("张")).filter( s -> s.length()== 3 )
+    .forEach(System.out::println);
+```
+
+### Stream流的获取
+
+Stream流式思想的核心：
+
+- 是先得到集合或者数组的Stream流（就是一根传送带）
+- 然后就用这个Stream流操作集合或者数组的元素
+- 然后用Stream流简化替代集合操作的API
+
+```java
+default Stream<E> stream();
+```
+
+```java
+Collection<String> c = new ArrayList<>();
+Stream<String> ss = c.stream();
+
+/** --------------------Map集合获取流-------------------------------   */
+Map<String, Integer> map = new HashMap<>();
+// 先获取键的Stream流。
+Stream<String> keyss = map.keySet().stream();
+// 在获取值的Stream流
+Stream<Integer> valuess = map.values().stream();
+// 获取键值对的Stream流（key=value： Map.Entry<String,Integer>）
+Stream<Map.Entry<String,Integer>> keyAndValues = map.entrySet().stream();
+
+/** ---------------------数组获取流------------------------------   */
+// 数组也有Stream流。
+String[] arrs = new String[]{"Java", "JavaEE" ,"Spring Boot"};
+Stream<String> arrsSS1 = Arrays.stream(arrs);
+Stream<String> arrsSS2 = Stream.of(arrs);
+```
+
+### Stream流的常用API
+
+- `forEach `: 逐一处理(遍历)
+
+- `count`：统计个数
+
+  `long count();`
+
+- `filter`: 过滤元素
+
+- `Stream<T> filter(Predicate<? super T> predicate)`
+
+- `limit`: 取前几个元素
+
+- `skip`: 跳过前几个
+
+- `map` : 加工方法
+
+  把原来的元素加工以后，重新放上去
+
+  ```java
+  <R> Stream<R> map(Function<? super T, ? extends R> mapper);
+  ```
+
+- `concat `: 合并流
+
+  ```java
+  public static <T> Stream<T> concat(Stream<? extends T> a, Stream<? extends T> b)
+  ```
+
+```java
+List<String> list = new ArrayList<>();
+list.add("张无忌");
+list.add("周芷若");
+list.add("赵敏");
+list.add("张强");
+list.add("张三丰");
+list.add("张三丰");
+
+list.stream().filter( s -> s.length() == 3 ).filter( s -> s.startsWith("张"))
+    .forEach( System.out::println);
+// 统计数量
+long count = list.stream().filter( s -> s.length() == 3 )
+    .filter( s -> s.startsWith("张")).count();
+System.out.println(count);
+// 取前2个
+list.stream().filter(s -> s.length() == 3).limit(2)
+    .forEach(System.out::println);
+// 跳过前2个
+list.stream().filter(s -> s.length() == 3).skip(2)
+    .forEach(System.out::println);
+// 把名称加工成学生对象放入list中
+list.stream().map(Student::new).forEach(System.out::println);
+```
+
+合并流
+
+```java
+List<String> list = new ArrayList<>();
+list.add("张无忌");
+list.add("周芷若");
+list.add("赵敏");
+list.add("张强");
+list.add("张三丰");
+list.add("张三丰");
+
+// 数组流
+Stream<Integer> s1 = Stream.of(10, 20 ,30 ,40);
+// 集合流
+Stream<String> s2 = list.stream();
+// 合并流
+Stream<Object> s3 = Stream.concat(s1,s2);
+s3.forEach(System.out::println);
+```
+
+### Stream流的综合应用
 
 
 
+```java
+List<String> one = new ArrayList<>();
+one.add("迪丽热巴");
+one.add("宋远桥");
+one.add("苏星河");
+one.add("老子");
+one.add("庄子");
+one.add("孙子");
+one.add("洪七公");
 
+List<String> two = new ArrayList<>();
+two.add("古力娜扎");
+two.add("张无忌");
+two.add("张三丰");
+two.add("赵丽颖");
+two.add("张二狗");
+two.add("张天爱");
+two.add("张三");
 
+/**
+         * 1. 第一个队伍只要名字为3个字的成员姓名；
+         * 2. 第一个队伍筛选之后只要前3个人；
+         */
+Stream<String> oneStream =
+    one.stream().filter(s -> s.length() == 3).limit(3);
+
+/**
+         * 3. 第二个队伍只要姓张的成员姓名；
+         * 4. 第二个队伍筛选之后不要前2个人；
+         * 5. 将两个队伍合并为一个队伍；
+         */
+Stream<String> twoStream =
+    two.stream().filter(s -> s.startsWith("张")).skip(2);
+
+Stream<String> allStream = Stream.concat(oneStream , twoStream);
+
+/**
+         * 6. 根据姓名创建`Student`对象； (加工)
+         * 7. 打印整个队伍的Student对象信息。
+         */
+//allStream.map(s -> new Student(s)).forEach(System.out::println);
+allStream.map(Student::new).forEach(System.out::println);
+```
+
+### Stream流的终结与非终结方法
+
+一旦Stream调用了终结方法，流的操作就全部终结了，不能继续使用，只能创建新的Stream操作。
+
+终结方法： `foreach `, `count`
+
+非终结方法：每次调用完成以后返回一个新的流对象，可以继续使用，支持链式编程！
+
+```java
+List<String> list = new ArrayList<>();
+list.add("张无忌");
+list.add("周芷若");
+list.add("赵敏");
+list.add("张强");
+list.add("张三丰");
+list.add("张三丰");
+
+// foreach终结方法
+list.stream().filter(s -> s.startsWith("张"))
+    .filter(s -> s.length() == 3).forEach(System.out::println);
+
+long count =  list.stream().filter(s -> s.startsWith("张"))
+    .filter(s -> s.length() == 3).count();
+System.out.println(count);
+```
+
+### 收集Stream流
+
+收集Stream流:把Stream流的数据转回成集合。
+
+Stream的作用是：把集合转换成一根传送带，借用Stream流的强大功能进行的操作。但是实际开发中数据最终的形式还是应该是集合，最终Stream流操作完毕以后还是要转换成集合。这就是收集Stream流。
+
+收集Stream流的含义：就是把Stream流的数据转回到集合中去。
+
+```java
+List<String> list = new ArrayList<>();
+list.add("张无忌");
+list.add("周芷若");
+list.add("赵敏");
+list.add("张强");
+list.add("张三丰");
+list.add("张三丰");
+
+Stream<String> zhangLists = list.stream().filter(s -> s.startsWith("张"));
+// 把stream流转换成Set集合。
+Set<String> sets = zhangLists.collect(Collectors.toSet());
+System.out.println(sets);
+
+// 把stream流转换成List集合。
+Stream<String> zhangLists1 = list.stream().filter(s -> s.startsWith("张"));
+List<String> lists= zhangLists1.collect(Collectors.toList());
+System.out.println(lists);
+
+// 把stream流转换成数组。
+Stream<String> zhangLists2 = list.stream().filter(s -> s.startsWith("张"));
+Object[] arrs = zhangLists2.toArray();
+// 可以借用构造器引用申明转换成的数组类型！！！
+//String[] arrs1 = zhangLists2.toArray(String[]::new);
+```
+
+## 第四章 File类
+
+### File类的概述
+
+File类：代表操作系统的文件对象
+
+File类：是用来操作操作系统的文件对象的，删除文件，获取文件信息，创建文件（文件夹）...
+
+广义来说操作系统认为文件包含（文件和文件夹）
+
+File类的创建文件对象的API:
+
+* 包：`java.io.File`
+* 构造器：
+  * `public File(String pathname)`:根据路径获取文件对象
+  * `public File(String parent, String child)`:根据父路径和文件名称获取文件对象！
+
+File类创建文件对象的格式:
+
+* `File f = new File("绝对路径/相对路径");`
+  * **绝对路径**：从磁盘的的盘符一路走到目的位置的路径。
+    * 绝对路径依赖具体的环境，一旦脱离环境，代码可能出错！！
+    * 一般是定位某个操作系统中的某个文件对象。
+  * **相对路径**：不带盘符的。（重点）
+    * 默认是直接相对到工程目录下寻找文件的。
+    * 相对路径只能用于寻找工程下的文件。
+    * 能用相对路径就应该尽量使用，可以跨平台！
+* `File f = new File("文件对象/文件夹对象");`
+  广义来说：文件是包含文件和文件夹的。
+
+> * 创建文件对象可以用绝对路径也可以用相对路径。
+> * 相对路径只能用于寻找工程下的文件。
+> * 文件对象可以表示文件也可以表示文件夹！
+
+```java
+File f1 = new File("D:\\itcast\\图片资源\\beautiful.jpg");
+System.out.println(f1.length()); // 获取文件的大小，字节大小
+
+// 2.创建文件对象：使用相对路径
+File f2 = new File("Day09Demo/src/dlei01.txt");
+System.out.println(f2.length());
+
+// 3.创建文件对象：代表文件夹。
+File f3 = new File("D:\\itcast\\图片资源");
+System.out.println(f3.exists());// 判断路径是否存在！！
+```
+
+### File类的获取功能的方法
+
+- `public String getAbsolutePath()`  ：返回此File的绝对路径名字符串。
+- `public String getPath()`  ： 获取创建文件对象的时候用的路径
+- `public String getName()`  ： 返回由此File表示的文件或目录的名称。
+- `public long length()`  ：    返回由此File表示的文件的长度。
+
+```java
+// 1.绝对路径创建一个文件对象
+File f1 = new File("D:/itcast/图片资源/meinv.jpg");
+// a.获取它的绝对路径。
+System.out.println(f1.getAbsolutePath());
+// b.获取文件定义的时候使用的路径。
+System.out.println(f1.getPath());
+// c.获取文件的名称：带后缀。
+System.out.println(f1.getName());
+// d.获取文件的大小：字节个数。
+System.out.println(f1.length());
+
+System.out.println("------------------------");
+
+// 2.相对路径
+File f2 = new File("Day09Demo/src/dlei01.txt");
+// a.获取它的绝对路径。
+System.out.println(f2.getAbsolutePath());
+// b.获取文件定义的时候使用的路径。
+System.out.println(f2.getPath());
+// c.获取文件的名称：带后缀。
+System.out.println(f2.getName());
+// d.获取文件的大小：字节个数。
+System.out.println(f2.length());
+```
+
+### File类的判断功能的方法
+
+- `public boolean exists()` ：此File表示的文件或目录是否实际存在。
+- `public boolean isDirectory()`：此File表示的是否为目录。
+- `public boolean isFile()` ：此File表示的是否为文件
+
+```java
+// 1.文件对象。
+File f1 = new File("D:\\itcast\\图片资源\\meinv.jpg");
+// a.判断文件路径是否存在
+System.out.println(f1.exists()); // true
+// b.判断文件对象是否是文件,是文件返回true ,反之
+System.out.println(f1.isFile()); // true
+// c.判断文件对象是否是文件夹,是文件夹返回true ,反之
+System.out.println(f1.isDirectory()); // false
+
+// 1.文件对象。
+File f2 = new File("D:\\itcast\\图片资源");
+// a.判断文件路径是否存在
+System.out.println(f2.exists()); // true
+// b.判断文件对象是否是文件,是文件返回true ,反之
+System.out.println(f2.isFile()); // false
+// c.判断文件对象是否是文件夹,是文件夹返回true ,反之
+System.out.println(f2.isDirectory()); // true
+```
+
+### File类的创建和删除方法
+
+- `public boolean createNewFile()` ：当且仅当具有该名称的文件尚不存在时，
+         创建一个新的空文件。 （几乎不用的，因为以后文件都是自动创建的！）
+- `public boolean delete()` ：删除由此File表示的文件或目录。 （只能删除空目录）
+- `public boolean mkdir()` ：创建由此File表示的目录。（只能创建一级目录）
+- `public boolean mkdirs()` ：可以创建多级目录（建议使用的）
+
+```java
+File f = new File("Day09Demo/src/dlei02.txt");
+// a.创建新文件，创建成功返回true ,反之
+System.out.println(f.createNewFile());
+
+// b.删除文件或者空文件夹
+System.out.println(f.delete());
+// 不能删除非空文件夹，只能删除空文件夹
+File f1 = new File("D:/itcast/aaaaa");
+System.out.println(f1.delete());
+
+// c.创建一级目录
+File f2 = new File("D:/itcast/bbbb");
+System.out.println(f2.mkdir());
+
+// d.创建多级目录
+File f3 = new File("D:/itcast/e/a/d/ds/fas/fas/fas/fas/fas/fas");
+System.out.println(f3.mkdirs());
+```
+
+### File目录的遍历
+
+- `public String[] list()`
+    获取当前目录下所有的"一级文件名称"到一个字符串数组中去返回。
+- `public File[] listFiles()`==常用==
+    获取当前目录下所有的"一级文件对象"到一个文件对象数组中去返回（重点）
+
+```java
+File dir = new File("day09/src/com/itheima");
+// a.获取当前目录对象下的全部一级文件名称到一个字符串数组返回。
+String[] names = dir.list();
+for (String name : names) {
+    System.out.println(name);
+}
+// b.获取当前目录对象下的全部一级文件对象到一个File类型的数组返回。
+File[] files = dir.listFiles();
+for (File file : files) {
+    System.out.println(file.getAbsolutePath());
+}
+
+// ---------拓展------------
+File f1 = new File("C:\\Users\\Administrator\\Documents\\codes\\notes\\java-notes\\java补充知识点\\codes\\seniorJava\\day09\\src\\com\\itheima\\_20File目录的遍历\\FileDemo.java");
+long time = f1.lastModified(); // 最后修改时间！
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+System.out.println(sdf.format(time));
+```
+
+## 第五章 递归
+
+### 递归的概述
+
+方法在方法中又调用了自己
+
+* 直接递归：自己的方法调用自己
+* 间接递归：自己的方法调用别的方法，别的方法又调用自己
+
+> - 递归是自己调用自己。
+> - 递归如果控制的不恰当，会形成递归的死循环，从而导致栈内存溢出错误！！
+> - 递归应该防止进入递归的死循环！
+
+一个简单的例子，计算
+$$
+f(x) = f(x-1) + 1
+$$
+
+```java
+public class RecursionDemo02 {
+    public static void main(String[] args) {
+        System.out.println(f(10));
+    }
+
+    public static int f(int x){
+        if(x == 1) {
+            return 1;
+        }else{
+            return f(x - 1) + 1 ;
+        }
+    }
+}
+```
+
+### 递归的核心
+
+递归算法分为三个要素：
+
+* 递归公式
+  $$
+  f(x)=f(x)+1
+  $$
+
+* 递归终结点
+  $$
+  f(1)=1
+  $$
+
+* 递归方向
+
+  必须走向终结点
+
+必须满足三要素，否则递归会出现死亡
+
+### 递归实现文件搜索
+
+这是一个非规律递归，实现步骤是：
+
+* 定义一个方法用于做搜索
+* 进入方法中进行业务搜索分析
+
+```java
+/**
+     * 去某个目录下搜索某个文件
+     * @param dir 搜索文件的目录。
+     * @param fileName 搜索文件的名称。
+     */
+public static void searchFiles(File dir , String fileName){
+    // 1.判断是否存在该路径，是否是文件夹
+    if(dir.exists() && dir.isDirectory()){
+        // 2.提取当前目录下的全部一级文件对象
+        File[] files = dir.listFiles(); // null/[]
+        // 3.判断是否存在一级文件对象（判断是否不为空目录）
+        if(files!=null && files.length > 0){
+            // 4.判断一级文件对象
+            for (File f : files) {
+                // 5.判断file是文件还是文件夹
+                if(f.isFile()){
+                    // 6.判断该文件是否为我要找的文件对象
+                    if(f.getName().contains(fileName)){
+                        System.out.println(f.getAbsolutePath());
+                        try {
+                            // 启动它（拓展）
+                            Runtime r = Runtime.getRuntime();
+                            r.exec(f.getAbsolutePath());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }else{
+                    // 7.该文件是文件夹，文件夹要递归进入继续寻找
+                    searchFiles(f ,fileName);
+                }
+            }
+        }
+    }
+}
+```
+
+## 第六章 字节流
+
+### 字符集
+
+字符集：各个国家为自己国家的字符取的一套编号规则。计算机的底层是不能直接存储字符的。计算机的底层只能存储二进制。010101二进制就是可以转成10进制的。10进制就是整数编号。101 = 1*2^0 + 0*2^1 + 1*2^2 = 5
+
+* 中国用的编码：GBK编码
+* 美国用的编码：ACSII编码
+
+### IO流读写数据
+
+IO输入输出流：输入/输出流。
+    Input:输入。
+    Output:输出。
+
+引入：
+    File类只能操作文件对象本身，不能读写文件对象的内容。
+    读写数据内容，应该使用IO流。
+
+IO流是一个水流模型：IO理解成水管，把数据理解成水流。
+
+IO流的分类:
+    按照流的方向分为：输入流，输出流。
+       （1）输出流：以内存为基准，把内存中的数据写出到磁盘文件或者网络介质中去的流称为输出流。
+               输出流的作用：写数据到文件，或者写数据发送给别人。
+
+​       （2）输入流：以内存为基准，把磁盘文件中的数据或者网络中的数据读入到内存中去的流称为输入流。
+​               输入流的作用：读取数据到内存。
+
+​    按照流的内容分为: 字节流，字符流。
+​       （1）字节流：流中的数据的最小单位是一个一个的字节，这个流就是字节流。
+​       （2）字符流：流中的数据的最小单位是一个一个的字符，这个流就是字符流。(针对于文本内容)
+
+所以流大体分为四大类:
+    字节输入流：以内存为基准，把磁盘文件中的数据或者网络中的数据以一个一个的字节的形式读入到内存中去的流称为字节输入流。
+    字节输出流：以内存为基准，把内存中的数据以一个一个的字节写出到磁盘文件或者网络介质中去的流称为字节输出流。
+    字符输入流：以内存为基准，把磁盘文件中的数据或者网络中的数据以一个一个的字符的形式读入到内存中去的流称为字符输入流。
+    字符输出流：以内存为基准，把内存中的数据以一个一个的字符写出到磁盘文件或者网络介质中去的流称为字符输出流。
+小结：
+    IO流是读写传输数据的，IO流有很多种，每种流有自己的功能特点。
+
+### 字节流的使用
 

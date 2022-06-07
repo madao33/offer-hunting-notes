@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
  */
 public class FileDemo {
     public static void main(String[] args) {
-        File dir = new File("D:\\itcast");
+        File dir = new File("day09/src/com/itheima");
         // a.获取当前目录对象下的全部一级文件名称到一个字符串数组返回。
         String[] names = dir.list();
         for (String name : names) {
@@ -26,7 +26,7 @@ public class FileDemo {
         }
 
         // ---------拓展------------
-        File f1 = new File("D:\\itcast\\图片资源\\beautiful.jpg");
+        File f1 = new File("C:\\Users\\Administrator\\Documents\\codes\\notes\\java-notes\\java补充知识点\\codes\\seniorJava\\day09\\src\\com\\itheima\\_20File目录的遍历\\FileDemo.java");
         long time = f1.lastModified(); // 最后修改时间！
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(sdf.format(time));
