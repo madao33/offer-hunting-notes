@@ -47,7 +47,7 @@
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day08\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FileInputStreamDemo03">
+  <component name="RunManager" selected="Application.FileReaderDemo01">
     <configuration name="FileDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.itheima._20File目录的遍历.FileDemo" />
       <module name="day09" />
@@ -67,6 +67,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.itheima._25字节流的使用.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileReaderDemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._00字符流的使用.FileReaderDemo01" />
+      <module name="day10" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima._00字符流的使用.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,26 +113,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StreamDemo03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._12Stream流的常用API.StreamDemo03" />
-      <module name="day09" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itheima._12Stream流的常用API.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FileReaderDemo01" />
         <item itemvalue="Application.FileInputStreamDemo03" />
         <item itemvalue="Application.FileDemo" />
         <item itemvalue="Application.StreamDemo (1)" />
         <item itemvalue="Application.StreamDemo" />
-        <item itemvalue="Application.StreamDemo03" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +132,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654201847490</updated>
       <workItem from="1654201847491" duration="11028000" />
-      <workItem from="1654479480589" duration="25059000" />
+      <workItem from="1654479480589" duration="31424000" />
     </task>
     <servers />
   </component>

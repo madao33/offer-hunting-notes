@@ -34,7 +34,7 @@ public class FileReaderDemo01 {
         // 2.创建一个字符输入流管道与源文件接通
         // Reader fr = new FileReader(f);
         // 3.简化写法：创建一个字符输入流管道与源文件路径接通
-        Reader fr = new FileReader("Day10Demo/src/dlei01.txt");
+        Reader fr = new FileReader("C:\\Users\\Administrator\\Documents\\codes\\notes\\java-notes\\java补充知识点\\codes\\seniorJava\\day10\\src\\com\\itheima\\_00字符流的使用\\FileReaderDemo01.java");
         // 4.按照字符读取，每次读取一个字符的编号返回。
 //        int code1 = fr.read();
 //        System.out.print((char)code1);

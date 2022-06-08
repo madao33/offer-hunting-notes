@@ -5813,3 +5813,534 @@ try(
 }
 ```
 
+# day10-缓冲流、转换流、序列流
+
+## 第一章 字符流
+
+`FileReader`:文件字符输入流。
+
+作用：以内存为基准，把磁盘文件的数据以字符的形式读入到内存。简单来说，读取文本文件内容到内存中去。
+
+构造器：
+
+* `public FileReader(File file)`:创建一个字符输入流与源文件对象接通。
+* `public FileReader(String filePath)`:创建一个字符输入流与源文件路径接通。
+
+方法：
+
+- `public int read()`: 读取一个字符的编号返回！ 读取完毕返回-1
+- `public int read(char[] buffer)`:读取一个字符数组，读取多少个字符就返回多少个数量，读取完毕返回-1
+
+- 
+  字符流一个一个字符的读取文本内容输出，可以解决中文读取输出乱码的问题。
+- 字符流很适合操作文本文件内容。
+- 但是：一个一个字符的读取文本内容性能较差！！
+
+```java
+// 1.创建一个文件对象定位源文件
+// File f = new File("Day10Demo/src/dlei01.txt");
+// 2.创建一个字符输入流管道与源文件接通
+// Reader fr = new FileReader(f);
+// 3.简化写法：创建一个字符输入流管道与源文件路径接通
+Reader fr = new FileReader("Day10Demo/src/dlei01.txt");
+// 4.按照字符读取，每次读取一个字符的编号返回。
+//        int code1 = fr.read();
+//        System.out.print((char)code1);
+//        int code2 = fr.read();
+//        System.out.print((char)code2);
+//        int code3 = fr.read();
+//        System.out.print((char)code3);
+//        int code4 = fr.read(); // 读取完毕返回-1
+//        System.out.print(code4);
+
+// 5.while循环一个一个字符读取。
+// 定义一个变量存储一个字符的编号
+int ch ;
+while ((ch = fr.read()) != -1){
+    System.out.print((char)ch);
+}
+
+// a.按照字符数组读取数据使用循环
+char[] buffer = new char[1024]; // 1K
+// b.定义一个整数记录每次桶读取的字符数据量。
+int len;
+while((len = fr.read(buffer)) != -1 ) {
+    // 读取多少倒出多少字符
+    System.out.print(new String(buffer, 0 , len));
+}
+```
+
+`FileWriter`文件字符输出流的使用。
+
+作用：以内存为基准，把内存中的数据按照字符的形式写出到磁盘文件中去。简单来说，就是把内存的数据以字符写出到文件中去。
+
+构造器：
+
+- `public FileWriter(File file)`:创建一个字符输出流管道通向目标文件对象。
+- `public FileWriter(String filePath)`:创建一个字符输出流管道通向目标文件路径。
+- `public FileWriter(File file,boolean append`):创建一个追加数据的字符输出流管道通向目标文件对象。
+- `public FileWriter(String filePath,boolean append)`:创建一个追加数据的字符输出流管道通向目标文件路径。
+
+方法：
+
+- `public void write(int c)`:写一个字符出去
+- `public void write(String c)` 写一个字符串出去：
+- `public void write(char[] buffer)`:写一个字符数组出去
+- `public void write(String c ,int pos ,int len)`:写字符串的一部分出去
+- `public void write(char[] buffer ,int pos ,int len)`:写字符数组的一部分出去
+
+小结：
+
+字符输出流可以写字符数据出去，总共有5个方法写字符。
+
+覆盖管道：
+
+`Writer fw = new FileWriter("Day10Demo/src/dlei03.txt"); // 覆盖数据管道`
+
+追加数据管道：
+
+`Writer fw = new FileWriter("Day10Demo/src/dlei03.txt",true); // 追加数据管道`
+
+换行：
+
+`fw.write("\r\n"); // 换行` 
+
+读写字符文件数据建议使用字符流。
+
+```java
+// 1.创建一个字符输出流管道通向目标文件路径
+//Writer fw = new FileWriter("Day10Demo/src/dlei03.txt"); // 覆盖数据管道
+Writer fw = new FileWriter("Day10Demo/src/dlei03.txt",true); // 追加数据管道
+
+// 2.写一个字符出去：public void write(int c):写一个字符出去
+fw.write(97);   // 字符a
+fw.write('b');  // 字符b
+fw.write('磊'); // 字符磊，此时没有任何问题。
+fw.write("\r\n"); // 换行
+
+// 3.写一个字符串出去：public void write(String c)写一个字符串出去：
+fw.write("Java是最优美的语言！");
+fw.write("我们在黑马学习它！");
+fw.write("\r\n"); // 换行
+
+// 4.写一个字符数组出去：public void write(char[] buffer):写一个字符数组出去
+fw.write("我爱中国".toCharArray());
+fw.write("\r\n"); // 换行
+
+// 5.写字符串的一部分出去: public void write(String c ,int pos ,int len):写字符串的一部分出去
+fw.write("Java是最优美的语言！",0,9);
+fw.write("\r\n"); // 换行
+
+// 6.写字符数组的一部分出去：public void write(char[] buffer ,int pos ,int len):写字符数组的一部分出去
+fw.write("我爱中国".toCharArray(),0 ,2);
+fw.write("\r\n"); // 换行
+
+fw.close();
+```
+
+## 第二章 IO资源的处理
+
+
+
+
+
+
+
+## 第三章 属性集
+
+`Properties`：属性集对象。
+
+其实就是一个Map集合。也就是一个键值对集合。但是我们一般不会当集合使用，
+
+因为有HashMap。
+
+`Properties`核心作用：
+
+Properties代表的是一个属性文件，可以把键值对的数据存入到一个属性文件中去。
+
+属性文件：后缀是.properties结尾的文件,里面的内容都是 key=value。
+
+大家在后期学的很多大型框架技术中，属性文件都是很重要的系统配置文件。
+
+```java
+users.properties
+admin=123456
+dlei=dlei
+```
+
+ 需求：使用Properties对象生成一个属性文件，里面存入用户名和密码信息。
+
+Properties的方法：
+
+- `public Object setProperty(String key, String value)` ： 保存一对属性。
+- `public String getProperty(String key)` ：使用此属性列表中指定的键搜索属性值
+- `public Set<String> stringPropertyNames()` ：所有键的名称的集合
+- `public void store(OutputStream out, String comments)`：保存数据到属性文件中去
+- `public void store(Writer fw, String comments)`：保存数据到属性文件中去
+- `public synchronized void load(InputStream inStream)`:加载属性文件的数据到属性集对象中去
+- `public synchronized void load(Reader fr)`:加载属性文件的数据到属性集对象中去
+
+```java
+Properties properties = new Properties();
+properties.setProperty("admin" , "123456");
+properties.setProperty("dlei" , "101333");
+System.out.println(properties);
+
+// b.把属性集对象的数据存入到属性文件中去（重点）
+OutputStream os = new FileOutputStream("Day10Demo/src/users.properties");
+/**
+         * 参数一：被保存数据的输出管道
+         * 参数二：保存心得。就是对象保存的数据进行解释说明！
+         */
+properties.store(os , "i am very happy!!我快乐的保存了用户数据!");
+```
+
+导入属性
+
+```java
+// 1.创建一个属性集对象
+Properties properties = new Properties();
+System.out.println(properties);
+
+// 2.字节输入流加载属性文件的数据到属性集对象properties中去。
+properties.load(new FileInputStream("Day10Demo/src/users.properties"));
+System.out.println(properties);
+
+System.out.println(properties.getProperty("dlei"));
+System.out.println(properties.getProperty("admin"));
+```
+
+## 第四章 缓冲流
+
+### 缓冲流的概述和分类
+
+什么是缓冲流：缓冲流可以提高字节流和字符流的读写数据的性能
+
+缓冲流分为四类：
+
+- `BufferedInputStream`：字节缓冲输入流，可以提高字节输入流读数据的性能。
+- `BufferedOutStream`：  字节缓冲输出流，可以提高字节输出流写数据的性能。
+- `BufferedReader`：  字符缓冲输入流，可以提高字符输入流读数据的性能。
+- `BufferedWriter`：  字符缓冲输出流，可以提高字符输出流写数据的性能。
+
+### 字节缓冲流
+
+字节缓冲输入流：`BufferedInputStream`
+
+作用：可以把低级的字节输入流包装成一个高级的缓冲字节输入流管道，从而提高字节输入流读数据的性能。
+
+构造器: `public BufferedInputStream(InputStream in)`
+
+原理：缓冲字节输入流管道自带了一个8KB的缓冲池，每次可以直接借用操作系统的功能最多提取8KB的数据到缓冲池中去，以后我们直接从缓冲池读取数据，所以性能较好！
+
+> * 字节缓冲输入流：`BufferedInputStream`
+> * 可以把低级的字节输入流包装成一个高级的缓冲字节输入流管道,从而提高字节输入流读数据的性能。
+> * 功能几乎无变化。
+
+```java
+// 1.定义一个低级的字节输入流与源文件接通
+InputStream is = new FileInputStream("Day10Demo/src/dlei04.txt");
+
+// 3.把低级的字节输入流包装成一个高级的缓冲字节输入流。
+BufferedInputStream bis = new BufferedInputStream(is);
+
+// 2.定义一个字节数组按照循环读取。
+byte[] buffer = new byte[3];
+int len ;
+while((len = is.read(buffer)) != -1){
+    String rs = new String(buffer, 0 , len);
+    System.out.print(rs);
+}
+```
+
+字节缓冲输出流：`BufferedOutputStream`
+
+作用：可以把低级的字节输出流包装成一个高级的缓冲字节输出流，从而提高写数据的性能。
+
+构造器：`public BufferedOutputStream(OutputStream os)`
+
+原理：缓冲字节输出流自带了8KB缓冲池,数据就直接写入到缓冲池中去，性能极高了！
+
+> * 字节缓冲输出流可以把低级的字节输出流包装成一个高级的缓冲字节输出流，从而提高写数据的性能。
+> * 功能几乎不变。
+
+```java
+// 1.写一个原始的字节输出流
+OutputStream os = new FileOutputStream("Day10Demo/src/dlei05.txt");
+// 3.把低级的字节输出流包装成一个高级的缓冲字节输出流
+BufferedOutputStream bos =  new BufferedOutputStream(os);
+// 2.写数据出去
+bos.write('a');
+bos.write(100);
+bos.write('b');
+bos.write("我爱中国".getBytes());
+bos.close();
+```
+
+> 高级的字节缓冲流按照一个一个字节数组的形式复制性能极高，建议以后使用
+
+### 字符缓冲流
+
+字符缓冲输入流：`BufferedReader`
+
+作用：字符缓冲输入流可以把字符输入流包装成一个高级的缓冲字符输入流，可以提高字符输入流读数据的性能。
+
+构造器：`public BufferedReader(Reader reader)`
+
+原理：缓冲字符输入流默认会有一个8K的字符缓冲池,可以提高读字符的性能。缓冲字符输入流除了提高了字符输入流的读数据性能，缓冲字符输入流还多了一个按照行读取数据的功能（重点）:`public String readLine()`: 读取一行数据返回，读取完毕返回`null`;
+
+字符缓冲输入流可以把字符输入流包装成一个高级的缓冲字符输入流，
+
+可以提高字符输入流读数据的性能。
+
+除此之外多了一个按照行读取数据的功能：
+
+`public String readLine()`: 读取一行数据返回，读取完毕返回`null`;
+
+```java
+// 1.定义一个原始的字符输入流读取源文件
+Reader fr = new FileReader("Day10Demo/src/dlei06.txt");
+
+// 3.把低级的字符输入流管道包装成一个高级的缓冲字符输入流管道
+BufferedReader br = new BufferedReader(fr);
+// 定义一个字符串变量存储每行数据
+String line;
+// 使用一个循环读取数据(经典代码)
+while((line = br.readLine())!=null){
+    System.out.println(line);
+}
+
+//        // 2.定义一个字符数组循环读取
+//        char[] buffer = new char[1024];
+//        int len ;
+//        while((len = br.read(buffer))!=-1){
+//            System.out.println(new String(buffer , 0 , len));
+//        }
+
+br.close();
+```
+
+字符缓冲输出流：`BufferedWriter`
+
+作用：把字符输出流包装成一个高级的缓冲字符输出流，提高写字符数据的性能。
+
+构造器：`public BufferedWriter(Writer writer)`:
+
+原理：高级的字符缓冲输出流多了一个8k的字符缓冲池，写数据性能极大提高了!
+
+字符缓冲输出流除了提高字符输出流写数据的性能，还多了一个换行的特有功能：`public void newLine()`：新建一行。
+
+缓冲字符输出流可以把低级的字符输出流进行包装。提高了写字符的性能。
+
+多了一个换行的功能：public void newLine()：新建一行。
+
+```java
+// 1.定义一个低级的字符输出流写数据出去
+Writer fw = new FileWriter("Day10Demo/src/dlei07.txt",true);
+
+// 3.把低级的字符输出流包装成高级的缓冲字符输出流
+BufferedWriter bw = new BufferedWriter(fw);
+
+// 2.写字符输出
+bw.write("我在黑马学IO流~~~~");
+bw.newLine(); // 换行
+bw.write("我在黑马学IO流~~~~");
+bw.newLine();// 换行
+
+bw.close();
+```
+
+### 不同编码读取乱码问题
+
+- 如果代码编码和读取的文件编码一致。字符流读取的时候不会乱码。
+- 如果代码编码和读取的文件编码不一致。字符流读取的时候会乱码。
+
+```java
+// 1.定义一个原始的字符输入流读取源文件
+//  代码UTF-8  文件UTF-8 不会出现乱码！
+// Reader fr = new FileReader("Day10Demo/src/dlei06.txt");
+//  代码UTF-8  文件GBK   会出现乱码！
+Reader fr = new FileReader("D:\\itcast\\网络编程公开课\\Netty.txt");
+// 2.把低级的字符输入流管道包装成一个高级的缓冲字符输入流管道
+BufferedReader br = new BufferedReader(fr);
+// 3.定义一个字符串变量存储每行数据
+String line;
+// 使用一个循环读取数据(经典代码)
+while((line = br.readLine())!=null){
+    System.out.println(line);
+}
+```
+
+## 第五章 转换流
+
+字符输入转换流`InputStreamReader`
+
+作用
+
+- 可以解决字符流读取不同编码乱码的问题。
+- 可以把原始的字节流按照当前默认的代码编码转换成字符输入流。
+- 也可以把原始的字节流按照指定编码转换成字符输入流
+
+构造器：
+
+- public InputStreamReader(InputStream is)：可以使用当前代码默认编码转换成字符流，几乎不用！
+- public InputStreamReader(InputStream is,String charset):可以指定编码把字节流转换成字符流
+
+
+字符输入转换流可以把字节输入流按照默认编码转换成字符输入流。
+
+Reader isr = new InputStreamReader(is); // 使用当前代码默认编码UTF-8转换成字符流，几乎不用！
+
+字符输入转换流也可以指定编码把字节输入流转换成字符输入流。
+
+Reader isr = new InputStreamReader(is,"GBK"); // 指定编码把字节流转换成字符流
+
+字符输入转换流可以解决不同编码读取乱码的问题！
+
+```java
+// 代码：UTF-8    文件：GBK(ab我爱你： o o [oo] [oo] [oo])
+// 1.提取GBK文件的原始字节流
+InputStream is = new FileInputStream("D:\\itcast\\网络编程公开课\\Netty.txt");
+// 2.把原始字节输入流通过转换流，转换成 字符输入转换流InputStreamReader
+//Reader isr = new InputStreamReader(is); // 使用当前代码默认编码UTF-8转换成字符流，几乎不用！
+Reader isr = new InputStreamReader(is,"GBK"); // 指定编码把字节流转换成字符流
+// 3.包装成缓冲流
+BufferedReader br = new BufferedReader(isr);
+// 4.定义一个字符串变量存储每行数据
+String line;
+// 使用一个循环读取数据(经典代码)
+while((line = br.readLine())!=null){
+    System.out.println(line);
+}
+```
+
+字符输出转换流：`OutputStreamWriter`
+
+作用：可以指定编码把字节输出流转换成字符输出流。可以指定写出去的字符的编码。
+
+构造器：
+
+- `public OutputStreamWriter(OutputStream os) `:   用当前默认编码UTF-8把字节输出流转换成字符输出流
+- `public OutputStreamWriter(OutputStream os , String charset)`:指定编码把字节输出流转换成字符输出流
+
+```java
+// 1.写一个字节输出流通向文件
+OutputStream os = new FileOutputStream("Day10Demo/src/dlei07.txt");
+
+// 2.把字节输出流转换成字符输出流。
+// Writer fw = new OutputStreamWriter(os); // .把字节输出流按照默认编码UTF-8转换成字符输出流。
+Writer fw = new OutputStreamWriter(os,"GBK"); // .  把字节输出流按照指定编码GBK转换成字符输出流。
+fw.write("abc我是中国人");
+fw.close();
+```
+
+## 第六章 序列流
+
+**对象序列化**：就是把Java对象数据直接存储到文件中去。           对象 => 文件中
+
+**对象反序列化**：就是把Java对象的文件数据恢复到Java对象中。     文件中 => 对象
+
+对象序列化流（对象字节输出流）：`ObjectOutputStream`
+
+**作用**：把内存中的Java对象数据保存到文件中去。
+
+构造器：   `public ObjectOutputStream(OutputStream out)`
+
+序列化方法：`public final void writeObject(Object obj)`
+
+> 对象如果想参与序列化，对象必须实现序列化接口 implements Serializable ，否则序列化失败！
+
+```java
+// 1.创建User用户对象
+User user = new User("tsgz","003197","铁扇公主");
+// 2.创建低级的字节输出流通向目标文件
+OutputStream os = new FileOutputStream("Day10Demo/src/obj.dat");
+// 3.把低级的字节输出流包装成高级的对象字节输出流ObjectOutputStream
+ObjectOutputStream oos = new ObjectOutputStream(os);
+// 4.通过对象字节输出流序列化对象：
+oos.writeObject(user);
+// 6.释放资源
+oos.close();
+System.out.println("序列化对象成功~~~~");
+```
+
+对象反序列化（对象字节输入流）：`ObjectInputStream`
+
+作用：读取序列化的对象文件恢复到Java对象中。
+
+构造器：`public ObjectInputStream(InputStream is)`
+
+方法：`public final Object readObject()`
+
+如果一个字段不想参数序列化：`transient`修饰该成员变量，它将不参与序列化！
+
+序列化版本号：
+
+private static final long serialVersionUID = 2L;
+
+必须序列化使用的版本号和反序列化使用的版本号一致才可以正常反序列化！否则报错！
+
+```java
+// 1.定义一个低级的字节输入流通向源文件
+InputStream is = new FileInputStream("Day10Demo/src/obj.dat");
+// 2.把字节输入流包装成高的对象字节输入流
+ObjectInputStream ois = new ObjectInputStream(is);
+// 3.反序列化
+User user = (User) ois.readObject();
+System.out.println(user);
+System.out.println("反序列化完成！");
+```
+
+## 第七章 打印流
+
+打印流 `PrintStream `/ `PrintWriter`
+
+打印流的作用：
+
+可以方便，快速的写数据出去。
+
+可以实现打印啥出去，就是啥出去。
+
+打印流的构造器：
+
+- `public PrintStream(OutputStream os)`
+- `public PrintStream(String filepath)`
+
+```java
+// 1.打印流PrintStream
+//OutputStream os = new FileOutputStream("Day10Demo/src/dlei08.txt");
+//PrintStream ps = new PrintStream(os);
+PrintStream ps = new  PrintStream("Day10Demo/src/dlei08.txt");
+//PrintWriter pw = new  PrintWriter("Day10Demo/src/dlei08.txt");
+
+ps.println(97); // 写97
+ps.println(110); // 写110
+ps.println("我在黑马快乐的调皮~~");
+ps.println(99.8);
+ps.println(false);
+ps.println('徐');
+
+// 写字节数据出去
+// ps.write("我爱你".getBytes());
+
+ps.close();
+```
+
+`public static void setOut(PrintStream out)` :让系统的输出流向打印流。
+
+```java
+System.out.println("==itheima0==");
+PrintStream ps = new PrintStream("Day10Demo/src/log.txt");
+System.setOut(ps); // 让系统的输出流向打印流。
+
+System.out.println("==itheima1==");
+System.out.println("==itheima2==");
+System.out.println("==itheima3==");
+System.out.println("==itheima4==");
+System.out.println("==itheima5==");
+```
+
+
+
+
+
