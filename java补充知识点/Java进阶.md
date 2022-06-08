@@ -5576,34 +5576,240 @@ public static void searchFiles(File dir , String fileName){
 ### IO流读写数据
 
 IO输入输出流：输入/输出流。
-    Input:输入。
-    Output:输出。
+
+* Input:输入。
+* Output:输出。
 
 引入：
-    File类只能操作文件对象本身，不能读写文件对象的内容。
-    读写数据内容，应该使用IO流。
+File类只能操作文件对象本身，不能读写文件对象的内容。
+读写数据内容，应该使用IO流。
 
 IO流是一个水流模型：IO理解成水管，把数据理解成水流。
 
-IO流的分类:
-    按照流的方向分为：输入流，输出流。
-       （1）输出流：以内存为基准，把内存中的数据写出到磁盘文件或者网络介质中去的流称为输出流。
-               输出流的作用：写数据到文件，或者写数据发送给别人。
+IO流的分类
 
-​       （2）输入流：以内存为基准，把磁盘文件中的数据或者网络中的数据读入到内存中去的流称为输入流。
-​               输入流的作用：读取数据到内存。
+按照流的方向分为：输入流，输出流。
 
-​    按照流的内容分为: 字节流，字符流。
-​       （1）字节流：流中的数据的最小单位是一个一个的字节，这个流就是字节流。
-​       （2）字符流：流中的数据的最小单位是一个一个的字符，这个流就是字符流。(针对于文本内容)
+* 输出流：以内存为基准，把内存中的数据写出到磁盘文件或者网络介质中去的流称为输出流。
+  输出流的作用：写数据到文件，或者写数据发送给别人。
+* 输入流：以内存为基准，把磁盘文件中的数据或者网络中的数据读入到内存中去的流称为输入流。
+  输入流的作用：读取数据到内存。
+
+按照流的内容分为: 字节流，字符流。
+
+* 字节流：流中的数据的最小单位是一个一个的字节，这个流就是字节流。
+* 字符流：流中的数据的最小单位是一个一个的字符，这个流就是字符流。(针对于文本内容)
 
 所以流大体分为四大类:
-    字节输入流：以内存为基准，把磁盘文件中的数据或者网络中的数据以一个一个的字节的形式读入到内存中去的流称为字节输入流。
-    字节输出流：以内存为基准，把内存中的数据以一个一个的字节写出到磁盘文件或者网络介质中去的流称为字节输出流。
-    字符输入流：以内存为基准，把磁盘文件中的数据或者网络中的数据以一个一个的字符的形式读入到内存中去的流称为字符输入流。
-    字符输出流：以内存为基准，把内存中的数据以一个一个的字符写出到磁盘文件或者网络介质中去的流称为字符输出流。
-小结：
-    IO流是读写传输数据的，IO流有很多种，每种流有自己的功能特点。
+
+* 字节输入流：以内存为基准，把磁盘文件中的数据或者网络中的数据以一个一个的字节的形式读入到内存中去的流称为字节输入流。
+* 字节输出流：以内存为基准，把内存中的数据以一个一个的字节写出到磁盘文件或者网络介质中去的流称为字节输出流。
+* 字符输入流：以内存为基准，把磁盘文件中的数据或者网络中的数据以一个一个的字符的形式读入到内存中去的流称为字符输入流。
+* 字符输出流：以内存为基准，把内存中的数据以一个一个的字符写出到磁盘文件或者网络介质中去的流称为字符输出流。
+
+>  IO流是读写传输数据的，IO流有很多种，每种流有自己的功能特点。
 
 ### 字节流的使用
+
+IO流的体系
+
+|     字节流      |      字节流      |   字符流   |         字符流         |
+| :-------------: | :--------------: | :--------: | :--------------------: |
+|   字节输入流    |    字节输出流    | 字符输入流 |       字符输出流       |
+|   InputStream   |   OutputStream   |   Reader   |     Writer(抽象类)     |
+| FileInputStream | FileOutputStream | FileReader | FileWriter(子类实现类) |
+
+#### 输入流
+
+FileInputStream文件字节输入流
+
+作用：以内存为基准，把磁盘文件中的数据按照字节的形式读入到内存中的流，简单的来说，就是按照字节读取文件数据到内存
+
+构造器
+
+* `public FileInputStream(File path)`:创建一个字节输入流管道与源文件对象接通
+* `public FileInputStream(String pathName)`:创建一个字节输入流管道与文件路径对接
+
+方法
+
+* `public int read()` 每次读取一个直接返回，读取完毕会返回`-1`
+* `public int read(byte[] buffer)` 从字节输入流中读取字节到字节数组中去，返回读取的字节数量，没有字节可读返回`-1`
+
+> - 一个一个字节读取英文和数字没有问题。
+> - 但是一旦读取中文输出无法避免乱码，因为会截断中文的字节。
+> - 一个一个字节的读取数据，性能也较差，所以禁止使用此方案！
+
+```java
+// 1.创建文件对象定位dlei01.txt
+File file = new File("Day09Demo/src/dlei01.txt");
+// 2.创建一个字节输入流管道与源文件接通
+InputStream is = new FileInputStream(file);
+// 3.读取一个字节的编号返回，读取完毕返回-1
+//        int code1 = is.read(); // 读取一滴水，一个字节
+//        System.out.println((char)code1);
+//
+//        int code2 = is.read(); // 读取一滴水，一个字节
+//        System.out.println((char)code2);
+//
+//        int code3 = is.read(); // 读取一滴水，一个字节
+//        System.out.println((char)code3);
+//
+//        int code4 = is.read(); // 读取一滴水，一个字节 ,读取没有字节返回-1
+//        System.out.println(code4);
+
+// 4.使用while读取字节数
+// 定义一个整数变量存储字节
+int ch = 0 ;
+while((ch = is.read())!= -1){
+    System.out.print((char) ch);
+}
+
+// 读法优化，必须使用循环     // abc xyz i
+// a.定义一个字节数组代表桶   // ooo ooo o
+byte[] buffer = new byte[3];
+int len ; // 存储每次读取的字节数。
+while((len = is.read(buffer)) != -1){
+    // 读取了多少就倒出多少！
+    String rs = new String(buffer , 0 , len);
+    System.out.print(rs);
+}
+```
+
+解决中文乱码
+
+定义一个字节数组与文件的大小刚刚一样大，然后一桶水读取全部字节数据再输出
+
+```java
+// 0.定位文件对象
+File f = new File("C:\\Users\\Administrator\\Documents\\codes\\notes\\java-notes\\java补充知识点\\codes\\seniorJava\\day09\\src\\com\\itheima\\_25字节流的使用\\FileInputStreamDemo03.java");
+// 1.定义一个字节输入流通向源文件路径，简化写法！
+InputStream is = new FileInputStream(f);
+
+// 2.定义一个字节数组与文件的大小刚刚一样大
+//        System.out.println("文件大小："+f.length());
+//        byte[] buffer = new byte[(int) f.length()];
+//        int len = is.read(buffer);
+//        System.out.println("读取了："+len);
+//        String rs = new String(buffer);
+//        System.out.println(rs);
+
+byte[] buffer = is.readAllBytes();
+String rs = new String(buffer);
+System.out.println(rs);
+```
+
+#### 输出流
+
+`FileOutputStream`文件字节输出流
+
+作用：以内存为基准，把内存中的数据，按照字节的形式写出到磁盘文件中去。简单来说，把内存数据按照字节写出到磁盘文件中去。
+
+构造器：
+
+- `public FileOutputStream(File file)`:创建一个字节输出流管道通向目标文件对象。
+- `public FileOutputStream(String file)`:创建一个字节输出流管道通向目标文件路径。
+- `public FileOutputStream(File file , boolean append)`:创建一个追加数据的字节输出流管道通向目标文件对象。
+- `public FileOutputStream(String file , boolean append)`:创建一个追加数据的字节输出流管道通向目标文件路径。
+
+方法：
+
+- `public void write(int a)`:写一个字节出去 。
+
+- `public void write(byte[] buffer)`:写一个字节数组出去。
+
+- `public void write(byte[] buffer , int pos , int len)`:写一个字节数组的一部分出去。
+
+  参数一，字节数组；参数二：起始字节索引位置，参数三：写多少个字节数出去。
+
+> * 字节输出流只能写字节出去
+> * 字节输出流默认是覆盖数据管道
+> * 换行用： `os.write("\r\n".getBytes());`
+> * 关闭和刷新：刷新流可以继续使用，关闭包含刷新数据但是流就不能使用了！
+
+`FileOutputStream`字节输出流每次启动写数据的时候都会先清空之前的全部数据
+
+### 字节流做文件复制
+
+字节是计算机中一切文件的组成，所以字节流适合做一切文件的复制。
+
+复制是把源文件的全部字节一字不漏的转移到目标文件，只要文件前后的格式一样，绝对不会有问题。
+
+复制步骤：
+
+- 创建一个字节输入流管道与源文件接通。
+- 创建一个字节输出流与目标文件接通。
+- 创建一个字节数组作为桶
+- 从字节输入流管道中读取数据，写出到字节输出流管道即可。
+- 关闭资源！
+
+```java
+InputStream is = null ;
+OutputStream os = null ;
+try{
+    /** （1）创建一个字节输入流管道与源文件接通。 */
+    is = new FileInputStream("D:\\itcast\\图片资源\\meinv.jpg");
+    /** （2）创建一个字节输出流与目标文件接通。*/
+    os = new FileOutputStream("D:\\itcast\\meimei.jpg");
+    /** （3）创建一个字节数组作为桶*/
+    byte[] buffer = new byte[1024];
+    /** （4）从字节输入流管道中读取数据，写出到字节输出流管道即可。*/
+    int len = 0;
+    while((len = is.read(buffer)) != -1){
+        // 读取多少就倒出多少
+        os.write(buffer, 0 , len);
+    }
+    System.out.println("复制完成！");
+}catch (Exception e){
+    e.printStackTrace();
+} finally {
+    /**（5）关闭资源！ */
+    try{
+        if(os!=null)os.close();
+        if(is!=null)is.close();
+    }catch (Exception e){
+        e.printStackTrace();
+    }
+}
+```
+
+JDK1.7 开始之后释放资源的新方式
+
+try-with-resources:
+
+```java
+try(
+    // 这里只能放置资源对象，用完会自动调用close()关闭
+){
+
+}catch(Exception e){
+    e.printStackTrace();
+}
+```
+
+什么是资源？
+
+* 资源类一定是实现了Closeable接口，实现这个接口的类就是资源
+* 有close()方法，try-with-resources会自动调用它的close()关闭资源。
+
+```java
+try(
+    /** （1）创建一个字节输入流管道与源文件接通。 */
+    InputStream is  = new FileInputStream("D:\\itcast\\图片资源\\meinv.jpg");
+    /** （2）创建一个字节输出流与目标文件接通。*/
+    OutputStream os = new FileOutputStream("D:\\itcast\\meimei.jpg");
+    /** （5）关闭资源！是自动进行的 */
+){
+    /** （3）创建一个字节数组作为桶*/
+    byte[] buffer = new byte[1024];
+    /** （4）从字节输入流管道中读取数据，写出到字节输出流管道即可。*/
+    int len = 0;
+    while((len = is.read(buffer)) != -1){
+        // 读取多少就倒出多少
+        os.write(buffer, 0 , len);
+    }
+    System.out.println("复制完成！");
+}catch (Exception e){
+    e.printStackTrace();
+}
+```
 

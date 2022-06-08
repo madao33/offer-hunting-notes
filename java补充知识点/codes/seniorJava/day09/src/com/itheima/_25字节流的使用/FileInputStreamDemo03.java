@@ -20,7 +20,7 @@ import java.io.InputStream;
 public class FileInputStreamDemo03 {
     public static void main(String[] args) throws Exception {
         // 0.定位文件对象
-        File f = new File("Day09Demo/src/dlei03.txt");
+        File f = new File("C:\\Users\\Administrator\\Documents\\codes\\notes\\java-notes\\java补充知识点\\codes\\seniorJava\\day09\\src\\com\\itheima\\_25字节流的使用\\FileInputStreamDemo03.java");
         // 1.定义一个字节输入流通向源文件路径，简化写法！
         InputStream is = new FileInputStream(f);
 
