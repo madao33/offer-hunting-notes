@@ -3,12 +3,12 @@ package com.itheima._08即时通信;
 public class User {
 	private Integer id ;
 	private String name ;
-	
+
 	public User(Integer id, String name) {
 		this.id = id;
 		this.name = name;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -25,6 +25,6 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + "]";
 	}
-	
-	
+
+
 }

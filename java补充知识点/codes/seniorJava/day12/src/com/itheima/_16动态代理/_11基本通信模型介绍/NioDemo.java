@@ -1,4 +1,4 @@
-package com.itheima._11基本通信模型介绍;
+package com.itheima._16动态代理._11基本通信模型介绍;
 
 /**
     拓展：基本通信模型的概念介绍。

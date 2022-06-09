@@ -51,7 +51,7 @@ class ServerReaderThread extends Thread{
             ps.println("Content-Type:text/html;charset=UTF-8");//响应数据的类型。网页或者文本内容！
             ps.println(); // 必须换一行
             // 以下开始响应真实的数据！！
-            ps.println("<span style='color:green;font-size:100px;'>牛逼的128期<span>");
+            ps.println("<span style='color:green;font-size:100px;'>Hello, world<span>");
 
             Thread.sleep(4000);
             ps.close();
@@ -59,7 +59,5 @@ class ServerReaderThread extends Thread{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 }
