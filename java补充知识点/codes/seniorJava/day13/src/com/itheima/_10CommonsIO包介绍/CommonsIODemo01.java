@@ -32,14 +32,14 @@ import java.nio.file.Paths;
 public class CommonsIODemo01 {
     public static void main(String[] args) throws Exception {
         // 1.完成文件复制！
-        IOUtils.copy(new FileInputStream("Day13Demo/src/books.xml"), new FileOutputStream("Day13Demo/new.xml"));
+        IOUtils.copy(new FileInputStream("day13/src/books.xml"), new FileOutputStream("day13/new.xml"));
         // 2.完成文件复制到某个文件夹下！
-        FileUtils.copyFileToDirectory(new File("Day13Demo/src/books.xml"), new File("D:/itcast"));
+        FileUtils.copyFileToDirectory(new File("day13/src/books.xml"), new File("day13/"));
         // 3.完成文件夹复制到某个文件夹下！
-        FileUtils.copyDirectoryToDirectory(new File("D:\\itcast\\约吧图片服务器") , new File("D:\\"));
+        FileUtils.copyDirectoryToDirectory(new File("C:\\Users\\Administrator\\Pictures\\wallpaper") , new File("C:\\Users\\Administrator\\Pictures\\testwall"));
 
         //  Java从1.7开始提供了一些nio, 自己也有一行代码完成复制的技术。
-        Files.copy(Paths.get("Day13Demo/src/books.xml")
-                , new FileOutputStream("Day13Demo/new11.txt"));
+        Files.copy(Paths.get("day13/src/books.xml")
+                , new FileOutputStream("day13/new11.txt"));
     }
 }

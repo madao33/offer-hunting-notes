@@ -35,7 +35,7 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
@@ -57,13 +57,13 @@
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day09\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestDemo">
-    <configuration name="ReflectDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._07暴力攻击集合泛型.ReflectDemo" />
-      <module name="day12" />
+  <component name="RunManager" selected="Application.Base64Demo">
+    <configuration name="Base64Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._11Base64.Base64Demo" />
+      <module name="day13" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._07暴力攻击集合泛型.*" />
+          <option name="PATTERN" value="com.itheima._11Base64.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -71,12 +71,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._16动态代理.TestDemo" />
-      <module name="day12" />
+    <configuration name="CommonsIODemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._10CommonsIO包介绍.CommonsIODemo01" />
+      <module name="day13" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._16动态代理.*" />
+          <option name="PATTERN" value="com.itheima._10CommonsIO包介绍.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,59 +84,60 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnnotationDemo01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="day12" />
+    <configuration name="ParseXMLConfig.parseXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="day13" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._14注解解析.*" />
+          <option name="PATTERN" value="com.itheima._07XML解析Mybatis框架的核心配置文件信息.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.itheima._14注解解析" />
-      <option name="MAIN_CLASS_NAME" value="com.itheima._14注解解析.AnnotationDemo01" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AnnotationDemo01.parseClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="day12" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itheima._14注解解析.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.itheima._14注解解析" />
-      <option name="MAIN_CLASS_NAME" value="com.itheima._14注解解析.AnnotationDemo01" />
-      <option name="METHOD_NAME" value="parseClass" />
+      <option name="PACKAGE_NAME" value="com.itheima._07XML解析Mybatis框架的核心配置文件信息" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima._07XML解析Mybatis框架的核心配置文件信息.ParseXMLConfig" />
+      <option name="METHOD_NAME" value="parseXML" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MethodDemo01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="day12" />
+    <configuration name="XPathDemo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="day13" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._06反射_获取Method方法并执行.*" />
+          <option name="PATTERN" value="com.itheima._06XPath检索XML中的信息.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.itheima._06反射_获取Method方法并执行" />
-      <option name="MAIN_CLASS_NAME" value="com.itheima._06反射_获取Method方法并执行.MethodDemo01" />
+      <option name="PACKAGE_NAME" value="com.itheima._06XPath检索XML中的信息" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima._06XPath检索XML中的信息.XPathDemo" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XPathDemo.path04" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="day13" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima._06XPath检索XML中的信息.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itheima._06XPath检索XML中的信息" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima._06XPath检索XML中的信息.XPathDemo" />
+      <option name="METHOD_NAME" value="path04" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestDemo" />
-        <item itemvalue="JUnit.AnnotationDemo01" />
-        <item itemvalue="JUnit.AnnotationDemo01.parseClass" />
-        <item itemvalue="Application.ReflectDemo" />
-        <item itemvalue="JUnit.MethodDemo01" />
+        <item itemvalue="Application.Base64Demo" />
+        <item itemvalue="Application.CommonsIODemo01" />
+        <item itemvalue="JUnit.ParseXMLConfig.parseXML" />
+        <item itemvalue="JUnit.XPathDemo" />
+        <item itemvalue="JUnit.XPathDemo.path04" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +150,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654201847490</updated>
       <workItem from="1654201847491" duration="11028000" />
-      <workItem from="1654479480589" duration="51949000" />
+      <workItem from="1654479480589" duration="62078000" />
     </task>
     <servers />
   </component>

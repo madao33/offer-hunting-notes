@@ -1,11 +1,13 @@
 package com.itheima._06XPath检索XML中的信息;
 
 import com.itheima._01Dom4J解析XML文档根元素.Dom4JDemo01;
-import org.dom4j.*;
+import org.dom4j.Attribute;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 import org.junit.Test;
 
-import java.io.File;
 import java.io.InputStream;
 import java.util.List;
 
@@ -49,7 +51,7 @@ public class XPathDemo {
 
         // 2.第二种方式（代码多点）先把xml文件读成一个字节输入流
         // 这里的“/”是直接去src类路径下寻找文件。
-        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contact.xml");
+        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contacts.xml");
         Document document = saxReader.read(is);
         // 3.使用绝对路径定位全部的name名称
         List<Node> nameNodes = document.selectNodes("/contactList/contact/name");
@@ -66,7 +68,7 @@ public class XPathDemo {
 
         // 2.第二种方式（代码多点）先把xml文件读成一个字节输入流
         // 这里的“/”是直接去src类路径下寻找文件。
-        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contact.xml");
+        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contacts.xml");
         Document document = saxReader.read(is);
 
         // 3.得到根元素对象
@@ -91,7 +93,7 @@ public class XPathDemo {
 
         // 2.第二种方式（代码多点）先把xml文件读成一个字节输入流
         // 这里的“/”是直接去src类路径下寻找文件。
-        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contact.xml");
+        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contacts.xml");
         Document document = saxReader.read(is);
 
         // 3.//name是指在整个xml文件中检索name节点！
@@ -124,7 +126,7 @@ public class XPathDemo {
 
         // 2.第二种方式（代码多点）先把xml文件读成一个字节输入流
         // 这里的“/”是直接去src类路径下寻找文件。
-        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contact.xml");
+        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contacts.xml");
         Document document = saxReader.read(is);
 
         // 3.检索全部属性对象

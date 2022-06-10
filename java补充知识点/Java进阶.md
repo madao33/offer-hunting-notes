@@ -2,6 +2,8 @@
 
 主要的知识点来自于黑马程序员的视频：`BV1TE41177mP`
 
+
+
 # day1-复习回顾、静态、继承、引用类型使用
 
 ## 定义类
@@ -8570,7 +8572,701 @@ public class ProxyUtil {
 }
 ```
 
+# day13-XML和Dom4j、装饰模式、工厂模式、commons-io工具包
 
+## 第一章 Dom4j
 
+### Dom4j获取Document对象和根元素
 
+dom4j属于第三方技术，必须导入该框架！！
+
+dom4j安装步骤：
+
+- 去dom4j官网下载dom4j的框架：都是一些jar包。
+- 把dom4j的核心jar包导入到当前项目中去。
+- 在项目中创建一个文件夹：lib
+- 将dom4j-2.1.1.jar文件复制到 lib 文件夹
+- 在jar文件上点右键，选择 Add as Library -> 点击OK
+- 在类中导包使用
+
+Java提供了Class下的一个方法：
+
+`public InputStream getResourceAsStream(String path)`
+
+ 用于加载文件成为一个字节输入流返回！！
+
+Document文档：
+`Element getRootElement()`：获取根元素。
+
+> * 先导入dom4j框架
+> * 创建一个dom4j的解析对象：SAXReader
+> * 通过解析对象把xml文件解析成Document文档对象。
+> * 从Document文档对象中获取我们想要的xml信息。
+
+```java
+// 需求：解析books.xml文件成为一个Document文档树对象，得到根元素对象。
+// 1.创建一个dom4j的解析器对象：代表整个dom4j框架。
+SAXReader saxReader = new SAXReader();
+
+// 2.第一种方式（简单）：通过解析器对象去加载xml文件数据，成为一个Document文档树对象。
+//Document document = saxReader.read(new File("Day13Demo/src/books.xml"));
+
+// 3.第二种方式（代码多点）先把xml文件读成一个字节输入流
+// 这里的“/”是直接去src类路径下寻找文件。
+InputStream is = Dom4JDemo01.class.getResourceAsStream("/books.xml");
+Document document = saxReader.read(is);
+
+System.out.println(document);
+
+// 4.从document文档树对象中提取根元素对象
+Element root = document.getRootElement();
+System.out.println(root.getName());
+```
+
+Element元素的API:
+
+- `String getName()`:取元素的名称。
+- `List<Element> elements()`:获取当前元素下的全部子元素（一级）
+- `List<Element> elements(String name)`:获取当前元素下的指定名称的全部子元素（一级）
+- `Element element(String name)`:获取当前元素下的指定名称的某个子元素，默认取第一个（一级）
+
+```java
+// 需求：解析books.xml文件成为一个Document文档树对象，得到根元素对象。
+// 1.创建一个dom4j的解析器对象：代表整个dom4j框架。
+SAXReader saxReader = new SAXReader();
+
+// 2.第一种方式（简单）：通过解析器对象去加载xml文件数据，成为一个Document文档树对象。
+Document document = saxReader.read(new File("Day13Demo/src/books.xml"));
+
+// 3.获取根元素对象
+Element root = document.getRootElement();
+System.out.println(root.getName());
+
+// 4.获取根元素下的全部子元素
+List<Element> sonElements = root.elements();
+for (Element sonElement : sonElements) {
+    System.out.println(sonElement.getName());
+}
+
+System.out.println("-------------------");
+// 5.获取根源下的全部book子元素
+List<Element> sonElements1 = root.elements("book");
+for (Element sonElement : sonElements1) {
+    System.out.println(sonElement.getName());
+}
+System.out.println("-------------------");
+// 6.获取根源下的指定的某个元素
+Element son = root.element("user");
+System.out.println(son.getName());
+
+// 默认会提取第一个名称一样的子元素对象返回！
+Element son1 = root.element("book");
+System.out.println(son1.attributeValue("id"));
+```
+
+### Dom4j获取属性信息
+
+Element元素的API:
+
+- `List<Attribute> attributes()`: 获取元素的全部属性对象。
+- `Attribute attribute(String name)`:根据名称获取某个元素的属性对象。
+- `String attributeValue(String var1)`:直接获取某个元素的某个属性名称的值。
+
+Attribute对象的API:
+
+- `String getName()`:  获取属性名称。
+- `String getValue()`: 获取属性值。
+
+```java
+// 1.创建一个dom4j的解析器对象：代表整个dom4j框架。
+SAXReader saxReader = new SAXReader();
+
+// 2.第一种方式（简单）：通过解析器对象去加载xml文件数据，成为一个Document文档树对象。
+Document document = saxReader.read(new File("day13/src/books.xml"));
+
+// 3.获取根元素对象。
+Element root = document.getRootElement();
+
+// 4.获取book子元素
+Element bookEle = root.element("book");
+
+// 5.获取book元素的全部属性对象
+List<Attribute> attributes = bookEle.attributes();
+for (Attribute attribute : attributes) {
+    System.out.println(attribute.getName()+"=>"+attribute.getValue());
+}
+
+// 6.获取Book元素的某个属性对象
+Attribute descAttr = bookEle.attribute("desc");
+System.out.println(descAttr.getName()+"--->"+descAttr.getValue());
+
+// 7.可以直接获取元素的属性值
+System.out.println(bookEle.attributeValue("id"));
+System.out.println(bookEle.attributeValue("desc"));
+```
+
+### Dom4j获取XML文本
+
+- `String elementText(String name)`: 可以直接获取当前元素的子元素的文本内容
+- `String elementTextTrim(String name)`: 去前后空格,直接获取当前元素的子元素的文本内容
+- `String getText()`:直接获取当前元素的文本内容。
+- `String getTextTrim()`:去前后空格,直接获取当前元素的文本内容。
+
+```java
+// 1.创建一个dom4j的解析器对象：代表整个dom4j框架。
+SAXReader saxReader = new SAXReader();
+
+// 2.第一种方式（简单）：通过解析器对象去加载xml文件数据，成为一个Document文档树对象。
+Document document = saxReader.read(new File("Day13Demo/src/books.xml"));
+
+// 3.获取根元素对象。
+Element root = document.getRootElement();
+
+// 4.得到第一个子元素book
+Element bookEle = root.element("book");
+
+// 5.直接拿到当前book元素下的子元素文本值
+System.out.println(bookEle.elementText("name"));
+System.out.println(bookEle.elementTextTrim("name")); // 去前后空格
+System.out.println(bookEle.elementText("author"));
+System.out.println(bookEle.elementTextTrim("author")); // 去前后空格
+System.out.println(bookEle.elementText("sale"));
+System.out.println(bookEle.elementTextTrim("sale")); // 去前后空格
+
+// 6.先获取到子元素对象，再获取该文本值
+Element bookNameEle = bookEle.element("name");
+System.out.println(bookNameEle.getText());
+System.out.println(bookNameEle.getTextTrim());// 去前后空格
+```
+
+### Dom4j解析案例
+
+Contacts.xml 解析成===>` List<Contact>`
+
+首先定义一个`Contact`类
+
+```java
+/**
+ <contact id="1" vip="true">
+     <name>潘金莲</name>
+     <gender>女</gender>
+     <email>panpan@itcast.cn</email>
+ </contact>
+ */
+public class Contact {
+    private int id ;
+    private boolean vip;
+    private String name ;
+    private char sex ;
+    private String email ;
+
+    public Contact() {
+    }
+
+    public Contact(int id, boolean vip, String name, char sex, String email) {
+        this.id = id;
+        this.vip = vip;
+        this.name = name;
+        this.sex = sex;
+        this.email = email;
+    }
+
+    /**
+     * 获取
+     * @return id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * 设置
+     * @param id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * 获取
+     * @return vip
+     */
+    public boolean isVip() {
+        return vip;
+    }
+
+    /**
+     * 设置
+     * @param vip
+     */
+    public void setVip(boolean vip) {
+        this.vip = vip;
+    }
+
+    /**
+     * 获取
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * 设置
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * 获取
+     * @return sex
+     */
+    public char getSex() {
+        return sex;
+    }
+
+    /**
+     * 设置
+     * @param sex
+     */
+    public void setSex(char sex) {
+        this.sex = sex;
+    }
+
+    /**
+     * 获取
+     * @return email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * 设置
+     * @param email
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String toString() {
+        return "Contact{id = " + id + ", vip = " + vip + ", name = " + name + ", sex = " + sex + ", email = " + email + "}";
+    }
+}
+```
+
+解析代码
+
+```java
+// 1.创建一个dom4j的解析器对象：代表整个dom4j框架。
+SAXReader saxReader = new SAXReader();
+
+// 2.第一种方式（简单）：通过解析器对象去加载xml文件数据，成为一个Document文档树对象。
+Document document = saxReader.read(new File("day13/src/Contacts.xml"));
+
+// 3.获取根元素对象。
+Element root = document.getRootElement();
+
+// 4.获取根元素下的全部子元素
+List<Element> sonElements = root.elements();
+
+// 5.遍历子元素 封装成List集合对象
+List<Contact> contactList = new ArrayList<>();
+if(sonElements != null && sonElements.size() > 0) {
+    for (Element sonElement : sonElements) {
+        Contact contact = new Contact();
+        contact.setId(Integer.valueOf(sonElement.attributeValue("id")));
+        contact.setVip(Boolean.valueOf(sonElement.attributeValue("vip")));
+        contact.setName(sonElement.elementText("name"));
+        contact.setSex(sonElement.elementText("gender").charAt(0));
+        contact.setEmail(sonElement.elementText("email"));
+        contactList.add(contact);
+    }
+}
+System.out.println(contactList);
+```
+
+### Xpath表达式
+
+用于检索XML中的某些信息
+
+XPath使用步骤：
+
+1. 导入dom4j框架。（XPath依赖于Dom4j技术,必须先倒入dom4j框架！）
+1. 导入XPath独有的框架包。jaxen-1.1.2.jar
+
+XPath常用API:
+
+- `List<Node> selectNodes(String var1)`：检索出一批节点集合。
+- `Node selectSingleNode(String var1)`：检索出一个节点返回。
+
+XPath提供的四种检索数据的写法：
+
+1. 绝对路径
+2. 相对路径
+3. 全文搜索
+4. 属性查找
+
+> 1. 绝对路径： /根元素/子元素/子元素。
+> 2. 相对路径： ./子元素/子元素。 (.代表了当前元素)
+> 3. 全文搜索：
+>    `//元素`  在全文找这个元素
+>    `//元素1/元素2`  在全文找元素1下面的一级元素2
+>    `//元素1//元素2  `在全文找元素1下面的全部元素2
+> 4. 属性查找。
+>    `//@属性名称`  在全文检索属性对象。
+>    `//元素[@属性名称]`  在全文检索包含该属性的元素对象。
+>    `//元素[@属性名称=值]`  在全文检索包含该属性的元素且属性值为该值的元素对象。
+
+```java
+public class XPathDemo {
+
+    //  1.绝对路径： /根元素/子元素/子元素。
+    @Test
+    public void path01() throws Exception {
+        // 1.创建一个dom4j的解析器对象：代表整个dom4j框架。
+        SAXReader saxReader = new SAXReader();
+
+        // 2.第二种方式（代码多点）先把xml文件读成一个字节输入流
+        // 这里的“/”是直接去src类路径下寻找文件。
+        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contact.xml");
+        Document document = saxReader.read(is);
+        // 3.使用绝对路径定位全部的name名称
+        List<Node> nameNodes = document.selectNodes("/contactList/contact/name");
+        for (Node nameNode : nameNodes) {
+            System.out.println(nameNode.getText());
+        }
+    }
+
+    // 2.相对路径： ./子元素/子元素。 (.代表了当前元素)
+    @Test
+    public void path02() throws Exception {
+        // 1.创建一个dom4j的解析器对象：代表整个dom4j框架。
+        SAXReader saxReader = new SAXReader();
+
+        // 2.第二种方式（代码多点）先把xml文件读成一个字节输入流
+        // 这里的“/”是直接去src类路径下寻找文件。
+        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contact.xml");
+        Document document = saxReader.read(is);
+
+        // 3.得到根元素对象
+        Element root = document.getRootElement();
+
+        // 4.从根元素开始检索
+        // .代表当前根元素对象路径！直接找其下的contact下的name
+        List<Node> nameNodes = root.selectNodes("./contact/name");
+        for (Node nameNode : nameNodes) {
+            System.out.println(nameNode.getText());
+        }
+    }
+
+    // 3.全文搜索：
+    //                "//元素"  在全文找这个元素
+    //                "//元素1/元素2"  在全文找元素1下面的一级元素2
+    //                "//元素1//元素2"  在全文找元素1下面的全部元素2
+    @Test
+    public void path03() throws Exception {
+        // 1.创建一个dom4j的解析器对象：代表整个dom4j框架。
+        SAXReader saxReader = new SAXReader();
+
+        // 2.第二种方式（代码多点）先把xml文件读成一个字节输入流
+        // 这里的“/”是直接去src类路径下寻找文件。
+        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contact.xml");
+        Document document = saxReader.read(is);
+
+        // 3.//name是指在整个xml文件中检索name节点！
+        List<Node> nameNodes = document.selectNodes("//name");
+        for (Node nameNode : nameNodes) {
+            System.out.println(nameNode.getText());
+        }
+        System.out.println("-----------------");
+        // 4.在全文中检索所有contact下的直接name节点
+        List<Node> nameNodes1 = document.selectNodes("//contact/name");
+        for (Node nameNode : nameNodes1) {
+            System.out.println(nameNode.getText());
+        }
+        System.out.println("-----------------");
+        // 5.在全文中检索所有contact下的所有name节点
+        List<Node> nameNodes2 = document.selectNodes("//contact//name");
+        for (Node nameNode : nameNodes2) {
+            System.out.println(nameNode.getText());
+        }
+    }
+
+    //   4.属性查找。
+    //         //@属性名称  在全文检索属性对象。
+    //          //元素[@属性名称]  在全文检索包含该属性的元素对象。
+    //          //元素[@属性名称=值]  在全文检索包含该属性的元素且属性值为该值的元素对象。
+    @Test
+    public void path04() throws Exception {
+        // 1.创建一个dom4j的解析器对象：代表整个dom4j框架。
+        SAXReader saxReader = new SAXReader();
+
+        // 2.第二种方式（代码多点）先把xml文件读成一个字节输入流
+        // 这里的“/”是直接去src类路径下寻找文件。
+        InputStream is = Dom4JDemo01.class.getResourceAsStream("/Contact.xml");
+        Document document = saxReader.read(is);
+
+        // 3.检索全部属性对象
+        List<Node> attributs = document.selectNodes("//@id");
+        for (Node attribut : attributs) {
+            Attribute attr = (Attribute) attribut;
+            System.out.println(attr.getName() + "--->"+attr.getValue());
+        }
+        System.out.println("---------------");
+        // 4.//元素[@属性名称]  在全文检索包含该属性的元素对象
+        List<Node> nodeEles = document.selectNodes("//contact[@id]");
+        for (Node nodeEle : nodeEles) {
+            System.out.println(nodeEle.getName());
+        }
+
+        System.out.println("---------------");
+        // 5. //元素[@属性名称=值]  在全文检索包含该属性的元素且属性值为该值的元素对象。
+        Node nodeEle = document.selectSingleNode("//contact[@id=2]");
+        Element ele = (Element) nodeEle;
+        System.out.println(ele.elementTextTrim("name"));
+    }
+}
+```
+
+### 解析Mybatis的核心配置文件信息
+
+```java
+public class ParseXMLConfig {
+    @Test
+    public void parseXML() throws Exception {
+        // 1.创建一个解析器对象
+        SAXReader saxReader = new SAXReader();
+        // 2.加载类路径下的xml文件成为一个document文档对象。
+        Document document = saxReader.read(ParseXMLConfig.class.getResourceAsStream("/sqlMapConfig.xml"));
+        // 3.得到根元素对象
+        Element root = document.getRootElement();
+        // 4.获取子元素environments
+        Element environments = root.element("environments");
+        // 5.获取子元素environment
+        Element environment = environments.element("environment");
+        // 6.获取子元素dataSource
+        Element dataSource = environment.element("dataSource");
+        // 7.获取 dataSource下的全部子元素
+        List<Element>  properties = dataSource.elements();
+        // 8.遍历他们
+        for (Element property : properties) {
+            System.out.println(property.attributeValue("name")
+                    +"==>"+property.attributeValue("value"));
+        }
+    }
+}
+```
+
+## 第二章 设计模式
+
+### 工厂设计模型
+
+什么是工厂设计模式？
+
+- 工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一
+- 这种类型的设计模式属于创建型模式，它提供了一种创建对象的方式
+- 之前我们创建类对象时, 都是使用`new`对象的形式创建, 除`new`对象方式以外，工厂模式也可以创建对象
+
+工厂设计模式的作用：
+
+* 对象通过工厂的方法创建返回，工厂的方法可以为该对象进行加工和数据注入。
+* 可以实现类与类之间的**解耦操作**
+
+> * 优点：工厂模式的存在可以改变创建对象的方式,解决类与类之间的耦合
+> * 缺点：工厂设计模式多了一个工厂类
+
+`FactoryPattern`
+
+```java
+public class FactoryPattern {
+    // 生产对象的方法：工厂方法
+    public static Animal createAniaml(){
+//        Dog dog = new Dog();
+//        return dog;
+        return new Cat();
+    }
+}
+```
+
+创建对象可以使用
+
+```java
+Animal a = FactoryPattern.createAniaml();
+a.run();
+```
+
+之后如果需要修改创建的对象，可以直接在`FactoryPattern`中修改对象创建
+
+### 装饰设计模式
+
+装饰模式指的是在不改变原类, 动态地扩展一个类的功能。
+
+思想：是创建一个新类，包装原始类，从而在新类中提升原来类的功能！！
+
+> 装饰模式可以在不改变原类的基础上对类中的方法进行扩展增强,实现原则为:
+>
+> 1. 定义父类
+> 2. 定义原始类，继承父类，定义功能。
+> 3. 定义装饰类，继承父类，包装原始类，增强功能！！
+
+`InputStream`
+
+```java
+public abstract class InputStream {
+    public abstract void read();
+    public abstract void close();
+}
+```
+
+`FileInputStream`
+
+```java
+public class FileInputStream extends InputStream {
+    @Override
+    public void read() {
+        System.out.println("读取数据~~~");
+    }
+
+    @Override
+    public void close() {
+        System.out.println("关闭流~~~");
+    }
+}
+
+```
+
+`BufferedInputStream`
+
+```java
+public class BufferedInputStream extends InputStream {
+    private InputStream is ;
+    public BufferedInputStrem(InputStream is){
+        this.is = is;
+    }
+    @Override
+    public void read() {
+        System.out.println("开启高效缓冲读取~");
+        is.read();
+    }
+
+    @Override
+    public void close() {
+        is.close();
+    }
+}
+```
+
+`Demo`
+
+```java
+InputStream is = new BufferedInputStrem(new FileInputStream());
+is.read();
+is.close();
+```
+
+## 第三章 Commons-io包
+
+什么是`Commons-io`包？
+
+commons-io是apache开源基金组织提供的一组有关IO操作的类库，可以挺提高IO功能开发的效率。commons-io工具包提供了很多有关io操作的类，见下表：
+
+| 包   | 功能描述 |
+| ----------------------------------- | ------------------------------------------- |
+| org.apache.commons.io | 有关Streams、Readers、Writers、Files的工具类 |
+| org.apache.commons.io.input | 输入流相关的实现类，包含Reader和InputStream |
+| org.apache.commons.io.output | 输出流相关的实现类，包含Writer和OutputStream |
+| org.apache.commons.io.serialization | 序列化相关的类 |
+
+步骤：
+
+ 1. 下载commons-io相关jar包；http://commons.apache.org/proper/commons-io/
+ 2. 把commons-io-2.6.jar包复制到指定的Module的lib目录中
+ 3. 将commons-io-2.6.jar加入到classpath中
+
+> `IOUtils`和`FileUtils`可以方便的复制文件和文件夹
+
+```java
+// 1.完成文件复制！
+IOUtils.copy(new FileInputStream("Day13Demo/src/books.xml"), new FileOutputStream("Day13Demo/new.xml"));
+// 2.完成文件复制到某个文件夹下！
+FileUtils.copyFileToDirectory(new File("Day13Demo/src/books.xml"), new File("D:/itcast"));
+// 3.完成文件夹复制到某个文件夹下！
+FileUtils.copyDirectoryToDirectory(new File("D:\\itcast\\约吧图片服务器") , new File("D:\\"));
+
+//  Java从1.7开始提供了一些nio, 自己也有一行代码完成复制的技术。
+Files.copy(Paths.get("Day13Demo/src/books.xml")
+        , new FileOutputStream("Day13Demo/new11.txt"));
+```
+
+## 第四章 Base64
+
+Base64是网络上最常见的用于传输8Bit字节码的编码方式之一，Base64就是一种基于64个可打印字符来表示二进制数据的方法。
+
+在Java 8中，Base64编码已经成为Java类库的标准。
+
+Java 8 内置了 Base64 编码的编码器和解码器。
+
+Base64工具类提供了一套静态方法获取下面三种BASE64编解码器：
+
+- **基本：**输出被映射到一组字符A-Za-z0-9+/，编码不添加任何行标，输出的解码仅支持A-Za-z0-9+/。
+- **URL：**输出映射到一组字符A-Za-z0-9+_，输出是URL和文件。
+- **MIME：**输出隐射到MIME友好格式。输出每行不超过76字符，并且使用'\r'并跟随'\n'作为分割。编码输出最后没有行分割。
+
+**内嵌类**
+
+| 序号 | 内嵌类 & 描述                                                |
+| :--- | :----------------------------------------------------------- |
+| 1    | **static class Base64.Decoder**该类实现一个解码器用于，使用 Base64 编码来解码字节数据。 |
+| 2    | **static class Base64.Encoder**该类实现一个编码器，使用 Base64 编码来编码字节数据 |
+
+**方法**
+
+| 序号 | 方法名 & 描述                                                |
+| :--- | :----------------------------------------------------------- |
+| 1    | **static Base64.Decoder getDecoder()**返回一个 Base64.Decoder ，解码使用基本型 base64 编码方案。 |
+| 2    | **static Base64.Encoder getEncoder()**返回一个 Base64.Encoder ，编码使用基本型 base64 编码方案。 |
+| 3    | **static Base64.Decoder getMimeDecoder()**返回一个 Base64.Decoder ，解码使用 MIME 型 base64 编码方案。 |
+| 4    | **static Base64.Encoder getMimeEncoder()**返回一个 Base64.Encoder ，编码使用 MIME 型 base64 编码方案。 |
+| 5    | **static Base64.Encoder getMimeEncoder(int lineLength, byte[] lineSeparator)**返回一个 Base64.Encoder ，编码使用 MIME 型 base64 编码方案，可以通过参数指定每行的长度及行的分隔符。 |
+| 6    | **static Base64.Decoder getUrlDecoder()**返回一个 Base64.Decoder ，解码使用 URL 和文件名安全型 base64 编码方案。 |
+| 7    | **static Base64.Encoder getUrlEncoder()**返回一个 Base64.Encoder ，编码使用 URL 和文件名安全型 base64 编码方案。 |
+
+> **注意：**Base64 类的很多方法从 **java.lang.Object** 类继承
+
+```java
+try {
+    // 1-1.基本编码后结果。普通文本的编码
+    String rs1 = Base64.getEncoder().encodeToString("黑马程序员".getBytes());
+    System.out.println(rs1); // 6buR6ams56iL5bqP5ZGY
+
+    // 1-2.基本解码后结果。普通文本的解码
+    byte[] buffer = Base64.getDecoder().decode(rs1);
+    System.out.println(new String(buffer));
+
+    // 2-1.URL编码
+    String rs2 = Base64.getUrlEncoder().encodeToString("?loginName=黑马&passWord=123456".getBytes());
+    System.out.println(rs2);
+    // 2-2 URL解码
+    byte[] buffer2 = Base64.getUrlDecoder().decode(rs2);
+    System.out.println(new String(buffer2));
+
+    // 3-1 MIME编码
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < 10; ++i) {
+        sb.append(UUID.randomUUID().toString());
+    }
+
+    String rs3 = Base64.getMimeEncoder().encodeToString(sb.toString().getBytes());
+    System.out.println(rs3);
+
+    // 3-2 MIME解码
+    byte[] buffer3 = Base64.getMimeDecoder().decode(rs3);
+    System.out.println(new String(buffer3));
+}catch(Exception e){
+    System.out.println("Error :" + e.getMessage());
+}
+```
 

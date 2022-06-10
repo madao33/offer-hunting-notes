@@ -3,13 +3,9 @@ package com.itheima._07XML解析Mybatis框架的核心配置文件信息;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import org.dom4j.io.SAXWriter;
-import org.dom4j.io.XMLWriter;
 import org.junit.Test;
 
-import java.io.FileOutputStream;
 import java.util.List;
-import java.util.regex.Pattern;
 
 /**
 

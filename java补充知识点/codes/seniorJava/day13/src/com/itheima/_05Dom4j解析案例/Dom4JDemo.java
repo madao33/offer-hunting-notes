@@ -23,7 +23,7 @@ public class Dom4JDemo {
         SAXReader saxReader = new SAXReader();
 
         // 2.第一种方式（简单）：通过解析器对象去加载xml文件数据，成为一个Document文档树对象。
-        Document document = saxReader.read(new File("Day13Demo/src/Contacts.xml"));
+        Document document = saxReader.read(new File("day13/src/Contacts.xml"));
 
         // 3.获取根元素对象。
         Element root = document.getRootElement();

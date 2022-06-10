@@ -7,5 +7,4 @@ public class FactoryPattern {
 //        return dog;
         return new Cat();
     }
-
 }
