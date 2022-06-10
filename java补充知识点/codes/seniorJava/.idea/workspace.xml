@@ -16,6 +16,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="INCOMING_CHECK_STRATEGY" value="Never" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -32,28 +35,35 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/day12/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/day13/lib" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day13" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day12\src" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day11\src" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day10\src" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day09\src" />
-      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\java补充知识点\codes\seniorJava\day08\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BSserverDemo">
-    <configuration name="BSserverDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._10BS架构模拟.BSserverDemo" />
-      <module name="day11" />
+  <component name="RunManager" selected="Application.TestDemo">
+    <configuration name="ReflectDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._07暴力攻击集合泛型.ReflectDemo" />
+      <module name="day12" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._10BS架构模拟.*" />
+          <option name="PATTERN" value="com.itheima._07暴力攻击集合泛型.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -61,12 +71,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientChat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._08即时通信.ClientChat" />
-      <module name="day11" />
+    <configuration name="TestDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itheima._16动态代理.TestDemo" />
+      <module name="day12" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._08即时通信.*" />
+          <option name="PATTERN" value="com.itheima._16动态代理.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,52 +84,59 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientDemo01 (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._06TCP通信三.ClientDemo01" />
-      <module name="day11" />
+    <configuration name="AnnotationDemo01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="day12" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._06TCP通信三.*" />
+          <option name="PATTERN" value="com.itheima._14注解解析.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.itheima._14注解解析" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima._14注解解析.AnnotationDemo01" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerChat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._08即时通信.ServerChat" />
-      <module name="day11" />
+    <configuration name="AnnotationDemo01.parseClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="day12" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._08即时通信.*" />
+          <option name="PATTERN" value="com.itheima._14注解解析.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.itheima._14注解解析" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima._14注解解析.AnnotationDemo01" />
+      <option name="METHOD_NAME" value="parseClass" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerDemo02 (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima._06TCP通信三.ServerDemo02" />
-      <module name="day11" />
+    <configuration name="MethodDemo01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="day12" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.itheima._06TCP通信三.*" />
+          <option name="PATTERN" value="com.itheima._06反射_获取Method方法并执行.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.itheima._06反射_获取Method方法并执行" />
+      <option name="MAIN_CLASS_NAME" value="com.itheima._06反射_获取Method方法并执行.MethodDemo01" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BSserverDemo" />
-        <item itemvalue="Application.ClientChat" />
-        <item itemvalue="Application.ServerChat" />
-        <item itemvalue="Application.ClientDemo01 (2)" />
-        <item itemvalue="Application.ServerDemo02 (2)" />
+        <item itemvalue="Application.TestDemo" />
+        <item itemvalue="JUnit.AnnotationDemo01" />
+        <item itemvalue="JUnit.AnnotationDemo01.parseClass" />
+        <item itemvalue="Application.ReflectDemo" />
+        <item itemvalue="JUnit.MethodDemo01" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +149,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654201847490</updated>
       <workItem from="1654201847491" duration="11028000" />
-      <workItem from="1654479480589" duration="41862000" />
+      <workItem from="1654479480589" duration="51949000" />
     </task>
     <servers />
   </component>

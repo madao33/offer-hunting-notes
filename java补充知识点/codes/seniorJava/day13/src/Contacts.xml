@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contactList>
+    <contact id="1" vip="true">
+        <name>潘金莲</name>
+        <gender>女</gender>
+        <email>panpan@itcast.cn</email>
+    </contact>
+    <contact id="2" vip="false">
+        <name>武松</name>
+        <gender>男</gender>
+        <email>wusong@itcast.cn</email>
+    </contact>
+    <contact id="3" vip="false">
+        <name>武大狼</name>
+        <gender>男</gender>
+        <email>wuda@itcast.cn</email>
+    </contact>
+</contactList>

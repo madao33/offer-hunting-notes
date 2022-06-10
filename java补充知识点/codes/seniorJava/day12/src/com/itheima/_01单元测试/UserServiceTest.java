@@ -44,13 +44,13 @@ public class UserServiceTest {
          * 参数三：实际值
          */
         // public static void assertEquals(String message, Object expected, Object actual)
-        Assert.assertEquals("登录业务功能方法有错误，请检查！","success",rs);
+        Assert.assertEquals("登录业务功能方法有错误，请检查！","success", rs);
     }
 
     @Test
     public void testChu(){
         UserService userService = new UserService();
-        userService.chu(10 , 0);
+        userService.chu(10 , 2);
     }
 }
 

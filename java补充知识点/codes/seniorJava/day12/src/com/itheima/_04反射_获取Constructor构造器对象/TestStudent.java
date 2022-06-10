@@ -63,7 +63,7 @@ public class TestStudent {
         Class c = Student.class ;
         // b.getConstructor()：定位某个构造器，根据参数匹配，只能拿public修饰的！
         // Constructor con = c.getConstructor(); // 报错!
-        Constructor con = c.getConstructor(String.class  , int.class); // 有参数的！!
+        Constructor con = c.getConstructor(String.class  ,int.class); // 有参数的！!
         // c.构造器名称和参数
         System.out.println(con.getName()+"===>"+con.getParameterCount());
     }

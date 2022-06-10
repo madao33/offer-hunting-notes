@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/css" href="../css/xml.css" ?>
+<!-- 7.处理指令：导入外部的css样式控制xml的界面效果，没有啥用，xml不是为了展示好看的！-->
+<!-- 1.申明 抬头 必须在第一行-->
+<!-- 2.注释，本处就是注释，必须用前后尖括号围起来 -->
+<!-- 3.标签（元素），注意一个XML文件只能有一个根标签-->
+<student>
+    <!-- 4.属性信息：id , desc-->
+    <name id="1" desc="高富帅">西门庆</name>
+    <age>32</age>
+    <!-- 5.实体字符：在xml文件中，我们不能直接写小于号，等一些特殊字符
+        会与xml文件本身的内容冲突报错，此时必须用转义的实体字符。
+    -->
+    <sql>
+       <!-- select * from student where age < 18 && age > 10; -->
+        select * from student where age &lt; 18 &amp;&amp; age &gt; 10;
+    </sql>
+    <!-- 6.字符数据区：在xml文件中，我们不能直接写小于号，等一些特殊字符
+        会与xml文件本身的内容冲突报错，此时必须用转义的实体字符
+        或者也可以选择使用字符数据区，里面的内容可以随便了！
+        -->
+    <sql2>
+        <![CDATA[
+             select * from student where age < 18 && age > 10;
+        ]]>
+    </sql2>
+</student>

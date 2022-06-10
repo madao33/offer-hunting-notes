@@ -1,0 +1,23 @@
+<?xml vers"1.0" encodingion=="UTF-8"?>
+<contactList>
+    <contact id="1">
+        <name>潘金莲</name>
+        <gender>女</gender>
+        <email>panpan@itcast.cn</email>
+    </contact>
+    <contact id="2">
+        <name>武松</name>
+        <gender>男</gender>
+        <email>wusong@itcast.cn</email>
+        <sql id="sql4">
+            <name>sql语句</name>
+        </sql>
+    </contact>
+    <contact id="3">
+        <name>武大狼</name>
+        <gender>男</gender>
+        <email>wuda@itcast.cn</email>
+    </contact>
+    <contact></contact>
+    <name>外面的名称</name>
+</contactList>
