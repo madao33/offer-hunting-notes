@@ -18,11 +18,7 @@
 - [x] [java补充知识点](java补充知识点/README.md)
   - [x] [java基础](java补充知识点/Java基础.md)
   - [x] [java进阶](java补充知识点/Java进阶.md)
-
 - [ ] [深入理解Java虚拟机](深入理解Java虚拟机/README.md) ==进行中==
-
-### 编程通用
-
 - [ ] [设计模式](设计模式/README.md)
 
 ### 计算机基础
@@ -34,12 +30,15 @@
 ### Java开发基础
 
 - [x] [MySQL数据库](数据库/MySQL/README.md)
-- [x] [JavaWeb](JavaWeb/README.md) <mark>暂时完成</mark>
-- [ ] [Spring5](Spring5/README.md)
+- [x] [JavaWeb](JavaWeb/README.md) 
+- [x] [MyBatis](MyBatis/MyBatis笔记.md) p19
 
-## 框架
+## [Java开发框架](SSM/README.md)
 
-- [ ] [SpringBoot](springboot/README.md)-暂停一哈…
+- [ ] [Spring](SSM/Spring.md)
+- [ ] [SpringBoot](SSM/SprintBoot.md)
+- [ ] [Maven高级]()
+- [ ] [MyBatisPlus]()
 
 ## 机器学习
 
