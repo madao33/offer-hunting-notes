@@ -937,7 +937,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MyBatis_demo2/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/MyBatis_demo3/src/main/resources" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -948,88 +948,62 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\MyBatis\codes\MyBatis_demo3\src\main\resources" />
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\MyBatis\codes\MyBatis_demo2\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Documents\codes\notes\java-notes\SSM\codes\MyBatis_demo1\src\main\resources\com\atguigu\mybatis\mapper" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.atguigu.mybatis.utils" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.SQLMapperTest.testInsertUser">
-    <configuration name="SQLMapperTest.testDeleteMore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MyBatis_demo2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.mybatis.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.atguigu.mybatis.test" />
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.mybatis.test.SQLMapperTest" />
-      <option name="METHOD_NAME" value="testDeleteMore" />
+  <component name="RunManager" selected="JUnit.ResultMapTest.testGetDeptAndEmpByStep">
+    <configuration name="ResultMapTest.testGetAllEmp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatis_demo3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ResultMapTest" />
+      <option name="METHOD_NAME" value="testGetAllEmp" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SQLMapperTest.testGetUserByLike" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MyBatis_demo2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.mybatis.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.atguigu.mybatis.test" />
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.mybatis.test.SQLMapperTest" />
-      <option name="METHOD_NAME" value="testGetUserByLike" />
+    <configuration name="ResultMapTest.testGetDeptAndEmp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatis_demo3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ResultMapTest" />
+      <option name="METHOD_NAME" value="testGetDeptAndEmp" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SQLMapperTest.testGetUserByTableName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MyBatis_demo2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.mybatis.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.atguigu.mybatis.test" />
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.mybatis.test.SQLMapperTest" />
-      <option name="METHOD_NAME" value="testGetUserByTableName" />
+    <configuration name="ResultMapTest.testGetDeptAndEmpByStep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatis_demo3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ResultMapTest" />
+      <option name="METHOD_NAME" value="testGetDeptAndEmpByStep" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SQLMapperTest.testInsertUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MyBatis_demo2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.mybatis.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.atguigu.mybatis.test" />
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.mybatis.test.SQLMapperTest" />
-      <option name="METHOD_NAME" value="testInsertUser" />
+    <configuration name="ResultMapTest.testGetEmpAndDept" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatis_demo3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ResultMapTest" />
+      <option name="METHOD_NAME" value="testGetEmpAndDept" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SelectMapperTest.testGetAllUserToMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MyBatis_demo2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.mybatis.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.atguigu.mybatis.test" />
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.mybatis.test.SelectMapperTest" />
-      <option name="METHOD_NAME" value="testGetAllUserToMap" />
+    <configuration name="ResultMapTest.testGetEmpAndDeptByStepOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatis_demo3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ResultMapTest" />
+      <option name="METHOD_NAME" value="testGetEmpAndDeptByStepOne" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1037,11 +1011,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SQLMapperTest.testInsertUser" />
-        <item itemvalue="JUnit.SQLMapperTest.testGetUserByTableName" />
-        <item itemvalue="JUnit.SQLMapperTest.testDeleteMore" />
-        <item itemvalue="JUnit.SQLMapperTest.testGetUserByLike" />
-        <item itemvalue="JUnit.SelectMapperTest.testGetAllUserToMap" />
+        <item itemvalue="JUnit.ResultMapTest.testGetDeptAndEmpByStep" />
+        <item itemvalue="JUnit.ResultMapTest.testGetDeptAndEmp" />
+        <item itemvalue="JUnit.ResultMapTest.testGetEmpAndDeptByStepOne" />
+        <item itemvalue="JUnit.ResultMapTest.testGetEmpAndDept" />
+        <item itemvalue="JUnit.ResultMapTest.testGetAllEmp" />
       </list>
     </recent_temporary>
   </component>
@@ -1059,7 +1033,7 @@
       <workItem from="1655005617585" duration="640000" />
       <workItem from="1655086055072" duration="3681000" />
       <workItem from="1655089782515" duration="1085000" />
-      <workItem from="1655090888932" duration="12065000" />
+      <workItem from="1655090888932" duration="19217000" />
     </task>
     <servers />
   </component>
