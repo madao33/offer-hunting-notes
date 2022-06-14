@@ -1,3 +1,5 @@
+package com.atguigu.mybatis;
+
 import com.atguigu.mybatis.mapper.DeptMapper;
 import com.atguigu.mybatis.mapper.EmpMapper;
 import com.atguigu.mybatis.pojo.Dept;
