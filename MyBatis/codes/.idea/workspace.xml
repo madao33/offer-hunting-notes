@@ -970,7 +970,7 @@
       <recent name="com.atguigu.mybatis.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CacheMapperTest.testCache">
+  <component name="RunManager" selected="JUnit.PageHelperTest.testPageHelper">
     <configuration name="CacheMapperTest.testCache" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MyBatis_demo3" />
       <extension name="coverage">
@@ -982,22 +982,6 @@
       <option name="PACKAGE_NAME" value="com.atguigu.mybatis" />
       <option name="MAIN_CLASS_NAME" value="com.atguigu.mybatis.CacheMapperTest" />
       <option name="METHOD_NAME" value="testCache" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DynamicSQLMapperTest.testGetEmpByChoose" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MyBatis_demo3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.atguigu.mybatis.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.atguigu.mybatis" />
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.mybatis.DynamicSQLMapperTest" />
-      <option name="METHOD_NAME" value="testGetEmpByChoose" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1035,17 +1019,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DynamicSQLMapperTest.testdeleteMoreByArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MyBatis_demo3" />
+    <configuration name="MBGTest.testMBG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatis_MBG" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.atguigu.mybatis.*" />
+          <option name="PATTERN" value="com.atguigu.mybatis.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.atguigu.mybatis" />
-      <option name="MAIN_CLASS_NAME" value="com.atguigu.mybatis.DynamicSQLMapperTest" />
-      <option name="METHOD_NAME" value="testdeleteMoreByArray" />
+      <option name="PACKAGE_NAME" value="com.atguigu.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.mybatis.test.MBGTest" />
+      <option name="METHOD_NAME" value="testMBG" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PageHelperTest.testPageHelper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyBatis_MBG" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.atguigu.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.mybatis.test.PageHelperTest" />
+      <option name="METHOD_NAME" value="testPageHelper" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1053,11 +1053,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PageHelperTest.testPageHelper" />
+        <item itemvalue="JUnit.MBGTest.testMBG" />
         <item itemvalue="JUnit.CacheMapperTest.testCache" />
         <item itemvalue="JUnit.DynamicSQLMapperTest.testGetEmpByCondition" />
         <item itemvalue="JUnit.DynamicSQLMapperTest.testInsertMoreByList" />
-        <item itemvalue="JUnit.DynamicSQLMapperTest.testdeleteMoreByArray" />
-        <item itemvalue="JUnit.DynamicSQLMapperTest.testGetEmpByChoose" />
       </list>
     </recent_temporary>
   </component>
@@ -1076,7 +1076,7 @@
       <workItem from="1655086055072" duration="3681000" />
       <workItem from="1655089782515" duration="1085000" />
       <workItem from="1655090888932" duration="25162000" />
-      <workItem from="1655212595936" duration="2597000" />
+      <workItem from="1655212595936" duration="5979000" />
     </task>
     <servers />
   </component>
