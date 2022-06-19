@@ -35,17 +35,18 @@
 
 ## [Java开发框架](SSM/README.md)
 
-Spring
+### Spring
 
 - [x] [spring-day1](SSM\Spring笔记\spring_day01\Spring_day01.md)
 - [x] [spring-day2](SSM\Spring笔记\spring_day01\Spring_day02.md)
 - [x] [spring-day3](SSM\Spring笔记\spring_day01\Spring_day03.md) 
 
+### SpringMVC
+
+- [x] [SpringMVC笔记day1](SSM/SpringMVC笔记/SpringMVC_day01/SpringMVC_day01.md)
+- [ ] [SpringMVC笔记day2](SSM/SpringMVC笔记/SpringMVC_day01/SpringMVC_day02.md)-p59
 
 
-- [ ] [SpringBoot](SSM/SprintBoot.md)
-- [ ] [Maven高级]()
-- [ ] [MyBatisPlus]()
 
 ## 机器学习
 
