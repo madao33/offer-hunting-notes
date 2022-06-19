@@ -18,7 +18,7 @@
 - [x] [java补充知识点](java补充知识点/README.md)
   - [x] [java基础](java补充知识点/Java基础.md)
   - [x] [java进阶](java补充知识点/Java进阶.md)
-- [ ] [深入理解Java虚拟机](深入理解Java虚拟机/README.md) ==进行中==
+- [ ] [JVM](JVM/README.md) ==进行中==
 - [ ] [设计模式](设计模式/README.md)
 
 ### 计算机基础
