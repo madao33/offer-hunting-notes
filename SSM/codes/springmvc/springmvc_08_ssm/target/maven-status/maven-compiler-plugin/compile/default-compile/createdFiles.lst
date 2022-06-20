@@ -1,0 +1,5 @@
+com\itheima\config\MyBatisConfig.class
+com\itheima\config\ServletConfig.class
+com\itheima\config\JdbcConfig.class
+com\itheima\config\SpringConfig.class
+com\itheima\config\SpringMvcConfig.class
