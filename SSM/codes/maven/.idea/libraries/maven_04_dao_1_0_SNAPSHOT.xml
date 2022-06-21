@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="maven_04_dao-1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/maven_04_dao/target/maven_04_dao-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
