@@ -44,7 +44,21 @@
 ### SpringMVC
 
 - [x] [SpringMVC笔记day1](SSM/SpringMVC笔记/SpringMVC_day01/SpringMVC_day01.md)
-- [ ] [SpringMVC笔记day2](SSM/SpringMVC笔记/SpringMVC_day01/SpringMVC_day02.md)-p59
+- [x] [SpringMVC笔记day2](SSM/SpringMVC笔记/SpringMVC_day02/SpringMVC_day02.md)
+
+## Maven高级笔记
+
+- [x] [Maven高级笔记](SSM/Maven高级笔记/Maven高级.md)
+
+## SpringBoot学习笔记
+
+- [x] [SpringBoot笔记](SSM\SpringBoot笔记\SpringBoot.md)
+
+## MyBatisPlus学习笔记
+
+- [ ] [MyBatisPlus学习笔记](SSM\Mybatisplus笔记\MyBatisPlus.md)
+
+
 
 
 
