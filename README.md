@@ -56,7 +56,7 @@
 
 ## MyBatisPlus学习笔记
 
-- [ ] [MyBatisPlus学习笔记](SSM\Mybatisplus笔记\MyBatisPlus.md)
+- [x] [MyBatisPlus学习笔记](SSM\Mybatisplus笔记\MyBatisPlus.md)
 
 
 
