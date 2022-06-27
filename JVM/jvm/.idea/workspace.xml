@@ -5,10 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="008b3e91-ff28-4126-a48e-ff9db5b6525e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jcstress/jcstress.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/jcstress.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c1.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c2.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/test/ConcurrencyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/test/ConcurrencyTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/test/Singleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/test/Singleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/test/SingletonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/test/SingletonTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/EmpMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/EmpMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/Dept.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/Dept.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/Emp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/Emp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/test-classes/com/atguigu/mybatis/test/MBGTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/test-classes/com/atguigu/mybatis/test/MBGTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/test-classes/com/atguigu/mybatis/test/PageHelperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/test-classes/com/atguigu/mybatis/test/PageHelperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo2/target/classes/com/atguigu/mybatis/mapper/SelectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo2/target/classes/com/atguigu/mybatis/mapper/SelectMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo2/target/test-classes/com/atguigu/mybatis/test/SQLMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo2/target/test-classes/com/atguigu/mybatis/test/SQLMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo2/target/test-classes/com/atguigu/mybatis/test/SelectMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo2/target/test-classes/com/atguigu/mybatis/test/SelectMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/CacheMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/CacheMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/CacheMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/CacheMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/DynamicSQLMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/DynamicSQLMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/EmpMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/EmpMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/pojo/Dept.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/pojo/Dept.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/pojo/Emp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/pojo/Emp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/utils/SqlSessionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/classes/com/atguigu/mybatis/utils/SqlSessionUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/CacheMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/CacheMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/DynamicSQLMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/DynamicSQLMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/ResultMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/ResultMapTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Spring5/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../leetcode/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../leetcode/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../springboot/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../springboot/doc/SpringBoot基础篇（发布版）.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../springboot/doc/SpringBoot开发实用篇.pptx" beforeDir="false" />
@@ -1146,11 +1180,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="jdk.selected.JAVA_MODULE" value="1.6" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../黑马ssm2022/03-maven高级/源码/maven/maven_03_pojo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33558342" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -1172,7 +1206,7 @@
       <recent name="E:\git\jvm\src\cn\itcast\jvm\t1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Demo1_13">
+  <component name="RunManager" selected="Application.Demo1_8">
     <configuration name="Demo1_13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.heap.Demo1_13" />
       <module name="jvm" />
@@ -1188,19 +1222,6 @@
     </configuration>
     <configuration name="Demo1_16" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.stack.Demo1_16" />
-      <module name="jvm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.itcast.jvm.t1.stack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Demo1_19" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.stack.Demo1_19" />
       <module name="jvm" />
       <extension name="coverage">
         <pattern>
@@ -1247,6 +1268,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Demo1_8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.metaspace.Demo1_8" />
+      <module name="jvm" />
+      <option name="VM_PARAMETERS" value="-XX:MaxMetaspaceSize=8m" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.itcast.jvm.t1.metaspace.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Demo2_4" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t2.Demo2_4" />
       <module name="jvm" />
@@ -1268,18 +1303,18 @@
       <item itemvalue="Application.Demo2_5" />
       <item itemvalue="Application.Demo1_20" />
       <item itemvalue="Application.Demo1_5" />
-      <item itemvalue="Application.Demo1_19" />
       <item itemvalue="Application.Demo1_16" />
       <item itemvalue="Application.Demo1_4" />
       <item itemvalue="Application.Demo1_13" />
+      <item itemvalue="Application.Demo1_8" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Demo1_8" />
         <item itemvalue="Application.Demo1_13" />
         <item itemvalue="Application.Demo1_4" />
         <item itemvalue="Application.Demo1_5" />
         <item itemvalue="Application.Demo1_16" />
-        <item itemvalue="Application.Demo1_19" />
       </list>
     </recent_temporary>
   </component>
@@ -1349,6 +1384,7 @@
       <workItem from="1565415579327" duration="1601000" />
       <workItem from="1565847982227" duration="125000" />
       <workItem from="1655711292650" duration="7517000" />
+      <workItem from="1656292602821" duration="2848000" />
     </task>
     <servers />
   </component>

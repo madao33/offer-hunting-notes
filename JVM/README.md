@@ -78,7 +78,7 @@ java.lang.StackOverflowError
 
 * 发生死锁
 
-### 本地方法栈
+## 本地方法栈
 
 ![image-20220620163039004](imgs/image-20220620163039004.png)
 
@@ -123,6 +123,39 @@ java.lang.OutOfMemoryError: Java heap space
    * 查看堆内存占用情况
 3. jconsole工具
    * 图形界面的，多功能的检测工具，可以连续监测
+
+## 方法区
+
+![image-20220627094117749](imgs/image-20220627094117749.png)
+
+### 组成
+
+![image-20220627094441517](imgs/image-20220627094441517.png)
+
+### 方法区内存溢出问题
+
+* 1.8 以前会导致永久代内存溢出
+
+  * 演示永久代内存溢出 `java.lang.OutOfMemoryError: PermGen space`
+
+  * `-XX:MaxPermSize=8m`
+
+* 1.8 之后会导致元空间内存溢出
+
+  * 演示元空间内存溢出 `java.lang.OutOfMemoryError: Metaspace `
+  * `-XX:MaxMetaspaceSize=8m`
+
+场景
+
+* spring
+* mybatis
+
+### 运行时常量池
+
+* 常量池，就是一张表，虚拟机指令根据这张常量表找到要执行的类名、方法名、参数类型、字面量 等信息
+* 运行时常量池，常量池是 *.class 文件中的，当该类被加载，它的常量池信息就会放入运行时常量 池，并把里面的符号地址变为真实地址
+
+p25
 
 
 
