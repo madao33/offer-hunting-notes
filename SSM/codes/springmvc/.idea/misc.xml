@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_08_ssm" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_09_result" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_10_exception" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_11_page" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc_12_interceptor" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/springmvc_08_ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_11_page/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_09_result/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_10_exception/pom.xml" />
+        <option value="$PROJECT_DIR$/springmvc_12_interceptor/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="16" project-jdk-type="JavaSDK" />
+</project>
