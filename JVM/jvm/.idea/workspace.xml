@@ -7,12 +7,6 @@
     <list default="true" id="008b3e91-ff28-4126-a48e-ff9db5b6525e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c1.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c2.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/test/ConcurrencyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/test/ConcurrencyTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/test/Singleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/test/Singleton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcstress/target/classes/test/SingletonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/test/SingletonTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" afterDir="false" />
@@ -43,23 +37,6 @@
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/CacheMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/CacheMapperTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/DynamicSQLMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/DynamicSQLMapperTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/ResultMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/ResultMapTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/JdbcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/JdbcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/MyBatisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/MyBatisConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/ServletConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/ServletConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringMvcConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringMvcSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringMvcSupport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/Code.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/Code.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/ProjectExceptionAdvice.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/ProjectExceptionAdvice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/exception/BusinessException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/exception/BusinessException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/exception/SystemException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/exception/SystemException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/service/BookService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/service/impl/BookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/test-classes/com/itheima/service/BookServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/test-classes/com/itheima/service/BookServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_03_pojo/target/classes/com/itheima/domain/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_03_pojo/target/classes/com/itheima/domain/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_04_dao/target/classes/com/itheima/dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_04_dao/target/classes/com/itheima/dao/BookDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Spring5/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../java补充知识点/Java进阶.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../java补充知识点/Java进阶.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../machineLearning/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../machineLearning/README.md" afterDir="false" />
@@ -1236,7 +1213,7 @@
       <recent name="E:\git\jvm\src\cn\itcast\jvm\t1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Demo1_26">
+  <component name="RunManager" selected="Application.Demo2_2">
     <configuration name="Demo1_20" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.Demo1_20" />
       <module name="jvm" />
@@ -1297,13 +1274,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo1_8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.metaspace.Demo1_8" />
+    <configuration name="Demo2_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t2.Demo2_2" />
       <module name="jvm" />
-      <option name="VM_PARAMETERS" value="-XX:MaxMetaspaceSize=8m" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.itcast.jvm.t1.metaspace.*" />
+          <option name="PATTERN" value="cn.itcast.jvm.t2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1331,19 +1307,19 @@
       <item itemvalue="Application.Demo2_4" />
       <item itemvalue="Application.Demo2_5" />
       <item itemvalue="Application.Demo1_20" />
-      <item itemvalue="Application.Demo1_8" />
       <item itemvalue="Application.Demo1_23" />
       <item itemvalue="Application.Demo1_24" />
       <item itemvalue="Application.Demo1_25" />
       <item itemvalue="Application.Demo1_26" />
+      <item itemvalue="Application.Demo2_2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Demo2_2" />
         <item itemvalue="Application.Demo1_26" />
         <item itemvalue="Application.Demo1_25" />
         <item itemvalue="Application.Demo1_24" />
         <item itemvalue="Application.Demo1_23" />
-        <item itemvalue="Application.Demo1_8" />
       </list>
     </recent_temporary>
   </component>
@@ -1415,7 +1391,7 @@
       <workItem from="1655711292650" duration="7517000" />
       <workItem from="1656292602821" duration="4564000" />
       <workItem from="1656572065594" duration="595000" />
-      <workItem from="1658280602469" duration="6717000" />
+      <workItem from="1658280602469" duration="8921000" />
     </task>
     <servers />
   </component>
