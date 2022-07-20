@@ -153,29 +153,103 @@ java.lang.OutOfMemoryError: Java heap space
 ### 运行时常量池
 
 * 常量池，就是一张表，虚拟机指令根据这张常量表找到要执行的类名、方法名、参数类型、字面量 等信息
-* 运行时常量池，常量池是 *.class 文件中的，当该类被加载，它的常量池信息就会放入运行时常量 池，并把里面的符号地址变为真实地址
+* 运行时常量池，常量池是 *.class 文件中的，当该类被加载，它的常量池信息就会放入运行时常量池，并把里面的符号地址变为真实地址
 
-p25
+例题
+
+```java
+String s1 = "a";
+String s2 = "b";
+String s3 = "a" + "b";
+String s4 = s1 + s2;
+String s5 = "ab";
+String s6 = s4.intern();
+// 问
+System.out.println(s3 == s4); // false
+System.out.println(s3 == s5); // true
+System.out.println(s3 == s6); // true
+String x2 = new String("c") + new String("d");
+String x1 = "cd";
+x2.intern();
+// 问，如果调换了【最后两行代码】的位置呢，如果是jdk1.6呢
+System.out.println(x1 == x2); // false true
+// 1.6中调换最后两行，最后一个结果仍然是false
+```
 
 
 
+```java
+// StringTable [ "a", "b" ,"ab" ]  hashtable 结构，不能扩容
+public class Demo1_22 {
+    // 常量池中的信息，都会被加载到运行时常量池中， 这时 a b ab 都是常量池中的符号，还没有变为 java 字符串对象
+    // ldc #2 会把 a 符号变为 "a" 字符串对象
+    // ldc #3 会把 b 符号变为 "b" 字符串对象
+    // ldc #4 会把 ab 符号变为 "ab" 字符串对象
+
+    public static void main(String[] args) {
+        String s1 = "a"; // 懒惰的
+        String s2 = "b";
+        String s3 = "ab";
+        String s4 = s1 + s2; // new StringBuilder().append("a").append("b").toString()  new String("ab")
+        String s5 = "a" + "b";  // javac 在编译期间的优化，结果已经在编译期确定为ab
+
+        System.out.println(s3 == s5);
 
 
 
+    }
+}
+```
 
+> 字符串加载延迟加载
 
+### StringTable 特性
 
+* 常量池中的字符串仅是符号，第一次用到时才变为对象 
+* 利用串池的机制，来避免重复创建字符串对象 
+* 字符串变量拼接的原理是 `StringBuilder `（1.8） 
+* 字符串常量拼接的原理是编译期优化 
+* 可以使用 `intern `方法，主动将串池中还没有的字符串对象放入串池
+  * 1.8 将这个字符串对象尝试放入串池，如果有则并不会放入，如果没有则放入串池， 会把串池中的对象返回 
+  * 1.6 将这个字符串对象尝试放入串池，如果有则并不会放入，如果没有会把此对象**复制**一份， 放入串池， 会把串池中的对象返回
 
+> 也就是说1.6串池和字符串对象不相等
 
+### StringTable性能调优
 
+* 调整 -XX:StringTableSize=桶个数，可以加速 Hash 查找，加快入池速度
+* 考虑将字符串对象是否入池
 
+> 如果存在大量字符串，并且这些字符串可能存在重复，可以将这些字符串进行入池，可以大大减少内存占用
 
+## 直接内存
 
+Direct Memory 
 
+* 常见于 NIO 操作时，用于数据缓冲区 
+* 分配回收成本较高，但读写性能高 
+* 不受 JVM 内存回收管理
 
+传统的文件读取流程
 
+<img src="imgs/image-20220720104457244.png" alt="image-20220720104457244" style="zoom:67%;" />
 
+使用直接内存的文件读取流程
 
+磁盘文件内容直接读取到直接内存中，java代码可以直接读取直接内存中的内容
+
+<img src="imgs/image-20220720104633119.png" alt="image-20220720104633119" style="zoom:67%;" />
+
+> * 直接内存也会导致内存溢出
+
+### 分配回收原理
+
+* 使用了 Unsafe 对象完成直接内存的分配回收，并且回收需要主动调用 freeMemory 方法 
+* ByteBuffer 的实现类内部，使用了 Cleaner （虚引用）来监测 ByteBuffer 对象，一旦 ByteBuffer 对象被垃圾回收，那么就会由 ReferenceHandler 线程通过 Cleaner 的 clean 方法调用 freeMemory 来释放直接内存
+
+> `-XX:+DisableExpliciGC` 禁用显式的垃圾回收
+
+# 垃圾回收
 
 
 

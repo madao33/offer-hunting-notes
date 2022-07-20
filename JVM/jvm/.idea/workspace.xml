@@ -7,13 +7,14 @@
     <list default="true" id="008b3e91-ff28-4126-a48e-ff9db5b6525e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jcstress/jcstress.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/jcstress.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c1.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c2.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/org/openjdk/jcstress/infra/results/I_Result_jcstress_c2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jcstress/target/classes/test/ConcurrencyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/test/ConcurrencyTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jcstress/target/classes/test/Singleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/test/Singleton.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jcstress/target/classes/test/SingletonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/jcstress/target/classes/test/SingletonTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/EmpMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/EmpMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/Dept.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/Dept.class" afterDir="false" />
@@ -42,7 +43,26 @@
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/CacheMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/CacheMapperTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/DynamicSQLMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/DynamicSQLMapperTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/ResultMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../MyBatis/codes/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/ResultMapTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/JdbcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/JdbcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/MyBatisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/MyBatisConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/ServletConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/ServletConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringMvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringMvcSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/config/SpringMvcSupport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/Code.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/Code.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/ProjectExceptionAdvice.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/ProjectExceptionAdvice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/controller/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/exception/BusinessException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/exception/BusinessException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/exception/SystemException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/exception/SystemException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/service/BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/service/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/classes/com/itheima/service/impl/BookServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/test-classes/com/itheima/service/BookServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_02_ssm/target/test-classes/com/itheima/service/BookServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_03_pojo/target/classes/com/itheima/domain/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_03_pojo/target/classes/com/itheima/domain/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/maven/maven_04_dao/target/classes/com/itheima/dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SSM/codes/maven/maven_04_dao/target/classes/com/itheima/dao/BookDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Spring5/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java补充知识点/Java进阶.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../java补充知识点/Java进阶.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../machineLearning/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../machineLearning/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../springboot/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../springboot/doc/SpringBoot基础篇（发布版）.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../springboot/doc/SpringBoot开发实用篇.pptx" beforeDir="false" />
@@ -1002,8 +1022,17 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/jvm_maven/src/main/java/cn/itcast/jvm/t3/load/Load6.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/cn/itcast/jvm/t1/stringtable/Demo1_25.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/jvm_maven/src/main/java/cn/itcast/jvm/t3/load/Load11.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/jvm_maven/src/main/java/cn/itcast/jvm/t3/load/TestJdbc.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/jvm_maven/src/main/java/cn/itcast/jvm/t3/load/TestFinal.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/cn/itcast/jvm/t1/stringtable/Demo1_24.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/cn/itcast/jvm/t1/stringtable/TestString.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/cn/itcast/jvm/t1/direct/Demo1_27.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/cn/itcast/jvm/t1/direct/Demo1_10.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/cn/itcast/jvm/t1/direct/Demo1_26.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/cn/itcast/jvm/t1/direct/Demo1_9.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -1188,6 +1217,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33558342" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1206,33 +1236,7 @@
       <recent name="E:\git\jvm\src\cn\itcast\jvm\t1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Demo1_8">
-    <configuration name="Demo1_13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.heap.Demo1_13" />
-      <module name="jvm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.itcast.jvm.t1.heap.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Demo1_16" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.stack.Demo1_16" />
-      <module name="jvm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.itcast.jvm.t1.stack.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Demo1_26">
     <configuration name="Demo1_20" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.Demo1_20" />
       <module name="jvm" />
@@ -1241,12 +1245,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo1_4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.heap.Demo1_4" />
+    <configuration name="Demo1_23" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.stringtable.Demo1_23" />
       <module name="jvm" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.itcast.jvm.t1.heap.*" />
+          <option name="PATTERN" value="cn.itcast.jvm.t1.stringtable.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1254,13 +1258,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo1_5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.heap.Demo1_5" />
+    <configuration name="Demo1_24" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.stringtable.Demo1_24" />
       <module name="jvm" />
-      <option name="VM_PARAMETERS" value="-Xmx8m" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.itcast.jvm.t1.heap.*" />
+          <option name="PATTERN" value="cn.itcast.jvm.t1.stringtable.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo1_25" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.stringtable.Demo1_25" />
+      <module name="jvm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.itcast.jvm.t1.stringtable.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo1_26" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.itcast.jvm.t1.direct.Demo1_26" />
+      <module name="jvm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.itcast.jvm.t1.direct.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1302,19 +1331,19 @@
       <item itemvalue="Application.Demo2_4" />
       <item itemvalue="Application.Demo2_5" />
       <item itemvalue="Application.Demo1_20" />
-      <item itemvalue="Application.Demo1_5" />
-      <item itemvalue="Application.Demo1_16" />
-      <item itemvalue="Application.Demo1_4" />
-      <item itemvalue="Application.Demo1_13" />
       <item itemvalue="Application.Demo1_8" />
+      <item itemvalue="Application.Demo1_23" />
+      <item itemvalue="Application.Demo1_24" />
+      <item itemvalue="Application.Demo1_25" />
+      <item itemvalue="Application.Demo1_26" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Demo1_26" />
+        <item itemvalue="Application.Demo1_25" />
+        <item itemvalue="Application.Demo1_24" />
+        <item itemvalue="Application.Demo1_23" />
         <item itemvalue="Application.Demo1_8" />
-        <item itemvalue="Application.Demo1_13" />
-        <item itemvalue="Application.Demo1_4" />
-        <item itemvalue="Application.Demo1_5" />
-        <item itemvalue="Application.Demo1_16" />
       </list>
     </recent_temporary>
   </component>
@@ -1384,7 +1413,9 @@
       <workItem from="1565415579327" duration="1601000" />
       <workItem from="1565847982227" duration="125000" />
       <workItem from="1655711292650" duration="7517000" />
-      <workItem from="1656292602821" duration="2848000" />
+      <workItem from="1656292602821" duration="4564000" />
+      <workItem from="1656572065594" duration="595000" />
+      <workItem from="1658280602469" duration="6717000" />
     </task>
     <servers />
   </component>
@@ -1470,11 +1501,6 @@
           <url>file://$PROJECT_DIR$/src/cn/itcast/jvm/t3/load/Load5_3.java</url>
           <line>7</line>
           <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/jvm_maven/src/main/java/cn/itcast/jvm/t3/load/TestJdbc.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$PROJECT_DIR$/../../../../../../../../Program Files/Java/jdk1.8.0_91/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class</url>
