@@ -58,7 +58,7 @@
 
 成员变量访问内存
 
-![image-20220427112225577](imgs/image-20220427112225577.png)
+![image-20220427112225577](http://localhost:81/articles/image-20220427112225577.png)
 
 ```java
 public class Student{
@@ -97,7 +97,7 @@ public class Student{
 > * 实例方法属于对象，无static修饰，必须先创建对象，然后用对象来访问。
 > * 静态方法也可以被对象共享访问，但是不推荐，因为静态方法直接用类名访问即可。
 
-![image-20220427143750503](imgs/image-20220427143750503.png)
+![image-20220427143750503](http://localhost:81/articles/image-20220427143750503.png)
 
 ```java
 public class Student {
@@ -1760,7 +1760,7 @@ interface Swim{
 
 可以修饰成员变量，修饰方法，修饰构造器，内部类，不同修饰符修饰的成员能够被访问的权限将受到限制!
 
-![image-20220525204748483](imgs/image-20220525204748483.png)
+![image-20220525204748483](http://localhost:81/articles/image-20220525204748483.png)
 
 ## Object类
 
@@ -2693,7 +2693,7 @@ System.out.println(s);
 
 ### ArrayList集合
 
-![image-20220601213800419](imgs/image-20220601213800419.png)
+![image-20220601213800419](http://localhost:81/articles/image-20220601213800419.png)
 
 `Collection`集合体系的特点:
 
@@ -3422,7 +3422,7 @@ public static int binarySerach(int[] arr , int number){
 * `Java`会为常见的代码异常都设计一个类来代表
 * `Java`中异常继承的根类是：`Throwable`
 
-<img src="imgs/image-20220603140634079.png" alt="image-20220603140634079" style="zoom: 80%;" />
+<img src="http://localhost:81/articles/image-20220603140634079.png" alt="image-20220603140634079" style="zoom: 80%;" />
 
 `Error `: 错误的意思，严重错误`Error`，无法通过处理的错误，一旦出现，程序员无能为力了，
 
@@ -4333,7 +4333,7 @@ java 死锁产生的四个必要条件：
 
 **原因**：按照JMM模型，所有的成员变量和静态变量都存在于主内存中，主内存中的变量可以被多个线程共享。每个线程都存在一个专属于自己的工作内存，工作内存一开始存储的是成员变量的副本。所以线程很多时候都是直接访问自己工作内存中的该变量，其他线程对主内存变量值的修改将不可见
 
-![image-20220606111513140](imgs/image-20220606111513140.png)
+![image-20220606111513140](http://localhost:81/articles/image-20220606111513140.png)
 
 希望所有线程对于主内存的成员变量修改，其他线程是可见的。
 

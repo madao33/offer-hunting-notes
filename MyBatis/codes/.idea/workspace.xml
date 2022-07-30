@@ -5,17 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e280ed83-bed1-4fd1-846c-0c3d9be6de6e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../MyBatis笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/../MyBatis笔记.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JVM/jvm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../JVM/jvm/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/src/test/java/ResultMapTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/test-classes/ResultMapTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/EmpMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/mapper/EmpMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/Dept.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/Dept.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/DeptExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/Emp.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/Emp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/classes/com/atguigu/mybatis/pojo/EmpExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/test-classes/com/atguigu/mybatis/test/MBGTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/test-classes/com/atguigu/mybatis/test/MBGTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_MBG/target/test-classes/com/atguigu/mybatis/test/PageHelperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_MBG/target/test-classes/com/atguigu/mybatis/test/PageHelperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo2/target/classes/com/atguigu/mybatis/mapper/SelectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo2/target/classes/com/atguigu/mybatis/mapper/SelectMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo2/target/test-classes/com/atguigu/mybatis/test/SQLMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo2/target/test-classes/com/atguigu/mybatis/test/SQLMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo2/target/test-classes/com/atguigu/mybatis/test/SelectMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo2/target/test-classes/com/atguigu/mybatis/test/SelectMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/CacheMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/CacheMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/CacheMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/CacheMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/DeptMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/DynamicSQLMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/DynamicSQLMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/EmpMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/mapper/EmpMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/pojo/Dept.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/pojo/Dept.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/pojo/Emp.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/pojo/Emp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/utils/SqlSessionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo3/target/classes/com/atguigu/mybatis/utils/SqlSessionUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/CacheMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/CacheMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/DynamicSQLMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/DynamicSQLMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/ResultMapTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/MyBatis_demo3/target/test-classes/com/atguigu/mybatis/ResultMapTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/springmvc/springmvc_08_ssm/springmvc_08_ssm.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/springmvc/springmvc_09_result/springmvc_09_result.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/springmvc/springmvc_10_exception/springmvc_10_exception.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/springmvc/springmvc_11_page/springmvc_11_page.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SSM/codes/springmvc/springmvc_12_interceptor/springmvc_12_interceptor.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Spring5/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java补充知识点/Java进阶.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../java补充知识点/Java进阶.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java补充知识点/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../java补充知识点/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java补充知识点/codes/seniorJava/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../java补充知识点/codes/seniorJava/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java补充知识点/codes/seniorJava/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../java补充知识点/codes/seniorJava/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../machineLearning/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../machineLearning/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../springboot/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../springboot/doc/SpringBoot基础篇（发布版）.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../springboot/doc/SpringBoot开发实用篇.pptx" beforeDir="false" />
@@ -892,6 +919,7 @@
       <change beforePath="$PROJECT_DIR$/../../springboot/doc/img/image-20220301174751845.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../springboot/doc/img/image-20220301175101812.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../springboot/doc/img/image-20220301175355482.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../深入理解Java虚拟机/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../笔试模拟/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../笔试模拟/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -943,11 +971,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MyBatis_MBG/src/test/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../java/leetcode-debug" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
@@ -1077,6 +1106,7 @@
       <workItem from="1655089782515" duration="1085000" />
       <workItem from="1655090888932" duration="25162000" />
       <workItem from="1655212595936" duration="6015000" />
+      <workItem from="1657705053277" duration="1274000" />
     </task>
     <servers />
   </component>
